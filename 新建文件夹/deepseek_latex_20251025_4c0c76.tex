@@ -1,0 +1,606 @@
+\documentclass[11pt]{article}
+\usepackage[UTF8]{ctex}
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{tocloft}
+
+% 定义 claim 环境
+\newtheoremstyle{claimstyle}% 名称
+  {3pt}% 上方间距
+  {3pt}% 下方间距
+  {\normalfont}% 主体字体
+  {0pt}% 缩进
+  {\bfseries}% 标题字体
+  {.}% 标题后标点
+  {0.5em}% 标题后间距
+  {}% 标题说明
+
+\theoremstyle{claimstyle}
+\newtheorem{claim}{断言}
+\newtheorem{lemma}{引理}
+
+% 定义 remark 环境
+\newtheoremstyle{remarkstyle}% 名称
+  {3pt}% 上方间距
+  {3pt}% 下方间距
+  {\normalfont}% 主体字体
+  {0pt}% 缩进
+  {\itshape}% 标题字体（斜体）
+  {.}% 标题后标点
+  {0.5em}% 标题后间距
+  {}% 标题说明
+
+\theoremstyle{remarkstyle}
+\newtheorem{remark}{备注}
+
+% 设置章节格式
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+
+% 设置页眉页脚
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize\textbf{\thetitle}}
+\fancyhead[R]{\footnotesize\href{http://web.evanchen.cc}{web.evanchen.cc}, 更新于 \today}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% 设置带框环境
+\usepackage{mdframed}
+\newmdenv[%
+    linecolor=purple,
+    backgroundcolor=purple!5,
+    linewidth=2pt,
+    frametitle=问题陈述,
+    frametitlebackgroundcolor=purple!20,
+    frametitlerule=true
+]{problembox}
+
+% 设置列表格式
+\setlist[enumerate]{label=\textbf{\arabic*}.}
+
+\title{USAMO 2025 解答笔记}
+\author{}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+本文是 2025 年美国数学奥林匹克 (USAMO) 解答的汇编。
+解答思路融合了我个人的工作、竞赛组委会提供的解答以及社区发现的解答。
+然而，所有文字均由我整理维护。
+
+这些笔记往往比组委会的"官方"解答更进阶和简练。
+特别是，如果某个定理或技巧对初学者而言未知但仍被视为"标准"，
+我通常倾向于直接使用该理论，而非试图绕开或隐藏它。
+例如，在几何问题中我通常不加说明地使用有向角，
+而不是笨拙地处理构型问题。
+类似地，像"令 $\mathbb{R}$ 表示实数集"这样的句子通常完全省略。
+
+欢迎指正和评论！
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\section*{问题}
+\addcontentsline{toc}{section}{问题}
+
+\begin{enumerate}
+\item 固定正整数 $k$ 和 $d$。
+证明对于所有足够大的奇数正整数 $n$，
+$n^k$ 的 $2n$ 进制表示中的所有数字都大于 $d$。
+
+\item 设 $n > k \ge 1$ 为整数。
+设 $P(x) \in \mathbb{R}[x]$ 是一个 $n$ 次多项式，
+无重根且 $P(0) \neq 0$。
+假设对于任意实数 $a_0$, \dots, $a_k$，
+只要多项式 $a_k x^k + \dots + a_1 x + a_0$ 整除 $P(x)$，
+则乘积 $a_0 a_1 \dots a_k$ 为零。
+证明 $P(x)$ 有一个非实根。
+
+\item 建筑师 Alice 和建造师 Bob 玩一个游戏。
+首先，Alice 选择平面上的两个点 $P$ 和 $Q$ 以及平面的一个子集 $\mathcal{S}$，并告知 Bob。
+接着，Bob 在平面上标记无限多个点，将每个点指定为一个城市。
+他不能将两个城市放置在彼此距离至多 1 个单位的位置，
+并且他放置的任意三个城市不能共线。
+最后，城市之间按如下方式修建道路：
+当且仅当以下条件成立时，
+每对城市 $A$, $B$ 通过线段 $AB$ 连接一条道路：
+\begin{quote}
+对于每一个不同于 $A$ 和 $B$ 的城市 $C$，
+存在 $R\in \mathcal{S}$ 使得 $\triangle PQR$ 与 $\triangle ABC$ 或 $\triangle BAC$ 直接相似。
+\end{quote}
+如果 (i) 最终的道路允许通过有限序列的道路在任何一对城市之间旅行，并且 (ii) 没有两条道路相交，则 Alice 获胜。
+否则，Bob 获胜。确定哪位玩家有必胜策略，并证明之。
+
+\item 设 $H$ 是锐角三角形 $ABC$ 的垂心，
+$F$ 是从 $C$ 到 $AB$ 的高的垂足，
+$P$ 是 $H$ 关于 $BC$ 的反射点。
+假设三角形 $AFP$ 的外接圆与直线 $BC$ 相交于两个不同的点 $X$ 和 $Y$。
+证明 $CX = CY$。
+
+\item 求所有满足以下条件的正整数 $k$：对于每个正整数 $n$，和式
+\[ \binom n0^k + \binom n1^k + \dots + \binom nn^k \]
+能被 $n+1$ 整除。
+
+\item 设 $m$ 和 $n$ 为正整数且 $m\geq n$。
+有 $m$ 个不同口味的纸杯蛋糕排成一个圆圈，以及 $n$ 个喜欢纸杯蛋糕的人。
+每个人给每个纸杯蛋糕分配一个非负实数分数，取决于他们有多喜欢该纸杯蛋糕。
+假设对于每个人 $P$，都可以将 $m$ 个纸杯蛋糕的圆圈划分成 $n$ 组连续的纸杯蛋糕，
+使得每组中纸杯蛋糕的 $P$ 的分数之和至少为 $1$。
+证明可以将这 $m$ 个纸杯蛋糕分给这 $n$ 个人，
+使得每个人 $P$ 收到的纸杯蛋糕相对于 $P$ 的总分数至少为 $1$。
+
+\end{enumerate}
+\pagebreak
+
+\section{第一天解答}
+
+\subsection{USAMO 2025/1, 由 John Berman 提出}
+\href{https://aops.com/community/p34326777}{在线查看}
+
+\begin{problembox}
+固定正整数 $k$ 和 $d$。
+证明对于所有足够大的奇数正整数 $n$，
+$n^k$ 的 $2n$ 进制表示中的所有数字都大于 $d$。
+\end{problembox}
+
+这个问题实际上与数字关系不大：
+思路是选取任意长度 $\ell \le k$，
+然后看 $n^k$ 的最右边 $\ell$ 位数字；
+也就是除以 $(2n)^\ell$ 后的余数。
+我们精确地计算它：
+
+\begin{claim}
+  设 $n \ge 1$ 为奇数整数，$k \ge \ell \ge 1$ 为整数。
+  则
+  \[ n^k \bmod{(2n)^\ell} = c(k,\ell) \cdot n^\ell \]
+  其中 $c(k,\ell)$ 是某个满足 $1 \le c(k,\ell) \le 2^\ell-1$ 的奇数整数。
+\end{claim}
+
+\begin{proof}
+  这直接由中国剩余定理得出，
+  $c(k,\ell)$ 是 $n^{k-\ell} \pmod{2^\ell}$ 的同余类
+  （这是合理的，因为 $n$ 是奇数）。
+\end{proof}
+
+我们现在可以确定所需的阈值：
+
+\begin{claim}
+  一旦 $n \ge (d+1) \cdot 2^{k-1}$，问题陈述成立。
+\end{claim}
+
+\begin{proof}
+  假设 $n$ 那么大。
+  那么 $n^k$ 在 $2n$ 进制下有 $k$ 位数字。
+  此外，对于每个 $1 \le \ell \le k$，我们有
+  \[ c(k,\ell) \cdot n^\ell \ge (d+1) \cdot (2n)^{\ell-1} \]
+  因为 $n$ 足够大；
+  这意味着从右边数第 $\ell$ 位数字至少是 $d+1$。
+  因此问题得证。
+\end{proof}
+
+\begin{remark}
+  注意 $c(k,\ell)$ 是奇数本身并不重要；
+  我们只需要 $c(k,\ell) \ge 1$。
+\end{remark}
+
+\pagebreak
+
+\subsection{USAMO 2025/2, 由 Carl Schildkraut 提出}
+\href{https://aops.com/community/p34326772}{在线查看}
+
+\begin{problembox}
+设 $n > k \ge 1$ 为整数。
+设 $P(x) \in \mathbb{R}[x]$ 是一个 $n$ 次多项式，
+无重根且 $P(0) \neq 0$。
+假设对于任意实数 $a_0$, \dots, $a_k$，
+只要多项式 $a_k x^k + \dots + a_1 x + a_0$ 整除 $P(x)$，
+则乘积 $a_0 a_1 \dots a_k$ 为零。
+证明 $P(x)$ 有一个非实根。
+\end{problembox}
+
+通过考虑 $P$ 的任意 $k+1$ 个根，我们不妨假设 $n = k+1$。
+假设 $P(x) = (x+r_1) \dots (x+r_n) \in \mathbb{R}[x]$ 满足 $P(0) \neq 0$。
+那么问题假设是，以下 $n$ 个多项式
+（次数为 $n-1$）中的每一个：
+\begin{align*}
+  P_1(x) &= (x+r_2)(x+r_3)(x+r_4) \dots (x+r_n) \\
+  P_2(x) &= (x+r_1)(x+r_3)(x+r_4) \dots (x+r_n) \\
+  P_3(x) &= (x+r_1)(x+r_2)(x+r_4) \dots (x+r_n) \\
+  &\vdots \\
+  P_n(x) &= (x+r_1)(x+r_2)(x+r_3) \dots (x+r_{n-1})
+\end{align*}
+至少有一个系数为零。
+（明确地，$P_i(x) = \frac{P(x)}{x+r_i}$。）
+我们将证明至少有一个 $r_i$ 不是实数。
+
+显然每个 $P_i$ 的首项系数和常数项非零，
+并且还有 $n-2$ 个其他系数可供选择。
+因此根据鸽巢原理，我们可以假设，例如，
+$P_1$ 和 $P_2$ 共享一个零系数的位置，比方说
+$x^k$ 的系数，对于某个 $1 \le k < n-1$。
+
+\begin{claim}
+  如果 $P_1$ 和 $P_2$ 的 $x^k$ 系数都为零，那么多项式
+  \[ Q(x) = (x+r_3)(x+r_4) \dots (x+r_n) \]
+  有两个连续的零系数，即 $b_k = b_{k-1} = 0$。
+\end{claim}
+
+\begin{proof}
+  应用韦达公式，假设
+  \[ Q(x) = x^{n-2} + b_{n-3} x^{n-3} + \dots + b_0. \]
+  （并令 $b_{n-2} = 1$。）
+  那么 $P_1$ 和 $P_2$ 的 $x^k$ 系数都为零意味着
+  \[ r_1 b_k + b_{k-1} = r_2 b_k + b_{k-1} = 0 \]
+  因此 $b_k = b_{k-1} = 0$（因为 $r_i$ 非零）。
+\end{proof}
+
+为了解决这个问题，我们使用：
+
+\begin{lemma}
+  如果 $F(x) \in \mathbb{R}[x]$ 是一个有两个连续零系数的多项式，
+  那么它不可能所有根都是互异实根。
+\end{lemma}
+
+我知道这个引理有两种可能的证明（还有更多）。
+
+\begin{proof}[使用罗尔定理的证明]
+  设 $F$ 的 $x^t$ 和 $x^{t+1}$ 系数都为零。
+
+  假设 $F$ 的所有根都是实根且互异。
+  那么根据罗尔定理，$F$ 的每一个更高阶导数也应该具有这个性质。
+  然而，$F$ 的 $t$ 阶导数在 $0$ 处有一个二重根，矛盾。
+\end{proof}
+
+\begin{proof}[使用笛卡尔符号法则的证明]
+  $F$ 的（非零）根的数量上界为
+  $F(x)$ 的变号次数（对于正根）
+  和 $F(-x)$ 的变号次数（对于负根）之和。
+  现在考虑 $F$ 中每一对连续的非零系数，
+  比方说 ${\star} x^i$ 和 ${\star} x^j$，其中 $i > j$。
+  \begin{itemize}
+    \item 如果 $i-j=1$，那么这个变号只会计入 $F(x)$ 或 $F(-x)$ 中的一个。
+    \item 如果 $i-j \ge 2$，那么变号可能同时计入 $F(x)$ 和 $F(-x)$
+    （即计两次），但同时它们之间至少有一个零系数。
+  \end{itemize}
+  因此，如果 $b$ 是 $F$ 的非零系数的个数，
+  而 $z$ 是 $F$ 的零系数的连续段的个数，
+  那么实根的数量上界为
+  \[ 1 \cdot (b-1-z) + 2 \cdot z = b - 1 + z \le \deg F. \]
+  然而，如果 $F$ 有两个连续的零系数，那么这个不等式是严格的。
+\end{proof}
+
+\begin{remark}
+  最终的这个断言显然以前在越南数学协会大学生奥林匹克竞赛的
+  华中科技大学队选拔测试中出现过；参见 \url{https://aops.com/community/p33893374} 引文。
+\end{remark}
+
+\pagebreak
+
+\subsection{USAMO 2025/3, 由 Carl Schildkraut 提出}
+\href{https://aops.com/community/p34326775}{在线查看}
+
+\begin{problembox}
+建筑师 Alice 和建造师 Bob 玩一个游戏。
+首先，Alice 选择平面上的两个点 $P$ 和 $Q$ 以及平面的一个子集 $\mathcal{S}$，并告知 Bob。
+接着，Bob 在平面上标记无限多个点，将每个点指定为一个城市。
+他不能将两个城市放置在彼此距离至多 1 个单位的位置，
+并且他放置的任意三个城市不能共线。
+最后，城市之间按如下方式修建道路：
+当且仅当以下条件成立时，
+每对城市 $A$, $B$ 通过线段 $AB$ 连接一条道路：
+\begin{quote}
+对于每一个不同于 $A$ 和 $B$ 的城市 $C$，
+存在 $R\in \mathcal{S}$ 使得 $\triangle PQR$ 与 $\triangle ABC$ 或 $\triangle BAC$ 直接相似。
+\end{quote}
+如果 (i) 最终的道路允许通过有限序列的道路在任何一对城市之间旅行，并且 (ii) 没有两条道路相交，则 Alice 获胜。
+否则，Bob 获胜。确定哪位玩家有必胜策略，并证明之。
+\end{problembox}
+
+答案是 Alice 获胜。
+让我们定义一个 \emph{Bob-集} $V$ 为平面上一个点集，其中任意三点不共线，
+且所有点之间的距离至少为 $1$。
+这个问题的关键在于证明以下事实。
+
+\begin{claim}
+  给定一个 Bob-集 $V \subseteq \mathbb{R}^2$，考虑具有顶点集 $V$ 的 \emph{Bob-图}，
+  定义如下：
+  连接边 $ab$ 当且仅当以 $\overline{ab}$ 为直径的圆盘
+  内部或边界上不包含 $V$ 的任何其他点。
+  则 Bob-图是 (i) 连通的，并且 (ii) 可平面的。
+\end{claim}
+
+证明这个断言就表明 Alice 获胜，因为 Alice 可以指定 $\mathcal{S}$
+为以 $PQ$ 为直径的圆盘之外的点集。
+
+\begin{proof}[证明每个 Bob-图都是连通的]
+  假设图不连通，用反证法。
+  设 $p$ 和 $q$ 是位于不同连通分支的两个点。
+  由于 $pq$ 不是边，存在第三个点 $r$
+  位于以 $\overline{pq}$ 为直径的圆盘内部。
+
+  因此，$r$ 与 $p$ 或 $q$ 中至少一个位于不同的连通分支
+  —— 假设是点 $p$。
+  然后我们在以 $\overline{pr}$ 为直径的圆盘上重复相同的论证，
+  找到一个新的点 $s$，与 $p$ 或 $r$ 都不相邻。
+  
+  通过这种方式，我们生成一个距离的无限序列
+  $\delta_1$, $\delta_2$, $\delta_3$, \dots 对应于非边的距离。
+  根据"勾股定理"（或者更确切地说是其相关不等式），我们有
+  \[ \delta_i^2 \le \delta_{i-1}^2 - 1 \]
+  这对于大的 $i$ 最终会产生矛盾，
+  因为我们得到 $0 \le \delta_i^2 \le \delta_1^2 - (i-1)$。
+\end{proof}
+
+\begin{proof}[证明每个 Bob-图都是可平面的]
+  假设边 $ac$ 和 $bd$ 相交，用反证法，这意味着 $abcd$ 是一个凸四边形。
+  不妨设 $\angle bad \ge 90^\circ$（每个四边形都有一个角至少 $90^\circ$）。
+  那么以 $\overline{bd}$ 为直径的圆盘包含 $a$，矛盾。
+\end{proof}
+
+\begin{remark}
+  在现实中，Bob-图实际上被称为 \href{https://w.wiki/DVnd}{Gabriel 图}。
+  注意我们从不要求 Bob-集是无限的；
+  这个解答对于有限的 Bob-集同样适用。
+
+  然而，有些方法适用于有限的 Bob-集但不适用于
+  无限集，例如 \href{https://www.graphclasses.org/classes/gc_1224.html}{相对邻域图}，
+  其中连接 $a$ 和 $b$ 当且仅当不存在 $c$ 使得
+  $d(a,b) \le \max \{d(a,c), d(b,c)\}$。
+  换句话说，当 $ab$ 是一个三角形的最长边时，边被阻塞
+  （而不是像 Gabriel 图中那样，当 $ab$ 是一个直角或钝角三角形的最长边时
+  边被阻塞）。
+
+  相对邻域图比 Gabriel 图有更少的边，所以它也是可平面的。
+  当 Bob-集是有限的时候，相对距离图仍然是连通的。
+  上面相同的论证仍然有效，只是距离现在满足
+  \[ \delta_1 > \delta_2 > \dots \]
+  由于距离只有有限多个，最终会得出矛盾。
+
+  然而对于无限的 Bob-集，递减条件是不够的，
+  连通性实际上完全失效。
+  一个反例（由 Carl Schildkraut 告知我）是首先取
+  $A_n \approx (2n,0)$ 和 $B_n \approx (2n+1, \sqrt3)$ 对于所有 $n \ge 1$，
+  然后轻微扰动所有点，使得
+  \begin{align*}
+    B_1A_1 &> A_1A_2 > A_2B_1 > B_1B_2 > B_2A_2 \\
+    &> A_2A_3 > A_3B_2 > B_2B_3 > B_3A_3 \\
+    &> \dotsb.
+  \end{align*}
+  在这种情况下，$\{A_n\}$ 和 $\{B_n\}$ 将彼此不连通：
+  边 $A_nB_n$ 或 $B_nA_{n+1}$ 都不会形成。
+  在这种情况下，相对邻域图由边
+  $A_1A_2A_3A_4 \dotsm$ 和 $B_1 B_2 B_3 B_4 \dotsm$ 组成。
+  这就是为什么在当前问题中，不等式
+  \[ \delta_i^2 \le \delta_{i-1}^2 - 1 \]
+  起着如此重要的作用，因为它使得（平方）距离
+  足够显著地减小，从而得出最终的矛盾。
+\end{remark}
+
+\pagebreak
+
+\section{第二天解答}
+
+\subsection{USAMO 2025/4, 由 Carl Schildkraut 提出}
+\href{https://aops.com/community/p34335844}{在线查看}
+
+\begin{problembox}
+设 $H$ 是锐角三角形 $ABC$ 的垂心，
+$F$ 是从 $C$ 到 $AB$ 的高的垂足，
+$P$ 是 $H$ 关于 $BC$ 的反射点。
+假设三角形 $AFP$ 的外接圆与直线 $BC$ 相交于两个不同的点 $X$ 和 $Y$。
+证明 $CX = CY$。
+\end{problembox}
+
+设 $Q$ 为 $B$ 的对径点。
+
+\begin{claim}
+  $AHQC$ 是一个平行四边形，且 $APCQ$ 是一个等腰梯形。
+\end{claim}
+
+\begin{proof}
+  因为 $\overline{AH} \perp \overline{BC} \perp \overline{CQ}$ 且 $\overline{CF} \perp \overline{AB} \perp \overline{AQ}$。
+\end{proof}
+
+设 $M$ 为 $\overline{QC}$ 的中点。
+
+\begin{claim}
+  点 $M$ 是 $\triangle AFP$ 的外心。
+\end{claim}
+
+\begin{proof}
+  从等腰梯形显然有 $MA = MP$。
+  至于 $MA = MF$，令 $N$ 表示 $\overline{AF}$ 的中点；
+  那么 $\overline{MN}$ 是平行四边形的中位线，所以 $\overline{MN} \perp \overline{AF}$。
+\end{proof}
+
+由于 $\overline{CM} \perp \overline{BC}$ 且 $M$ 是 $(AFP)$ 的圆心，可得 $CX = CY$。
+
+\pagebreak
+
+\subsection{USAMO 2025/5, 由 John Berman 提出}
+\href{https://aops.com/community/p34335836}{在线查看}
+
+\begin{problembox}
+求所有满足以下条件的正整数 $k$：对于每个正整数 $n$，和式
+\[ \binom n0^k + \binom n1^k + \dots + \binom nn^k \]
+能被 $n+1$ 整除。
+\end{problembox}
+
+答案是所有偶数 $k$。
+
+我们将问题中的和式简写为 $S(n) := \binom n0^k + \dots + \binom nn^k$。
+
+\paragraph{证明偶数 $k$ 是必要的。}
+选择 $n=2$。我们需要 $3 \mid S(2) = 2+2^k$，
+这要求 $k$ 是偶数。
+
+\begin{remark}
+  实际上，使用 $n = p-1$ 其中 $p$ 为素数也并不困难，
+  因为 $\binom{p-1}{i} \equiv (-1)^i \pmod p$。
+  因此 $S(p-1) \equiv 1 + (-1)^k + 1 + (-1)^k + \dots + 1 \pmod p$，
+  这也要求 $k$ 是偶数。
+  这个特例对于理解接下来的证明是有启发性的。
+\end{remark}
+
+\paragraph{证明 $k$ 是充分的。}
+从现在起，我们视 $k$ 为固定，并令 $p^e$ 为完全整除 $n+1$ 的素数幂。
+基本思路是通过归纳法从 $n+1$ 约化到 $(n+1)/p$。
+
+\begin{remark}
+  这里有一个具体的例子可以清楚地说明情况。
+  令 $p = 5$。
+  当 $n = p-1 = 4$ 时，我们有
+  \[ S(4) = 1^k + 4^k + 6^k + 4^k + 1^k \equiv 1 + 1 + 1 + 1 + 1 \equiv 0 \pmod 5. \]
+  当 $n = p^2-1 = 24$ 时，$S(24)$ 的 $25$ 项按顺序是，模 $25$ 下，
+  \begin{align*}
+    S(24) &\equiv 1^k + 1^k + 1^k + 1^k + 1^k\\
+    &+ 4^k + 4^k + 4^k + 4^k + 4^k \\
+    &+ 6^k + 6^k + 6^k + 6^k + 6^k \\
+    &+ 4^k + 4^k + 4^k + 4^k + 4^k \\
+    &+ 1^k + 1^k + 1^k + 1^k + 1^k \\
+    &= 5(1^k + 4^k + 6^k + 4^k + 1^k).
+  \end{align*}
+  关键在于 $S(24)$ 模 $25$ 下是 $S(4)$ 的五份拷贝。
+\end{remark}
+
+为了使备注中的模式明确，我们证明以下关于\emph{每个}二项式系数的引理。
+
+\begin{lemma}
+  假设 $p^e$ 是一个素数幂且完全整除 $n+1$。那么
+  \[ \binom{n}{i} \equiv \pm \binom{\frac{n+1}{p}-1}{\left\lfloor i/p \right\rfloor} \pmod{p^e}. \]
+\end{lemma}
+
+\begin{proof}[引理证明]
+  通过先看 $\left\lfloor i/p \right\rfloor \in \{0,1,2\}$ 的情况最容易理解证明。
+  \begin{itemize}
+  \item 对于 $0 \le i < p$，由于 $n \equiv -1 \mod p^e$，我们有
+  \[ \binom{n}{i} = \frac{n(n-1) \dots (n-i+1)}{1 \cdot 2 \cdot \dots \cdot i}
+    \equiv \frac{(-1)(-2) \dots (-i)}{1 \cdot 2 \cdot \dots \cdot i} \equiv \pm 1 \pmod{p^e}. \]
+  \item 对于 $p \le i < 2p$，我们有
+  \begin{align*}
+    \binom{n}{i}
+    &\equiv \pm 1 \cdot \frac{n-p+1}{p} \cdot \frac{(n-p)(n-p-1) \dots (n-i+1)}{(p+1)(p+2) \dots i} \\
+    &\equiv \pm 1 \cdot \frac{\frac{n-p+1}{p}}{1} \cdot \pm 1 \\
+    &\equiv \pm \binom{\frac{n+1}{p}-1}{1} \pmod{p^e}.
+  \end{align*}
+  \item 对于 $2p \le i < 3p$，类似的推理给出
+  \begin{align*}
+    \binom ni
+    &\equiv \pm 1 \cdot \frac{n-p+1}{p} \cdot \pm 1 \cdot \frac{n-2p+1}{2p} \cdot \pm 1 \\
+    &\equiv \pm \frac{\left(\frac{n+1}{p}-1\right)\left( \frac{n+1}{p}-2 \right) }{1 \cdot 2} \\
+    &\equiv \pm \binom{\frac{n+1}{p}-1}{2} \pmod{p^e}.
+  \end{align*}
+  \end{itemize}
+  依此类推。关键在于，一般来说，如果我们写成
+  \[ \binom ni = \prod_{1 \le j \le i} \frac{n-(j-1)}{j} \]
+  那么对于 $p \nmid j$ 的分数都是 $\pm 1 \pmod{p^e}$。
+  所以只考虑那些 $p \mid j$ 的 $j$；在那种情况下
+  恰好得到所声称的 $\binom{\frac{n+1}{p}-1}{\left\lfloor i/p \right\rfloor}$
+  （甚至不需要取模 $p^e$）。
+\end{proof}
+
+由引理可知，如果 $p^e$ 是一个完全整除 $n+1$ 的素数幂，那么
+\[ S(n) \equiv p \cdot S\left( \frac{n+1}{p}-1 \right) \pmod{p^e} \]
+这是通过将 $n+1$ 项（对于 $0 \le i \le n$）
+按照 $\left\lfloor i/p \right\rfloor$ 的值分成连续的长度为 $p$ 的组得到的。
+
+\begin{remark}
+  实际上，通过相同的证明（加上更好的 $\pm$ 符号管理）可以证明
+  \[ n+1 \mid \sum_{i=0}^n \left( (-1)^i \binom ni \right)^k \]
+  对于\emph{所有}非负整数 $k$ 都成立，而不仅仅是偶数 $k$。
+  所以在某种意义上，这个结果比问题陈述中的结果更自然。
+\end{remark}
+
+\pagebreak
+
+\subsection{USAMO 2025/6, 由 Cheng-Yin Chang 和 Hung-Hsun Yu 提出}
+\href{https://aops.com/community/p34335840}{在线查看}
+
+\begin{problembox}
+设 $m$ 和 $n$ 为正整数且 $m\geq n$。
+有 $m$ 个不同口味的纸杯蛋糕排成一个圆圈，以及 $n$ 个喜欢纸杯蛋糕的人。
+每个人给每个纸杯蛋糕分配一个非负实数分数，取决于他们有多喜欢该纸杯蛋糕。
+假设对于每个人 $P$，都可以将 $m$ 个纸杯蛋糕的圆圈划分成 $n$ 组连续的纸杯蛋糕，
+使得每组中纸杯蛋糕的 $P$ 的分数之和至少为 $1$。
+证明可以将这 $m$ 个纸杯蛋糕分给这 $n$ 个人，
+使得每个人 $P$ 收到的纸杯蛋糕相对于 $P$ 的总分数至少为 $1$。
+\end{problembox}
+
+任意挑选一个人——称她为 Pip——以及她的 $n$ 段弧。
+最初的想法是尝试应用霍尔婚姻引理，将
+$n$ 个人与 Pip 的弧进行匹配（使得每个这样匹配的人都对他们匹配到的弧感到满意）。
+为此，构造一个明显的二分图 $\mathfrak{G}$，
+连接人和 Pip 的弧。
+
+我们现在考虑以下算法，该算法需要几个步骤。
+\begin{itemize}
+  \item 如果 $\mathfrak{G}$ 存在完美匹配，我们就完成了！
+  
+  \item 我们可能没那么幸运。
+  根据霍尔条件，这意味着存在一个\emph{坏集合} $\mathcal{B}_1$，即一些人，
+  他们只与少于 $|\mathcal{B}_1|$ 条弧兼容。
+  然后删除 $\mathcal{B}_1$ 和 $\mathcal{B}_1$ 的邻居，
+  然后尝试在剩余的图中寻找匹配。
+  
+  \item 如果现在存在匹配，则终止算法。
+  否则，这意味着对于剩余的图存在另一个坏集合 $\mathcal{B}_2$。
+  我们再次删除 $\mathcal{B}_2$ 和少于 $|\mathcal{B}_2|$ 个的邻居。
+  
+  \item 重复直到在剩余的图中可能找到完美匹配 $\mathcal{M}$，
+  即不再有坏集合（然后一旦发生就终止）。
+  
+  由于 Pip 是一个通用顶点，不可能删除 Pip，
+  所以算法确实以非空的 $\mathcal{M}$ 终止。
+\end{itemize}
+
+我们承诺将 $\mathcal{M}$ 中的每个人分配给他们匹配的弧
+（特别是如果根本没有坏集合，问题已经解决）。
+现在我们通过对 $n$ 进行归纳（对于剩余的人）来完成问题，只需删除 $\mathcal{M}$ 使用的弧。
+
+为了理解为什么这个删除归纳法有效，
+考虑任何特定的不在 $\mathcal{M}$ 中的人 Quinn。
+根据定义，Quinn 对 $\mathcal{M}$ 中的任何弧都不满意。
+所以当 $\mathcal{M}$ 的一条弧 $\mathcal{A}$ 被删除时，
+它对 Quinn 的价值小于 $1$，
+所以特别地，它不可能完全包含 Quinn 的任何弧。
+因此，在删除的弧 $\mathcal{A}$ 中，Quinn 的弧最多有一个端点。
+当这种情况发生时，这会导致 Quinn 的两条弧合并，合并后的值是
+\[ (\ge 1) + (\ge 1) - (\le 1) \qquad \ge \qquad 1 \]
+这意味着归纳是可行的。
+
+\begin{remark}
+  这个删除论证甚至可以在意识到霍尔定理之前，在 $\mathcal{M}$ 只有一个人（Pip）的特殊情况下考虑。
+  这相当于说，如果 Pip 的一条弧不被任何人喜欢，
+  那么那条弧可以被删除，归纳继续进行。
+\end{remark}
+
+\begin{remark}
+  相反，即使在找到删除论证之前，也应该合理地期望霍尔定理会有所帮助。
+  在解决这个问题时，我最初说的几句话之一是：
+  \begin{quote}
+    ``我们应该让霍尔定理为我们承担繁重的工作：
+    找到一种方法来创建满足霍尔条件的 $n$ 个组，
+    而不是将 $n$ 个组分配给 $n$ 个人的方案。''
+  \end{quote}
+  作为一个通用的启发式方法，对于任何类型的"兼容匹配"问题，
+  霍尔条件通常是首选的工具。
+  （验证霍尔条件比自己实际找到匹配要容易得多。）
+  实际上在大多数竞赛问题中，如果一个人意识到自己处于霍尔设置中，
+  通常就接近完成问题了。
+  这是一个相对罕见的例子，其中需要额外的想法
+  与霍尔定理一起使用。
+\end{remark}
+
+\pagebreak
+
+\end{document}

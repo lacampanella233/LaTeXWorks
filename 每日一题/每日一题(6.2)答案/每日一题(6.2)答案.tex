@@ -1,0 +1,38 @@
+\documentclass[UTF8]{ctexart}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{geometry}
+\usepackage{enumitem}
+\geometry{a4paper,scale=0.7}
+\title{每日一题(6.2)答案}
+\author{选题:王一丁、李政毅\\答案制作:程昊一}
+
+\begin{document}
+\maketitle
+\textbf{1.}{\CJKfamily{kai}证明$ 3^{2012}+4^{2013} $是5的倍数.\\
+(王一丁供题)}
+\par \textbf{分析}\quad 这道题是一个和同余有关的题目.我们记$ a\equiv b(\mathrm{mod}m) $表示$ a\text{和}b $除以$ m $的余数相同.我们有以下几个常用结论:
+\begin{itemize}
+	\item[(1)] 若$ a\equiv b( \mathrm{mod}{m}),c\equiv d( \mathrm{mod}{m}) $,则$ a\pm c\equiv b\pm d( \mathrm{mod}{m}) $.
+	\item[(2)] 若$ a\equiv b( \mathrm{mod}{m}),c\equiv d( \mathrm{mod}{m}) $,则$ ac\equiv bd( \mathrm{mod}{m}) $
+	\item[(3)] 若$ a\equiv b( \mathrm{mod}{m}) $,$ n $为正整数,则$ a^n\equiv b^n( \mathrm{mod}{m}) $.这一点可以从(2)推出.
+\end{itemize}
+\par\textbf{解}
+\begin{align*}
+3^{2012}+4^{2013}&=\left(3^2\right)^{1006}+\left(4^3\right)^{671}\\
+&=9^{1006}+{64}^{671}\\
+&\equiv (-1)^{1006}+(-1)^{671}\\
+&=0(\mathrm{mod}m)
+\end{align*}
+\par 所以,$ 5\mid 3^{2012}+4^{2013} $.\\
+\par\textbf{2.}{\CJKfamily{kai}不存在整数$ x,y $,使得$ x^2+y^2=2015 $.\\
+(李政毅供题)}
+\par \textbf{解}\quad 我们先证明以下结论:对于任意整数$n$,有$ n^2\equiv 0\text{或}1(\mathrm{mod}4) $.对此,我们分以下两种情况讨论:
+\begin{itemize}
+\item[(1)] $ n $为奇数,不妨设$ n=2k+1,k $为整数.则
+$ n^2=(2k+1)^2=4k^2+4k+1=4(k^2+k)+1\equiv 1(\mathrm{mod}4) $.
+\item[(2)] $ n $为偶数,此时显然有$ n^2\equiv 0(\mathrm{mod}4) $.
+\end{itemize}
+\par 那么,$x^2,y^2\equiv0\text{或}1(\mathrm{mod}4)$,所以$x^2+y^2\equiv0\text{或}1\text{或}2(\mathrm{mod}4)$.而$2015\equiv3(\mathrm{mod}4)$,所以无论$x,y$为何值,都有$x^2+y^2\neq2015$.命题得证.
+
+\end{document}

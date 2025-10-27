@@ -1,0 +1,696 @@
+\documentclass[lang=cn,10pt]{elegantbook}
+\usepackage{amsmath,mathtools,geometry}
+\usepackage[fontset=none]{ctex}
+
+
+\geometry{a4paper, scale=0.8}
+
+%\newCJKfontfamily\sonti{FZCuSong-B09S}[BoldFont=FZCuSong-B09S]
+
+\newcommand{\source}[1]{\color{second}{(\textit{#1})}\hspace{1em}}
+\newcommand{\pr}[2]{
+\begin{example}
+\source{#1}\color{black}#2
+\end{example}
+\vspace{1em}
+}
+\newcommand{\fl}[1]{\left\lfloor #1\right\rfloor}
+
+\title{非传统不等式习题集}
+
+\author{lyl、chy}
+\date{Sept, 2023}
+
+
+% \setcounter{tocdepth}{3}
+
+\cover{cover.jpg}
+
+% 修改标题页的橙色带
+% \definecolor{customcolor}{RGB}{32,178,170}
+% \colorlet{coverlinecolor}{customcolor}
+
+\begin{document}
+
+\maketitle
+\frontmatter
+
+
+
+\mainmatter
+
+\chapter*{前言}
+
+{\kaishu “一年前, 我第一次踏入联赛考场. 那是近几年第一次代数放三, 天真的我看了一个小时后一无所获. 几个月前, 考前的我做了许多非传统的不等式问题, 再次踏入考场, 迎来的却是一道‘陈’的代数四. 我明白, 我站在了一个‘时代的边缘’……”}\par
+联赛之前未了结的心愿便是整理一些这样的问题. 这里我们便整理了一些非传统的不等式问题, 以便大家学习参考.\par
+上文提及的非传统不等式, 是指解答中不完全依赖代数变形与放缩技巧, 而使用了其他模块的技巧、方法或思想的不等式. 作为对比, 我们分别列出两道传统与非传统的不等式题目:\par
+\textbf{传统不等式: }{\kaishu 非负实数$a_1,a_2,\cdots,a_n$满足$\sum_{i=1}^{n}a_i=n$. 求以下表达式的最大值:
+\[\sum_{i=1}^n\frac{1}{1+a_i}-n\prod_{i=1}^n\frac{1}{1+a_i}.\]
+}\par
+\textbf{非传统不等式: }{\kaishu 设$m, n$是正整数, $x_{i,j}\in[0,1]$ $(i=1,2,\cdots,m,j=1,2,
+\cdots,n)$. 求证:
+\[\prod_{j=1}^n\left(1-\prod_{i=1}^m x_{i,j}\right)+\prod_{i=1}^m\left(1-\prod_{j=1}^n (1-x_{i,j})\right)\ge 1.\]}\par
+虽然这个不等式可以通过数学归纳法, 运用传统方法证明, 但这个不等式的“非传统”之处在于它有一个惊人的基于概率的解法:\par
+{\kaishu 构造一个$m$行$n$列的表格, 将每个格子随机地染成黑、白两种颜色. 令第$i$行、第$j$列的格子为黑色的概率为$x_{i,j}$. 则
+\[\prod_{j=1}^n\left(1-\prod_{i=1}^m x_{i,j}\right)\]
+表示不存在全部为黑格的一列的概率, 此事件记为$\mathrm{A}$;
+\[\prod_{i=1}^m\left(1-\prod_{j=1}^n (1-x_{i,j})\right)\]
+表示不存在全部为白格的一行的概率, 此事件记为$\mathrm{B}$. 由于$\overline{\mathrm{A}}$(即存在全部为黑格的一列)与$\overline{\mathrm{B}}$(即存在全部为白格的一行)不可能同时发生, 因此$\mathrm{A}$与$\mathrm{B}$之一必然发生, 故
+\[\prod_{j=1}^n\left(1-\prod_{i=1}^m x_{i,j}\right)+\prod_{i=1}^m\left(1-\prod_{j=1}^n (1-x_{i,j})\right)=P(\mathrm{A})+P(\mathrm{B})\ge 1.\]}\par
+这些问题往往跳脱了传统的圈套, 不再是满篇的代数变形和一些常见的通法套路, 考验我们的创新性思维. 大多数这样的问题都有着极好的选拨意义, 在很多大型比赛中, 都有它们的身影. 我们针对这样一类问题, 简单梳理了一些赛题. 该习题集按照题目来源分为若干节, 节内按照时间逆序排列. 但由于时间和精力有限, 我们未能对题目的难度进行排序, 因此可能会出现题目难度变化过大的情况, 敬请谅解. 因此若遇到实在无法解决的难题, 不妨先跳过, 等水平提升后再回头补上. 所有题目均来自于微信数之谜小程序, 题目答案也可以在数之谜相关问题中查询, 如果没有答案, 后期我们会根据自身的时间与精力在数之谜相关问题上分享解答.\par
+编者保留对此习题集(PDF文件和.tex源文件)的文化产权. 此习题集仅用作学习交流使用, 请勿以盈利为目的对此习题集进行修改与转载, 编者保留对上述行为追究法律责任的权利.\par
+最后, 感谢我们的老师, 如果没有他的建议, 这本习题集不会出现. 感谢在编写习题集时提出宝贵建议的所有老师和同学. 若发现本习题集的任何错误与疏漏, 或是有对于改进此习题集的建议和意见, 欢迎联系我们.\par
+\quad\par
+{\hfill\kaishu lyl (QQ: 1467965618)\quad chy (QQ: 487582493)}\par
+{\hfill\kaishu 2023年11月17日}
+
+\tableofcontents
+
+\chapter*{题目}
+
+\section{全国高中数学联赛}
+
+\pr{2022 全国高中数学联赛-A卷加试 P3}{设 $a_1,a_2,\cdots,a_{100}$ 是非负整数, 同时满足以下条件:
+\begin{enumerate}
+\item 存在正整数 $k\leq100$,使得 $a_1\leq a_2\leq\cdots\leq a_k$ , 而当 $i>k$ 时 $a_i=0$;
+\item $\:a_1+a_2+a_3+\cdots+a_{100}=100$;
+\item $a_1+2a_2+3a_3+\cdots+100a_{100}=2022$.
+\end{enumerate}
+求 $a_1+2^2a_2+3^2a_3+\cdots+100^2a_{100}$ 的最小可能值.}
+
+\pr{2023 全国高中数学联赛-A卷加试 P3}{求具有下述性质的最小正整数$k$: 若将 $1,2,\cdots,k$ 中的每个数任意染为红色或者蓝色, 则或者存在 9 个互不相同的红色的数 $x_1,x_2,\cdots,x_9$ 满足$x_1+x_2+\cdots+x_8<x_9$, 或者存在 10 个互不相同的蓝色的数 $y_1,y_2,\cdots,y_{10}$ 满足$y_1+y_2+\cdots+y_9<y_{10}$.}
+
+\section{中国数学奥林匹克}
+\pr{2019 CMO P1}{设实数$a_1,a_2,\cdots,a_{40}$满足$\sum_{i=1}^{40}a_i=0$, 且对$1\leq i\leq40$,都有$|a_i-a_{i+1}|\leq1$,这里 $a_{41}=a_1$. 记 $a=a_{10},b=a_{20},c=a_{30},d=a_{40}.$
+\begin{enumerate}
+    \item 求 $a+b+c+d$ 的最大值;
+    \item 求 $ab+cd$ 的最大值.
+\end{enumerate}}
+
+\pr{2015 CMO P1}{设正整数 $a_1,a_2,\cdots,a_{31},b_1,b_2,\cdots,b_{31}$ 满足: 
+\begin{enumerate}
+    \item $a_1<a_2<\cdots<a_{31}\leq2015$, $b_1<b_2<\cdots<b_{31}\leq2015$;
+    \item $a_1+a_2+\cdots+a_{31}=b_1+b_2+\cdots+b_{31}.$
+\end{enumerate}
+求 $S=|a_1-b_1|+|a_2-b_2|+\cdots+|a_{31}-b_{31}|$ 的最大值.}
+
+\pr{1995 CMO P5}{设 $a_1,a_2,\cdots,a_{10}$ 是不同的正整数, 和为 1995.求
+\[a_1a_2+a_2a_3+\cdots+a_{10}a_1\]
+的最小值.}
+
+\section{北方希望之星数学夏令营}
+
+\pr{2021 北方希望之星数学夏令营 P5}{求最大的正整数 $n$, 使得存在 $n$ 个正整数$x_1<x_2<\cdots<x_n$, 满足
+\[x_1+x_1x_2+\cdots+x_1x_2\cdots x_n=2021.\]
+}
+
+\section{中国国家集训队选拔}
+
+\pr{2023 CTST P11}{ 设 $n$ 是正整数, $a_{ijk}\in\{-1,1\}(1\leq i,j,k\leq n)$ . 求证: 存在 $x_1,\cdots,x_n,y_1,\cdots,y_n,z_1,\cdots,z_n\in\{-1,1\}$, 使得
+\[\left|\sum_{s=1}^{n}a_{ijk}x_{i}y_{j}z_{k}\right|>\frac{n^{2}}{3}.\]
+}
+
+\pr{2023 CTST P14}{对非空有限实数集 $B$ 和实数 $x$, 定义
+\[d_B(x)=\min_{b\in B}|x-b|.\]
+\begin{enumerate}
+	\item 给定正整数 $m$. 求最小的实数 $\lambda$, 使得对任意正整数 $n$ 和任意实数 $x_1,x_2,\cdots,x_n\in[0,1]$, 都存在 $m$ 元实数集 $B$, 满足
+	\[d_B(x_1)+d_B(x_2)+\cdots+d_B(x_n)\leq\lambda n.\]
+	\item 设 $m$ 是正整数, $\varepsilon$ 是正实数. 求证: 存在正整数 $n$ 和非负实数 $x_1,x_2,\cdots,x_n$, 满足对任意 $m$ 元实数集$B$, 都有
+	\[d_B(x_1)+d_B(x_2)+\cdots+d_B(x_n)>(1-\varepsilon)(x_1+x_2+\cdots+x_n).\]
+\end{enumerate}}
+
+\pr{2023 CTST P21}{ 给定整数 $n\geq2$. 求最小的实数 $\lambda$, 使得对任意实数$a_1,a_2,\cdots,a_n$ 及 $b$, 均有
+\[\lambda\sum_{i=1}^n\sqrt{|a_i-b|}+\sqrt{n\left|\sum_{i=1}^na_i\right|}\geq\sum_{i=1}^n\sqrt{|a_i|}.\]}
+
+\pr{2022 CTST P9}{设 $a_1,a_2,\cdots,a_n$ 是 $n$ 个两两互相不整除的正整数， 求证：
+\[a_1+a_2+\cdots+a_n\geq1.1n^2-2n.\]}
+
+\pr{2022 CTST P10}{给定正整数 $n$. 求使 $\mathbb{R}^n$ 上的函数
+\[f(x_1,x_2,\cdots,x_n)=\sum_{k_1=0}^2\sum_{k_2=0}^2\cdots\sum_{k_n=0}^2|k_1x_1+k_2x_2+\cdots+k_nx_n-1|\]
+达到最小值时的所有 $(x_1,x_2,\cdots,x_n)$.}
+
+\pr{2022 CTST P12}{设整数 $m\geq n\geq2022,\quad a_1,a_2,\cdots,a_n,b_1,b_2,b_n$ 是实数. 求证: 使得 $|a_i+b_j-ij|\leq m$ 的 $(i,j)\ (1\leq i,j\leq n)$的对数不超过 $3n\sqrt{m\ln n}$.}
+
+\pr{2022 CTST P23}{设 $n$ 是正整数, $2n$ 个非负实数 $x_1,x_2,\cdots,x_{2n}$ 满足$x_1+x_2+\cdots+x_{2n}=4$ . 求证: 存在非负整数 $p,q$ , 使得 $q\leq n-1$, 且
+\[\sum_{i=1}^qx_{p+2i-1}\leq1,\ \sum_{i=q+1}^{n-1}x_{p+2i}\leq1,\]
+其中下标按模 $2n$ 理解.}
+
+\pr{2021 CTST P11}{设$n$是正整数, $a_1,a_2,\cdots,a_n$是正实数. 对$1\le k\le 2n+1$, 记
+\[b_k=\max\limits_{0\le m\le n}\left(\frac{1}{2m+1}\sum_{i=k-m}^{k+m}a_i\right),\]
+其中角标按模$2n+1$理解. 求证: 满足$b_k\ge 1$的$k$的个数不超过$2\sum_{i=1}^{2n+1}a_i$.}
+
+\pr{2021 CTST P15}{求最大的实数 $C$, 使得对任意整数 $n\geq2$, 存在 $x_1,x_2,\cdots,x_n\in[-1,1]$, 满足
+\[\prod_{1\leq i<j\leq n}\left(x_i-x_j\right)\geq C^{n(n-1)/2}.\]}
+
+\pr{2021 CTST P19}{给定整数 $n\geq2$. 求最小的正整数 $m$, 使得存在不同的正实数 $x_{ij}(1\leq i,j\leq n)$,满足:
+\begin{enumerate}
+    \item 对任意 $1\leq i,j\leq n,$
+\[x_{ij}=\max\{x_{i1},x_{i2},\cdots,x_{ij}\}\]
+或
+\[x_{ij}=\max\{x_{1j},x_{2j},\cdots,x_{ij}\};\]
+\item 对任意 $1\leq i\leq n$,至多有 $m$ 个脚标 $k$ 使得$x_{ik}=\max\{x_{i1},x_{i2},\cdots,x_{ik}\};$
+\item 对任意 $1\leq j\leq n$,至多有 $m$ 个脚标 $k$ 使得
+ $x_{kj}=\max\{x_{1j},x_{2j},\cdots,x_{kj}\}$ .
+\end{enumerate}}
+
+\pr{2020 CTST P5}{设 $n$ 是正整数, $a_1,a_2,\cdots,a_n$ 是 $1,2,\cdots,n$ 的一个排列, 求
+\[\sum_{i=1}^n\min\{a_i,2i-1\}\]
+的最小值.}
+
+\pr{2018 CTST P6}{设$m, n$为正整数, $A_1,A_2,\cdots,A_m$是某个$n$元集合的$m$个子集. 求证:
+\[\sum_{i=1}^m\sum_{j=1}^m|A_i|\cdot|A_i\cap A_j|\ge\frac{1}{mn}\left(\sum_{i=1}^m|A_i|\right)^3.\]}
+
+\pr{2017 CTST P2}{设实数$x>1$, $n$是正整数. 求证:
+\[\sum_{k=1}^n\frac{\{kx\}}{\fl{kx}}<\sum_{i=1}^n\frac{1}{2k-1}.\]}
+
+\pr{2017 CTST P21}{求满足以下条件的数组 $(x_1,x_2,\cdots,x_{100})$ 的个数: 
+\begin{enumerate}
+    \item $x_1,x_2,\cdots,x_{100}\in\{1,2,\cdots,2017\}$ ;
+    \item $2017\mid x_1+x_2+\cdots+x_{100}$ ;
+    \item $2017\mid x_1^2+x_2^2+\cdots+x_{100}^2$.
+\end{enumerate}}
+
+\pr{2013 CTST P4}{
+设 $n,k$ 为给定的大于 1 的整数, 非负实数 $a_1,a_2,$ $\cdots,a_n;c_1,c_2,\cdots,c_n$ 满足
+\begin{enumerate}
+    \item $a_1\geq a_2\geq\cdots\geq a_n$ ,且$a_1+a_2+\cdots+a_n=1$ ;
+    \item 对 $m=1,2,\cdots,n$ ,有$c_1+c_2+\cdots+c_m\leq m^k.$
+\end{enumerate}
+求 $c_1a_1^k+c_2a_2^k+\cdots+c_na_n^k$ 的最大值.}
+
+\pr{2009 CTST P23}{设 $m$ 是大于 1 的整数, $n$ 是奇数且 $3\leq n<2m$.数$a_{i,j}(1\leq i\leq m,1\leq j\leq n)$ 满足:
+\begin{enumerate}
+    \item 对任意 $1\leq j\leq n,\quad a_{1,j},a_{2,j},\cdots,a_{m,j}$ 是 $1,2,\cdots,m$ 的一个排列;
+    \item 对任意 $1\leq i\leq m,1\leq j\leq n-1,$ $|a_{i,j}-a_{i,j+1}|\leq1$.
+\end{enumerate}
+求 
+\[M=\max\limits_{1\leq i\leq m}\sum\limits_{j=1}^na_{i,j}\]
+的最小值.}
+
+\pr{2008 CTST P24}{求最大的正实数 $M$,使得对任意正整数 $n$, 存在正实数数列 $a_1,a_2,\cdots,a_n$ 及 $b_1,b_2,\cdots,b_n$, 满足:
+\begin{enumerate}
+    \item $\sum_{k=1}^n b_k=1$,且对 $2\leq k\leq n-1$, $2b_k\geq b_{k-1}+b_{k+1}$ ;
+    \item 对 $1\leq k\leq n$ , \[a_k^2\leq1+\sum\limits_{i=1}^ka_ib_i,\]且 $a_n=M.$
+\end{enumerate}}
+
+\pr{2007 CTST P23}{设 $x_1,x_2,\cdots,x_n$ 是不全相等且和不等于 0 的实数, 记
+\[A=\left|\sum_{i=1}^nx_i\right|,\quad B=\max_{1\leq i<j\leq n}\lvert x_i-x_j\rvert.\]
+求证: 对任意 $n$ 个复数 $z_1,z_2,\cdots,z_n$ ,存在 $x_1,x_2,$ $\cdots,x_n$ 的一个排列 $y_1,y_2,\cdots,y_n$,使得
+\[\left|\sum_{i=1}^ny_iz_i\right|\geq\frac{AB}{2A+B}\max_{1\leq i\leq n}\lvert z_i\rvert.\]
+}
+
+\pr{2006 CTST P3}{
+设 $a_1,a_2,\cdots,a_n$ 是 $n$ 个实数.求证: 存在实数 $b_1,b_2,$ $\cdots,b_n,$ 满足:
+\begin{enumerate}
+    \item 对 $1\leq i\leq n,\quad a_i-b_i$ 是正整数;
+    \item \[\sum_{1\leq i<j\leq n}(b_i-b_j)^2\leq\frac{n^2-1}{12}.\]
+\end{enumerate}}
+
+\section{中国女子数学奥林匹克}
+
+\pr{2022 CGMO P1}{考虑所有满足以下两个条件的实数序列 $x_0,x_1,x_2,$ $\cdots,x_{100}:$
+\begin{enumerate}
+    \item $x_0=0$;
+    \item 对任意 $1\leq i\leq100,$ 有 $1\leq x_i-x_{i-1}\leq2.$
+\end{enumerate}
+求最大的正整数 $k\leq100$, 使得对任意这样的序列, 均有
+\[x_k+x_{k+1}+\cdots+x_{100}\geq x_0+x_1+\cdots+x_{k-1}.\]}
+
+\pr{2020 CGMO P2}{给定整数 $n\geq2$.设 $x_1,x_2,\cdots,x_n$ 是实数, 求
+\[2\sum_{1\le i<j\le n}\lfloor x_ix_j\rfloor-(n-1)\sum_{i=1}^{n}\lfloor x_i^2\rfloor\]
+的最大值.}
+
+\pr{2017 CGMO P5}{求最大的实数 $c$, 使得对任意正整数 $n$ 及任意满足$0=x_0<x_1<\cdots<x_n=1$的数列 $\{x_n\},$ 都有 
+\[\sum_{k=1}^nx_k^2(x_k-x_{k-1})>c.\]}
+
+\pr{2014 CGMO P2}{
+给定整数 $n\geq2$.设 $x_1,x_2,\cdots,x_n$ 是正实数且满足$\fl{x_1},\fl{x_2},\cdots,\fl{x_n}$ 是 $1,2,\cdots,n$ 的一个排列.求
+\[\sum_{i=1}^{n-1}\lfloor x_{i+1}-x_i\rfloor \]
+的最大值和最小值.}
+
+\section{西部数学邀请赛}
+
+\pr{2019 CWMO P4}{给定整数 $n\geq2.$ 求最小的实数$\lambda$, 使得对任意实数 
+$x_1,x_2,\cdots,x_n\in[0,1]$,存在 $\varepsilon_1,\varepsilon_2,\cdots,\varepsilon_n$ $\in\{0,1\}$,满足对任意 $1\leq i\leq j\leq n$, 都有
+\[\left|\sum_{k=i}^j(\varepsilon_k-x_k)\right|\leq\lambda.\]}
+
+\pr{2018 CWMO P1}{设实数 $x_1,x_2,\cdots,x_{2018}$ 满足: 对任意$1\leq i<j\leq2018$,均有 $x_i+x_j\geq(-1)^{i+j}$.求
+\[\sum_{i=1}^{2018} ix_i\]
+的最小值.}
+
+\pr{2017 CWMO P2}{若存在正整数 $x_1,x_2,\cdots,x_n$ 满足
+\[x_1x_2\cdots x_n(x_1+x_2+\cdots+x_n)=100n,\]
+求正整数 $n$ 的最大值.}
+
+\pr{2015 CWMO P1}{给定正整数 $n$.设实数 $x_1,x_2,\cdots,x_n$ 满足 $\sum_{i=1}^{n} x_i$ 为
+整数.记 
+\[d_k=\min_{m\in\mathbb{Z}}|x_k-m|,1\leq k\leq n,\]
+求 $\sum_{k=1}^{n}d_k$的最大值.}
+
+\pr{2014 CWMO P6}{给定整数 $n\geq2.$ 设实数 $x_1,x_2,\cdots,x_n$ 满足:
+\begin{enumerate}
+    \item $\sum_{i=1}^{n} x_i=0$;
+    \item $\left|x_i\right|\leq1,1\leq i\leq n$
+\end{enumerate}
+求$\min\limits_{1\leq i\leq n-1}|x_i-x_{i+1}|$的最大值.}
+
+\pr{2009 CWMO P8}{给定整数 $n\geq3$.设 $a_1,a_2,\cdots,a_n$ 满足$a_1+a_2+\cdots+a_n=0$,且对 $2\leq k\leq n-1,$
+ $2a_k\leq a_{k-1}+a_{k+1}$.求最小的实数 $\lambda$, 使得对任意
+ $k\in\{1,2,\cdots,n\}$,都有
+ \[|a_k|\leq\lambda\max\{|a_1|,|a_n|\}.\]}
+
+\pr{2008 CWMO P8}{设 $P$ 为正 $n$ 边形 $A_1A_2\cdots A_n$ 内的任意一点.对
+ $1\leq i\leq n$,直线 $A_iP$ 交正 $n$ 边形 $A_1A_2\cdots A_n$ 的边界于另一点 $B_i$.求证:
+\[\sum_{i=1}^{n}PA_i\ge\sum_{i=1}^{n}PB_i.\]}
+
+\pr{2003 CWMO P2}{设实数 $a_1,a_2,\cdots,a_{2n}$ 满足
+\[\sum_{i=1}^{2n-1}(a_{i+1}-a_i)^2=1,\]
+求
+\[(a_{n+1}+a_{n+2}+\cdots+a_{2n})-(a_1+a_2+\cdots+a_n)\]
+的最大值.}
+
+\section{中国东南地区数学奥林匹克}
+{\kaishu 题号“$1\,\text{-}\,x$”表示高一组的第$x$题, “$2\,\text{-}\,x$”表示高二组的第$x$题.}
+
+\pr{2023 CSMO P1-7}{称正整数 $S$ 为"育英数", 如果存在正整数 $n$ 以及$2n$ 个正整数 $a_1,a_2,\cdots,a_n,b_1,b_2,\cdots,b_n$, 使得
+\[S=\sum_{i=1}^na_ib_i,\ \sum_{i=1}^n(a_i^2-b_i^2)=1,\ \sum_{i=1}^n(a_i+b_i)=2023.\]
+求: (1)最小的育英数; (2)最大的育英数.}
+
+\pr{2020 CSMO P1-4}{设 $a_1,a_2,\cdots,a_{17}$ 是 $1,2,\cdots,17$ 的一个排列, 且满足
+\[(a_1-a_2)(a_2-a_3)\cdots(a_{16}-a_{17})(a_{17}-a_1)=2^n.\]
+正整数 $n$ 的最大值.}
+
+\pr{2017 CSMO P1-4}{设实数 $a_1,a_2,\cdots a_{2017}$满足 $a_1=a_{2017},$
+\[|a_i+a_{i+2}-2a_{i+1}|\leq1\ (i=1,2,\cdots,2015).\]
+求$\max\limits_{1\le i<j\le 2017}|a_i-a_j|$的最大值.}
+
+\section{陈省身杯全国高中数学奥林匹克}
+
+\pr{2021 陈省身杯 P2}{给定整数 $n\geq2.$ 实数 $x_1,x_2,\cdots,x_n$ 满足
+\[\min_{1\leq k\leq n}\left\{\frac{x_1+x_2+\cdots+x_k}k\right\}=0,\quad\max_{1\leq k\leq n}\left\{\frac{x_1+x_2+\cdots+x_k}k\right\}=1.\]
+记
+\[M=\max_{1\leq i<n}\{x_i\},m=\min_{1\leq i\leq n}\{x_i\},\]
+求 $M-m$ 的最小值和最大值.}
+
+\section{希望联盟夏令营}
+
+\pr{希望联盟夏令营 2023-3 P13}{设 $a_1,a_2,\cdots,a_{100}$ 是和为 1000 的 100 个正整数. 记\[S=a_1a_2+a_2a_3+\cdots+a_{99}a_{100}.\]
+求 $S$ 的最大值, 并确定使 $S$ 取到最大值的所有可能数组 $(a_1,a_2,\cdots,a_{100})$ 的个数.} 
+
+\pr{希望联盟夏令营 2021-1 P11}{已知正实数 $a_1,a_2,\cdots,a_{2022},b_1,b_2,\cdots,b_{2022}$ 满足
+\[a_1+a_2+\cdots+a_{2022}=b_1+b_2+\cdots+b_{2022}=1,\]
+求
+\[S=\min_{1\leq i\leq2022}\frac{a_i}{b_i}+\min_{1\leq i\leq2022}\frac{b_i}{a_i}+\sum_{i=1}^{2022}\lvert a_i-b_i\rvert\]
+的最大值.}
+
+\pr{希望联盟夏令营 2021-3 P12}{设 $a_1,a_2,\cdots,a_{2021}$ 是整数, 满足$1=a_1\leq a_2\leq\cdots\leq a_{2021}=100$ .记
+\[f=(a_1^2+a_2^2+\cdots+a_{2021}^2)-(a_1a_3+a_2a_4+\cdots+a_{2019}a_{2021}).\]
+求$f$ 的最大值 $f_0$, 并求使得 $f=f_0$ 成立的数组 $(a_1,a_2,\cdots,a_{2021})$ 的个数.}
+
+\pr{希望联盟夏令营 2021-2 P4}{设 $\vec{u}=(u_1,u_2,u_3)$ 和 $\vec{v}=(v_1,v_2,v_3)$ 是空间向量, 满足 $u_i,v_i\left(i=1,2,3\right)$ 均为整数, 且
+$0.9999<\cos\langle\vec{u},\vec{v}\,\rangle<1.$ 记
+\[S=|u_1|+|u_2|+|u_3|+|v_1|+|v_2|+|v_3|, \]
+求$\fl{\sqrt{S}}$的最小可能值.}
+
+\pr{希望联盟夏令营 2020-1 P12}{没正实数 $a_1,a_2,\cdots,a_{2020}$ 满足 $\sum_{i=1}^{2020} a_i=2020$, 求
+\[\sum_{k=1}^{2020}a_k^{1/k^2}\]
+的最大值.}
+
+\pr{希望联盟夏令营 2020-2 P13}{设整数 $n\geq2,\quad x_1,x_2,\cdots,x_n$ 为互不相同的正实数。求证: 可以选取 $a_1$, $a_2$, $\cdots$, $a_n\in\{-1,1\}$, 使得
+\[\sum_{i=1}^na_ix_i^2>\left(\sum_{i=1}^na_ix_i\right)^2.\]}
+
+\pr{希望联盟夏令营 2019-2 P13}{给定正整数 $n$.求最小的实数 $\lambda$, 使得存在区间 $[0,1]$ 内的实数 $a_1,a_2,\cdots,a_n$, 满足对任意
+ $0\leq x_1\leq x_2\leq\cdots\leq x_n\leq1$,均有$\min\limits_{1\leq i\leq n} |x_i-a_i|\leq\lambda_.$}
+
+\section{新星数学奥林匹克}
+
+\pr{新星数学奥林匹克 2023春季 P2}{给定偶数 $n\geq4$.实数 $a_1\geq a_2\geq\cdots\geq a_n\geq0$ 满足
+\[a_1+a_3+\cdots+a_{n-1}=3,\ \quad a_2+a_4+\cdots+a_n=1.\]
+求$\sum_{i=1}^na_i^2$的最小值.}
+
+\pr{新星数学奥林匹克 2022春季 P2}{设非负实数 $a_1,a_2,\cdots,a_{15}$ 满足$a_1+a_2+\cdots+a_{15}=1$.求
+\[\sum_{1\le i<j\le 15}\left(\frac32\right)^{i+j}a_ia_j\]
+的最大值.}
+
+\pr{新星数学奥林匹克 2021春季 P3}{给定整数 $n\geq4.$ 求最大的实数 $\lambda$, 使得对任意满足$\sum_{i=1}^na_i=1$ 的非负实数 $a_1,a_2,\cdots,a_n$, 均有
+\[\sum_{i=1}^na_ia_{i+1}\leq\frac14-\lambda mM,\]
+其中 $a_{n+1}=a_1,\ m=\min\{a_1,a_2,\cdots,a_n\},\ M=\max\{a_1,a_2,\cdots,a_n\}$.}
+
+\pr{新星数学奥林匹克 2020秋季 P1}{求最小的实数$\lambda$,使得对任意满足$\sum_{i=1}^ {20} ix_i=0$ 的实数$x_1,x_2,\cdots,x_{20}$,都有
+\[\left|\sum_{i=1}^{20}i^2x_i\right|\leq\lambda\max_{1\leq i\leq20}|x_i|.\]}
+
+\pr{新星数学奥林匹克 2019夏季 P1}{设 $x_1,x_2,\cdots,x_{2019}$ 是实数,满足$x_1+x_2+\cdots+x_{2019}\in\mathbb{Z}.$求
+\[\sum_{1\leq i<j\leq2019}\left\{x_i+x_j\right\}\]
+的最大值, 其中$\{x\}$为$x$的小数部分.}
+
+\pr{新星数学奥林匹克 2018秋季 P3}{给定整数 $n\geq2.$ 设 $x_1,x_2,\cdots,x_n$ 是正实数, 满足对任意 $1\leq i<j\leq n$ 都有 $x_ix_j\geq i$.求 $x_1x_2\cdots x_n$的最小值.}
+
+\pr{新星数学奥林匹克 2018春季 P1}{给定整数 $n\geq2$.设非负实数 $x_1,x_2,\cdots,x_n$ 满足$\sum_{i=1}^nx_i=n$.求
+\[\left(\sum_{i=1}^{n}\fl{x}\right)\left(\sum_{i=1}^{n}\{x\}\right)\]
+的最大值.}
+
+\pr{新星数学奥林匹克 2017秋季 P4}{给定整数 $n\geq2$.求最小的实数 $c$, 使得对任意非负实数$a_1,a_2,\cdots,a_n$,都存在 $i\in\{1,2,\cdots,n\}$, 满足$a_{i-1}+a_{i+1}\leq ca_i$ ,其中 $a_0=a_{n+1}=0$.}
+
+\pr{新星数学奥林匹克 2016秋季 P1}{设 $x_1,x_2,\cdots,x_n$ 是 $n$ 个不同的实数, 记$D=\max_{1\leq i<j\leq n}|x_i-x_j|$。求证: 存在 $x_1,x_2,\cdots,x_n$
+的一个排列 $y_1,y_2,\cdots,y_n$, 使得
+\[\left|\sum_{i=1}^{n}iy_i\right|\ge\frac{n-1}{2}D.\]}
+
+\pr{新星数学奥林匹克 2017夏季 P1}{给定整数 $n\geq2$.设实数 $a_1,a_2,\cdots,a_n$ 满足
+\[\sum_{i=1}^n\lvert a_i\rvert+\left\lvert\sum_{i=1}^na_i\right\rvert=1.\]
+求$\sum_{i=1}^{n}a_i^2$的最小值和最大值.}
+
+\section{学而思数学竞赛联考}
+
+\pr{XMO 12th P13}{已知 $a_1,a_2,a_{22}\in[1,2]$, 令$a_{23}=a_1$, 求
+\[{\left(\sum_{i=1}^{22}a_ia_{i+1}\right)}\left/ {\left(\sum_{i=1}^{22}a_i\right)^2}\right.\]的最大值.}
+
+\section{土耳其数学奥林匹克第二轮}
+
+\pr{2022 Turkey MO Round 2 P3}{设 $a_1,a_2,\cdots,a_{2022}$是非负实数,满足 $a_1+a_2+\cdots+a_{2022}=1$ .求数对 $(i,j)$ 个数的最大值,满足 $1\leq i,j\leq2022$,且 $a_i^2+a_j\geq\frac{1}{2021}$.}
+
+\pr{2019 Turkey MO Round 2 P5}{设函数 $f:\{1,2,\cdots,2019\}\to\{-1,1\}$, 满足对任意 $1\leq k\leq2019$, 存在$1\leq l\leq2019$, 使得
+\[\sum_{i{:}(l-i)(i-k)\ge 0}f(i)\le 0.\]
+求$\sum_{i=1}^{2019}f(i)$的最大值.}
+
+\section{谜之竞赛}
+
+\pr{谜之竞赛 2023年7月 P13}{设数列 $\{a_n\}$ 满足 $a_1=1$, 且对任意正整数 $n$, $a_{n+1}=a_n+a_{i_n}$ ,其中
+\[i_n=\min\{1\leq i\leq n\mid3a_i+2023\geq a_n\}.\]
+求证: 存在非负整数 $d,N$, 使得对任意整数 $n\geq N$, 都有 $a_{n+1}=a_n+a_{n-d}$.}
+
+\section{保加利亚数学奥林匹克}
+
+\pr{Bulgaria MO 2023 P5}{给定正整数 $n$.设实数 $x_1,x_2,\cdots,x_n$ 满足$|x_1|+|x_2|+\cdots+|x_n|=1$,求
+\[|x_1|+|x_1-x_2|+|x_1+x_2-x_3|+\cdots+|x_1+x_2+\cdots+x_{n-1}-x_n|\]
+的最小值.}
+
+\pr{Bulgaria MO 2020 P2}{设 $n$ 是正整数, 非负实数 $b_1,b_2,\cdots,b_n$ 的和为$2$, 实数 $a_0,a_1,\cdots,a_n$ 满足 $a_0=a_n=0$ , 且对任意$1\leq i\leq n$, $|a_i-a_{i-1}|\leq b_i$. 求证:
+\[\sum_{i=1}^n(a_i+a_{i-1})b_i\leq2.\]}
+
+\pr{Bulgaria MO 2018 P3}{求证:
+\[\left(\frac65\right)^{\sqrt{3}}>\left(\frac54\right)^{\sqrt{2}}.\]}
+
+\section{韩国数学奥林匹克决赛}
+
+\pr{Korea MO Final 2013 P3}{设整数 $n\geq2$, 记集合
+\[T=\{(i,j)\mid1\leq i<j\leq n,i\mid j\}.\]
+设 $x_1,x_2,\cdots,x_n$ 是非负实数, 满足$x_1+x_2+\cdots+x_n=1$.求 $\sum\limits_{(i,j)\in T} x_ix_j$ 的最大值.}
+
+\section{国际数学奥林匹克预选题代数}
+
+\pr{2022 IMOSL A4}{设整数 $n\geq3$, 实数$x_1,x_2,\cdots,x_n\in[0,1]$. 记$s=x_1+x_2+\cdots+x_n$ , 且设 $s\geq3$.求证: 存在$1\leq i<j\leq n$,使得
+\[2^{j-i}x_ix_j>2^{s-3}.\]}
+
+\pr{2022 IMOSL A5}{求所有的整数 $n\geq2$, 使得存在正实数$a_1<a_2<\cdots<a_n$ 和正实数 $r$, 满足
+\[\{a_j-a_i\mid1\leq i<j\leq n\}=\{r,r^2,\cdots,r^{n(n-1)/2}\}.
+\]}
+
+\pr{2021 IMOSL A1}{设 $n$ 是正整数, $A$ 是 $\{0,1,\cdots,5^n\}$ 的一个$4n+2$ 元子集. 求证: 存在 $A$ 中的元素 $a<b<c$ , 使得$c+2a>3b$.}
+
+\pr{2021 IMOSL A2}{求所有的正整数$n$, 使得
+\[\sum_{i=1}^n\sum_{j=1}^n\fl{\frac{ij}{n+1}}=\frac{n^2(n-1)}4.\]}
+
+\pr{2021 IMOSL A3}{给定正整数 $n$.设 $a_1,a_2,\cdots,a_n$ 是 $1,2,\cdots,n$的一个排列, 求下列表达式的最小值:
+\[\sum_{k=1}^{n}\fl{\frac{a_k}{k}}.\]}
+
+\pr{2020 IMOSL A1}{给定正整数 $N$. 求最小的实数 $b_N$, 使得对任意实数$x$, 均有
+\[\sqrt[N]{\frac{x^{2N}+1}2}\leq b_N(x-1)^2+x.\]}
+
+\pr{2019 IMOSL A2}{设实数 $u_1,u_2,\cdots,u_2019$, 满足
+\[\sum_{i=1}^{2019}u_i=0,\ \sum_{i=1}^{2019}u_i^2=1.\]
+设$a=\min\{u_1,u_2,\cdots,u_{2019}\}$, $b=\max\{u_1,u_2,\cdots,u_{2019}\}$. 求证: $ab<-1/2019.$}
+
+\pr{2019 IMOSL A3}{设整数$n\geq3$, $a_1,a_2,\cdots,a_n$ 是和为 2 的严格递增的正实数数列. $X$ 是集合 $\{1,2,\cdots,n\}$ 的子集, 使得
+\[\left|1-\sum_{i\in X}a_i\right|\]
+最小. 求证: 存在和为$2$的严格递增的正实数数列 $b_1,b_2,\cdots,b_n$, 使得
+\[\sum_{i\in X}b_i=1.\]}
+
+\pr{2019 IMOSL A4}{设整数 $n\geq2$, 实数 $a_1,a_2,\cdots,a_n$ 满足$a_1+a_2+\cdots+a_n=0$.定义集合
+\[A=\{(i,j):\ 1\leq i<j\leq n,|a_i-a_j|\geq1\}.\]
+求证:若 $A$ 非空,则
+\[\sum_{(i,j)\in A}a_ia_j<0.\]}
+
+\pr{2018  IMOSL A3}{设 $S$ 是由正整数构成的集合, 求证: 下述命题中至少有一个成立:
+\begin{enumerate}
+	\item 存在 $S$ 的不同的有限子集 $F,G$, 使得
+	\[\sum_{x\in F}\frac1x =\sum_{x\in G}\frac1x ;\]
+	\item 存在有理数 $r\in(0,1)$, 使得对 $S$ 的任一有限子集$F$, 
+	\[\sum_{x\in F}\frac1x \neq r.\]
+\end{enumerate}}
+
+\pr{2018 IMOSL A4}{设数列$\{a_n\}$满足$a_0=0,a_1=1$, 且当$n\geq2$时, 存在$1\leq k\leq n$, 使得
+\[a_n=\frac{a_{n-1}+a_{n-2}+\cdots+a_{n-k}}k.\]
+求 $a_{2018}-a_{2017}$ 的最大可能值.}
+
+\pr{2017 IMOSL A2}{设$q$ 是实数. 甲有一张餐巾纸, 上面写着 10 个不同的实数, 他在黑板上写下以下三行实数:\par
+在第一行, 甲写下了所有形如 $a-b$ 的数, 其中 $a,b$是餐巾纸上的两个数 (可以相同);\par
+在第二行, 甲写下了所有形如 $qab$ 的数, 其中 $a,b$ 是第一行的两个数 (可以相同);\par
+在第三行, 甲写下了所有形如 $a^2+b^2-c^2-d^2$ 的数, 其中 $a,b,c,d$ 是第一行中的四个数 (可以相同).\par
+求所有的 $q$, 使得无论餐巾纸上的数是什么, 第二行中的每个数都出现在第三行中.}
+
+\pr{2017 IMOSL A5}{给定整数 $n\geq3.$ 设 $x_1,x_2,\cdots,x_n$ 是实数, 如果对它的任意一个排列 $y_1,y_2,\cdots,y_n$, 都有
+\[\sum_{i=1}^{n-1}y_iy_{i+1}\ge -1,\]
+求最大的实数$\lambda$, 使得总有
+\[\sum_{1\le i<j\le n}x_ix_j\ge\lambda.\]}
+
+\pr{2016 IMOSL A2}{求最小的实数 $C$, 使得对任意正实数 $a_1,a_2,a_3,a_4,a_5$(允许相同), 总可以选择不同的下标 $i,j,k,l$, 满足
+\[\left|\frac{a_i}{a_j}-\frac{a_k}{a_l}\right|\le C.\]}
+
+\pr{2016 IMOSL A3}{求所有的整数 $n\geq3$, 使得对任意满足$|a_k|+|b_k|=1$ $(1\leq k\leq n)$的实数 $a_1,a_2,\cdots,a_n$和 $b_1,b_2,\cdots,b_n$, 均存在 $\varepsilon_1,\varepsilon_2,\cdots,\varepsilon_n\in\{-1,1\}$ 满足
+\[\left|\sum_{k=1}^n\varepsilon_ka_k\right|+\left|\sum_{k=1}^n\varepsilon_kb_k\right|\leq1.\]}
+
+\pr{2016 IMOSL A8}{求最大的实数 $a$, 使得对任意正整数 $n$ 及任意实数$0=x_0<x_1<\cdots<x_n$ , 均有
+\[\sum_{i=1}^n\frac1{x_i-x_{i-1}}\geq a{\sum_{i=1}^n}\frac{i+1}{x_i}.\]}
+
+\pr{2015 IMOSL A3}{给定正整数$n$. 设$x_1,x_2,\cdots,x_{2n}\in[-1,1]$. 求下列表达式的最大值:
+\[\sum_{1\le r<s\le 2n}(s-r-n)x_rx_s.\]}
+
+\pr{2014 IMOSL A2}{定义函数
+\[f(x)=
+\begin{cases}
+x+\frac12, \ 0<x<\frac12;\\
+x^2,\quad\ \ \,\frac12\le x<1.
+\end{cases}\]
+设正实数 $a,b$ 满足 $a<b<1$ ,数列 $\{a_n\},\{b_n\}$满足$a_0=a,b_0=b,a_n=f(a_{n-1}),~b_n=f(b_{n-1}),n\ge1$. 求证: 存在正整数$n$, 满足
+\[(a_n-a_{n-1})(b_n-b_{n-1})<0.\]}
+
+\pr{2014 IMOSL A3}{对于实数数列 $x_1,x_2,\cdots,x_n$, 定义其“价值”为
+\[\max_{1\leq i\leq n}\{|x_1+x_2+\cdots+x_i|\}.\]\par
+给定 $n$ 个实数, 甲和乙想把这 $n$ 个实数排成低价值的数列.一方面, 勤奋的甲检验了所有可能的方式来寻找其最小的价值 $D$.另一方面, 贪婪的乙先选择 $x_1$, 使得 $|x_1|$ 尽可能地小; 再在剩下的数中选择 $x_2$, 使得$|x_1+x_2|$ 尽可能地小; $\cdots$; 在第 $i$ 步, 在剩下的数中选择 $x_i$, 使得 $|x_1+x_2+\cdots+x_i|$ 尽可能地小在每一步, 若有不止一种选择, 则乙任意选择一种. 设乙最后得到的数列的价值为$G$.\par
+求最小的实数 $c$, 使得对于每个正整数 $n$、每个由 $n$ 个实数构成的数组和每个乙可以得到的数列, 均有
+\[G\le cD.\]}
+
+\pr{2013 IMOSL A2}{求证: 在任意由 $2000$ 个不同实数构成的集合中, 存在实数 $a>b$ 和 $c>d$, 使得 $a\neq c$ 或 $b\neq d$, 且
+\[\left|\frac{a-b}{c-d}-1\right|<\frac{1}{10^5}.\]}
+
+\pr{2013 IMOSL A4}{设 $n$ 是正整数, 正整数 $a_1,a_2,\cdots,a_n$ 满足$a_1\leq a_2\leq\cdots\leq a_n\leq n+a_1$ , 且 $a_{a_i}\leq n+i-1,$ $1\leq i\leq n$(其中脚标按模 $n$ 理解). 求证:
+\[a_1+a_2+\cdots+a_n\leq n^2.\]}
+
+\pr{2012 IMOSL A2}{\begin{enumerate}
+	\item 是否能将 $\mathbb{Z}$ 表示成三个非空子集 $A,B,C$ 的不交并, 使得 $A+B,B+C,C+A$ 两两不交?
+	\item 是否能将 $\mathbb{Q}$ 表示成三个非空子集 $A,B,C$ 的不交并, 使得 $A+B,B+C,C+A$ 两两不交?
+\end{enumerate}}
+
+\pr{2011 IMO P1}{对于由四个不同的正整数组成的集合 $A=\{a_1,a_2,a_3,a_4\}$, 定义$s_A=a_1+a_2+a_3+a_4$. 设恰有 $n_A$ 对 $(i,j)$, $1\leq i<j\leq4$, 使得 $a_i+a_j\mid s_A$. 求所有的集合 $A$, 使得$n_A$ 达到最大值.}
+
+\pr{2011 IMOSL A2}{求所有的正整数数列 $x_1,x_2,\cdots,x_{2011}$ , 使得对每个正整数 $n$, 都存在整数 $a$, 满足
+\[x_1^n+2x_2^n+\cdots+2011x_{2011}^n=a^{n+1}+1.\]}
+
+\pr{2011 IMOSL A5}{设 $n$ 是正整数. 求证:  可以将集合$\{2,3,\cdots,3n+1\}$划分为 $n$ 个三元子集的不交并, 使得每个子集中的三个数都能构成钝角三角形的三边长.}
+
+\pr{2010 IMOSL A3}{设非负实数 $x_1,x_2,\cdots,x_{100}$ 满足: 对$1\leq i\leq100$, 有 $x_i+x_{i+1}+x_{i+2}\leq1$, 其 中$x_{101}=x_1$, $x_{102}=x_2$. 求$\sum_{i=1}^{100} x_ix_{i+2}$ 的最大值.}
+
+\pr{2010 IMOSL A4}{设数列 $\{x_n\}$ 满足 $x_1=1,x_{2k}=-x_k$, $x_{2k-1}=(-1)^{k+1}x_k$, $k\geq1$. 求证: 对任意正整数 $n$, $x_1+x_2+\cdots+x_n\geq0.$}
+
+\pr{2009 IMOSL A1}{已知 $2009$ 个非退化的三角形, 将每个三角形的三边分别染上蓝、红、白色. 对于每种颜色, 将边按长度排序. 设蓝色边的长度为 $b_1\leq b_2\leq\cdots\leq b_{2009}$ ; 红色边的长度为 $r_1\leq r_2\leq\cdots\leq r_{2009}$ ; 白色边的长度为$w_1\leq w_2\leq\cdots\leq w_{2009}$ . 求最大的整数 $k$, 使得存在$k$ 个下标 $j$, 满足以 $b_j,r_j,w_j$ 为边长能构成一个非退化的三角形.}
+
+\pr{2006 IMOSL A3}{设数列 $c_0,c_1,c_2\cdots$ 满足: $c_0=1$, $c_1=0$, $c_{n+2}=c_{n+1}+c_n$, $n\geq0$. 考虑有序数对 $(x,y)$ 构成的集合 $S$, 其中 $(x,y)$ 满足: 有一个由正整数构成的有限集$J$, 使得
+\[x=\sum_{j\in J}c_j,\quad y=\sum_{j\in J}c_{j-1}.\]
+求证: 存在实数 $\alpha,\beta,m,M$, 使得对 $x,y\in\mathbb{N}$, $(x,y)\in S$ 的充分必要条件是 $m<\alpha x+\beta y<M$.\par
+注: 空集的元素和为$0$.}
+
+\pr{2003 IMOSL A1}{设实数 $a_{ij}$ 满足:当 $i=j$ 时, $a_{ij}$ 为正数; 当$i\neq j$ 时, $a_{ij}$ 为负数, 其中 $1\leq i,j\leq3$.求证: 存在正实数 $c_1,c_2,c_3$, 使得
+\[a_{11}c_1+a_{12}c_2+a_{13}c_3,a_{21}c_1+a_{22}c_2+a_{23}c_3,a_{31}c_1+a_{32}c_2+a_{33}c_3\]
+要么都是负数, 要么都是正数, 要么都是$0$.}
+
+\pr{2003 IMOSL A3}{考虑两个正实数列 $a_1\geq a_2\geq a_3\geq\cdots,$ $b_1\geq b_2\geq b_3\geq\cdots$.记
+\[A_n=a_1+a_2+\cdots+a_n,B_n=b_1+b_2+\cdots+b_n,\:n\geq1.\] 
+设
+\[c_i=\min\{a_i,b_i\},\quad C_n=c_1+c_2+\cdots+c_n,n\geq.1\]
+\begin{enumerate}
+\item 是否存在数列 $\{a_i\},\{b_i\}$, 使得数列 $\{A_n\},\{B_n\}$无界,而数列 $\{C_n\}$ 有界?
+\item 若$b_i=\frac1i,i\geq1$,则(1)的结论是否改变?
+\end{enumerate}}
+
+\pr{2009 IMOSL A6}{设 $n$ 是正整数, $x_1,x_2,\cdots,x_n$, $y_1,y_2,\cdots,y_n$, $z_2,\cdots,z_{2n}$ 是正实数, 满足对 $1\leq i,j\leq n$, $z_{i+j}^2\geq x_iy_j$. 记 $M=\max\{z_2,z_3,\cdots,z_{2n}\}$, 求证:
+\[\left(\frac{M+z_2+z_3+\cdots+z_{2n}}{2n}\right)^2\geq\left(\frac{x_1+x_2+\cdots+x_n}n\right)\left(\frac{y_1+y_2+\cdots+y_n}n\right).\]}
+
+\section{国际数学奥林匹克预选题组合}
+
+\pr{2022 IMOSL C1}{一个$\pm1$ - 序列是一个长为 $2022$ 的序列 $a_1,a_2,\cdots,a_{2022}$, 其中每个 $a_i\in\{-1,1\}$. 求最大的整数 $C$, 使得对任意一个$\pm1$ - 序列, 存在一个正整数 $k$ 和一列下标 $1\leq t_1<\cdots<t_k\leq2022$, 满足$t_{i+1}-t_i\leq2$ $(i=1, \cdots,k-1)$, 且
+\[\left|\sum_{i=1}^ka_{t_i}\right|\geq C.\]}
+
+\pr{2013 IMOSL C1}{给定正整数 $n$. 求最小的正整数 $k$, 使得对任意正整数 $d$ 及任意不超过 $1$ 的正实数 $a_1,a_2,\cdots,a_d$ , 只要$a_1+a_2+\cdots+a_d=n$ , 那么总能将这些数分成不超过 $k$ 组, 满足每组中的数之和不超过 $1$.}
+
+\pr{2009 IMOSL C3}{设 $n$ 是正整数, 数列 $c_1,c_2,\cdots,c_{n-1}$ 的各项为 $0$ 或 $1$ . 数列 $a_0,a_1,\cdots,a_n$ 和 $b_0,b_1,\cdots,b_n$ 满足$a_0=b_0=1$, $a_1=b_1=7$, 且对于任意$1\leq i\leq n-1$, 
+\[a_{i+1}=\begin{cases}2a_{i-1}+3a_i,&c_i=0;\\3a_{i-1}+a_i,&c_i=1,\end{cases},
+\quad
+b_{i+1}=\begin{cases}2b_{i-1}+3b_i,&c_{n-i}=0;\\3b_{i-1}+b_i,&c_{n-i}=1.\end{cases}\]
+求证: $a_n=b_n$.}
+
+\pr{2008 IMOSL C5}{设 $k,l$ 是正整数, 实数 $x_i\in[0,1],$ $1\leq i\leq k+l$.称集合 $S=\{x_1,x_2,\cdots,x_{k+l}\}$ 的 $k$元子集 $A$ 是“好的”, 如果
+\[\left|\frac1k\sum_{x_i\in A}x_i-\frac1l\sum_{x_j\in S\setminus A}x_j\right|\leq\frac{k+l}{2kl}.\]
+求证: 好子集至少有$\displaystyle\frac2{k+l}\binom{k+l}{k}$}
+
+\pr{2007 IMOSL C1}{设整数 $n\geq2$. 求满足下列条件的所有数列 $a_1,a_2,$ $\cdots,a_{n^2+n}$:
+\begin{enumerate}
+	\item 对 $1\leq i\leq n^2+n$ , $a_i\in\{0,1\}$;
+	\item 对 $0\leq i\leq n^2-n$ ,
+	\[a_{i+1}+a_{i+2}+\cdots+a_{i+n}<a_{i+n+1}+a_{i+n+2}+\cdots+a_{i+2n}.\]
+\end{enumerate}}
+
+\pr{2007 IMOSL C4}{设 $A_0=(a_1,a_2,\cdots,a_n)$ 是实数数列. 对每个非负整数 $k$, 由数列 $A_k=(x_1,x_2,\cdots,x_n)$ 来构造一个新的数列$A_{k+1}$, 满足以下条件:
+\begin{enumerate}
+	\item 选取 $\{1,2,\cdots,n\}$ 的一个划分 $(I,J)$,使
+	\[\left|\sum_{i\in I}x_i-\sum_{j\in J}x_j\right|\]
+	取得最小值(允许 $I$ 或 $J$ 是空集, 这种情况的和为 $0$ ). 如果有多于一个这样的划分, 任选其中一个;
+	\item 设数列 $A_{k+1}=(y_1,y_2,\cdots,y_n)$, 其中若 $i\in I$ , 
+	则 $y_i=x_i+1$; 若 $i\in J$, 则 $y_i=x_i-1$.
+\end{enumerate}
+求证: 存在非负整数 $k$, 使得数列 $A_k$ 中包含一项 $x$, 满足 $|x|\geq n/2$.}
+
+\section{欧洲女子数学奥林匹克}
+
+\pr{2022 EGMO P4}{给定整数 $n\geq2.$ 求最大的正整数 $N$, 使得存在$N+1$ 个实数 $a_0,a_1,\cdots,a_N$, 满足
+\begin{enumerate}
+	\item $a_0+a_1=-1/n$;
+	\item 对任意 $1\leq k\leq N-1$ ,
+	\[(a_k+a_{k-1})(a_k+a_{k+1})=a_{k-1}-a_{k+1}.\]
+\end{enumerate}}
+
+\pr{2020 EGMO P2}{求所有的非负实数组 $(x_1,x_2,\cdots,x_{2020})$, 满足: 
+\begin{enumerate}
+	\item $x_1\leq x_2\leq\cdots\leq x_{2020}\leq x_1+1$ ;
+	\item 存在 $x_1,x_2,\cdots,x_{2020}$ 的一个排列$y_1,y_2,\cdots,y_{2020}$ , 使得
+	\[\sum_{i=1}^{2020}((x_i+1)(y_i+1))^2=8\sum_{i=1}^{2020}x_i^3.\]
+\end{enumerate}}
+
+\pr{2019 EGMO P5}{设整数 $n\geq2$, $a_1,a_2,\cdots,a_n$ 是正整数. 求证: 存在正整数 $b_1,b_2,\cdot,b_n$满足以下条件:
+\begin{enumerate}
+	\item 对任意 $1\leq i\leq n$, 均有 $a_i\leq b_i$ ;
+	\item $b_1,b_2,\cdots,b_n$ 两两模 $n$ 不同余;
+	\item \[b_1+b_2+\cdots+b_n\leq n\left (\frac{n-1}2+\fl{\frac{a_1+a_2+\cdots+a_n}n}\right).\]
+\end{enumerate}}
+
+\pr{2016 EGMO P1}{设 $n$ 是正奇数, $x_1,x_2,\cdots,x_n$ 是非负实数.求证:
+\[\min_{1\leq i\leq n}\{x_i^2+x_{i+1}^2\}\leq\max_{1\leq i\leq n}\{2x_ix_{i+1}\},\]
+其中 $x_{n+1}=x_1.$}
+
+\pr{2014 EGMO P1}{求所有的实数 $t$, 使得当 $a,b,c$ 为某个三角形的三边长时, $a^2+bct,b^2+cat,c^2+abt$ 也为某个三角形的三边长.}
+
+\pr{2012 EGMO P2}{给定正整数 $n$. 求最大的正整数 $m$, 使得存在一个 $m$ 
+行 $n$ 列的实矩阵, 满足对于任意两个不同的行 $(a_1,a_2,\cdots,a_n)$  和 $(b_1,b_2,\cdots,b_n)$, 有
+\[\max\{|a_1-b_1|,|a_2-b_2|,\cdots,|a_n-b_n|\}=1.\]}
+
+\section{国际大都市数学奥林匹克}
+
+\pr{2020 International Mathematical Tournament of Towns P3}{设整数 $n\geq2$. 铸币厂需要铸造一套有 $n$ 种面值的硬币, 每种面值都是正整数, 且每种面值的硬币个数不限. 称面值 $\{a_1,a_2,\cdots,a_n\}$ 是"幸运的", 如果 $a_1+a_2+\cdots+a_n$ 只能通过唯一的一种方式给出, 即每种面值的硬币各一个. 求证:
+\begin{enumerate}
+	\item 存在幸运的面值 $a_1,a_2,\cdots,a_n$, 使得
+	\[a_1+a_2+\cdots+a_n<n\cdot2^n;\]
+	\item 对任意幸运的面值 $a_1,a_2,\cdots,a_n$, 均有
+	\[a_1+a_2+\cdots+a_n>n\cdot2^{n-1}.\]
+\end{enumerate}}
+
+\pr{2016 International Mathematical Tournament of Towns P3}{设 $A_1A_2\cdots A_n$ 是内接于 $\odot O$ 的凸 $n$ 边形, $O$ 是 $A_1A_2\cdots A_n$ 内的点. $B_1,B_2,\cdots,B_n$ 分别是边 $A_1A_2,A_2A_3,\cdots,A_nA_1$ 上的点 (均不与顶点重合). 求证:
+\[\frac{B_1B_2}{A_1A_3}+\frac{B_2B_3}{A_2A_4}+\cdots+\frac{B_nB_1}{A_nA_2}>1.\]}
+
+\section{捷克波兰斯洛伐克数学竞赛}
+
+\pr{2023 Czech-Polish-Slovak Match P2}{设 $a_1,a_2,\cdots,a_n$ 是实数, 满足对任意 $1\leq k\leq n$, 均有
+\[n\cdot a_k\geq\sum_{i=1}^ka_i^2.\]
+求证: 存在至少 $n/10$ 个 $k$ 使 $a_k\leq1000$.}
+
+\section{美国数学奥林匹克}
+
+\pr{2012 USAMO P1}{求所有的整数 $n\geq3$, 使得对任意满足
+\[\max\{a_1,a_2,\cdots,a_n\}\leq n\cdot\min\{a_1,a_2,\cdots,a_n\}\]
+的 $n$ 个正实数 $a_1,a_2,\cdots,a_n$, 其中都存在三个为一个锐角三角形的三边长.}
+
+\pr{2012 USAMO P6}{设整数 $n>2$,实数 $x_1,x_2,\cdots,x_n$ 满足
+\[x_1+x_2+\cdots+x_n=0,\ x_1^2+x_2^2+\cdots+x_n^2=1.\]
+对于 $\{1,2,\cdots,n\}$ 的子集 $A$,定义 $S_A=\sum_{i\in A}x_i$, 规定 $S_\emptyset=0.$\par
+求证: 对任意正数 $\lambda$, 满足 $S_A\geq\lambda$ 的集合 $A$ 的个数
+不超过 $2^{n-3}/\lambda^2$, 并求出等号成立时的 $x_1,x_2,\cdots,x_n,\lambda$.}
+
+\pr{2010 USAMO P3}{	设 $a_1,a_2,\cdots,a_{2010}$是正实数, 满足对任 $1\leq i<j\leq2010$, 都有 $a_ia_j\leq i+j$. 求 $a_1a_2\cdots 	a_{2010}$ 的最大值. }
+
+\pr{2006 USAMO P4}{求所有的正整数 $n$, 使得存在整数 $k\geq2$ 及正有理数$a_1,a_2,\cdots,a_k$ , 满足
+\[a_1+a_2+\cdots+a_k=a_1a_2\cdots a_k=n.\] }
+
+\pr{2000 USAMO P6}{设 $a_1,a_2,\cdots,a_n,b_1,b_2,\cdots,b_n$ 是非负实数, 求证: 
+\[\sum_{i,j=1}^n\min\{a_ia_j,b_ib_j\}\leq\sum_{i,j=1}^n\min\{a_ib_j,a_jb_i\}.\]}
+
+\pr{1997 USAMO P6}{设 $a_1,a_2,\cdots,a_{1997}$ 是非负整数, 满足对任意$1\leq i,j\leq1997$, 若$i+j\leq1997$, 则
+\[a_i+a_j\leq a_{i+j}\leq a_i+a_j+1.\]
+求证: 存在实数 $x$, 使得对任意 $1\leq n\leq1997$, 均有$a_n=\fl{nx}.$}
+
+\section{美国TSTST}
+
+\pr{2019 American TSTST P4}{求最小的实数 $\lambda$, 使得对任意不超过 $1$ 且和为 $50$ 的正实数 $x_1,x_2,\cdots,x_{100}$, 总存在集合 $\{1,2,\cdots,100\}$ 的划分 $(A,B)$, 满足 $|A|=|B|$, 且
+\[\left|\sum_{i\in A}x_i-\sum_{j\in B}x_j\right|\leq\lambda.\]}
+
+\pr{2015 American TSTST P1}{设正整数 $m<n,\quad a_1,a_2,\cdots,a_n$ 是实数. 对$1\leq k\leq n$, 称$k$ 是"好的", 如果存在 $1\leq l\leq m$, 使得 $a_k+a_{k+1}+\cdots+a_{k+l-1}\geq0$ , 其中脚标按模$n$ 理解. 用 $T$ 表示所有好数构成的集合, 求证: 
+\[\sum_{k \in T}a_k\ge 0.\]}
+
+\section{北大夏令营}
+\pr{2023 北大夏令营 P2}{对正整数 $n$, 用 $S(n)$ 表示 $0\sim n-1$ 在十进制中的数码和之和. 求证: 对任意正整数 $m,n$,
+\[S(m+n)\geq S(m)+S(n)+\min\{m,n\}.\]}
+
+\pr{2023 北大夏令营 P5}{给定正整数 $n>m$.求所有的数组 $(i_1,i_2,\cdots,i_m)$ $(1\leq i_1<i_2<\cdots<i_m\leq n)$, 使得对任意满足 $\sum_{i=1}^nx_i=0$ 的实数组 $(x_1,x_2,\cdots,x_n)$ $\left(x_1<x_2<\cdots<x_n\right)$, 都有
+\[\sum_{k=1}^{m}x_{i_k}>0.\]}
+
+\pr{2022 北大夏令营 P2}{设数列 $\{f_n\}_{-\infty}^{+\infty}$ 满足只有 $f_1,f_2,\cdots,f_{2022}$ 可能不为 $0$ . 令
+\[M(n)=\max_{r,s\geq0}\left.\left(\sum_{i=n-r}^{n+s}|f_i|\right)\right/(r+s+1).\]
+求证:
+\[\sum_{n=1}^{2023}\lvert M(n)-M(n-1)\rvert\leq\sum_{n=1}^{2023}\lvert f_n-f_{n-1}\rvert.\]}
+
+\pr{2021 北大夏令营 P1}{设 $a_1,a_2,a_3,a_4,k$ 是两两不同的正整数, 且不小于 $80$ , 满足 $a_1^2+a_2^2+a_3^2+a_4^2-4k^2$ 是正整数. 求$
+(a_1^2+a_2^2+a_3^2+a_4^2-4k^2)\cdot k^2$的最小值.}
+
+\pr{2019 北大夏令营 P6}{对正实数 $a_1,a_2,\cdots,a_n$ , 定义
+\[\sigma(a_1,a_2,\cdots,a_n)=\min\left\{\left|\sum_{k=1}^ne_ka_k\right|:e_k=\pm1\right\}.\]
+求最小的实数 $\lambda$, 使得
+\[\sigma(a_1,a_2,\cdots,a_n)\left(\sum_{k=1}^na_k\right)\leq\lambda\sum_{k=1}^na_k^2\]
+对任意正实数 $a_1,a_2,\cdots,a_n$ 都成立.}
+
+\pr{2018 北大夏令营 P3}{设实数 $a_1,a_2,\cdots,a_{2018}$ 满足 $|a_{i+1}-a_i|\leq1$ $(1\leq i\leq2018)$, 其中 $a_{2019}=a_1$. 求
+\[\sum_{i=1}^{2018}\lvert a_i\rvert-\left|\sum_{i=1}^{2018}a_i\right|\]
+的最大值.}
+
+\pr{2018 北大夏令营 P5}{
+设实数 $a>2$, 整数 $0\leq j\leq n$. 求证：
+\[\sum_{k=0}^n(-1)^{k-j}a^{-k^2+2kj}>0.\]}
+
+\section{北大金秋营}
+
+\pr{2020 北大金秋营 P1}{给定正整数 $n$. 设非负实数 $a_1,a_2,\cdots,a_n$ 的和为 $1$, 记 $S$ 为如下 $2^n$ 个实数
+
+\[\varepsilon_1a_1+\varepsilon_2a_2+\cdots+\varepsilon_na_n,\varepsilon_i\in\{-1,1\}\]
+
+中所有正数之和. 求 $S$ 的最小可能值.}
+
+\pr{2019 北大金秋营 P4}{设 $\theta_1,\theta_2,\cdots,\theta_l$ 是实数. 求证: 存在正整数 $k$ 和正实数 $a_1,a_2,\cdots,a_k$, 满足 $\sum_{i=1}^{k}a_i=1$, 且对任意正整数$n\leq k$ 和 $m\leq l$, 都有
+\[\left|\sum_{j=1}^{n}a_j\sin{(j\theta_m)}\right|\le\frac{1}{2018n}.\]}
+
+\pr{2017 北大金秋营 P4}{求最小的实数 $\lambda$, 使得对一切满足 $a_i<2^i$ 的正实数$a_1,a_2,\cdots,a_n$ , 都有
+\[\sum_{1\le i,j\le n}\{a_ia_j\}\leq\lambda\sum_{i=1}^n\{a_i\}.\]}
+
+\pr{2016 北大金秋营 P2}{设 $a_1,a_2,\cdots,a_n,b_1,b_2,\cdots,b_n$ 是 $1,2,\cdots,2n$ 的一个排列, 求
+\[\sum_{i=1}^n |a_ib_i-a_{i+1}b_{i+1}|\]
+的最小值.}
+
+
+
+
+\end{document}

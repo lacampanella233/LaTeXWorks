@@ -1,0 +1,49 @@
+\documentclass{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath,mathtools,geometry,pgfplots,float,mathrsfs,caption}
+\pgfplotsset{compat=1.15}
+\usetikzlibrary{arrows}
+\usetikzlibrary[patterns]
+\geometry{scale=0.7}
+
+\title{代数小题一道}
+\author{ }
+\date{ }
+
+\begin{document}
+{\kaishu 题目: 对于正实数$x_1,\ x_2,\ \cdots,\ x_n\ (n\ge 2)$, 记
+\[S_k:=1+\sum\limits_{i=1}^{k}{\frac{x_i}{i}},\  T_k:=\sum\limits_{i=1}^{k}\frac{x_i}{i+1},\ k=1,\ 2,\ \cdots,\ n.\]
+求证: 
+\[\prod\limits_{i=1}^{n}(1+x_i)\le \sum\limits_{k=1}^{n}\frac{((k+1)!)^2}{(k+1) k^{2k}}\left(k(S_k-T_k)-\frac{2^k-1}{2^k}\right)^k.\]
+}\par
+解: 注意到恒等式
+\begin{align*}
+	\prod\limits_{i=1}^{n}(1+x_i)&=\prod\limits_{i=1}^{n-1}(1+x_i)+x_n \prod\limits_{i=1}^{n-1}(1+x_i)\\
+	&=\prod\limits_{i=1}^{n-2}(1+x_i)+x_{n-1}\prod\limits_{i=1}^{n-2}(1+x_i)+x_n\prod\limits_{i=1}^{n-1}(1+x_i)\\
+	&=\prod\limits_{i=1}^{n-3}(1+x_i)+x_{n-2}\prod\limits_{i=1}^{n-3}(1+x_i)+x_{n-1}\prod\limits_{i=1}^{n-2}(1+x_i)+x_n\prod\limits_{i=1}^{n-1}(1+x_i)\\
+	&=\cdots\\
+	&=(1+x_1)+\sum\limits_{k=2}^{n}{x_k \prod\limits_{i=1}^{k-1}{(1+x_i)}}.
+\end{align*}
+而对于$2\le k\le n$, 
+\begin{align*}
+	\sum\limits_{k=2}^{n}{x_k \prod\limits_{i=1}^{k-1}{(1+x_i)}}&=
+	(1\cdot 2\cdot\ \cdots\ \cdot k)^2\cdot(k+1)\cdot\left(\prod_{i=1}^{k-1}{\frac{1+x_i}{i(i+1)}}\right)\cdot\frac{x_k}{k(k+1)}\\
+	&\le\frac{((k+1)!)^2}{k+1}\left(\frac{1}{k}\left(\frac{x_k}{k(k+1)}+\sum_{i=1}^{k-1}{\frac{1+x_i}{i(i+1)}}\right)\right)^k\\
+	&=\frac{((k+1)!)^2}{(k+1)k^k}\left[x_k\left(\frac{1}{k}-\frac{1}{k+1}\right)+\sum_{i=1}^{k-1}{(1+x_i)\left(\frac{1}{i}-\frac{1}{i+1}\right)}\right]^k\\
+	&=\frac{((k+1)!)^2}{(k+1)k^k}\left[\left(1-\frac{1}{k}\right)+\sum_{i=1}^{n}\frac{x_i}{i}-\sum_{i=1}^{n}\frac{x_i}{i+1}\right]^k\\
+	&=\frac{((k+1)!)^2}{(k+1)k^{2k}}\left[(k-1)+k(S_k-1)-kT_k\right]^k\\
+	&=\frac{((k+1)!)^2}{(k+1)k^{2k}}\left[k(S_k-T_k)-1\right]^k
+	\le\frac{((k+1)!)^2}{(k+1)k^{2k}}\left(k(S_k-T_k)-\frac{2^k-1}{2^k}\right)^k.
+\end{align*}
+并且注意到
+\[1+x_1=\left.\frac{((k+1)!)^2}{(k+1) k^{2k}}\left(k(S_k-T_k)-\frac{2^k-1}{2^k}\right)^k\right|_{k=1}.\]\par
+故
+\begin{align*}
+	\prod\limits_{i=1}^{n}(1+x_i)&=(1+x_1)+\sum\limits_{k=2}^{n}{x_k \prod\limits_{i=1}^{k-1}{(1+x_i)}}\\
+	&\le\left.\frac{((k+1)!)^2}{(k+1) k^{2k}}\left(k(S_k-T_k)-\frac{2^k-1}{2^k}\right)^k\right|_{k=1}+\sum_{k=2}^{n}{\frac{((k+1)!)^2}{(k+1) k^{2k}}\left(k(S_k-T_k)-\frac{2^k-1}{2^k}\right)^k}\\
+	&=\sum_{k=1}^{n}{\frac{((k+1)!)^2}{(k+1) k^{2k}}\left(k(S_k-T_k)-\frac{2^k-1}{2^k}\right)^k}.
+\end{align*}\par
+证毕!
+
+\end{document}
+

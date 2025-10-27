@@ -1,0 +1,265 @@
+\documentclass{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath,mathtools,geometry,amsfonts,amssymb,tikz,graphicx}
+\usetikzlibrary{arrows.meta}
+\geometry{a4paper,scale=0.7}
+\title{一线串通的高等数学基础}
+\author{\textbf{程昊一}  \and {\small 李衡岳} \and {\small 王一丁}}
+
+\begin{document}
+\maketitle
+\section{函数}
+\subsection{函数的定义}
+函数,本质上是一种\textbf{一一对应}的关系,将一个对象转化成另一个对象.下面给出函数的严格定义:
+\par\textbf{定义1.}\quad {\CJKfamily{fs}给定两个实数域$\mathbb{R}$的非空子集$A$和$B$.若一个对应关系$f:A\to B$,使得$A$中的每一个数,通过这种对应关系,在$B$中都有唯一一个数与之一一对应,那么这种关系就叫做\textbf{函数},通常记作$f(x)$.其中,$A$被称作$f$的\textbf{定义域},$B$被称作$f$的\textbf{值域}.}
+\subsection{函数的单调性}
+\par 在学习中,我们经常会遇到一些函数,如$y=x,y=x^3$.它们似乎都是只增不减的.
+\begin{figure}[!ht]
+	\centering
+	\begin{tikzpicture}
+		\draw [->](-1,0)--(5,0)node[right]{$x$};
+		\draw [->](0,-1)--(0,5)node[above]{$y$};
+		\node at(0,0)[anchor=north east]{$O$};
+		\draw[domain=0:4]plot(\x,\x)node[anchor=south west]{$y=x$};
+		\draw[domain=0:1.5]plot(\x,{\x*\x*\x})node[above]{$y=x^3$};
+	\end{tikzpicture}
+\end{figure}
+\par 下面,我们给出函数单调性的严格定义:
+\par\textbf{定义2.}\quad{\CJKfamily{fs}设函数$f(x)$在区间$D$上有定义.若对于任意的$x_1,x_2\in D$,其中$x_1<x_2$,都有$f(x_1)<f(x_2)$,则称$f(x)$在$D$上\textbf{单调递增};若若对于任意的$x_1,x_2\in D$,其中$x_1<x_2$,都有$f(x_1)<f(x_2)$,则称$f(x)$在$D$上\textbf{单调递减}.}
+
+\subsection{奇函数与偶函数}
+有些函数的图像是关于原点对称的,例如$y=x,y=x^3,y=\sin{x}$等,被称为\textbf{奇函数};有些是关于$y$轴对称的,例如$y=x^2,y=\cos{x}$等,被称为\textbf{偶函数}.下面给出奇函数与偶函数的严格定义:
+\par\textbf{定义3.}\quad{\CJKfamily{fs}对于一个函数$f(x)$,它的定义域为$D$,且关于原点对称.若任意的$x\in D$,有$f(x)=-f(-x)$,则称$f(x)$为\textbf{奇函数};若任意的$x\in D$,有$f(x)=f(-x)$,则称$f(x)$为\textbf{偶函数}.}
+\subsection{反函数}
+我们注意到,一个函数$y=f(x)$,相当于给出了$x$的值,求$y$的值.但是我们有时候要从$y$求出$x$.对于有些函数,一个$y$唯一对应这一个$x$,比如一次函数,反比例函数等.但是有些就是一个$y$可能对应多个$x$,如二次函数等.对于第一类函数(即一个$y$唯一对应一个$x$的函数),我们定义\textbf{反函数}:
+\par\textbf{定义4.}\quad{\CJKfamily{fs}若对于一个函数$f(x)$,若对于其值域上的任何一个数$y$,都有唯一的$x$使得$f(x)=y$,那么存在且唯一存在一个函数$g(x)$满足$g(f(x))=x$.我们将$g(x)$称为$f(x)$的\textbf{反函数}.}
+\newpage
+\section{极限}
+\subsection{极限的基本思想}
+{\CJKfamily{kai}我们有一个函数$f$和一个平面直角坐标系.在$f$的定义域上有一个数$x_0$.当$x$非常非常接近$x_0$但不等于$x_0$时,$f(x)$的值是什么样子的?极限,就是对此时的$f(x)$的值的一种描述.当$x$从小往大趋近于$x_0$时$f(x)$趋近的那个数,被称作$f(x)$在$x_0$的\textbf{左极限};当$x$从大往小趋近于$x_0$时$f(x)$\\趋近的那个数,被称作$f(x)$在$x_0$的\textbf{右极限}.当$f(x)$在$x_0$的左极限等于右极限时,这个左极限或右极限的数值被称作$f(x)$在$x_0$处的\textbf{极限}.这就是极限的基本思想.}
+
+\subsection{函数的极限}
+在\textbf{2.1}中,我们了解到了函数在某个点的\textbf{左极限,右极限}以及\textbf{极限}.我们将给出它们的严格定义:
+\par\textbf{定义5.}\quad {\CJKfamily{fs}对于一个函数$f(x)$和一个数$x_0$,若对于一个任意的正实数$\varepsilon$,都存在一个正实数$\delta$,\\在$0<x-x_0<\varepsilon$时都有$|f(x)-f(x_0)|<\delta$,则称$f(x_0)$为$f(x)$在点$x_0$的\textbf{右极限};若对于一个任意的正实数$\varepsilon$,都存在一个正实数$\delta$,在$0<x_0-x<\varepsilon$时都有$|f(x)-f(x_0)|<\delta$,则称$f(x_0)$为$f(x)$在点$x_0$的\textbf{左极限}.若$f(x)$在点$x_0$的左极限与右极限相同时,则称$f(x_0)$为$f(x)$在点$x_0$的\textbf{极限};若左极限不等于右极限时,则称$f(x)$在点$x_0$的极限\textbf{不存在}.}
+\par 左极限、右极限以及极限的记法如下：
+\par 我们将$f(x)$在$x_0$处的左极限记作
+\[\lim\limits_{x\to x_0^-}f(x),\]
+右极限记作
+\[\lim\limits_{x\to x_0^+}f(x),\]
+极限记作
+\[\lim\limits_{x\to x_0}f(x).\]
+\subsection{极限的常见求法}
+\subsubsection{极限的四则运算}
+根据极限的定义,我们能得到下列关系式:
+\par 若$\lim\limits_{x\to x_0}f_1(x)$与$\lim\limits_{x\to x_0}f_2(x)$存在,$c$为常数,则
+\[c\cdot \lim\limits_{x\to x_0}f_1(x)=\lim\limits_{x\to x_0}\left(c\cdot f_1(x)\right),\]
+\[\lim\limits_{x\to x_0}\left(f_1(x)\pm f_2(x) \right)=\lim\limits_{x\to x_0}f_1(x)\pm \lim\limits_{x\to x_0}f_2(x),\]
+\[\lim\limits_{x\to x_0}\left(f_1(x)\cdot f_2(x)\right)=\lim\limits_{x\to x_0}f_1(x)\cdot \lim\limits_{x\to x_0}f_2(x),\]
+\par 若$\lim\limits_{x\to x_0}f_2(x)\neq 0$,则
+\[\frac{\lim\limits_{x\to x_0}f_1(x)}{\lim\limits_{x\to x_0}f_2(x)}=\lim\limits_{x\to x_0}\left(\frac{f_1(x)}{f_2(x)}\right),\]
+
+\subsubsection{夹逼定理}
+若函数$f(x),f_1(x),f_2(x)$在定义域上始终有$f_1(x)\le f(x)\le f_2(x)$,且$\lim\limits_{x\to x_0}f_1(x)$与$\lim\limits_{x\to x_0}f_2(x)$存在且都等于$y_0$,那么我们就有
+\[\lim\limits_{x\to x_0}f(x)=y_0.\]
+\par 这就相当于$f(x)$一直夹在$f_1(x)$与$f_2(x)$之间,当$f_1(x)$与$f_2(x)$在某一点有相同的极限,那么$f(x)$\\在这一点就自然而然地有相同的极限.
+\newpage
+\section{导数与微分}
+\subsection{导数的基本思想}
+{\CJKfamily{kai}人们在开始研究微积分的时候,是通过速度与时间的关系来认识的.现在我们回到这里,考虑导数是如何存在的.我们知道,$\text{速度}=\dfrac{\text{路程}}{\text{时间}}$,而这个速度只是一个平均速度.而如果我们需要知道在这一时间的瞬时速度,需要让这一段时间尽可能地短,这样这个平均速度尽可能地接近瞬时速度.这个速度可以表示为$\dfrac{\text{大路程}-\text{小路程}}{\text{大时间}-\text{小时间}}$,将这个式子转化为另一种形式:$\frac{f(x)-f(x_1)}{x-x_1}$.当\\$x\to x_1$时,这就是$f(x)$在$x_1$处的导数.也可以理解为,$f(x)$的图像在 $x_1$处切线的斜率.这就是导数的基本思想.}
+\subsection{导数的定义}
+在\textbf{3.1}中,我们了解到了,导数是在研究物体的瞬时速度和曲线斜率的时候产生的.下面,我们给出导数的严格定义:
+\par\textbf{定义6.}\quad {\CJKfamily{fs}对于连续的函数$f(x)$,在点$x_0$处以及其邻域有定义.我们定义:
+\[\lim\limits_{\Delta x\to0^+}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}\]
+为$f(x)$在$x_0$处的\textbf{右导数};定义
+\[\lim\limits_{\Delta x\to0^-}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}\]
+为$f(x)$在$x_0$处的\textbf{左导数};当$f(x)$在$x_0$处的左导数与右导数都存在且等于$k$,则称$k$为$f(x)$在$x_0$处的\textbf{导数},记作$f'(x_0)$或$\left.\dfrac{\mathrm{d}y}{\mathrm{d}x}\right|_{x=x_0}$.若左导数与右导数不相等,则称$f(x)$在$x_0$处的导数\textbf{不存在}.}
+\par 导数本质上描述的是一个函数在某个点对于自变量变化的敏感程度.理解这一句话是十分重要的,因为在学习更抽象的导数时,“切线斜率”这样的几何直观就不适用了.
+\par 将$f(x)$每一点的导数写成关于$x$的函数,我们就得到了$f(x)$的\textbf{导函数}.
+\par \textbf{定义7.}\quad {\CJKfamily{fs}设$f(x)$连续且可导.定义以下关于$x$的函数
+\[\lim\limits_{\Delta x\to0}\frac{f(x+\Delta x)-f(x)}{\Delta x}\]
+为$f(x)$的\textbf{导函数},记作$f'(x)$.}
+\subsection{使用定义求导}
+这一节,我们利用几道例题,来说明如何用定义求导.
+\par\textbf{例1}\quad 求$\left(x^3\right)'$.
+\par\textbf{解}\quad 
+\begin{align*}
+\left(x^3\right)'
+&=\lim\limits_{\Delta x\to0}\frac{(x+\Delta x)^3-x^3}{\Delta x}\\
+&=\lim\limits_{\Delta x\to0}\frac{x^3+3\Delta x \cdot x^2+3(\Delta x)^2x+(\Delta x)^3-x^3}{\Delta x}\\
+&=\lim\limits_{\Delta x\to0}\frac{3\Delta x \cdot x^2+3(\Delta x)^2x+(\Delta x)^3}{\Delta x}\\
+&=\lim\limits_{\Delta x\to0}\left(3x^2+3\Delta x\cdot x+(\Delta x)^2\right)\\
+&=3x^2.
+\end{align*} 
+\par\textbf{例2}\quad 求$\left(\dfrac{1}{x}\right)'$.
+\par\textbf{解}\quad
+\begin{align*}
+\left(\dfrac{1}{x}\right)'
+&=\lim\limits_{\Delta x\to0}\frac{\frac{1}{x+\Delta x}-\frac{1}{x}}{\Delta x}\\
+&=\lim\limits_{\Delta x\to0}\frac{\frac{-\Delta x}{x(x+\Delta x)}}{\Delta x}\\
+&=\lim\limits_{\Delta x\to0}\frac{-1}{x(x+\Delta x)}\\
+&=-\frac{1}{x^2}.
+\end{align*}
+\par\textbf{例3}\quad 求$\left(\sqrt{x}\right)'$.
+\par\textbf{解}\quad
+\begin{align*}
+\left(\sqrt{x}\right)'
+&=\lim\limits_{\Delta x\to0}\frac{\sqrt{x+\Delta x}-\sqrt{x}}{\Delta x}\\
+&=\lim\limits_{\Delta x\to0}\frac{(\sqrt{x+\Delta x}-\sqrt{x})(\sqrt{x+\Delta x}+\sqrt{x})}{\Delta x(\sqrt{x+\Delta x}+\sqrt{x})}\\
+&=\lim\limits_{\Delta x\to0}\frac{(x+\Delta x)-x}{\Delta x(\sqrt{x+\Delta x}+\sqrt{x})}\\
+&=\lim\limits_{\Delta x\to0}\frac{1}{\sqrt{x+\Delta x}+\sqrt{x}}\\
+&=\frac{1}{\sqrt{x}+\sqrt{x}}\\
+&=\frac{1}{2\sqrt{x}}
+\end{align*}
+\subsection{导数的运算}
+\subsubsection{导数的加减运算}
+通过极限的定义,我们能得到下列关系式:
+\[(f(x)\pm g(x))'=f'(x)\pm g'(x)\]
+\[(c\cdot f(x))'=c\cdot f'(x)\]
+\subsubsection{导数的乘除}
+我们来推导一下导函数的乘除法则.
+\par 假设我们有两个函数$f(x),g(x)$,则
+\begin{align*}
+(f(x)\cdot g(x))'
+&=\lim\limits_{\Delta x\to0}\frac{f(x+\Delta x)g(x+\Delta x)-f(x)g(x)}{\Delta x}\\
+&=\lim\limits_{\Delta x\to0}\frac{[f(x+\Delta x)-f(x)]g(x+\Delta x)+f(x)[g(x+\Delta x)-g(x)]}{\Delta x}\\
+&=\lim\limits_{\Delta x\to0}\frac{g(x+\Delta x)[f(x+\Delta x)-f(x)]}{\Delta x}+\lim\limits_{\Delta x\to0}\frac{f(x)[g(x+\Delta x)-g(x)]}{\Delta x}\\
+&=g(x)\cdot\lim\limits_{\Delta x\to0}\frac{f(x+\Delta x)-f(x)}{\Delta x}+f(x)\cdot\lim\limits_{\Delta x\to0}\frac{g(x+\Delta x)-g(x)}{\Delta x}\\
+&=f'(x)g(x)+f(x)g'(x)
+\end{align*}
+\begin{align*}
+\left(\frac{f(x)}{g(x)}\right)'
+&=\lim\limits_{\Delta x\to0}\frac{\frac{f(x+\Delta x)}{g(x+\Delta x)}-\frac{f(x)}{g(x)}}{\Delta x}\\
+&=\lim\limits_{\Delta x\to0}\frac{f(x+\Delta x)g(x)-f(x)g(x+\Delta x)}{g(x+\Delta x)g(x)\Delta x}\\
+&=\lim\limits_{\Delta x\to0}\frac{g(x)[f(x+\Delta x)-f(x)]-f(x)[g(x+\Delta x)-g(x)]}{g(x+\Delta x)g(x)\Delta x}\\
+&=\left(\lim\limits_{\Delta x\to0}\frac{g(x)}{g(x)g(x+\Delta x)}\right)\cdot\left(\lim\limits_{\Delta x\to0}\frac{f(x+\Delta x)-f(x)}{\Delta x}\right)\\
+&-\left(\lim\limits_{\Delta x\to0}\frac{f(x)}{g(x)g(x+\Delta x)}\right)\cdot\left(\lim\limits_{\Delta x\to0}\frac{g(x+\Delta x)-g(x)}{\Delta x}\right)\\
+&=\frac{f'(x)g(x)-f(x)g'(x)}{g(x)^2}
+\end{align*}
+
+\subsubsection{复合函数的导数}
+对于复合函数$f(g(x))$,我们有如下定理:
+\par\textbf{定理1.}\quad{\CJKfamily{fs}若$f(x),g(x)$为连续且可导的函数,则有\[\left(f(g(x))\right)'=f'(g(x))\cdot g'(x).\]} 
+\par 对这个定理的严格证明我们不在这里给出,有兴趣的读者可以自行尝试.
+\subsubsection{反函数的导数}
+\textbf{定理2.}\quad{\CJKfamily{fs}若$f(x)$为$(a,b)$上的连续可导的函数,且有反函数$g(x)$,则对于$(a,b)$上的任意一点$x_0$,有\[f'(x_0)=\frac{1}{g'(f(x_0))}.\]}
+\par 也就是说,\textbf{一个函数在一点的导数恰好等于其反函数在对应点的导数的倒数.}
+\subsection{常见初等函数的导数}
+这一章,我们研究一下几种常见的基本初等函数的导数.
+\subsubsection{幂函数}
+我们分两个部分讨论:\\
+\textbf{(1)\quad 指数为正整数}
+\par 设函数$f(x)=x^n,n\in\mathbb{N_+}$,那么
+\begin{align*}
+f'(x)&=\lim\limits_{\Delta x\to0}\frac{f(x+\Delta x)-f(x)}{\Delta x}\\
+&=\lim\limits_{\Delta x\to0}\frac{(x+\Delta x)^n-x^n}{\Delta x}\\
+&=\lim\limits_{\Delta x\to0}\frac{x^n+nx^{n-1}\cdot\Delta x+(\Delta x)^2\cdot(\text{一群没用的废物})-x^n}{\Delta x}\\
+&=\lim\limits_{\Delta x\to0}\left(nx^{n-1}+\Delta x(\text{一群没用的废物})\right)\\
+&=nx^{n-1}.
+\end{align*}
+\par 所以$\left(x^n\right)'=nx^{n-1}$.\\[1em]
+\textbf{(2)\quad 指数为实数}
+\par 这一部分需要指数函数和对数函数的导数的知识,建议在阅读完\textbf{3.5.2}和 \textbf{3.5.3}后再阅读此部分.
+\par 设函数$f(x)=x^a,a\in\mathbb{R}$,则
+\begin{align*}
+\left(x^a\right)'&=\left(\mathrm{e}^{a\ln{x}}\right)'\\
+&=\mathrm{e}^{a\ln{x}}\cdot\left(a\cdot\frac{1}{x}\right)\text{\quad 复合函数的求导法则}\\
+&=\frac{a}{x}\cdot x^a\\
+&=ax^{a-1}.
+\end{align*}
+\par 所以$\left(x^a\right)'=ax^{a-1}$.
+
+\subsubsection{指数函数}
+我们来求$f(x)=a^x (a\in\mathbb{R_+})$的导数.我们先看$\mathrm{e}^x$的导数.
+\par 注意到
+\begin{align*}
+\left(\mathrm{e}^x\right)'&=\lim\limits_{\Delta x\to0}\frac{\mathrm{e}^{x+\Delta x}-\mathrm{e}^x}{\Delta x}\\
+&=\lim\limits_{\Delta x\to0}\frac{\mathrm{e}^x(\mathrm{e}^{\Delta x}-1)}{\Delta x}\\
+&=\mathrm{e}^x\cdot\lim\limits_{\Delta x\to0}\frac{\mathrm{e}^{\Delta x}-1}{\Delta x}
+\end{align*}
+\par 下面我们来观察极限$\lim\limits_{\Delta x\to0}\dfrac{\mathrm{e}^{\Delta x}-1}{\Delta x}$.\\
+\par 我们令$n=\mathrm{e}^{\Delta x}-1$,则$\Delta x=\ln{(n+1)}$.显然,当$\Delta x\to0$时,$n\to0$.那么,
+\begin{align*}
+\lim\limits_{\Delta x\to0}\frac{\mathrm{e}^{\Delta x}-1}{\Delta x}
+&=\lim\limits_{\Delta x\to0}\frac{n}{\ln{(n+1)}}\\
+&=\lim\limits_{\Delta x\to0}\left(\frac{1}{n}\ln{(n+1)}\right)^{-1}\\
+&=\left(\lim\limits_{\Delta x\to0}\left(\ln{(n+1)^\frac{1}{n}}\right)\right)^{-1}\\
+&=(\ln{\mathrm{e}})^{-1}\\
+&=1
+\end{align*}
+\par 所以$\lim\limits_{\Delta x\to0}\dfrac{\mathrm{e}^{\Delta x}-1}{\Delta x}=1$.\\
+\par 带回原式,我们得到\[\left(\mathrm{e}^x\right)'=\mathrm{e}^x.\]
+\par 那么对于任意的$a^x$,因为$a^x=e^{x\ln{a}}$,所以由复合函数的求导法则,我们有
+\[\left(a^x\right)'=a^x\ln{a}.\]
+\subsubsection{对数函数}
+我们先看$\ln{x}$的导数.
+\par 因为$\ln{x}$是$\mathrm{e}^x$的反函数,所以我们令 $f(x)=\ln{x},g(x)=\mathrm{e}^x$.
+\par 由反函数的求导法则
+\[f'(x_0)=\frac{1}{g'(f(x_0))},\]
+我们有
+\[(\ln{x})'=\frac{1}{\mathrm{e}^{\ln{x}}}=\frac{1}{x}\]
+\subsection{无穷小量与微分}
+我们分两个部分来讨论无穷小量与微分.\\
+\textbf{(1)\quad 无穷小量}
+\par 所谓无穷小量,就是\textbf{以0为极限的变量}.例如,当$n\to+\infty$时,$\frac{1}{n},q^n(|q|<1)$以及$\frac{1}{n!}$都是无穷小量;当$x\to0$时,$x,\cos{x}-1$以及$\ln{(1+x)}$都是无穷小量.
+\par 设$f(x),g(x)$在$x\to a$时是两个无穷小量,则$f(x)\pm g(x),f(x)\cdot g(x)$都是无穷小量.但是,$\dfrac{f(x)}{g(x)}$\\却有多种情况.若$g(x)\neq0$,且
+\[\frac{f(x)}{g(x)}\to1\quad(x\to a),\]
+则称$f(x)$与$g(x)$是\textbf{等价无穷小量},记为$f(x)~g(x)\quad(x\to a)$.
+\par 若存在一个无穷小量$\eta(x)$,使得
+\[f(x)=\eta(x)g(x)\]
+则称$f(x)$是比$g(x)$\textbf{更高阶的无穷小量},记为$f(x)=o(g(x))\quad(x\to a)$.
+\par 若存在一个常数$l$,使得
+\[\lim\limits_{x\to a}\frac{f(x)}{g(x)}=l,\]
+则称$f(x)$与$g(x)$是\textbf{同阶无穷小量}.
+\par 当$x\to a$时,若$f(x)$与$(x-a)^n$是同阶无穷小量,则称$f(x)$为$x-a$的\textbf{$n$阶无穷小量}.事实上,无穷小量的阶数表示的是无穷小量趋近于0的效率.\\[1em]
+\textbf{(2)\quad 微分}
+\par 设$f(x)$在$x_0$附近有定义.我们令$x$有一个增量$\Delta x$,此时$y$也有一个变化量$\Delta y$.我们用无穷小量的眼光去观察$\Delta x$与$\Delta y$的关系.
+\par 设$f(x)$在$x_0$附近可导,那么$f(x)$在$x_0$附近至少是连续的,所以
+\[\Delta y=f(x+\Delta x)-f(x)\quad (\Delta x\to0).\]
+所以,当$\Delta x\to0$时,$\Delta y$是一个无穷小量.并且,由导数的存在性,我们有
+\[f'(x_0)=\lim\limits_{\Delta x\to0}\frac{\Delta y}{\Delta x}.\]
+我们再来考察
+\[\eta(x)=\frac{\Delta y}{\Delta x}-f'(x_0).\]
+显然,当$\Delta x\to0$时,$\eta(x)$也是一个无穷小量.我们将上式变形,得到
+\[\Delta y=f'(x_0)\Delta x+\eta(x)\Delta x.\]
+\par 这告诉了我们了一个重要事实:$\Delta y$可以被拆分成两个部分,一部分是$\Delta x$与一个常数的乘积,另一部分比$\Delta x$更高阶的无穷小量,也即
+\[\Delta y=f'(x_0)+o(\Delta x).\]
+当$\Delta x$很小的时候,$\Delta y$可以由$f'(x_0)\Delta x$很好地近似.
+\par 以上是在$f(x)$可导的条件下进行的讨论.那一般情况呢?
+\par 何时$\Delta y$可以写成$A\Delta x+o(\Delta x)$(其中$A$为常数)的形式呢?
+\par 对此,我们给出微分以及可微的定义:
+\par \textbf{定义7.}\quad{\CJKfamily{fs}设$y=f(x)$在$x_0$点附近有定义.若存在一个常数$A$,使得
+\[f(x+\Delta x)-f(x)=A\Delta x+o(\Delta x)\quad (\Delta x\to0),\]
+则称$y=f(x)$在$x_0$处\textbf{可微},并把$A\Delta x$称作$y=f(x)$在$x_0$处的\textbf{微分},记作$\mathrm{d}f$或$\mathrm{d}y$.}
+
+\subsection{高阶导数}
+设$f(x)$为$(a,b)$上的可导函数,则$f'(x)$也是$(a,b)$上的连续函数.那么我们自然会问:$f'(x)$也是可导函数吗?如果$f'(x)$在$x_0$处存在导数,则称此为$f(x)$在$x_0$的\textbf{二阶导数},记作$f''(x)$或$f^{(2)}(x)$,\\有时也记作$\left.\dfrac{\mathrm{d}^2y}{\mathrm{d}x^2}\right|_{x=x_0}$.
+\par 同理,我们能定义$f(x)$在$x_0$的$n$阶导数,记作$f^{(n)}(x)$或$\left. \dfrac{\mathrm{d}^nx}{\mathrm{d}x^n}\right|_{x=x_0}$.
+\par 一般来说,我们求一个函数的$n$阶导数的通项公式,需要用到数学归纳法. 但即便如此,求通项一般还是比较困难的事情.下面的莱布兹尼公式有时会有所帮助:
+\par \textbf{定理3.}\quad{\CJKfamily{fs}设$y=f(x)$及$y=g(x)$在$(a,b)$上有$n$阶导数,则它们的乘积的$n$阶导数成立下列公式:
+\[[f(x)\cdot g(x)]^{(n)}=\sum\limits_{k=0}^{n}C_n^k f^{(k)}(x)g^{(n-k)}(x),\]
+其中$f^{(0)}=f,g^{(0)}=g$.}
+\par 这个公式很像牛顿的二项展开式,只不过把原来的方幂数换成求导的阶数而已.
+\newpage
+{\Large \textbf{参考文献}}\\[1em]
+
+\begin{figure}[!htbp]
+	\centering
+	\scalebox{1.1}{
+	\begin{tabular}{c|l}
+		\hline
+		{\small[1]}&{\hspace*{0.5em}\small 李忠,周建莹.高等数学(上册)[M].北京:北京大学出版社,2009.8.}\\
+		{\small[2]}&
+		\begin{tabular}{l}
+			{\small [美]Adrian Banner.\textit{The Calculus Life: All the Tools You Need to Excel at Calculus}[M].}\\
+			{\small 杨爽,赵晓平,高璞.北京:人民邮电出版社,2016.10.}
+		\end{tabular}
+		\\
+		{\small[3]}&\hspace*{0.5em}{\small [日]远山启.数学与生活[M].吕砚山,李诵雪,马\hspace{1em}杰, 莫德举.北京:人民邮电出版社,2014.10.}\\
+		\hline
+	\end{tabular}}
+\end{figure}
+
+
+
+
+\end{document}

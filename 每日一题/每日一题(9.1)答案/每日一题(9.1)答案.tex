@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath,mathtools,geometry,fancyhdr,amsfonts,amssymb}
+\geometry{a4paper,scale=0.7}
+\pagenumbering{arabic}
+\pagestyle{fancy}
+\fancyhead[L]{励志AQ班}
+\fancyhead[R]{每日一题(9.1)答案}
+\fancyfoot[C]{\thepage}
+\title{每日一题(9.1)答案}
+\author{\kaishu 选题: 李政毅\\\kaishu 答案制作:程昊一}
+
+\begin{document}
+\maketitle
+\textbf{1. }
+{\kaishu 已知:
+\[\left(a^2+b^2+c^2\right)\left(x^2+y^2+z^2\right)=(ax+by+cz)^2\quad(a,b,c\neq0),\]
+求证: $\dfrac{x}{a}=\dfrac{y}{b}=\dfrac{z}{c}$.\\\par}
+
+\textbf{解}\quad 将原式展开, 得到
+\[a^2x^2+b^2y^2+c^2z^2+a^2y^2+a^2z^2+b^2x^2+b^2z^2+c^2x^2+c^2y^2=a^2x^2+b^2y^2+c^2z^2+2abxy+2acxz+2bcyz,\]\par
+很容易发现其中$a^2x^2+b^2y^2+c^2z^2$可以被抵消, 其余的部分可以分别分成三组并配方. 于是, 化简得
+\[\left(a^2x^2+b^2y^2-2abxy\right)+\left(a^2x^2+c^2z^2-2acxz\right)+\left(b^2y^2+c^2z^2-2bcyz\right)=0,\]
+即
+\[(ax-by)^2+(ax-cz)^2+(by-cz)^2=0\]
+所以
+\[ax=by=cz\]
+所以原命题成立.\\\par
+\textbf{注}\quad 这道题的背景其实是\textbf{柯西不等式}, 完整形式如下:\par
+\textbf{柯西不等式.} 设$a_1, a_2, \cdots, a_n, b_1, b_2, \cdots, b_n\in\mathbb{R}$, 则以下不等式成立: 
+\[\left(a_1^2+a_2^2+\cdots+a_n^2\right)\left(b_1^2+b_2^2+\cdots+b_n^2\right)\ge(a_1b_1+\cdots+a_nb_n)^2,\]
+即
+\[\left(\sum\limits_{i=1}^na_i^2\right)\left(\sum\limits_{i=1}^nb_i^2\right)\ge\left(\sum\limits_{i=1}^na_ib_i\right)^2, \]
+等号当且仅当存在实数$k$使得$a_1=kb_1, a_2=kb_2,\cdots, a_n=kb_n$时取等.\par
+事实上, 此题就是$n=3$时取等的情况.\\\par
+\textbf{2. }
+{\kaishu 已知$a-b=4$, $ab+c^2+4=0$, 求$a+b$的值.}\\\par
+\textbf{解(方法一)}\quad 将(1)式代入(2)式, 得
+\[a(a-4)+4+c^2=0,\]
+即
+\[(a-2)^2+c^2=0.\]\par
+所以$a=2$. 代入(1)式, 得$c=-2$. 所以, $a+b=0$.\par
+\textbf{方法二}\quad 将原式变形, 得
+\[\begin{cases}
+	a-b=4\\a+b=-4-c^2
+\end{cases},\]
+则
+\begin{align*}
+	(a+b)^2&=(a-b)^2+4ab\\
+	&=16+4(-4-c^2)\\
+	&=-4c^2
+\end{align*}
+即
+\[(a+b)^2+4c^2=0.\]\par
+所以$a+b=0$.\par
+\textbf{方法三}\quad (1)式平方, (2)式乘4, 得
+\[\begin{cases}
+	(a-b)^2=16\\4ab+4c^2+16=0
+\end{cases},\]
+上式代入下式, 得
+\[(a-b)^2+4ab+4c^2=0,\]
+即
+\[(a+b)^2+4c^2=0,\]
+所以$a+b=0$.
+\end{document}

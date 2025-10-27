@@ -1,0 +1,269 @@
+\documentclass{article}
+\usepackage[UTF8]{ctex}
+\usepackage{mathtools,amsmath,geometry,enumerate,amsfonts}
+
+\geometry{a4paper,scale=0.8}
+
+\newcommand\del{\partial}
+\newcommand\bo[1]{\boldsymbol{#1}}
+\renewcommand\d{\mathrm{d}}
+\newcommand\e{\mathrm{e}}
+\newcommand\bh[1]{\boldsymbol{\hat{#1}}}
+
+\title{物理笔记}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Nabla算符}
+
+\textbf{1. }$\nabla (fg)=(\nabla f)g+(\nabla g)f$.
+\begin{align*}
+\nabla (fg)=\del_i(fg)=f\del_i g+g\del_i f=(\nabla f)g+(\nabla g)f.
+\end{align*}\par
+
+\textbf{2. }$\nabla f\bo{A}=(\nabla\cdot\bo{A})f+\bo{A}\cdot(\nabla f)$.
+\begin{align*}
+(\nabla\cdot\bo{A})f+\bo{A}\cdot(\nabla f)&=f\delta_{ij}\del_j A_i+\delta_{ij}A_i\del_j f=\delta_{ij}\left(f\del_j A_i+A_i\del_j f\right)\\
+&=\delta_{ij}\del_j(fA_i)=\nabla(f\bo{A}).
+\end{align*}
+
+\textbf{3. }$\nabla\cdot(\bo{A}\times\bo{B})=\bo{B}\cdot(\nabla\cdot\bo{A})-\bo{A}\cdot(\nabla\cdot\bo{B})$.
+\begin{align*}
+\nabla\cdot(\bo{A}\times\bo{B})&=\varepsilon_{ijk}\del_i\left(A_jB_k\right)=\varepsilon_{ijk}(A_j\del_i B_k+B_k\del_i A_j)\\
+&=\varepsilon_{ijk}B_i\del_jA_k-\varepsilon_{ijk}A_i\del_jB_k=\bo{B}\cdot(\nabla\cdot\bo{A})-\bo{A}\cdot(\nabla\cdot\bo{B}).
+\end{align*}
+
+\textbf{4. }$\nabla\times(f\bo{A})=(\nabla\times\bo{A})f-\bo{A}\times(\nabla f)$.
+\begin{align*}
+\nabla\times(f\bo{A})&=\varepsilon_{ijk}\bo{e}_i\del_j(fA_k)=\varepsilon_{ijk}\bo{e}_i(A_k\del_j f+f\del_j A_k)\\
+&=f\varepsilon_{ijk}\bo{e}_i\del_jA_k-\varepsilon_{ijk}\bo{e}_iA_j\del_k f=(\nabla\times\bo{A})f-\bo{A}\times(\nabla f).
+\end{align*}
+
+\textbf{5. }$\nabla\cdot(\nabla\times\bo{A})=0$.
+\begin{align*}
+\nabla\cdot(\nabla\times\bo{A})&=\delta_{ij}\del_i(\nabla\times\bo{A})_j=\delta_{ij}\del_i(\varepsilon_{jkl}\del_k A_l)=\delta_{ij}\varepsilon_{jkl}\del_{ik}A_l\\
+&=\varepsilon_{jkl}(\delta_{ij}\del_{ik})A_l=\varepsilon_{jkl}\del_{jk}A_l=\frac12(\varepsilon_{jkl}\del_{jk}A_l+\varepsilon_{kjl}\del_{kj}A_l)\\
+&=\frac12(\varepsilon_{jkl}+\varepsilon_{kjl})\del_{jk}A_l=0.
+\end{align*}
+
+\textbf{6. }$\nabla\times(\nabla f)=\bo{0}$.
+\begin{align*}
+\nabla\times(\nabla f)&=\varepsilon_{ijk}\bo{e}_i\del_j(\nabla f)_k=\varepsilon_{ijk}\bo{e}_i\del_{jk}f=\frac12\bo{e}_i(\varepsilon_{ijk}+\varepsilon_{ikj})\del_{jk}f=\bo{0}.
+\end{align*}
+
+\textbf{7. }$\nabla\times(\nabla\times\bo{A})=\nabla(\nabla\cdot\bo{A})-\nabla^2\cdot\bo{A}$.
+\begin{align*}
+\nabla\times(\nabla\times\bo{A})&=\varepsilon_{ijk}\bo{e}_i\del_j(\nabla\times\bo{A})_k=\varepsilon_{ijk}\varepsilon_{klm}\bo{e}_i\del_{jl}A_m\\
+&=(\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl})\bo{e}_i\del_{jl}A_m\\
+&=(\delta_{il}\bo{e}_i)\del_{jl}(\delta_{jm}A_m)-(\delta_{im}\bo{e}_i)(\delta_{jl}\del_j\del_l)A_m\\
+&=\bo{e}_l\del_{l}(\del_j A_j)-\bo e_m(\delta_{jl}\del_j\del_l)A_m=\nabla(\nabla\cdot\bo{A})-\nabla^2\cdot\bo{A}.
+\end{align*}
+
+\section{曲线坐标系的矢量微分}
+\subsection{球坐标系}
+\[\d\bo l=\d r\bh r+r\d\theta\bh\theta+r\sin\theta\d\theta\bh\varphi,\quad \d\tau=r^2\sin\theta\d r\d\theta\d\varphi.\]
+\[\nabla t=\del_rt\bh{r}+\frac{1}{r}\del_\theta t\bh{\theta}+\frac{1}{r\sin\theta}\del_\varphi t\bh{\varphi};\]
+\[\nabla\cdot\bo v=\frac{1}{r^2}\del_r(r^2v_r)+\frac{1}{r\sin\theta}\del_\theta(\sin\theta v_\theta)+\frac{1}{r\sin\theta}\del_\varphi v_\varphi;\]
+\[\nabla\times\bo v=\frac{1}{r\sin\theta}\left[\del_\theta(v_\varphi\sin\theta)-\del_\varphi v_\theta\right]\bh r+\frac{1}{r}\left[\frac{1}{\sin\theta}\del_\varphi v_r-\del_r(rv_\varphi)\right]\bh\theta+\frac{1}{r}\left[\del_r(rv_\theta)-\del_\theta v_r\right]\bh\varphi.\]
+\[\nabla^{2}t=\frac{1}{r^2}\del_r(r^2\del_rt)+\frac{1}{r^2\sin\theta}\del_\theta(\sin\theta\del_\theta t)+\frac{1}{r^2\sin^2\theta}\del_{\varphi}^2t.\]
+
+\subsection{柱坐标系}
+\[\d\bo l=\d s\bh s+s\d\varphi\bh\varphi+\d z\bh z,\quad\d\tau=s\d s\d\varphi\d\theta.\]
+\[\nabla t=\del_s t\bh s+\frac{1}{s}\del_\varphi t\bh\varphi+\del_z t\bh z;\]
+\[\nabla\cdot\bo v=\frac{1}{s}\del_s(sv_s)+\frac{1}{s}\del_\varphi v_\varphi+\del_z v_z.\]
+\[\nabla\times\bo v=\left[\frac{1}{s}\del_\varphi v_z-\del_zv_\varphi\right]\bh s+\left[\del_zv_s-\del_sv_z\right]\bh\varphi+\frac{1}{s}\left[\del_s(sv_\varphi)-\del_\varphi v_s\right]\bh z.\]
+\[\nabla^2t=\frac{1}{s}\del_s(s\del_st)+\frac{1}{s^2}\del_\varphi^2t+\del_z^2t.\]
+
+
+\section{三维形式的Maxwell方程组}
+
+\subsection{真空中}
+微分形式:
+\begin{align*}
+\nabla\cdot\bo E&=\frac{\rho}{\varepsilon_{0}}&\nabla\cdot\bo E&=4\pi\rho\\
+\nabla\times\bo E&=-\del_t\bo B&\nabla\times\bo E&=-\frac{1}{c}\del_t\bo H\\
+\nabla\cdot\bo B&=0&\nabla\cdot\bo H&=0\\
+\nabla\times\bo B&=\mu_0\bo J+\mu_0\varepsilon_0\del_t\bo E&\nabla\times\bo H&=\frac{4\pi}{c}\bo J+\frac{1}{c}\del_t\bo E
+\end{align*}
+积分形式:
+\begin{align*}
+\int_{\del V}\bo E\cdot\d\bo a&=\frac{Q_{\mathrm{in}}}{\varepsilon_{0}}&\int_{\del V}\bo E\cdot\d\bo a&=4\pi Q_{\mathrm{in}}\\
+\oint_{\del S}\bo E\cdot\d\bo l&=-\del_t\int_S\bo B\cdot\d\bo a&\oint_{\del S}\bo E\cdot\d\bo l&=-\frac{1}{c}\del_t\int_S\bo H\cdot\d\bo a\\
+\oint_S\bo B\cdot\d\bo a&=0&\oint_S\bo H\cdot\d\bo a&=0\\
+\oint_{\del S}\bo B\cdot\d\bo l&=\mu_0\int\bo J\cdot\d\bo a+\mu_0\varepsilon_0\del_t\int\bo E\cdot\d\bo a&\oint_{\del S}\bo H\cdot\d\bo l&=\frac{4\pi}{c}\int\bo J\cdot\d\bo a+\frac{1}{c}\del_t\int\bo E\cdot\d\bo a&
+\end{align*}
+
+\subsection{介质中}
+\vspace*{-2em}
+\begin{align*}
+\bo D=\varepsilon_{0}\bo E+\bo P&,\quad \bo B=\mu_0(\bo H+\bo M)&\bo D=\bo E+4\pi\bo P&,\quad \bo B=\bo H+4\pi\bo M\\
+\nabla\cdot\bo D&=\frac{\rho_\mathrm{f}}{\varepsilon_{0}}&\nabla\cdot\bo D&=4\pi\rho_\mathrm{f}\\
+\nabla\times\bo E&=-\del_t\bo B&\nabla\times\bo E&=-\frac1c\del_t\bo B\\
+\nabla\cdot\bo B&=0&\nabla\cdot\bo B&=0\\
+\nabla\times\bo H&=\bo J_\mathrm{f}+\del_t\bo D&\nabla\times\bo H&=\frac{4\pi}{c}\bo J_\mathrm{f}+\frac1c\del_t\bo D
+\end{align*}
+
+\section{相对性原理}
+
+\subsection{洛伦兹变换}
+四维时空中的转动:
+\[x=x'\cosh\psi+ct'\sinh\psi,\quad ct=x'\sinh\psi+ct'\cosh\psi,\quad \tanh\psi=\frac{V}{c}.\]
+\[x=\frac{x'+Vt}{\sqrt{1-V^2/c^2}},\quad t=\frac{t'+Vx/c^2}{\sqrt{1-V^2/c^2}}\]\par
+\textbf{洛伦兹收缩}: 静止的$K$系内有一根杆, 在相对于$K$的运动速度为$V$的$K'$系的同一时刻中, 杆两端坐标为
+\[x_1=\frac{x_1'+Vt'}{\sqrt{1-V^2/c^2}},\quad x_2=\frac{x_2'+Vt'}{\sqrt{1-V^2/c^2}}.\]
+得
+\[x_2'-x_1'=\frac{x_2-x_1}{\sqrt{1-V^2/c^2}}.\]\par
+
+\subsection{四维时空}
+采用\textbf{度规}
+\[g^{ik}=g_{ik}=\begin{pmatrix}
+1&0&0&0\\0&-1&0&0\\0&0&-1&0\\0&0&0&-1
+\end{pmatrix}.\]
+
+四维时空中的矢量$A^i$有\textbf{逆变分量}(空间分量带有“正确的”正号)和\textbf{协变分量}:
+\[A_i=g_{ik}A^k.\]
+四维矢量$A$的模长为$A_iA^i$, 两个矢量$A$和$B$的标积为$A_iB^i$.\par
+洛伦兹变换就是闵可夫斯基空间中的转动, \textbf{四维标量}在转动过程中不变. 一个\textbf{四维矢量}的模长是一个四维标量. \textbf{闵可夫斯基空间}中的转动应当为
+\[\begin{pmatrix}
+A^0\\A^1\\A^2\\A^3
+\end{pmatrix}
+=\begin{pmatrix}
+\cosh\psi&\sinh\psi&0&0\\
+\sinh\psi&\cosh\psi&0&0\\
+0&0&1&0\\0&0&0&1
+\end{pmatrix}\begin{pmatrix}
+A'^1\\A'^2\\A'^3\\A'^4
+\end{pmatrix}.\]
+取$\tanh\psi=V/c$, 有
+\[A^0=\frac{A'^0+VA'^1/c}{\sqrt{1-V^2/c^2}},\quad A^1=\frac{A'^1+VA'^0/c}{\sqrt{1-V^2/c^2}},\quad A^2=A'^2,\quad A^3=A'^3.\]
+
+\section{相对论动力学}
+\textbf{能量}、\textbf{动量}:
+\[\mathcal{E}=\frac{mc^2}{\sqrt{1-\bo{v}^2/c^2}}=c\sqrt{\bo{p}^2+m^2c^2},\quad \bo{p}=\frac{m \bo{v}}{\sqrt{1-\bo{v}^2/c^2}}=\frac{\mathcal{E}\bo{v}}{c^2}.\]
+此外, 有\textbf{四维动量矢量}(在洛伦兹变换下满足四维矢量的变换规律)
+\[p^i=(\mathcal{E}/c,\bo{p})=mc u_i.\]
+自由粒子的\textbf{作用量}与\textbf{拉格朗日函数}:
+\[S=-\int mc\d s=-\int mc^2\sqrt{1-\bo{v}^2/c^2}\d t,\quad L=-mc^2\sqrt{1-\bo{v}^2/c^2}.\]
+
+\section{运动方程、场方程}
+\subsection{四维电流矢量与四维势}
+\[J^i=(c\rho,\bo{J}),\quad A^i=(\varphi,\bo{A}).\]
+\textbf{连续性方程}:
+\[\nabla\cdot\bo{J}+\del_t\rho=0\Leftrightarrow\del_iJ^i=0.\]
+四维势的\textbf{洛伦兹规范}:
+\[\del_iA^i=0.\]
+设一个粒子具有电量$e$, 则在电磁场中的作用量和拉格朗日函数为
+\[S=-\int mc\d s-\frac{e}{c}\int A_i\d x^i=\int L\d t,\quad L=-mc\sqrt{1-\bo{v}^2/c^2}-e\varphi+\frac{e}{c}\bo{A}\cdot\bo{v}.\]
+对于连续的电流情形, 作用量为(其中$\d\Omega$为四维体积微元)
+\[S=-\sum\int mc\d s-\frac{1}{c^2}\int A_iJ^i\d\Omega.\]
+
+\subsection{运动方程、电磁场张量}
+可以利用最小作用量原理, 通过变分粒子的轨道, 来推导粒子的运动方程. 设一个粒子的轨道有变分$x^i+\delta x^i$.
+\[\delta\d s=\delta\sqrt{\d x_i\d x^i}=\frac{\delta(\d x_i\d x^i)}{2\sqrt{\d x_i\d x^i}}=\frac{\d x_i}{\d s}\delta\d x^i=u_i\delta\d x^i.\]
+其中$u_i$为四维速度. 则
+\begin{align*}
+    \delta S&=-\int mc\delta\d s-\frac{e}{c}\int\delta(A_i\d x^i)=-\int mcu_i\delta\d x^i-\frac{e}{c}\int\left(\delta A_i\d x^i+A_i\delta\d x^i\right)\\
+    &=\int\left\{-mcu_i\d\delta x^i-\frac{e}{c}A_i\d\delta x^i-\frac{e}{c}\left(\del_kA_i\right)\delta x^k\d x^i\right\}\\
+    &=-\int\frac{e}{c}\left(\del_iA_k\right)\delta x^i\d x^k+\int\left\{mc\d u_i\delta x^i+\frac{e}{c}\d A_i\delta x^i\right\}\\
+    &=-\int\frac{e}{c}\left(\del_iA_k\right)\delta x^i u_k\d s+\int\left\{mc\frac{\d u_i}{\d s}\d s\delta x^i+\frac{e}{c}\left(\del_k A_i\right)u^k\d s\delta x^i\right\}\\
+    &=\int\left\{mc\frac{\d u_i}{\d s}-\frac{e}{c}\left(\del_iA_k-\del_kA_i\right)u^k\right\}\delta x^i\d s.
+\end{align*}
+记\textbf{电磁场张量}为
+\[F_{ik}=\del_i A_k-\del_k A_i,\]
+则可以得到运动方程
+\[\boxed{\frac{e}{c}F_{ik}u^k=mc\frac{\d u_i}{\d s}.}\]\par 
+设
+\[\bo{E}=-\nabla\varphi-\frac{1}{c}\del_t\bo{A},\quad\bo{H}=\nabla\times\bo{A},\]
+(分别称为\textbf{电场}和\textbf{磁场}), 则有
+\[F_{ik}=\begin{bmatrix}0&E_x&E_y&E_z\\-E_x&0&-H_z&H_y\\-E_y&H_z&0&-H_x\\-E_z&-H_y&H_x&0\end{bmatrix},
+ F^{ik}=\begin{bmatrix}0&-E_x&-E_y&-E_z\\E_x&0&-H_z&H_y\\E_y&H_z&0&-H_x\\E_z&-H_y&H_x&0\end{bmatrix}.\]\par 
+写出上述运动方程的三维形式, 就有
+\[\boxed{\frac{\d\bo{p}}{\d t}=e\left(\bo{E}+\frac{\bo{v}}{c}\times\bo{H}\right).}\]
+
+\subsection{电磁场的作用量、场的拉格朗日方程}
+在\textbf{高斯单位制}下, 电磁场及其中粒子的作用量为
+\[\boxed{S=-\sum\int mc\d s-\frac{1}{c^2}\int A_iJ^i\d\Omega-\frac{1}{16\pi c}\int F^{ik}F_{ik}\d\Omega.}\]
+其拉格朗日量的密度为
+\[\mathcal{L}=-\frac{1}{c^2}A_iJ^i-\frac{1}{16\pi c}F^{ik}F_{ik}.\]\par
+一般地, 对于任意一种形式的场(不仅是电磁场), 设其拉格朗日密度为$\mathcal{L}$, 由一些量$q_{(n)}$(简写为$q$)所决定(对于电磁场, $q$就是$A^i$的分量). 则$\mathcal{L}$可以写为$q$和$\del_i q$的函数. 通过变分法可以得到
+\[\frac{\del\mathcal{L}}{\del q}-\frac{\del}{\del x^i}\frac{\del\mathcal{L}}{\del(\del_iq)}=0.\]
+
+\subsection{第一对麦克斯韦方程}
+第一对麦克斯韦方程可以直接从电磁场张量的定义$F_{ik}=\del_i A_k-\del_k A_i$得来:
+\[\boxed{e^{iklm}\del_k F_{lm}=0.}\Leftrightarrow\boxed{\del_iF_{kl}+\del_kF_{li}+\del_lF_{ik}=0.}\]
+这等价于三维形式的方程:
+\[\nabla\times\bo{E}=\frac{1}{c}\del_t\bo{H},\quad\nabla\cdot\bo{H}=0.\]
+\subsection{第二对麦克斯韦方程}
+第二对麦克斯韦方程描述的是电荷如何激发电磁场. 这可以通过在电磁场的作用量中, 变分势$A^i$而得来:
+\begin{align*}
+    \delta S&=-\frac{1}{c^2}\int\delta A_iJ^i\d\Omega-\frac{1}{16\pi c}\int\delta\left(F^{ik}F_{ik}\right)\d\Omega\\
+    &=-\frac{1}{c^2}\int J^i\delta A_i\d\Omega-\frac{1}{8\pi c}\int F^{ik}\delta\left(\del_iA_k-\del_kA_i\right)\d\Omega\\
+    &=-\frac{1}{c^2}\int J^i\delta A_i\d\Omega+\frac{1}{8\pi c}\int\left\{\del_iF^{ik}\delta A_k-\del_kF^{ik}\delta A_i\right\}\d\Omega\\
+    &=-\int\left\{\frac{1}{c^2}J^i+\frac{1}{4\pi c}\del_kF^{ik}\right\}\delta A_i\d\Omega\text{(对上式交换第二个积分第一项的$i,k$并用反对称性)}
+\end{align*}
+故有:
+\[\boxed{\del_kF^{ik}=\frac{4\pi}{c}J^i.}\]
+这等价于三维形式的方程:
+\[\nabla\cdot\bo{E}=4\pi\rho,\quad\nabla\times\bo{H}=\frac{4\pi}{c}\bo{J}+\frac{1}{c}\del_t\bo{E}.\]
+
+\subsection{能量与动量}
+由麦克斯韦方程组出发, 通过运算, 可以得到
+\[\del_t\left(\frac{E^2+H^2 }{8\pi}\right)+\bo{J}\cdot\bo{E}=-\nabla\cdot(\frac{c}{4\pi}\bo{E}\times\bo{H}).\]
+记\textbf{坡印廷矢量}为
+\[\bo{S}=\frac{c}{4\pi}\bo{E}\times\bo{H}.\]
+对上式在某一体积$V$内进行积分, 并且利用高斯定理, 注意到$\bo{J}\cdot\bo{E}$为动能密度对于时间的导数, 就有
+\[\del_t\left\{\int_{V}\frac{E^2+H^2}{8\pi}\d V+\mathcal{E}_{\mathrm{kin}}\right\}=-\oint_{\del V}\bo{S}\cdot\d\bo{f}.\]
+由此式可知, $\left(E^2+H^2\right)/8\pi$为电磁场的\textbf{能量密度}, $S$为能流密度.\par
+时空的平移对称性表现在场的拉格朗日函数不显含空间坐标, 即
+\[\del_i\mathcal{L}=\frac{\del\mathcal{L}}{\del q}\frac{\del q}{\del x^i}+\frac{\del\mathcal{L}}{\del(\del_kq)}\frac{\del(\del_kq)}{\del x^i}=\del_k\left(\frac{\del\mathcal{L}}{\del(\del_kq)}\right)\del_iq+\frac{\del\mathcal{L}}{\del(\del_kq)}\del_k(\del_iq)=\del_k\left(\frac{\del\mathcal{L}}{\del(\del_kq)}\del_iq\right).\]
+则有
+\[\del_k\left\{\frac{\del\mathcal{L}}{\del(\del_kq)}\del_iq-\delta_i^k\mathcal{L}\right\}=0.\]
+记\textbf{能量动量张量}为
+\[T_i^k=\frac{\del\mathcal{L}}{\del(\del_kq)}\del_iq-\delta_i^k\mathcal{L}.\]
+一般来说, 可以加上一个三阶张量的散度, 使得$T^{ik}$为对称张量:
+\[T^{ik}+\del_l\psi^{ikl},\quad\psi^{ikl}=-\psi^{ilk}.\]\par 
+能量动量张量的各分量的物理意义如下:
+\[T^{ik}=\begin{bmatrix}W&S_x/c&S_y/c&S_z/c\\S_x/c&-\sigma_{xx}&-\sigma_{xy}&-\sigma_{xz}\\S_y/c&-\sigma_{yx}&-\sigma_{yy}&-\sigma_{yz}\\S_z/c&-\sigma_{zx}&-\sigma_{zy}&-\sigma_{zz}\end{bmatrix}.\]
+其中, $W$为能量密度, $S_\alpha=cT^{0\alpha}$为坡印廷矢量即能流密度, $P_\alpha=T^{0\alpha}/c$为动量密度, $-\sigma_{\alpha\beta}$为动量流密度, $\sigma_{\alpha\beta}$为应力张量.
+
+\section{拉普拉斯方程}
+\subsection{球坐标}
+拉普拉斯算子:
+\[\nabla^2=\frac{1}{r^2}\del_r\left(r^2\del_r\right)+\frac{1}{r^2\sin\theta}\del_\theta\left(\sin\theta\del_\theta\right)+\frac{1}{r^2\sin^2\theta}\del_\phi^2.\]
+设欲求的函数$\phi(r,\theta,\phi)=R(r)Y(\theta,\phi)$, 则分离变量得到以下两个方程:
+\begin{align*}
+    &\del_r\left(r^2\del_rR\right)=l(l+1)R,\\
+    &\frac{1}{\sin\theta}\del_\theta\left(\sin\theta\del_\theta Y\right)+\frac{1}{\sin^2\theta}\del_\phi^2Y=-l(l+1)Y.
+\end{align*}
+第一个方程可以解出
+\[R(r)=A_lr^l+\frac{B_l}{r^{l+1}}.\]
+其中$A_l,B_l$为常数. 对第二个方程继续分离变量:$Y(\theta,\phi)=\Theta(\theta)\Phi(\phi)$. 则有
+\begin{align*}
+    &\del_\phi^2\Phi=-m^2\Phi,\\
+    &\del_\theta^2\Theta+\cot\theta\del_\theta\Theta+\left(l(l+1)-\frac{m^2}{\sin^2\theta}\right)\Theta=0.
+\end{align*}
+(因为$\Phi$是周期函数, 故$m\in\mathbb{Z}$.)第一个方程可以解出
+\[\Phi(\phi)=\e^{im\phi}.\]
+第二个方程的解为$P_l^m(\cos\theta)$, 称为\textbf{连带勒让德多项式}(此时要求$|m|\le l$). 若记$x=\cos\theta$, 则有
+\[(1-x^2)\frac{\d^2\Theta}{\d x^2}-2x\frac{\d\Theta}{\d x}+\left(l(l+1)-\frac{m^2}{1-x^2}\right)\Theta=0.\]\par
+故上述拉普拉斯方程的一个特解为
+\[\left(A_l r^l+\frac{B_l}{r^{l+1}}\right)Y_{lm}(\theta,\phi).\]
+其中$Y_{lm}$是(归一化的)\textbf{球谐函数}.
+
+\subsection{球谐函数与勒让德多项式}
+勒让德多项式可由以下母函数生成:
+\[\frac{1}{\sqrt{1-2tx+t^2}}=\sum_{l\ge0}t^lP_l(x).\]
+勒让德多项式是正交完备的函数系:
+\[\int_{-1}^1P_l(x)P_{l'}(x)\d x=\frac{2}{2l+1}\delta_{ll'},\quad \sum_{l\ge0}\frac{2l+1}{2}P_l(x)P_l(x')=\delta(x-x').\]
+球谐函数为
+\[Y_{lm}(\theta,\phi)=\sqrt{\frac{2l+1}{4\pi}\frac{(l-m)!}{(l+m)!}}P_l^{m}(\cos\theta),\quad Y_{l,-m}(\theta,\phi)=(-1)^mY^*_{lm}(\theta,\phi).\quad(0\le m\le l)\]
+其也为正交完备的函数系:
+\[\int Y_{lm}Y^*_{l'm'}\d o=\delta_{ll'}\delta_{mm'},\quad\sum_{l\ge 0,\ |m|\le l}Y_{lm}(\theta,\phi)Y^*_{lm}(\theta',\phi')=\delta(\cos\theta-\cos\theta')\delta(\phi-\phi').\]\par
+球谐函数的\textbf{加法定理}: 对于单位矢量$\bo{n}_1,\bo{n}_2$, 有
+\[P_l(\bo{n}_1\cdot\bo{n}_2)=\frac{4\pi}{2l+1}\sum_{-l\le m\le l}Y^*_{lm}(\bo   {n}_1)Y_{lm}(\bo{n}_2).\]
+因此, 对于两个矢量$\bo{r},\bo{r}'$, 满足$r'<r$, 则有
+\[\frac{1}{|\bo{r}-\bo{r}'|}=\frac{1}{r}\sum_{l\ge 0}\left(\frac{r'}{r}\right)^lP_l(\hat{\bo{r}}\cdot\hat{\bo{r}}')=\frac{1}{r}\sum_{l\ge0,\ |m|\le l}\frac{4\pi}{2l+1}\left(\frac{r'}{r}\right)^lY^*_{lm}(\hat{\bo{r}})Y_{lm}(\hat{\bo{r}}')\]
+\end{document}

@@ -1,0 +1,6 @@
+\beamer@sectionintoc {1}{\heiti 勾股定理}{2}{0}{1}
+\beamer@sectionintoc {2}{\heiti 勾股定理的若干证明}{3}{0}{2}
+\beamer@subsectionintoc {2}{1}{\kaishu 1. 毕达哥拉斯证}{3}{0}{2}
+\beamer@subsectionintoc {2}{2}{\kaishu 2. 射影定理证法}{4}{0}{2}
+\beamer@subsectionintoc {2}{3}{\kaishu 3. 张景中证法}{5}{0}{2}
+\beamer@subsectionintoc {2}{4}{\kaishu 4. 分块法}{6}{0}{2}

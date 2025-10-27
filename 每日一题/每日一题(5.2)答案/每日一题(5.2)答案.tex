@@ -1,0 +1,55 @@
+\documentclass[UTF8]{ctexart}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{cases}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{tikz}
+\setlength{\parindent}{0pt}
+\geometry{a4paper,scale=0.7}
+\title{每日一题(5.2)答案}
+\author{选题:门宇翎、李东宸\\答案制作:程昊一}
+\begin{document}
+\maketitle
+\hspace*{2em}\textbf{1.}{\CJKfamily{kai}若$n$为正整数,$2^n+1$为素数,求证:$n$为2的幂,即存在自然数$k$,使得$n=2^k$.\\(门宇翎供题)}\\
+\hspace*{2em}\textbf{分析}\quad 这道题与每日一题(5.1)中的第一题很类似,我们仍然采用反证法,但我们要考虑清楚“$n$为2的幂”的反面是什么.\\
+\hspace*{2em}\textbf{解}\quad 假设$n$不为2的幂,即存在一个大于1的奇数$n_1$,使得$n_1\mid n$.记$\dfrac{n}{n_1}=n_2$.
+那么, 
+\begin{align*}
+	2^n+1&=2^{n_1\times n_2}+1\\
+	&=(2^{n_2})^{n_1}+1\\
+	&=(2^{n_2}+1)[(2^{n_2})^{n_1-1}-(2^{n_2})^{n_1-2}+(2^{n_2})^{n_1-3}-\dots+1]
+\end{align*}
+在这里,我们把$2^n+1$分解成了大于1的两个数的乘积,所以$2^n+1$不是素数,与题目矛盾!\\
+\hspace*{2em}所以,假设不成立,即$n$为2的幂.\\
+\hspace*{2em}\textbf{注}\quad 我们利用了一个公式:
+\[a^n+1=(a+1)(a^{n-1}-a^{n-2}+a^{n-3}-\dots+1)\]
+其中$n$是奇数.\\
+\hspace*{2em}更一般地:
+\[a^n+b^n=(a+b)(a^{n-1}-a^{n-2}b+a^{n-3}b^2-a^{n-4}b^3)+\dots+b^{n-1}\]
+其中$n$是奇数.\\
+\hspace*{2em}\textbf{2.}{\CJKfamily{kai}将正七边形的七个顶点染红、蓝两色,证明必存在一个顶点均同色的等腰三角形.\\(李东宸供题)}\\
+\hspace*{2em}\textbf{解}\quad 我们设这个正七边形的七个顶点设为$A_1,A_2,\dots,A_7$.\\
+\begin{figure}[!ht]
+	\centering
+	\begin{tikzpicture}
+		\draw (0,0)--(2,0)--(3.247,1.5636)--(2.802,3.5136)--(1,4.3812)--(-0.802,3.5136)--(-1.427,1.5636)--cycle;
+		\node at (0,0) [below]{\large $A_1$};
+		\node at (2,0) [below]{\large $A_2$};
+		\node at (3.247,1.5636) [right]{\large $A_3$};
+		\node at (2.802,3.5136) [above]{\large $A_4$};
+		\node at (1,4.3812) [above]{\large $A_5$};
+		\node at (-0.802,3.5136) [above]{\large $A_6$};
+		\node at (-1.427,1.5636) [left]{\large $A_7$};
+	\end{tikzpicture}
+
+\end{figure}
+\hspace*{2em}由于抽屉原理,对于某种颜色,至少有4个点被染成了这种颜色.不妨设有至少4个红色的点,且$A_1$被染成了红色.\\
+\hspace*{2em}如果四个红点中有3个连续的,那么命题成立.如果没有3个连续的,那么必定会有2个红点在同一条边上,我们不妨设$A_1$和$A_2$均为红色.我们按$A_5$的颜色进行分类讨论.\\
+\begin{itemize}
+	\item[(1)]若$ A_5 $为红色,则$\bigtriangleup A_1A_2A_5$为等腰三角形,而且$ A_1,A_2,A_5 $都为红色,命题成立.
+	\item[(2)]若$ A_5 $为蓝色,因为红点中没有三个连续的,所以$ A_7,A_3 $均不是红色,即$ A_7,A_3 $都是蓝色,此时$ \bigtriangleup A_3A_5A_7 $为符合要求的等腰三角形,命题成立.
+\end{itemize}
+综上:命题得证.
+
+\end{document}

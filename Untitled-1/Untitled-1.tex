@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage{fancyhdr,tikz,geometry,fontspec}
+\usepackage[UTF8]{ctex}
+\geometry{a4paper,scale=0.7}
+\pagestyle{fancy}
+\fancyfoot[L]{
+\begin{tikzpicture}
+	\fill [color=cyan!70] (0,0) circle (0.5);
+	\fill [color=cyan!50] (1,0) circle (0.5);
+	\fill [color=cyan!30] (2,0) circle (0.5);
+	\node at (0,0) {\textbf{\thepage}};
+\end{tikzpicture}
+}
+\fancyfoot[C]{}
+
+
+\title{aaa}
+\author{BBB}
+
+\begin{document}
+\maketitle
+This is the first page.
+\newpage
+This is the second page.
+\newpage
+This is the third page.
+\newpage
+This is the forth page.
+\end{document}

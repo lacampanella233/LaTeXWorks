@@ -1,0 +1,57 @@
+\documentclass[UTF8]{ctexart}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{geometry}
+\geometry{a4paper,scale=0.7}
+
+\title{每日一题(2.1)答案}
+\author{选题:门宇翎、李东宸\\答案制作:程昊一}
+\begin{document}
+\maketitle
+\begin{enumerate}
+\item \textbf{在实数范围内解方程:
+\[\sqrt{x}+\sqrt{y-1}+\sqrt{z-2}=\frac{1}{2}(x+y+z)\]}
+\hspace*{2em}\textbf{分析}\quad 这是一个无理方程,我们一般的解决方式是\textbf{化“无理”为“有理”},方法有换元、配方、主动平方、因式分解等.注意:在解完方程后,我们要注意检验方程的解是否为\textbf{增根}(即使原方程的根号下部分小于零的解).\\
+\hspace*{2em}对于这道题,我们选择配方.\\
+\hspace*{2em}\textbf{解}\quad 将原式两边同时乘2,得到
+\[2\sqrt{x}+2\sqrt{y-1}+2\sqrt{z-2}=x+y+z\]
+移项,得
+\[(x-2\sqrt{x})+(y-2\sqrt{y-1})+(z-2\sqrt{z-2})=0\]
+整理,得
+\[(x-2\sqrt{x}+1)+(y-1-2\sqrt{y-1}+1)+(z-2-2\sqrt{z-2}+1)=0\]
+\hspace*{2em}对于每一项,我们使用公式$a^2\pm 2ab+b^2=(a\pm b)^2$进行配方,得
+\[(\sqrt{x}-1)^2+(\sqrt{y-1}-1)^2+(\sqrt{z-2}-1)^2=0\]
+\hspace*{2em}由于平方数的非负性,我们得到
+\[\begin{cases}
+\sqrt{x}-1=0\\\sqrt{y-1}-1=0\\\sqrt{z-2}-1=0\\
+\end{cases}\]
+于是立得
+\[\begin{cases}
+x=1\\y=2\\z=3\\
+\end{cases}\]
+
+\hspace*{2em}\textbf{注}\quad 在这道题中,我们选择了配方.无理方程化为有理方程的办法比较多,对于什么时候用什么方法,每种方法适用于什么情况,这都需要我们多做题,才能找到其中的道理.\\
+
+%-------%
+\item \textbf{已知$a,b,c$为一个三角形的三边长,且满足
+\[a^2+b^2+c^2+338=10a+24b+26c\]
+试判断此三角形的形状.}\\
+\hspace*{2em}\textbf{分析}\quad 在这里,我们仍然使用配方,然后再利用几何知识找出三角形的形状(锐角三角形、直角三角形、钝角三角形、等腰(边)三角形等).\\
+\hspace*{2em}\textbf{解}\quad 将等式移项,得
+\[(a^2-2\times 5a)+(b^2-2\times 12b)+(c^2-2\times 13c)+338=0\]
+注意到$338=5^2+12^2+13^2$,所以将原式化为
+\[(a^2-2\times 5a+5^2)+(b^2-2\times 12b)+(c^2-2\times 13c)=0\]
+即
+\[(a-5)^2+(b-12)^2+(c-13)^2=0\]
+\hspace*{2em}由于平方的非负性,我们得到
+\[\begin{cases}
+(a-5)^2=0\\(b-12)^2=0\\(c-13)^2=0\\
+\end{cases}\]
+即
+\[\begin{cases}
+a=5\\b=12\\c=13\\
+\end{cases}\]
+\hspace*{2em}又因为$5^2+12^2=13^2$,所以此三角形为直角三角形.\\
+\hspace*{2em}\textbf{注}\quad 最后一步利用了勾股定理的逆定理,证明很简单,我们在此就不赘述.
+\end{enumerate}
+\end{document}

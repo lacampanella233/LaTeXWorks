@@ -1,0 +1,78 @@
+\documentclass{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath,mathtools,enumitem,geometry,fancyhdr}
+\pagenumbering{arabic}
+\pagestyle{fancy}
+\fancyhead[L]{励志AQ班}
+\fancyhead[R]{每日一题(7.1)答案}
+\fancyfoot[C]{\thepage}
+\renewcommand{\footrulewidth}{0.5pt}
+\geometry{a4paper,scale=0.7}
+
+\title{每日一题(7.1)答案}
+\author{选题:程昊一、李衡岳\\答案制作:程昊一}
+\begin{document}
+\maketitle
+
+\textbf{1.}{\CJKfamily{kai}
+	证明:若$a,b>0,a,b\neq 1$,则
+	\begin{itemize}
+		\item[(1)]$\log_ax+\log_ay=\log_axy$\quad$(x,y>0)$;
+		\item[(2)]$\log_ax^b=b\log_ax$\quad$(x>0)$;
+		\item[(3)]$\log_ax=\dfrac{\log_bx}{\log_ba}$\quad$(x>0)$;
+		\item[(4)]$\log_{a^x}b^y=\dfrac{y}{x}\log_ab$\quad$(x\neq 0)$.
+	\end{itemize}
+	(程昊一供题)
+}
+\par\textbf{分析}\quad 事实上,对数是指数的逆运算.如果我们对对数不熟悉,可以把对数转换为指数处理.
+\par\textbf{解}\quad\textbf{(1).}设$\log_ax=m,\log_ay=n$,则根据指数的定义,我们有
+\[\begin{cases}
+a^m=x,\\a^n=y.
+\end{cases}\]
+两式相乘,有
+\[a^{m+n}=xy,\]
+即\[m+n=\log_axy,\]
+所以\[\log_ax+\log_ay=\log_axy.\]
+\par\textbf{(2).}设$\log_ax=m$,则
+\[a^m=x\]
+等式两边同时$b$次方,得
+\[a^bm=x^,b\]
+所以
+\[bm=\log_ax^b,\]
+即
+\[\log_ax^b=b\log_ax.\]
+\par\textbf{(3).}设$\log_ax=m$,则
+\[a^m=x\]
+等式两边同时以$b$为底进行底数运算,得到
+\[m\log_ba=\log_bx,\]
+即
+\[m=\frac{\log_bx}{\log_ba},\]
+所以
+\[\log_ax=\dfrac{\log_bx}{\log_ba}.\]
+这个公式被称为对数的\textbf{换底公式}.
+\par\textbf{(4).}任取一个正数$c$,使得$c\neq 1$,那么
+\begin{align*}
+\log_{a^x}b^y&=\frac{\log_cb^y}{\log_ca^x}(\text{换底公式})\\
+&=\frac{y\log_cb}{x\log_ca}(\text{公式\textbf{(2)}})\\
+&=\frac{y}{x}\cdot\frac{\log_cb}{\log_ca}\\
+&=\frac{y}{x}\log_ab(\text{换底公式的逆用}).
+\end{align*}
+\par 至此,我们将4个命题证明完毕.\\
+
+\par\textbf{2.}{\CJKfamily{kai}
+	有$n$个人,每个人的生日是完全随机且互不相关的.当$n$不小于多少时,存在两个生日相同的人的概率不小于$\dfrac{1}{2}$(假设一年有 365天)?\\
+	(李衡岳供题)
+}
+\par\textbf{解}\quad %22:0.4757; 23:0.5073
+我们从反面考虑,即考虑任意两个人的生日都不重复的概率.
+\par 我们先\textbf{只}考虑第一个人.他(她)的生日是任意的,且没有其他的人,所以他(她)与其他人(事实上此时没有其他人)生日不重合的概率为1.
+\par 我们再考虑第二个人.他(她)的生日是任意的,如果他(她)的生日为除去第一个人的生日的余下的364天,那么两个人的生日就不会重合,概率为$\dfrac{364}{365}$.
+\par 我们再考虑第三个人,他(她)的生日也是任意的,且我们不希望与前两个人重合,概率(这三个人的生日均不重合的概率)为$\dfrac{364}{365} \times\dfrac{363}{365}$.
+\par 同理,前4个人的生日互不重合的概率为$\dfrac{364}{365}\times \dfrac{363}{365}\times\dfrac{362}{365}$.
+\par 那么,这$n$个人生日互不重合的概率为$\dfrac{364}{365}\times \dfrac{363}{365}\times\cdots\times\dfrac{366-n}{365}$,这$n$个人中存在两个生日相同的人的概率为
+\begin{equation}\label{equ:gailv}
+1-\dfrac{364}{365}\times\dfrac{363}{365}\times\cdots\times\dfrac{366-n}{365}.	
+\end{equation}
+\par 我们目前没有找到估算(\ref{equ:gailv})式的简单的初等方法.我们利用计算器得知,$n=23$时,这个式子的值约为0.4757;当$n=24$时,这个式子的值约为0.5073.当$n$增大时,这个式子的值也会越来越大.
+\par 综上:当$n$不小于24时,存在两个生日相同的人的概率不小于$\dfrac{1}{2}$.
+\end{document}

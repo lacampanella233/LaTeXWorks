@@ -1,0 +1,225 @@
+\headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
+\headcommand {\beamer@framepages {1}{1}}
+\headcommand {\slideentry {0}{0}{2}{2/2}{}{0}}
+\headcommand {\beamer@framepages {2}{2}}
+\headcommand {\partentry {实数与极限}{1}}
+\headcommand {\beamer@partpages {1}{2}}
+\headcommand {\beamer@sectionpages {1}{2}}
+\headcommand {\beamer@subsectionpages {1}{2}}
+\headcommand {\slideentry {0}{0}{3}{3/3}{}{1}}
+\headcommand {\beamer@framepages {3}{3}}
+\headcommand {\slideentry {0}{0}{4}{4/4}{}{1}}
+\headcommand {\beamer@framepages {4}{4}}
+\headcommand {\beamer@sectionpages {3}{4}}
+\headcommand {\beamer@subsectionpages {3}{4}}
+\headcommand {\sectionentry {1}{\heiti 基础知识}{5}{\heiti 基础知识}{1}}
+\headcommand {\beamer@subsectionpages {5}{4}}
+\headcommand {\beamer@subsectionentry {1}{1}{1}{5}{\kaishu 基础数学与逻辑}}
+\headcommand {\slideentry {1}{1}{1}{5/5}{\kaishu 基础数学与逻辑}{1}}
+\headcommand {\beamer@framepages {5}{5}}
+\headcommand {\slideentry {1}{1}{2}{6/6}{\kaishu 基础数学与逻辑}{1}}
+\headcommand {\beamer@framepages {6}{6}}
+\headcommand {\beamer@subsectionpages {5}{6}}
+\headcommand {\beamer@subsectionentry {1}{1}{2}{7}{\kaishu 集合论}}
+\headcommand {\slideentry {1}{2}{1}{7/7}{\kaishu 集合论}{1}}
+\headcommand {\beamer@framepages {7}{7}}
+\headcommand {\slideentry {1}{2}{2}{8/8}{\kaishu 集合论}{1}}
+\headcommand {\beamer@framepages {8}{8}}
+\headcommand {\slideentry {1}{2}{3}{9/9}{\kaishu 集合论}{1}}
+\headcommand {\beamer@framepages {9}{9}}
+\headcommand {\beamer@sectionpages {5}{9}}
+\headcommand {\beamer@subsectionpages {7}{9}}
+\headcommand {\sectionentry {2}{\heiti 有理数的缺陷}{10}{\heiti 有理数的缺陷}{1}}
+\headcommand {\beamer@subsectionpages {10}{9}}
+\headcommand {\beamer@subsectionentry {1}{2}{1}{10}{\kaishu 整数与有理数的定义}}
+\headcommand {\slideentry {2}{1}{1}{10/10}{\kaishu 整数与有理数的定义}{1}}
+\headcommand {\beamer@framepages {10}{10}}
+\headcommand {\slideentry {2}{1}{2}{11/11}{\kaishu 整数与有理数的定义}{1}}
+\headcommand {\beamer@framepages {11}{11}}
+\headcommand {\slideentry {2}{1}{3}{12/12}{\kaishu 整数与有理数的定义}{1}}
+\headcommand {\beamer@framepages {12}{12}}
+\headcommand {\beamer@subsectionpages {10}{12}}
+\headcommand {\beamer@subsectionentry {1}{2}{2}{13}{\kaishu 上界与上确界}}
+\headcommand {\slideentry {2}{2}{1}{13/13}{\kaishu 上界与上确界}{1}}
+\headcommand {\beamer@framepages {13}{13}}
+\headcommand {\slideentry {2}{2}{2}{14/14}{\kaishu 上界与上确界}{1}}
+\headcommand {\beamer@framepages {14}{14}}
+\headcommand {\slideentry {2}{2}{3}{15/15}{\kaishu 上界与上确界}{1}}
+\headcommand {\beamer@framepages {15}{15}}
+\headcommand {\beamer@subsectionpages {13}{15}}
+\headcommand {\beamer@subsectionentry {1}{2}{3}{16}{\kaishu 有理数的缺陷}}
+\headcommand {\slideentry {2}{3}{1}{16/16}{\kaishu 有理数的缺陷}{1}}
+\headcommand {\beamer@framepages {16}{16}}
+\headcommand {\slideentry {2}{3}{2}{17/17}{\kaishu 有理数的缺陷}{1}}
+\headcommand {\beamer@framepages {17}{17}}
+\headcommand {\beamer@sectionpages {10}{17}}
+\headcommand {\beamer@subsectionpages {16}{17}}
+\headcommand {\sectionentry {3}{\heiti 实数的最小上界性}{18}{\heiti 实数的最小上界性}{1}}
+\headcommand {\beamer@subsectionpages {18}{17}}
+\headcommand {\beamer@subsectionentry {1}{3}{1}{18}{\kaishu 域}}
+\headcommand {\slideentry {3}{1}{1}{18/18}{\kaishu 域}{1}}
+\headcommand {\beamer@framepages {18}{18}}
+\headcommand {\slideentry {3}{1}{2}{19/19}{\kaishu 域}{1}}
+\headcommand {\beamer@framepages {19}{19}}
+\headcommand {\beamer@subsectionpages {18}{19}}
+\headcommand {\beamer@subsectionentry {1}{3}{2}{20}{\kaishu 实数域的定义}}
+\headcommand {\slideentry {3}{2}{1}{20/20}{\kaishu 实数域的定义}{1}}
+\headcommand {\beamer@framepages {20}{20}}
+\headcommand {\beamer@sectionpages {18}{20}}
+\headcommand {\beamer@subsectionpages {20}{20}}
+\headcommand {\sectionentry {4}{\heiti 序列极限}{21}{\heiti 序列极限}{1}}
+\headcommand {\beamer@subsectionpages {21}{20}}
+\headcommand {\beamer@subsectionentry {1}{4}{1}{21}{\kaishu 序列的定义}}
+\headcommand {\slideentry {4}{1}{1}{21/21}{\kaishu 序列的定义}{1}}
+\headcommand {\beamer@framepages {21}{21}}
+\headcommand {\beamer@subsectionpages {21}{21}}
+\headcommand {\beamer@subsectionentry {1}{4}{2}{22}{\kaishu 收敛与序列极限}}
+\headcommand {\slideentry {4}{2}{1}{22/22}{\kaishu 收敛与序列极限}{1}}
+\headcommand {\beamer@framepages {22}{22}}
+\headcommand {\beamer@sectionpages {21}{22}}
+\headcommand {\beamer@subsectionpages {22}{22}}
+\headcommand {\sectionentry {5}{\heiti 单调有界序列的极限}{23}{\heiti 单调有界序列的极限}{1}}
+\headcommand {\beamer@subsectionpages {23}{22}}
+\headcommand {\beamer@subsectionentry {1}{5}{1}{23}{\kaishu 单调序列}}
+\headcommand {\slideentry {5}{1}{1}{23/23}{\kaishu 单调序列}{1}}
+\headcommand {\beamer@framepages {23}{23}}
+\headcommand {\beamer@subsectionpages {23}{23}}
+\headcommand {\beamer@subsectionentry {1}{5}{2}{24}{\kaishu 单调有界序列的极限}}
+\headcommand {\slideentry {5}{2}{1}{24/24}{\kaishu 单调有界序列的极限}{1}}
+\headcommand {\beamer@framepages {24}{24}}
+\headcommand {\slideentry {5}{2}{2}{25/25}{\kaishu 单调有界序列的极限}{1}}
+\headcommand {\beamer@framepages {25}{25}}
+\headcommand {\partentry {自然底数$\mathrm {e}$}{2}}
+\headcommand {\beamer@partpages {3}{25}}
+\headcommand {\beamer@sectionpages {23}{25}}
+\headcommand {\beamer@subsectionpages {24}{25}}
+\headcommand {\slideentry {5}{0}{3}{26/26}{}{2}}
+\headcommand {\beamer@framepages {26}{26}}
+\headcommand {\slideentry {5}{0}{4}{27/27}{}{2}}
+\headcommand {\beamer@framepages {27}{27}}
+\headcommand {\beamer@sectionpages {26}{27}}
+\headcommand {\beamer@subsectionpages {26}{27}}
+\headcommand {\sectionentry {6}{\heiti 定义与概述}{28}{\heiti 定义与概述}{2}}
+\headcommand {\slideentry {6}{0}{1}{28/28}{}{2}}
+\headcommand {\beamer@framepages {28}{28}}
+\headcommand {\slideentry {6}{0}{2}{29/29}{}{2}}
+\headcommand {\beamer@framepages {29}{29}}
+\headcommand {\slideentry {6}{0}{3}{30/30}{}{2}}
+\headcommand {\beamer@framepages {30}{30}}
+\headcommand {\slideentry {6}{0}{4}{31/31}{}{2}}
+\headcommand {\beamer@framepages {31}{31}}
+\headcommand {\slideentry {6}{0}{5}{32/32}{}{2}}
+\headcommand {\beamer@framepages {32}{32}}
+\headcommand {\beamer@sectionpages {28}{32}}
+\headcommand {\beamer@subsectionpages {28}{32}}
+\headcommand {\sectionentry {7}{\heiti 关于$\mathrm {e}$的不等式}{33}{\heiti 关于$\mathrm {e}$的不等式}{2}}
+\headcommand {\beamer@subsectionpages {33}{32}}
+\headcommand {\beamer@subsectionentry {2}{7}{1}{33}{\kaishu 两个不同的序列}}
+\headcommand {\slideentry {7}{1}{1}{33/33}{\kaishu 两个不同的序列}{2}}
+\headcommand {\beamer@framepages {33}{33}}
+\headcommand {\slideentry {7}{1}{2}{34/34}{\kaishu 两个不同的序列}{2}}
+\headcommand {\beamer@framepages {34}{34}}
+\headcommand {\slideentry {7}{1}{3}{35/35}{\kaishu 两个不同的序列}{2}}
+\headcommand {\beamer@framepages {35}{35}}
+\headcommand {\slideentry {7}{1}{4}{36/36}{\kaishu 两个不同的序列}{2}}
+\headcommand {\beamer@framepages {36}{36}}
+\headcommand {\beamer@subsectionpages {33}{36}}
+\headcommand {\beamer@subsectionentry {2}{7}{2}{37}{\kaishu $\mathrm {e}$与调和级数}}
+\headcommand {\slideentry {7}{2}{1}{37/37}{\kaishu $\mathrm {e}$与调和级数}{2}}
+\headcommand {\beamer@framepages {37}{37}}
+\headcommand {\slideentry {7}{2}{2}{38/38}{\kaishu $\mathrm {e}$与调和级数}{2}}
+\headcommand {\beamer@framepages {38}{38}}
+\headcommand {\slideentry {7}{2}{3}{39/39}{\kaishu $\mathrm {e}$与调和级数}{2}}
+\headcommand {\beamer@framepages {39}{39}}
+\headcommand {\slideentry {7}{2}{4}{40/40}{\kaishu $\mathrm {e}$与调和级数}{2}}
+\headcommand {\beamer@framepages {40}{40}}
+\headcommand {\partentry {均值不等式}{3}}
+\headcommand {\beamer@partpages {26}{40}}
+\headcommand {\beamer@sectionpages {33}{40}}
+\headcommand {\beamer@subsectionpages {37}{40}}
+\headcommand {\slideentry {7}{0}{5}{41/41}{}{3}}
+\headcommand {\beamer@framepages {41}{41}}
+\headcommand {\slideentry {7}{0}{6}{42/42}{}{3}}
+\headcommand {\beamer@framepages {42}{42}}
+\headcommand {\beamer@sectionpages {41}{42}}
+\headcommand {\beamer@subsectionpages {41}{42}}
+\headcommand {\sectionentry {8}{\heiti 概述}{43}{\heiti 概述}{3}}
+\headcommand {\slideentry {8}{0}{1}{43/43}{}{3}}
+\headcommand {\beamer@framepages {43}{43}}
+\headcommand {\slideentry {8}{0}{2}{44/44}{}{3}}
+\headcommand {\beamer@framepages {44}{44}}
+\headcommand {\slideentry {8}{0}{3}{45/45}{}{3}}
+\headcommand {\beamer@framepages {45}{45}}
+\headcommand {\beamer@sectionpages {43}{45}}
+\headcommand {\beamer@subsectionpages {43}{45}}
+\headcommand {\sectionentry {9}{\heiti 证明选讲}{46}{\heiti 证明选讲}{3}}
+\headcommand {\beamer@subsectionpages {46}{45}}
+\headcommand {\beamer@subsectionentry {3}{9}{1}{46}{\kaishu 调整法}}
+\headcommand {\slideentry {9}{1}{1}{46/46}{\kaishu 调整法}{3}}
+\headcommand {\beamer@framepages {46}{46}}
+\headcommand {\slideentry {9}{1}{2}{47/47}{\kaishu 调整法}{3}}
+\headcommand {\beamer@framepages {47}{47}}
+\headcommand {\slideentry {9}{1}{3}{48/48}{\kaishu 调整法}{3}}
+\headcommand {\beamer@framepages {48}{48}}
+\headcommand {\slideentry {9}{1}{4}{49/49}{\kaishu 调整法}{3}}
+\headcommand {\beamer@framepages {49}{49}}
+\headcommand {\slideentry {9}{1}{5}{50/50}{\kaishu 调整法}{3}}
+\headcommand {\beamer@framepages {50}{50}}
+\headcommand {\slideentry {9}{1}{6}{51/51}{\kaishu 调整法}{3}}
+\headcommand {\beamer@framepages {51}{51}}
+\headcommand {\beamer@subsectionpages {46}{51}}
+\headcommand {\beamer@subsectionentry {3}{9}{2}{52}{\kaishu 反向归纳法}}
+\headcommand {\slideentry {9}{2}{1}{52/52}{\kaishu 反向归纳法}{3}}
+\headcommand {\beamer@framepages {52}{52}}
+\headcommand {\slideentry {9}{2}{2}{53/53}{\kaishu 反向归纳法}{3}}
+\headcommand {\beamer@framepages {53}{53}}
+\headcommand {\slideentry {9}{2}{3}{54/54}{\kaishu 反向归纳法}{3}}
+\headcommand {\beamer@framepages {54}{54}}
+\headcommand {\partentry {$\mathrm {e}$与均值不等式的应用}{4}}
+\headcommand {\beamer@partpages {41}{54}}
+\headcommand {\beamer@sectionpages {46}{54}}
+\headcommand {\beamer@subsectionpages {52}{54}}
+\headcommand {\slideentry {9}{0}{4}{55/55}{}{4}}
+\headcommand {\beamer@framepages {55}{55}}
+\headcommand {\slideentry {9}{0}{5}{56/56}{}{4}}
+\headcommand {\beamer@framepages {56}{56}}
+\headcommand {\beamer@sectionpages {55}{56}}
+\headcommand {\beamer@subsectionpages {55}{56}}
+\headcommand {\sectionentry {10}{\heiti 用均值不等式证明有关$\mathrm {e}$的不等式}{57}{\heiti 用均值不等式证明有关$\mathrm {e}$的不等式}{4}}
+\headcommand {\slideentry {10}{0}{1}{57/57}{}{4}}
+\headcommand {\beamer@framepages {57}{57}}
+\headcommand {\slideentry {10}{0}{2}{58/58}{}{4}}
+\headcommand {\beamer@framepages {58}{58}}
+\headcommand {\slideentry {10}{0}{3}{59/59}{}{4}}
+\headcommand {\beamer@framepages {59}{59}}
+\headcommand {\slideentry {10}{0}{4}{60/60}{}{4}}
+\headcommand {\beamer@framepages {60}{60}}
+\headcommand {\slideentry {10}{0}{5}{61/61}{}{4}}
+\headcommand {\beamer@framepages {61}{61}}
+\headcommand {\beamer@sectionpages {57}{61}}
+\headcommand {\beamer@subsectionpages {57}{61}}
+\headcommand {\sectionentry {11}{\heiti 正数的拆分}{62}{\heiti 正数的拆分}{4}}
+\headcommand {\slideentry {11}{0}{1}{62/62}{}{4}}
+\headcommand {\beamer@framepages {62}{62}}
+\headcommand {\slideentry {11}{0}{2}{63/63}{}{4}}
+\headcommand {\beamer@framepages {63}{63}}
+\headcommand {\slideentry {11}{0}{3}{64/64}{}{4}}
+\headcommand {\beamer@framepages {64}{64}}
+\headcommand {\slideentry {11}{0}{4}{65/65}{}{4}}
+\headcommand {\beamer@framepages {65}{65}}
+\headcommand {\slideentry {11}{0}{5}{66/66}{}{4}}
+\headcommand {\beamer@framepages {66}{66}}
+\headcommand {\beamer@sectionpages {62}{66}}
+\headcommand {\beamer@subsectionpages {62}{66}}
+\headcommand {\sectionentry {12}{\heiti 课后练习}{67}{\heiti 课后练习}{4}}
+\headcommand {\slideentry {12}{0}{1}{67/67}{}{4}}
+\headcommand {\beamer@framepages {67}{67}}
+\headcommand {\slideentry {12}{0}{2}{68/68}{}{4}}
+\headcommand {\beamer@framepages {68}{68}}
+\headcommand {\slideentry {12}{0}{3}{69/69}{}{4}}
+\headcommand {\beamer@framepages {69}{69}}
+\headcommand {\beamer@partpages {55}{69}}
+\headcommand {\beamer@subsectionpages {67}{69}}
+\headcommand {\beamer@sectionpages {67}{69}}
+\headcommand {\beamer@documentpages {69}}
+\headcommand {\gdef \inserttotalframenumber {69}}

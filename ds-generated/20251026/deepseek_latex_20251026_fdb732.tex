@@ -1,0 +1,130 @@
+\documentclass[tikz,border=5pt]{standalone}
+\usetikzlibrary{arrows.meta, decorations.markings}
+
+\begin{document}
+\begin{tikzpicture}[
+    vertex/.style={circle, draw, fill=white, inner sep=1.5pt, minimum size=0.6cm},
+    edge/.style={
+        semithick,
+        postaction={
+            decorate,
+            decoration={
+                markings,
+                mark=at position 0.5 with {\arrow{Stealth[scale=0.7]}}
+            }
+        }
+    }
+]
+
+% 放置顶点
+\foreach \i in {1,...,30} {
+    \node[vertex] (v\i) at (90-12*\i:8cm) {\i};
+}
+
+% 绘制边，按终点的gcd染色
+\foreach \x in {1,...,30} {
+    \pgfmathsetmacro{\d}{gcd(\x,30)}
+    \pgfmathsetmacro{\modulus}{30/\d}
+    \foreach \y in {1,...,30} {
+        \ifnum \y=\x
+            % skip self
+        \else
+            \pgfmathtruncatemacro{\remainder}{mod(\y-1, \modulus)}
+            \ifnum \remainder=0
+                \pgfmathtruncatemacro{\ygcd}{gcd(\y,30)}
+                \pgfmathsetmacro{\bendamt}{8}
+                \pgfmathsetmacro{\benddir}{rnd>0.5 ? "left" : "right"}
+                
+                % 根据ygcd值选择颜色和线型
+                \ifnum\ygcd=1
+                    \def\edgecolor{red!70!black}
+                    \def\edgestyle{solid}
+                \fi
+                \ifnum\ygcd=2
+                    \def\edgecolor{blue!70!black}
+                    \def\edgestyle{solid}
+                \fi
+                \ifnum\ygcd=3
+                    \def\edgecolor{green!70!black}
+                    \def\edgestyle{solid}
+                \fi
+                \ifnum\ygcd=5
+                    \def\edgecolor{orange!70!black}
+                    \def\edgestyle{solid}
+                \fi
+                \ifnum\ygcd=6
+                    \def\edgecolor{purple!70!black}
+                    \def\edgestyle{solid}
+                \fi
+                \ifnum\ygcd=10
+                    \def\edgecolor{brown!70!black}
+                    \def\edgestyle{solid}
+                \fi
+                \ifnum\ygcd=15
+                    \def\edgecolor{cyan!70!black}
+                    \def\edgestyle{solid}
+                \fi
+                \ifnum\ygcd=30
+                    \def\edgecolor{coral!70!black}
+                    \def\edgestyle{solid}
+                \fi
+                
+                \if\benddir left
+                    \draw[edge, \edgestyle, draw=\edgecolor] 
+                        (v\x) to [bend left=\bendamt] (v\y);
+                \else
+                    \draw[edge, \edgestyle, draw=\edgecolor] 
+                        (v\x) to [bend right=\bendamt] (v\y);
+                \fi
+            \fi
+        \fi
+    }
+}
+
+% 添加图例
+\begin{scope}[shift={(-2,-12)}]
+    \node[anchor=north west] at (0,0) {\textbf{Sample (according to terminal gcd)}};
+    
+    % 可能的gcd值: 1,2,3,5,6,10,15,30
+    \foreach \gcdvalue/\ypos in {30/0.5, 15/1.0, 10/1.5, 6/2.0, 5/2.5, 3/3.0, 2/3.5, 1/4.0} {
+        \ifnum\gcdvalue=1
+            \def\legendcolor{red!70!black}
+            \def\legendstyle{solid}
+        \fi
+        \ifnum\gcdvalue=2
+            \def\legendcolor{blue!70!black}
+            \def\legendstyle{solid}
+        \fi
+        \ifnum\gcdvalue=3
+            \def\legendcolor{green!70!black}
+            \def\legendstyle{solid}
+        \fi
+        \ifnum\gcdvalue=5
+            \def\legendcolor{orange!70!black}
+            \def\legendstyle{solid}
+        \fi
+        \ifnum\gcdvalue=6
+            \def\legendcolor{purple!70!black}
+            \def\legendstyle{solid}
+        \fi
+        \ifnum\gcdvalue=10
+            \def\legendcolor{brown!70!black}
+            \def\legendstyle{solid}
+        \fi
+        \ifnum\gcdvalue=15
+            \def\legendcolor{cyan!70!black}
+            \def\legendstyle{solid}
+        \fi
+        \ifnum\gcdvalue=30
+            \def\legendcolor{coral!70!black}
+            \def\legendstyle{solid}
+        \fi
+        
+        \draw[\legendstyle, draw=\legendcolor, semithick] 
+            (0,-\ypos) -- (0.5,-\ypos) 
+            node[right, black] {gcd = \gcdvalue};
+    }
+\end{scope}
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,99 @@
+\documentclass{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath,mathtools,geometry,amssymb,fancyhdr}
+\geometry{a4paper,scale=0.8}
+\fancyfoot{}
+
+\begin{document}
+
+\vspace*{3.2cm}
+{\huge\hspace*{-1.5em} \textit{Homework\quad 2}}\par
+\vspace{1.5cm}
+\textbf{问题 1.} 证明 Lucas 定理. 
+
+
+\textbf{问题 2.} 给出(可数)无限多个函数$f_i:\mathbb{N}\to\mathbb{N}^+$, 使得任两个都不
+
+可比较, 即对任意$i\neq j,f_i\notin O(f_j).$
+
+\textbf{问题 3}. 找出并{\kaishu 严格}证明下列函数$f$的量级：
+
+\quad(a) $f(n)=1^{10}+2^{10}+\cdots+n^{10}$;
+
+\quad(b) $f(n)=1+\frac12+\frac13+\cdots+\frac1{n}$;
+
+\quad(c)令$r(k)$为$k$的约数的个数. $f(n)=r(1)+r(2)+\cdots+r(n);$
+
+\quad(d)令$\phi(k)$为$[k]$中和$k$互质的数的个数, $f(n)=\phi(1)+\phi(2)+$
+
+$\cdots+\phi(n);$
+
+\quad(e) $f(1)=1$,并且对任意$n>1$,
+$$f(n)=2f(\lfloor n/2\rfloor)+n.\hspace{5cm}$$
+
+\textbf{问题 4.} 证明：对任意自然数 $n$ 和 $m$
+$$\sum_{k=0}^{m}(-1)^{k}\binom{n}{k}=(-1)^{m}\binom{n-1}{m}.\hspace{5cm}$$
+
+\textbf{问题 5.} 给定正整数 $m,n(2\leq n\leq m)$. 设$a_1,a_2,\ldots,a_m$是
+
+$1,2,\ldots,m$中任取 $n$ 个互不相同的数构成的一个排列. 如果
+
+存在$k\in\{1,2,\ldots,n\}$使得$a_k+k$为奇数, 或者存在整数$k,l$
+
+$(1\leq k<l\leq n)$,使得$a_k>a_l$,则称$a_1,a_2,\ldots,a_n$是一个好排列. 
+
+试确定所有好排列的个数.
+
+\textbf{问题 6.} 对任意一个 0 到$2^\mathrm{2020}-1$之间的整数$x$,定义
+\[f(x)=\{i:0\leq i<2020,x\text{的二进制表示的第} i \text{位为} 1\}\hspace{5cm}\]
+
+其中我们定义整数的二进制表示的最低位为第 0 位. 
+
+有多少对整数  $( a, b)$使得$0\leq a,b<2^{2020}$,并且
+$$ab=f^{-1}(f(a)\cup f(b))f^{-1}(f(a)\cap f(b))?\hspace{5cm}$$
+
+\textbf{问题 7.} 集合$A_0=\{0\},A_1=\{1\},A_{n+1}=(A_1+A_{n+1})\Delta A_n$.证
+
+明 有 无 穷 多 个  $n$使得$|A_n|=1$.
+
+\textbf{问题 8.} 用多种方该证明下列组合恒等式. 
+
+\quad(a)对任意正整数$n,a,b$,
+$$\sum_k\binom{k}{a}\binom{n-k}{b}=\binom{n+1}{a+b+1}.\hspace{5cm}$$
+
+\quad(b)对任意正整数$n$,
+$$\sum_{k}\binom{n}{2k}\binom{2k}{k}2^{n-2k}=\binom{2n}{n}.\hspace{5cm}$$
+
+\quad(c)对任意正整数 $a$ 和$b$,
+$$\sum_i\binom{a}{i}\binom{b+i}{a}=\sum_i\binom{a}{i}\binom{b}{i}2^i.\hspace{5cm}$$
+
+\quad(d)对任何正整数$n,m,$
+$$\sum_{r}\binom{n}{2r-1}\binom{r-1}{m}=\binom{n-m-1}{m}2^{n-2m-1}.\hspace{5cm}$$
+
+\textbf{问题 9.} 给定正整数$n$, 定义
+$$D_k=\begin{pmatrix}n\\k+1\end{pmatrix}-\begin{pmatrix}n\\k\end{pmatrix},\quad(k=0,1,2,\ldots,n-1).\hspace{5cm}$$
+
+求$k$使得$D_k$取到最大值.
+
+\textbf{问题 10.} 求证：对任意自然数$n$,
+$$\sum_{k=0}^{n}\binom{2k}{k}\binom{2n-2k}{n-k}=4^{n}.\hspace{5cm}$$
+
+\textbf{问题 11.} 将 $n$ 个硬币扔在地上. 每个硬币都可能是正面或反面向
+
+上. 在每种情况中, 计算正面的个数和反面的个数的差的绝对值.  
+
+所有的 $2^n$种情况中上述值之和为多少?
+
+\textbf{问题 12.} 有多少个函数$f:[t]\to[n]$满足：对任意$1\leq a\leq n$,
+$$|f^{-1}([a])|<a?\hspace{5cm}$$
+
+注意$f^{-1}(X)$是所有被$f$射到$X$中的点的点组成的集合. 所以上
+
+面的要求是：对每个$a,[t]$中取值不超过$a$的点少于 $a$.
+
+\textbf{问题 13.} 证明：对任意正整数$n,p,q$,
+$$\binom{n}{p}\binom{n}{q}=\sum_{k=0}^{n}\binom{n}{k}\binom{n-k}{p-k}\binom{n-p}{q-k}.\hspace{5cm}$$
+
+\textbf{问题 14.} 证明：对任意正整数$n,p,q$,
+\[\binom{n}{p}\binom{n}{q}=\sum_{k=0}^{n}\binom{p}{k}\binom{q}{k}\binom{n+k}{p+q}.\hspace{5cm}\]
+\end{document}

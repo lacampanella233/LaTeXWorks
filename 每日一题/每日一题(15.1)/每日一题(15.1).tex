@@ -1,0 +1,128 @@
+\documentclass{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath,mathtools,geometry,pgfplots,float,mathrsfs,caption}
+\pgfplotsset{compat=1.15}
+\usetikzlibrary{arrows}
+\usetikzlibrary[patterns]
+\geometry{scale=0.7}
+
+\title{每日一题(15.1)}
+\author{\kaishu 李东宸、程昊一}
+\date{2022年4月19日}
+
+\begin{document}
+\maketitle
+\textbf{1. }回答下列问题:\par
+(1) 如图1所示, 四边形$ABCD$的面积为1, $M$, $N$为$AD$, $BC$中点, 求$\mathrm{S}_{\text{四边形}ANCM}$.\par
+(2) 如图2所示, 四边形$ABCD$的面积为1, $M$, $N$为$AD$的三等分点, $P$, $Q$为$BC$的三等分点, 求$\mathrm{S}_{\text{四边形}MNQP}$.\\
+\rightline{(\kaishu 李东宸供题, 程昊一改编)}\\
+\vspace*{-0.8cm}
+\begin{figure}[H]
+	\flushright
+	\begin{minipage}{0.2\textheight}
+		\centering
+		\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+		\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm]
+			\clip(-0.8983224457873562,-0.7590151845223644) rectangle (4.810489723696861,3.0491530645266487);
+			\draw [line width=1.2pt] (0.8365697169165169,2.2450939495667366)-- (0.,0.);
+			\draw [line width=1.2pt] (0.,0.)-- (4.,0.);
+			\draw [line width=1.2pt] (4.,0.)-- (2.913009461761662,2.6894980277992757);
+			\draw [line width=1.2pt] (2.913009461761662,2.6894980277992757)-- (0.8365697169165169,2.2450939495667366);
+			\draw [line width=0.4pt] (1.8747895893390893,2.467295988683006)-- (4.,0.);
+			\draw [line width=0.4pt] (0.8365697169165169,2.2450939495667366)-- (2.,0.);
+			\begin{scriptsize}
+				\draw [fill=black] (0.8365697169165169,2.2450939495667366) circle (0.5pt);
+				\draw[color=black] (0.7340622889341037,2.349317414509753) node {$A$};
+				\draw [fill=black] (0.,0.) circle (0.5pt);
+				\draw[color=black] (-0.12293969679466275,-0.11739729573601194) node {$B$};
+				\draw [fill=black] (4.,0.) circle (0.5pt);
+				\draw[color=black] (4.021503768581488,-0.13553490389958378) node {$C$};
+				\draw [fill=black] (2.913009461761662,2.6894980277992757) circle (0.5pt);
+				\draw[color=black] (2.983125701217004,2.8208952267626195) node {$D$};
+				\draw [fill=uuuuuu] (2.,0.) circle (0.5pt);
+				\draw[color=uuuuuu] (2.012763664465914,-0.15820691410404852) node {$N$};
+				\draw [fill=uuuuuu] (1.8747895893390893,2.467295988683006) circle (0.5pt);
+				\draw[color=uuuuuu] (1.835921984871089,2.5896407226770792) node {$M$};
+			\end{scriptsize}
+		\end{tikzpicture}
+		\caption*{\kaishu 图1}
+	\end{minipage}
+	\begin{minipage}{0.2\textheight}
+		\centering
+		\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+		\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm]
+			\clip(-0.761665856590649,-0.9156499368986393) rectangle (5.2382033365527985,3.0019684022498526);
+			\draw [line width=1.2pt] (0.8365697169165169,2.2450939495667366)-- (0.,0.);
+			\draw [line width=1.2pt] (0.,0.)-- (4.,0.);
+			\draw [line width=1.2pt] (4.,0.)-- (2.913009461761662,2.6894980277992757);
+			\draw [line width=1.2pt] (2.913009461761662,2.6894980277992757)-- (0.8365697169165169,2.2450939495667366);
+			\draw [line width=0.4pt] (1.5287162985315645,2.3932286423109157)-- (1.3417055752881974,0.);
+			\draw [line width=0.4pt] (2.220862880146614,2.541363335055096)-- (2.683411150576399,0.);
+			\begin{scriptsize}
+				\draw [fill=black] (0.8365697169165169,2.2450939495667366) circle (0.5pt);
+				\draw[color=black] (0.7251960880167819,2.351157316397488) node {$A$};
+				\draw [fill=black] (0.,0.) circle (0.5pt);
+				\draw[color=black] (-0.12784329687017368,-0.12218034145909856) node {$B$};
+				\draw [fill=black] (4.,0.) circle (0.5pt);
+				\draw[color=black] (4.022979631825572,-0.1412426740822707) node {$C$};
+				\draw [fill=black] (2.913009461761662,2.6894980277992757) circle (0.5pt);
+				\draw[color=black] (2.984082503862687,2.822950048820999) node {$D$};
+				\draw [fill=uuuuuu] (1.5287162985315645,2.3932286423109157) circle (0.5pt);
+				\draw[color=uuuuuu] (1.5448763908131862,2.5417806426292096) node {$M$};
+				\draw [fill=uuuuuu] (2.220862880146614,2.541363335055096) circle (0.5pt);
+				\draw[color=uuuuuu] (2.231120365247385,2.6704513878356217) node {$N$};
+				\draw [fill=uuuuuu] (1.3417055752881974,0.) circle (0.5pt);
+				\draw[color=uuuuuu] (1.3161283993351198,-0.14600825723806377) node {$P$};
+				\draw [fill=uuuuuu] (2.683411150576399,0.) circle (0.5pt);
+				\draw[color=uuuuuu] (2.688616348203518,-0.1412426740822707) node {$Q$};
+			\end{scriptsize}
+		\end{tikzpicture}
+		\caption*{\kaishu 图2}
+	\end{minipage}
+\end{figure}
+\vspace*{-1em}\textbf{2. }在四边形$ABCD$中, $E$, $F$, $G$, $H$分别是$AB$, $BC$, $CD$, $DA$的中点. 若图中四个角上的阴影三角形的面积分别为$a$, $b$, $c$, $d$, 求中间的阴影(斜线状)四边形的面积.\\
+\rightline{(\kaishu 李东宸供题)}
+\begin{figure}[H]
+	\flushright
+	\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.4cm,y=1.4cm]
+		\clip(-0.6156155945766433,-0.5839348015880522) rectangle (4.57421365040901,3.150763606638323);
+		\fill[line width=2.pt,fill=black,fill opacity=0.25] (1.8747895893390893,2.467295988683006) -- (2.1150873914767745,2.1883185282256794) -- (2.913009461761662,2.6894980277992757) -- cycle;
+		\fill[line width=2.pt,fill=black,fill opacity=0.25] (0.8365697169165169,2.2450939495667366) -- (0.41828485845825847,1.1225469747833683) -- (1.172722407082904,1.5964135930412537) -- cycle;
+		\fill[line width=2.pt,fill=black,fill opacity=0.25] (0.,0.) -- (1.6644349317967624,0.6475464110426453) -- (2.,0.) -- cycle;
+		\fill[line width=2.pt,fill=black,fill opacity=0.25] (2.996012368122437,1.1655950132714192) -- (4.,0.) -- (3.456504730880831,1.3447490138996379) -- cycle;
+		\fill[line width=2.pt,fill=black,pattern=north east lines,pattern color=black] (1.172722407082904,1.5964135930412537) -- (1.6644349317967624,0.6475464110426453) -- (2.996012368122437,1.1655950132714192) -- (2.1150873914767745,2.1883185282256794) -- cycle;
+		\draw [line width=1.2pt] (0.8365697169165169,2.2450939495667366)-- (0.,0.);
+		\draw [line width=1.2pt] (0.,0.)-- (4.,0.);
+		\draw [line width=1.2pt] (4.,0.)-- (2.913009461761662,2.6894980277992757);
+		\draw [line width=1.2pt] (2.913009461761662,2.6894980277992757)-- (0.8365697169165169,2.2450939495667366);
+		\draw [line width=0.4pt] (1.8747895893390893,2.467295988683006)-- (4.,0.);
+		\draw [line width=0.4pt] (0.8365697169165169,2.2450939495667366)-- (2.,0.);
+		\draw [line width=0.4pt] (2.913009461761662,2.6894980277992757)-- (0.41828485845825847,1.1225469747833683);
+		\draw [line width=0.4pt] (3.456504730880831,1.3447490138996379)-- (0.,0.);
+		\begin{scriptsize}
+			\draw [fill=black] (0.8365697169165169,2.2450939495667366) circle (0.5pt);
+			\draw[color=black] (0.7405828340177012,2.3366323311143615) node {$A$};
+			\draw [fill=black] (0.,0.) circle (0.5pt);
+			\draw[color=black] (-0.11270918640488028,-0.10370040362075339) node {$B$};
+			\draw [fill=black] (4.,0.) circle (0.5pt);
+			\draw[color=black] (4.021841038154778,-0.12018913831490957) node {$C$};
+			\draw [fill=black] (2.913009461761662,2.6894980277992757) circle (0.5pt);
+			\draw[color=black] (2.974806385075862,2.806561269897813) node {$D$};
+			\draw [fill=uuuuuu] (0.41828485845825847,1.1225469747833683) circle (0.5pt);
+			\draw[color=uuuuuu] (0.3077535482961019,1.1453212494615774) node {$E$};
+			\draw [fill=uuuuuu] (2.,0.) circle (0.5pt);
+			\draw[color=uuuuuu] (2.014337589141265,-0.1408000566826048) node {$F$};
+			\draw [fill=uuuuuu] (3.456504730880831,1.3447490138996379) circle (0.5pt);
+			\draw[color=uuuuuu] (3.5395455483507106,1.4379962902828496) node {$G$};
+			\draw [fill=uuuuuu] (1.8747895893390893,2.467295988683006) circle (0.5pt);
+			\draw[color=uuuuuu] (1.8370836911790862,2.5757189841796264) node {$H$};
+			\draw[color=black] (2.2245689564917566,2.4231981882586817) node {$d$};
+			\draw[color=black] (0.8147821401414039,1.656472024980419) node {$a$};
+			\draw[color=black] (1.2599779768836203,0.20134118822113597) node {$b$};
+			\draw[color=black] (3.485957160594703,0.8608905759873832) node {$c$};
+		\end{scriptsize}
+	\end{tikzpicture}
+\end{figure}\par
+
+\end{document}

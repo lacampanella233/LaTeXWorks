@@ -1,0 +1,53 @@
+\documentclass[UTF8]{ctexart}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{geometry}
+\usepackage{cases}
+\geometry{a4paper,scale=0.7}
+\title{每日一题(3.1)答案}
+\author{选题人:王一丁,李政毅\\答案制作:程昊一}
+\begin{document}
+\maketitle
+\begin{enumerate}
+\item \textbf{已知$a,b,c$为实数,且$a-b=4,ab+c^2+4=0$,求$a+b$的值.}\\
+\hspace*{2em}\textbf{分析}\quad 我们会发现,我们关于$c$的了解非常少(因为$c$在整个题目中只出现了一次),似乎只有$c^2$为非负数这一条件,那我们就要思考如何去利用它.\\
+\hspace*{2em}\textbf{解}\quad 由完全平方公式,我们有
+\begin{equation}
+a^2+2ab+b^2=(a+b)^2
+\end{equation}\begin{equation}
+a^2-2ab+b^2=(a-b)^2
+\end{equation}
+$(1)-(2)$,得
+\[4ab=(a+b)^2-(a-b)^2\]
+即
+\[ab=\frac{(a+b)^2-(a-b)^2}{4}\]
+\hspace*{2em}所以,
+\begin{align*}
+ab+c^2+4&=\frac{(a+b)^2-(a-b)^2}{4}+c^2+4\\
+&=\frac{(a+b)^2-4^2}{4}+c^2+4\\
+&=\frac{(a+b)^2}{4}-4+c^2+4\\
+&=\left(\frac{a+b}{2}\right)^2+c^2\\
+&=0
+\end{align*}
+由于平方数的非负性(注意:我们在这里利用了关于$c$的唯一一个条件),我们有
+\[\left(\frac{a+b}{2}\right)^2=0\]
+即\[a+b=0\]
+\hspace*{2em}所以,$a+b=0$.
+\item \textbf{已知$a+\dfrac{1}{a}=5$,求$\dfrac{a^4+a^2+1}{a^2}$的值.}\\
+\quad\\
+\hspace*{2em}\textbf{分析}\quad 我们今后要知道一个结论:
+\[a^2+\left(\frac{1}{a}\right)^2=(a+\frac{1}{a})^2-2\]
+\hspace*{2em}这可以直接由完全平方公式得来.这个结论的重要之处在于:已知$a+\dfrac{1}{a}$,则可以确定$a^2+\left(\dfrac{1}{a}\right)^2$.一般来说,我们已知$a+b$,并不能确定$a^2+b^2$,因为$(a+b)^2$的展开式中有“混合积”$2ab$.而在$\left(a+\dfrac{1}{a}\right)^2$中,“混合积”为$2\times a\times \dfrac{1}{a}=2$,是一个常数!因此已知$a+\dfrac{1}{a}$,则可以确定$a^2+\left(\dfrac{1}{a}\right)^2$.\\
+\hspace*{2em}\textbf{解}
+\begin{align*}
+\frac{a^4+a^2+1}{a^2}&=\frac{a^4}{a^2}+\frac{a^2}{a^2}+\frac{1}{a^2}\\
+&=a^2+\left(\frac{1}{a}\right)^2+1\\
+&=\left(a+\frac{1}{a}\right)^2-2+1\\
+&=5^2-2+1\\
+&=24
+\end{align*}
+\hspace*{2em}所以$\dfrac{a^4+a^2+1}{a^2}=24$.\\
+\hspace*{2em}\textbf{注}\quad 也可直接解方程$a+\dfrac{1}{a}=5$,但这样不但要解二次方程,还要进行大量的根式运算,不仅麻烦,而且非常容易出错,千万不要这样做.
+\end{enumerate}
+
+\end{document}

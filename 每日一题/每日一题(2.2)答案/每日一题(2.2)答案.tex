@@ -1,0 +1,55 @@
+\documentclass[UTF8]{ctexart}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{geometry}
+\usepackage{cases}
+\geometry{a4paper,scale=0.7}
+\title{每日一题(2.2)答案}
+\author{选题:门宇翎、李东宸\\答案制作:程昊一}
+\begin{document}
+\maketitle
+\begin{enumerate}
+\item \textbf{若方程组
+\[\begin{cases}
+a_1x+b_1y=c_1\\a_2x+b_2y=c_2\\
+\end{cases}\]
+的解为$(x,y)=(3,4)$,求方程组
+\[\begin{cases}
+3a_1x+2b_1y=5c_1\\3a_2x+2b_2y=5c_2\\
+\end{cases}\]
+的解.}\\
+\hspace*{2em}\textbf{解}\quad 由题意得
+\[\begin{matrix}
+\begin{cases}3a_1+4b_1=c_1\\3a_2+4b_2=c_2\end{cases}
+&\begin{cases}\frac{3}{5}a_1x+\frac{2}{5}b_1y=c_1\\
+\frac{3}{5}a_2x+\frac{2}{5}b_2y=c_2\end{cases}
+\end{matrix}\]
+所以,
+\[\begin{cases}
+3a_1+4b_1=\frac{3}{5}a_1x+\frac{2}{5}b_1y\\
+3a_2+4b_2=\frac{3}{5}a_2x+\frac{2}{5}b_2y
+\end{cases}\]
+对比系数,我们可以得到
+\[\begin{cases}
+x=5\\y=10
+\end{cases}\]
+\item \textbf{已知关于$x,y$的方程组
+\[\begin{cases}
+2x-ay=6\\4x+y=7\\
+\end{cases}\]
+的解为整数,$a$为正整数,求$a$的值.}\\
+\hspace*{2em}\textbf{分析}\quad 这是一个含参方程组.对于这种要求方程的解满足一定条件的问题,我们可以用参数表示出解,然后通过解的条件确定参数.对于这道题,我们用$a$表示$x$和$y$,然后通过$x,y$为正整数这一条件得出$a$需要满足的条件.\\
+\hspace*{2em}\textbf{解}\quad 解题中的方程组,得到
+\begin{numcases}
+\\x=\frac{7a+6}{4a+2}\label{1} \\y=-\frac{5}{2a+1}\label{2}
+\end{numcases}
+因为y是整数,所以$2a+1$是5的因数,所以
+\[2a+1=\pm5,\pm1\]即\[a=2,-3,0,-1\]
+将$a$分别代入$(1)$中验证,发现当且仅当$a=2$时成立.\\
+所以原方程的解为
+\[\begin{cases}
+x=2\\y=-1\\
+\end{cases}\]
+\end{enumerate}
+
+\end{document}

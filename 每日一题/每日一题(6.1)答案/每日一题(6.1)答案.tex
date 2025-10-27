@@ -1,0 +1,56 @@
+\documentclass[UTF8]{ctexart}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{float}
+\geometry{a4paper,scale=0.7}
+\title{每日一题(6.1)答案}
+\author{王一丁,李政毅}
+
+\begin{document}
+\maketitle
+\textbf{1.}{\CJKfamily{kai}求满足$ 5x-2[x]=-8 $的所有$ x $,其中$ [x] $表示不超过$ x $的最大整数.\\
+(王一丁供题)}\\
+\par \textbf{分析}\quad 题中的$ [x] $被称作“高斯函数”,例如$ [\pi] =3,[-\pi]=-4$(别忘了是不超过$ x $的最大整数!).含高斯函数的方程一般被称为高斯方程.解高斯方程有两个要点:
+\begin{itemize}
+	\item[(1)]$ [x] $是整数.虽然这个条件是显然的,但是我们有时能得到许多有用的信息.
+	\item[(2)]$ [x]\le x<[x]+1 $.这点也很重要.
+\end{itemize}
+\par\textbf{解}\quad 由$ [x]\le x<[x]+1 $,我们有
+\[5[x]-2[x]\le 5x-2[x]=-8<5([x]+1)-2[x]\]
+解得
+\[-13<3[x]\le-8\]
+又因为$ [x] $是整数,所以
+\[ [x]=-4\text{或}-3 \]
+\par 带回原方程,得到
+\[ x=-\frac{14}{5}\text{或}-\frac{16}{5} \]
+经检验, $x=-\dfrac{14}{5}\text{或}-\dfrac{16}{5}$为原方程的解.
+\par 综上:原方程的解为$x=-\dfrac{14}{5}\text{或}x=-\dfrac{16}{5}$
+
+\par \textbf{2.}{\CJKfamily{kai}在2003$ \times $2003的小方格中,随意写上1或-1，然后将每一列中的乘积写在其下方，将每一行中的乘积写在其右边，这样得到4006个数，证明：这4006个数的和不等于0.\\
+(李政毅供题)}
+\par \textbf{分析}\quad 对于这种问题,如果一时没有头绪,可以从比较小的情况开始尝试构造,比如这道题可以尝试对于$ 2\times 2 $和$ 3\times 3 $等去构造.
+\par\textbf{解}\quad 我们按下列表格中的方式记表格中的所有数字为$ a_{(i,j)} ,a_{(i,j)}=\pm 1,i,j=1,2,\cdots ,2003$.我们记$ \prod\limits_{i=1}^{2003} a_{(k,i)}=x_k,\prod\limits_{i=1}^{2003} a_{(i,k)}=y_k,S=\sum\limits_{i=1}^{2003}(x_i+y_i)$.其中$ \prod $表示累乘,与$ \sum $的用法类似.
+
+\begin{figure}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c}
+		\hline 
+		$ a_{(1,1)} $&$ a_{(1,2)} $&$ a_{(1,3)} $&$ \cdots $&$ a_{(1,2003)} $&$ x_1 $\\
+		\hline 
+		$ a_{(2,1)} $&$ a_{(2,2)} $&$ a_{(2,3)} $&$ \cdots $&$ a_{(2,2003)}$&$ x_2 $\\
+		\hline 
+		$ a_{(3,1)} $&$ a_{(3,2)} $&$ a_{(3,3)} $&$ \cdots $&$ a_{(3,2003)} $&$ x_3 $\\
+		\hline 
+		$ \vdots $&$ \vdots $&$ \vdots $&$ \vdots $&$ \vdots $&$ \vdots $\\
+		\hline 
+		$ a_{(2003,1)} $&$ a_{(2003,2)} $&$ a_{(2003,3)}$&$ \cdots $&$ a_{(2003,2003)} $&$ x_{2003} $\\
+		\hline
+		$ y_1 $&$ y_2 $&$ y_3 $&$ \cdots $&$ y_{2003} $&$ S $\\
+	\end{tabular}
+\end{figure}
+
+\par 我们来观察任意一项$a_{(i,j)}$改变符号后会发生什么.若$ a_{(i,j)} $被改变,那么$ x_i,y_j $均被改变,且变化量为$ \pm 2 $.那么,对于$ S $来说,$ S $的变化量为$ \pm 4 $或0.所以,当表格中的任何一项被改动时,\textbf{$S$除以4的余数都不会被改变.}
+\par 我们现在来看$ S $除以4的余数.因为改变表格中的任何一项,$ S $除以4的余数都不会改变,所以我们不妨设所有的$ a_{(i,j)} $都为1,$ i,j=1,2,\cdots,2003 $.此时$ x_i=y_i=1,S=4006$,除以4余2.所以,对于这个表格,$ S $除以4的余数均为2.而0除以4的余数为0,所以$ S\neq 0 $.证毕.
+\end{document}

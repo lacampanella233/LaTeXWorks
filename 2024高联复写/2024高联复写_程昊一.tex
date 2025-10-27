@@ -1,0 +1,182 @@
+\documentclass{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath,mathtools,geometry,enumerate,amsfonts,float}
+\geometry{a4paper,scale=0.8}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+
+\title{2024高联复写}
+
+\author{\kaishu  程昊一}
+
+\begin{document}
+\maketitle 
+
+(解答题未按照卷面格式进行排版)
+
+\section{一试}
+
+\begin{enumerate}
+\item $4049$
+\item $[-\frac14,0)\cup(0,2)$
+\item $7$
+\item $\frac34$
+\item $\frac{4}{21}$
+\item $11$
+\item $\frac{\sqrt{6}}{4}$
+\item 
+\end{enumerate}
+
+9.({\kaishu 卷面较整洁})\par 
+解: 注意到
+\[\frac{\sin A+\cos A}{2}=\frac{\frac{\sqrt{2}}{2}\sin A+\frac{\sqrt{2}}{2}\cos A}{\sqrt{2}}=\frac{\sin\left(A+\pi/4\right)}{\sqrt{2}}.\]
+故有
+\[\sqrt{2}\cos C=\sin(A+\pi/4)=\sin(B+\pi/4).\]
+分两种情况讨论:\par 
+(1) $A+\pi/4=B+\pi/4$, 即$A=B$. 此时$C=\pi-2A$, 即$\cos C=-\cos (2A)$. 代入上式, 得到
+\[\sqrt{2}\cos(2A)+\sin(A+\pi/4)=0\quad\Rightarrow\quad2\cos(2A)+\sin A+\cos A=0\]
+即
+\[(\sin A+\cos A)(2(\cos A-\sin A)+1)=0.\]
+而$A\in(0,\pi/2)$, 故$\sin A+\cos A>0$, 故有$\sin A-\cos A=\frac{1}{2}$. 故$\sin A-\sqrt{1-\sin^2 A}=1/2$, 解得$\sin A=\frac{\sqrt{7}+1}{4}$, $\cos A=\frac{\sqrt{7}-1}{4}$, 由此, 得
+\[\cos C=\sin^2A-\cos^2A=\left(\frac{\sqrt{7}+1}{4}\right)^2-\left(\frac{\sqrt{7}-1}{4}\right)^2=\frac{\sqrt{7}}{4}.\]\par 
+(2) $(A+\pi/4)+(B+\pi/4)=\pi$, 得到$C=\pi/2$, 故$\cos C=0$, 得到$\sin A+\cos A=0$, 这不可能.\par 
+综上, $\cos C=\frac{\sqrt{7}}{4}$.\\\par
+10.({\kaishu 卷面较整洁})\par 
+解: 先考虑一个圆是好圆的充分必要条件.\par 
+设一个圆心在$y$轴的圆为$x^2+(y-t)^2=r^2$. 与双曲线$x^2-y^2=1$联立, 得到
+\[y^2+1+(y-t)^2=r^2\quad\Rightarrow\quad 2y^2-2ty+(t^2+1-r^2)=0.\]
+由题目, 此关于$y$的方程只有两个重根, 故判别式等于零, 即
+\[\Delta=4t^2-4\cdot 2\cdot (t^2+1-r^2)=0\quad\Rightarrow\quad t^2=2r^2-2.\]
+反之, 若$t^2=2r^2-1$, 则上面关于$y$的二次方程只有两个重根, 满足好圆的条件.\par 
+即, 圆$x^2+(y-t)^2=r^2$为好圆的充分必要条件是$t^2=2r^2-2$.\par 
+考虑两个圆$x_{1,2}^2+(y_{1,2}-t)^2=r_{1,2}^2$, 其中$t_{1,2}^2=2r_{1,2}^2-2$. ($\ast$) 不妨设$t_1>t_2$. 由于两个圆外切, 故
+\[d=r_1+r_2=t_1-t_2.\]
+将($\ast$)两式相减, 得到$(t_1-t_2)(t_1+t_2)=2(r_1-r_2)(r_1+r_2)$. 而$r_1+r_2=t_1-t_2\neq 0$, 故
+\[2(r_1-r_2)=t_1+t_2.\]
+结合$r_1+r_2=t_1-t_2$, 解得$r_1=3r_2+2t_2$. 结合$|AP|^2=(r^2+t^2)^2+1$, 有
+\begin{align*}
+d^2&=(r_1+r_2)^2=(4r_2+2t_2)^2=4(2r_2+t_2)^2=4(2r_2^2+2r_2^2+4r_2t_2+t_2^2)\\
+&=4(t_2^2+2+2r_2^2+4r_2t_2+t_2^2)=8((r_2+t_2)^2+1)=8|AP|^2.
+\end{align*}
+由此得
+\[\frac{d}{|AP|}=\sqrt{\frac{d^2}{|AP|^2}}=2\sqrt{2}.\]
+
+11. ({\kaishu 卷面尚可})\par 
+设$z=1+a+b\mathrm{i}$, $w=1-a-b\mathrm{i}$, 其中$a,b\in\mathbb{R}$,$\mathrm{i}=\sqrt{-1}$.
+代入, 得
+\[z^2-2w=(a+b\mathrm{i})^2-2(1-a-b\mathrm{i})=(a^2-b^2+2a-2)+(2ab+2b)\mathrm{i},\]
+故
+\[|z^2-2w|=\sqrt{b^4+(2a^2+4a+8)b^2+(a^4+4a^3-8a+4)}.\]
+故
+\[|z^2-2w|+|w^2-2z|=\sqrt{b^4+(2a^2+4a+8)b^2+(a^4+4a^3-8a+4)}+\sqrt{b^4+(2a^2-4a+8)b^2+(a^4-4a^3+8a+4)}.\]\par 
+可以证明, 此关于$b^2$的函数单调递增, 故
+\[|z^2-2w|+|w^2-2z|\ge\sqrt{a^4+4a^3-8a+4}+\sqrt{a^4-4a^3+8a+4}.\]
+
+\newpage
+
+\section{二试}
+1.({\kaishu 卷面差, 第一次做错, 于是有大面积涂改; 并且因此解答书写空间较小, 于是过程较简略, 如下})\par 
+解:(1) $r$为奇数. 取$a_1=1/2$, 则由$r$为奇数, 知$a_n$均为奇数的二分之一, 故$\|a_n\|=1/2$, 故$C\le 1/2$. 另一方面, $C>1/2$显然不符要求(对任意的实数$x$, 均有$\|x\|\le 1/2$.)\par
+(2) $r$为偶数, 设$r=2r'$. 取$a_1=\frac{r'-1}{r}=\frac{r}{2r+2}$, 由于$(r'-1)r^n\equiv (r'-1)(-1)^n\quad (\mathrm{mod}\ (r+1))$, 故对于任意正整数$n$均有$\|r^n(r'-1)\|=\frac{r}{2r+2}$. \par 
+另一方面, 下面证明$C=\frac{r}{2r+2}$符合要求. 将$\frac{r+2}{2r+2}$按照$r$进制展开. 不妨设$a_1\in(0,1)$. 设$a_1$和$\frac{r+2}{2r+2}$的$r$进制小数点后第$n$位第一次出现不同. 分类讨论:\par 
+1. $n$为大于一的奇数. 若$\frac{r+2}{2r+2}$的小数点后第$n$位大于$a_1$的小数点后第$n$位, 由$n$的极小性, 知
+\[\{r^{n-2}\frac{r+2}{2r+2}\}>\{r^{n-2}a_1\},\]
+且存在整数$k$使得$r^{n-2}\frac{r+2}{2r+2}$与$\{r^{n-2}a_1\}$均在$(k,k+1)$中. 而$\{r^{n-2}\frac{r+2}{2r+2}\}<1/2$, 故
+\[\frac{r}{2r+2}=\|r^{n-2}\frac{r+2}{2r+2}\|>\|r^{n-2}a_1\|.\]\par 
+若$\frac{r+2}{2r+2}$的小数点后第$n$位小于$a_1$的小数点后第$n$位, 由$n$的极小性, 知
+\[\{r^{n-1}\frac{r+2}{2r+2}\}<\{r^{n-1}a_1\},\]
+且存在整数$k$使得$r^{n-1}\frac{r+2}{2r+2}$与$\{r^{n-1}a_1\}$均在$(k,k+1)$中.
+而$\{r^{n-1}\frac{r+2}{2r+2}\}>1/2$, 故
+\[\frac{r}{2r+2}=\|r^{n-1}\frac{r+2}{2r+2}\|<\|r^{n-1}a_1\|.\]\par 
+2. $n$为偶数, 同理可以证明.\par 
+3. $n=1$. 与1类似.\par 
+综上, $C$的最大值为$1/2$, 当$n$为奇数; $C$的最大值为$\frac{r}{2r+2}$, 当$n$为偶数.\\\par 
+2.({\kaishu 卷面尚可})
+\begin{figure}[H]
+\centering 
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\definecolor{qqwwtt}{rgb}{0.,0.4,0.2}
+\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.7cm,y=0.7cm]
+\clip(-2.9854935998476793,-3.591288218070078) rectangle (7.051128459613836,7.232079627920492);
+\draw [line width=0.8pt,color=qqwwtt] (0.46808076010174426,1.3974227402579587) circle (2.3456728117249392);
+\draw [line width=0.8pt,color=qqwwtt] (4.518386119757739,1.3974227402579587) circle (1.7046325479310558);
+\draw [line width=0.8pt,color=qqqqff] (-0.6332036517594166,-0.6736527252568061)-- (2.8137535718266835,1.3974227402579587);
+\draw [line width=0.8pt,color=qqqqff] (2.8137535718266835,1.3974227402579587)-- (5.318704580032317,-0.10765615654767036);
+\draw [line width=0.8pt,color=qqqqff] (-0.6332036517594166,-0.6736527252568061)-- (2.8137535718266835,-2.8027637361950744);
+\draw [line width=0.8pt,color=qqqqff] (2.8137535718266835,-2.8027637361950744)-- (5.318704580032317,-0.10765615654767036);
+\draw [line width=0.8pt,dash pattern=on 1pt off 1pt,color=qqqqff] (2.8137535718266835,6.445766579280153)-- (-0.6332036517594166,-0.6736527252568061);
+\draw [line width=0.8pt,dash pattern=on 1pt off 1pt,color=qqqqff] (2.8137535718266835,6.445766579280153)-- (5.318704580032317,-0.10765615654767036);
+\draw [line width=0.8pt,color=qqqqff] (-0.6332036517594166,-0.6736527252568061)-- (5.318704580032317,-0.10765615654767036);
+\draw [line width=0.8pt,color=qqqqff] (2.4233309276781996,-0.3829916436793213) -- (2.3526026319944853,-0.4942578940273429);
+\draw [line width=0.8pt,color=qqqqff] (2.4233309276781996,-0.3829916436793213) -- (2.3328982962784166,-0.2870509877771305);
+\draw [line width=0.8pt,color=qqqqff] (4.425466993280618,-1.068701455475462)-- (0.5959428433003495,-1.432869961485023);
+\draw [line width=0.8pt,color=qqqqff] (2.430124454748734,-1.2584485057031582) -- (2.5008527504324483,-1.1471822553551365);
+\draw [line width=0.8pt,color=qqqqff] (2.430124454748734,-1.2584485057031582) -- (2.520557086148517,-1.354389161605349);
+\draw [line width=0.8pt,color=qqqqff] (0.5959428433003495,-1.432869961485023)-- (4.110743771827009,3.052596398711791);
+\draw [line width=0.8pt,color=qqqqff] (1.40969916724471,3.545802528608968)-- (4.425466993280618,-1.068701455475462);
+\draw [line width=0.8pt,dash pattern=on 1pt off 1pt,color=qqqqff] (2.8137535718266835,1.3974227402579587)-- (2.8137535718266835,6.445766579280153);
+\draw [line width=0.8pt,color=qqqqff] (2.8137535718266835,1.3974227402579587)-- (2.8137535718266835,-2.8027637361950744);
+\draw [line width=0.8pt,color=qqqqff] (2.813753571826684,-0.8645584785709812) -- (2.7096827271536976,-0.7836144882697698);
+\draw [line width=0.8pt,color=qqqqff] (2.813753571826684,-0.8645584785709812) -- (2.9178244164996703,-0.7836144882697698);
+\draw [line width=0.8pt,color=qqqqff] (2.813753571826684,-0.7026704979685582) -- (2.7096827271536976,-0.6217265076673466);
+\draw [line width=0.8pt,color=qqqqff] (2.813753571826684,-0.7026704979685582) -- (2.9178244164996703,-0.6217265076673466);
+\draw [line width=0.8pt,dash pattern=on 1pt off 1pt,color=qqqqff] (4.425466993280618,0.4290381888705238)-- (4.425466993280618,-1.068701455475462);
+\draw [line width=0.8pt,dash pattern=on 1pt off 1pt,color=qqqqff] (0.5959428433003495,-1.432869961485023)-- (0.5959428433003494,0.06486968286096316);
+\begin{scriptsize}
+\draw [fill=ffqqqq] (2.8137535718266835,1.3974227402579587) circle (1.0pt);
+\draw[color=ffqqqq] (3.304578051386331,1.488910792263103) node {$A$};
+\draw [fill=ffqqqq] (2.8137535718266826,1.3974227402579587) circle (1.0pt);
+\draw [fill=ffqqqq] (-0.6332036517594166,-0.6736527252568061) circle (1.0pt);
+\draw[color=ffqqqq] (-1.0432705705073169,-0.8237746449143695) node {$B$};
+\draw [fill=ffqqqq] (5.318704580032317,-0.10765615654767036) circle (1.0pt);
+\draw[color=ffqqqq] (5.6480992943928365,-0.361237557478875) node {$D$};
+\draw [fill=ffqqqq] (2.8137535718266835,-2.8027637361950744) circle (1.0pt);
+\draw[color=ffqqqq] (2.764951449378254,-3.1827137908353915) node {$C$};
+\draw [fill=ffqqqq] (2.8137535718266835,6.445766579280153) circle (1.0pt);
+\draw[color=ffqqqq] (2.5799366144040565,6.838923103600322) node {$S,T$};
+\draw [fill=ffqqqq] (1.40969916724471,3.545802528608968) circle (1.0pt);
+\draw[color=ffqqqq] (1.1614895462685402,4.125372190645422) node {$P$};
+\draw [fill=ffqqqq] (4.110743771827009,3.052596398711791) circle (1.0pt);
+\draw[color=ffqqqq] (4.245070129171836,3.5857455886373444) node {$Q$};
+\draw [fill=ffqqqq] (4.425466993280618,-1.068701455475462) circle (1.0pt);
+\draw[color=ffqqqq] (4.75386092535088,-1.3171475381788968) node {$F$};
+\draw [fill=ffqqqq] (0.5959428433003495,-1.432869961485023) circle (1.0pt);
+\draw[color=ffqqqq] (0.2980869830556171,-1.7796846256143912) node {$E$};
+\draw [fill=ffqqqq] (2.8137535718266835,-0.3458644118187824) circle (1.0pt);
+\draw[color=ffqqqq] (3.0424737018395507,0.008792112469520608) node {$M$};
+\draw [fill=ffqqqq] (2.8137535718266835,-1.2219673041343513) circle (1.0pt);
+\draw[color=ffqqqq] (3.0424737018395507,-0.839192547828886) node {$N$};
+\draw [fill=ffqqqq] (4.425466993280618,0.4290381888705238) circle (1.0pt);
+\draw[color=ffqqqq] (4.538010284547649,0.8567767727679272) node {$Y$};
+\draw [fill=ffqqqq] (0.5959428433003494,0.06486968286096316) circle (1.0pt);
+\draw[color=ffqqqq] (0.45226601220078194,0.6100903261356634) node {$X$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{figure}
+证明: 延长$CA, BP$交于$S$, 延长$DQ, CA$交于$T$. 由于$AC$与$\omega_1,\omega_2$相切, 故
+\[\angle BPA=\angle BAC=\angle DAC=\angle AQD\quad\Rightarrow\quad\angle SPA=\angle TQA.\]
+由$\angle SBA=\angle PAS=\angle CAF$知
+\[\angle BSA=\angle BAC-\angle SBA=\angle CAD-\angle CAF=\angle DAF.\]
+过$E,F$作$EX,FY\parallel AC$, 分别交$AB,AD$于$X,Y$. 则由$\angle DYF=\angle CAD=\angle BPA$知
+\[\angle AYF=\angle SPA,\quad \angle YAF=\angle PAS\quad\Rightarrow\quad\triangle SPA~\triangle AYF.\]
+同理$\triangle TQA~\triangle AXE.$\par 
+由$XE\parallel AC\parallel YF, BD\parallel EF$知
+\[\frac{XE}{AC}=\frac{BE}{BC}=\frac{DF}{DC}=\frac{YF}{AC}\quad\Rightarrow\quad XE=YF.\]
+由$\triangle SPA~\triangle AYF$知$SA/PA=AF/YF$, 对于另一侧也有类似结论, 即
+\[SA=\frac{PA\cdot AF}{YF}, TA=\frac{QA\cdot AE}{XE}.\quad(\ast)\]
+而
+\begin{align*}
+\frac{PA}{QA}&=\frac{PA\sin\angle BPA}{QA\sin\angle DQA}(\text{正弦定理})=\frac{BA\sin\angle PBA}{DA\sin\angle QDA}=\frac{BM\sin\angle FAN}{DM\sin\angle EAN}\\
+&=\frac{EN/\sin\angle EAN}{FN/\sin\angle FAN}(\text{正弦定理})
+=\frac{AE/\sin\angle ANE}{AF/\sin\angle ANF}=\frac{AE}{AF}.
+\end{align*}
+
+故$PA\cdot AF=QA\cdot AE$. 结合($\ast$)与$XE=YF$, 得到$AS=AT$. 故$S, T$重合, 即$PB, QD, CA$共点. 故
+\[SP\cdot SB=SA^2=SQ\cdot SD.\]
+由此知原命题成立.\\\par 
+第三题与第四题仅写了一点, 根据评分细则, 无法得分.
+\end{document}

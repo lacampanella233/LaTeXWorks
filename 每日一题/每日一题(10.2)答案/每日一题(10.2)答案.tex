@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath,mathtools,geometry,fancyhdr}
+\geometry{a4paper,scale=0.7}
+\pagenumbering{arabic}
+\pagestyle{fancy}
+\fancyfoot[C]{\thepage}
+\fancyhead[L]{励志AQ班}
+\fancyhead[R]{每日一题(10.2)答案}
+
+\title{每日一题(10.2)答案}
+\author{\kaishu 选/命题: 门宇翎、程昊一\\\kaishu 答案制作: 程昊一}
+
+\begin{document}
+\maketitle
+\textbf{1. }{\kaishu 已知$x$, $y$, $z$为实数, 且满足
+\[x+2y-5z=3, x-2y-z=-5,\]
+求$x^2+y^2+z^2$的最小值.\\
+\rightline{(门宇翎供题)}}\\\par
+\textbf{分析}\quad 我们看到了3个未知数, 2个等式, 我们可以用其中一个未知数表示另外两个未知数, 然后将需要求的式子写成关于一个未知数的式子, 相对来说就更好处理.\\\par
+\textbf{解}\quad 解关于$x$, $y$的方程组
+\[\begin{cases}
+	x+2y=5z+3\\x-2y=z-5
+\end{cases},\]
+得
+\[\begin{cases}
+	x=3z-1\\y=z+2
+\end{cases}.\]\par
+所以, 原式$=(3z-1)^2+(z+2)^2+z^2=11z^2-2z+5=11\left(z-\dfrac{1}{11}\right)^2+\dfrac{54}{11}.$\par
+所以, 原式的最小值为$\dfrac{54}{11}.$\\\par
+
+\textbf{2. }{\kaishu 因式分解:
+\[\left(x^2+2y^2\right)^4+64y^8.\]
+\rightline{(程昊一命题)}}\\\par
+\textbf{分析}\quad 我们先回顾一下$a^4+4b^4$的因式分解的方法:
+\begin{align*}
+	a^4+4b^4&=a^4+4a^2b^2+4b^4-4a^2b^2\\
+	&=\left(a^2+2b^2\right)^2-(2ab)^2\\
+	&=\left(a^2-2ab+2b^2\right)\left(a^2+2ab+2b^2\right).
+\end{align*}\par
+我们在这里进行了一个添项: $4a^2b^2$. 其目的是与前两项配成完全平方, 同时能与配成的完全平方进行平方差.\par
+对于这道题, 我们做换元:
+\[\begin{cases}
+	a=x^2+2y^2\\b=2y^2
+\end{cases}, \]
+就可以了.\\\par
+\textbf{解}\quad 设
+\[\begin{cases}
+	a=x^2+2y^2\\b=2y^2
+\end{cases}, \]
+则\begin{align*}
+	\text{原式}&=a^4+4b^4\\
+	&=\left(a^2-2ab+2b^2\right)\left(a^2+2ab+2b^2\right)\\
+	&=\left[\left(x^2+2y^2\right)^2-2\left(x^2+2y^2\right)\left(2y^2\right)+2\left(2y^2\right)^2\right]\left[\left(x^2+2y^2\right)^2+2\left(x^2+2y^2\right)\left(2y^2\right)+2\left(2y^2\right)^2\right]\\
+	&=\left(x^4+4y^4+4x^2y^2-4x^2y^2-8y^4+8y^4\right)\left(x^4+4y^4+4x^2y^2+4x^2y^2+8y^4+8y^4\right)\\
+	&=\left(x^4+4y^4\right)\left(x^4+20y^4+8x^2y^2\right)\\
+	&=\left(x^2-2xy+2y^2\right)\left(x^2+2xy+2y^2\right)\left(x^4+20y^4+8x^2y^2\right).
+\end{align*}\par
+\textbf{注}\quad 事实上, 我在出这道题时, 核心思想就是利用$a^4+4b^4$的因式分解, 所以构造了上述换元, 使在分解的过程中运用了两次$a^4+4b^4$的因式分解.
+\end{document}

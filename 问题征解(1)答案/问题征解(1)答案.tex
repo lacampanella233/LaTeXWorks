@@ -1,0 +1,147 @@
+\documentclass[UTF8]{ctexart}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{cases}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{a4paper,scale=0.7}
+\linespread{1.75}
+\title{问题征解（1）答案}
+\author{程昊一}
+\begin{document}
+\maketitle
+\begin{flushleft}
+%----------%
+\textbf{\large 1.证明:素数有无穷多个.}\\
+\end{flushleft}
+解:假设素数的个数有限,设这些素数为$p_1,p_2,\dots p_n$.\\
+考虑$k=p_1p_2p_3\dots p_n+1$,则$p_1\nmid k,p_2\nmid k,\dots p_n\nmid k$.\\
+若$k$为素数,则与假设矛盾.\\
+若$k$为合数,∵$p_1\nmid k,p_2\nmid k,\dots p_n\nmid k$,∴k有比$p_1,p_2,\dots p_n$更大的素因子,与假设矛盾.\\
+∴假设不成立,即素数的个数无限.\\
+\\
+%----------%
+\textbf{\large 2.证明:数列$10001,100010001,1000100010001,\dots$中,每一个数都是合数.}\\
+解:(1) $10001=73\times 137$,∴$10001$为合数.\\
+(2)$n>1$时,$1\underbrace{00010001\dots 0001}_{\text{共$n$个1}} =10^{4n}+10^{4n-4}+\dots+1=\dfrac{10^{4n+4}-1}{10^4-1}=\dfrac{(10^{2n+2}-1)(10^{2n+2}+1)}{9999}$\\
+∵$(10^{2n+2}+1)>(10^{2n+2}-1)>9999$,∴$1\underbrace{00010001\dots 0001}_{\text{共$n$个1}}$为合数.\\
+综上,数列$10001,100010001,1000100010001,\dots$中,每一个数都是合数.\\
+\\
+%----------%
+\textbf{\large 3.求所有的正整数$x,y,z$,满足$3^x+4^y=5^z$.}\\
+解:对原方程两边同时模3,得到
+\[2^z\equiv (-1)^z\equiv 1\pmod{3}\]
+所以$2\mid z$,设$z=2z_1$.\\
+对原方程两边同时模4,得到
+\[3^x\equiv (-1)^x\equiv 1\pmod{4}\]
+所以$2\mid x$,设$x=2x_1$.\\
+则原方程$\Rightarrow3^{2x_1}+2^{2y}=5^{2z_1}$,即
+\[\begin{cases}
+3^{2x_1}=(5^{z_1})^2-(2^{y})^2\\
+2^{2y}=(5^{z_1})^2-(3^{x_1})^2\\
+\end{cases}\]
+得到
+\begin{numcases}{}
+3^{2x_1}=(5^{z_1}-2^{y})(5^{z_1}+2^{y})\label{}\\
+2^{2y}=(5^{z_1}-3^{x_1})(5^{z_1}+3^{x_1})\label{}
+\end{numcases}
+对于$(1)$:\\
+∵$(5^{z_1}-2^{y},5^{z_1}+2^{y})=(5^{z_1}-2^{y},2^{y+1}),3\nmid2^{y+1}$,\\
+∴$3\nmid(5^{z_1}-2^{y},5^{z_1}+2^{y})$,即$5^{z_1}-2^{y}$与$5^{z_1}+2^{y}$不同时含有素因子3.∴$5^{z_1}-2^{y}$与$5^{z_1}+2^{y}$一个为$3^{2x_1}$,一个为1.\\
+又$5^{z_1}-2^{y}<5^{z_1}+2^{y}$,∴有
+\[\begin{cases}
+5^{z_1}-2^{y}=1\\
+5^{z_1}+2^{y}=3^{2x_1}\\
+\end{cases}\]
+得
+\begin{equation}
+5^{z_1}=2^{y}+1
+\end{equation}
+对于$(2)$:\\
+∵$(5^{z_1}-3^{x_1},5^{z_1}+3^{x_1})=(5^{z_1}-3^{x_1},2\times3^{x_1}),2\mid5^{z_1}-3^{x_1},2\mid2\times3^{x_1}$而$4\nmid2\times3^{x_1}$\\
+∴$(5^{z_1}-3^{x_1},5^{z_1}+3^{x_1})=2$,又$5^{z_1}-3^{x_1}<5^{z_1}+3^{x_1})$,∴有\\
+\begin{numcases}{}
+5^{z_1}-3^{x_1}=2\label{}\\
+5^{z_1}+3^{x_1}=2^{2y-1}\label{}
+\end{numcases}
+$(4)+(5)$,得
+\[2\times 5^{z_1}=2+2^{2y-1}\]
+得
+\begin{equation}
+5^{z_1}=2^{2y-2}+1
+\end{equation}
+由$(3),(6)$得
+\[2^{y}+1=2^{2y-2}+1\]
+即
+\[y=2y-2\]
+得$y=2$.\\
+将$y=2$代入$(3)$,得
+\[5^{z_1}=5\]
+得$z_1=5,z=2$.\\
+将$y=2,z=2$代入原方程,立得$x=2$.\\
+综上:原方程的正整数解为$x=y=z=2$.\\
+\\
+%----------%
+\textbf{\large 4.已知\[a+b+c=5,a^2+b^2+c^2=15,a^3+b^3+c^3=47\]求\[(a^2+ab+b^2)(b^2+bc+c^2)(c^2+ca+a^2)\]}\\
+解:展开$(a^2+ab+b^2)(b^2+bc+c^2)(c^2+ca+a^2)$,得
+\[3a^2b^2c^2+\sum\limits_{sym}{a^4b^2}+2\sum\limits_{sym}{a^3b^2c}+\sum\limits_{cyc}{a^4bc}+\sum\limits_{cyc}{a^3b^3}\]
+其中$\sum\limits_{sym}$与$\sum\limits_{cyc}$详见脚注.\footnote{
+$\sum\limits_{sym}$指将此符号后的式子中的字母随意交换,将得到的所有式子求和,例如$\sum\limits_{sym}{a^2b}=a^2b+b^2c+c^2a+ab^2+bc^2+ca^2$;
+$\sum\limits_{cyc}$指将此符号后的式子中的字母依次轮换(例如$a\to b,b\to c,c\to a$),将得到的所有式子求和,例如$\sum\limits_{cyc}{ab}=ab+bc+ca$.}\\
+∵$2\sum\limits_{cyc}{ab}=(a+b+c)^2-(a^2+b^2+c^2)=5^2-15=10$\\
+∴$\sum\limits_{cyc}{ab}=5$.\\%∑ab=5
+∵由欧拉公式,
+\begin{align*}
+3abc&=(\sum\limits_{cyc}{a^3})-(\sum\limits_{cyc}{a})(\sum\limits_{cyc}{a^2}-\sum\limits_{cyc}{ab})\\
+&=47-5\times (15-5)\\
+&=-3
+\end{align*}
+∴$abc=-1$.%abc=-1
+\begin{align*}
+\sum\limits_{cyc}{a^4bc}&=\sum\limits_{cyc}{(abc\times a^3)}\\
+&=abc(\sum\limits_{cyc}{a^3})\\
+&=(-1)\times47\\
+&=-47
+\end{align*}
+∴$\sum\limits_{cyc}{a^4bc}=-47$.%∑a^4bc=-47
+\begin{align*}
+\sum\limits_{cyc}{a^2b^2}&=(\sum\limits_{cyc}{ab})^2-2\sum\limits_{cyc}{(ab\times bc)}\\
+&=(\sum\limits_{cyc}{ab})^2-2\sum\limits_{cyc}{(abc\times a)}\\
+&=(\sum\limits_{cyc}{ab})^2-2abc\sum\limits_{cyc}{a}\\
+&=5^2-2\times (-1)\times 5\\
+&=35\end{align*}
+∴$\sum\limits_{cyc}{a^2b^2}=35$.%∑a²b²=35
+\begin{align*}
+\sum\limits_{sym}{a^4b^2}&=(\sum\limits_{cyc}{a^2})(\sum\limits_{cyc}{a^2b^2})-3a^2b^2c^2\\&=15\times 35-3\times(-1)^2\\&=522
+\end{align*}
+∴$\sum\limits_{sym}{a^4b^2}=522$%∑a^4b^2=522
+\begin{align*}
+\sum\limits_{cyc}{a^2b}&=(\sum\limits_{cyc}{ab})(\sum\limits_{cyc}{a})-3abc\\
+&=5\times 5-3\times(-1)\\
+&=28
+\end{align*}
+∴$\sum\limits_{sym}{a^2b}=28$.%∑a²b=28
+\begin{align*}
+\sum\limits_{sym}{a^3b^2c}&=\sum\limits_{sym}{(abc\times a^2b)}\\
+&=abc\times\sum\limits_{sym}{a^2b}\\
+&=(-1)\times 28\\
+&=-28
+\end{align*}
+∴$\sum\limits_{sym}a^3b^2c=-28$.%∑a³b²c=-28
+\begin{align*}
+\sum\limits_{cyc}{a^3b^3}&=(\sum\limits_{cyc}{ab})(\sum\limits_{cyc}{a^2b^2})-\sum\limits_{sym}{a^3b^2c}\\
+&=5\times35-(-28)\\
+&=203
+\end{align*}
+∴$\sum\limits_{cyc}{a^3b^3}=203$\\%∑a³b³=203
+∴原式
+\begin{align*}
+&=3a^2b^2c^2+\sum\limits_{sym}{a^4b^2}+2\sum\limits_{sym}{a^3b^2c}+\sum\limits_{cyc}{a^4bc}+\sum\limits_{cyc}{a^3b^3}\\
+&=3\times(-1)^2+522+2\times(-28)+(-47)+203\\
+&=625
+\end{align*}
+综上:原式$=625$.
+
+
+\end{document}
+

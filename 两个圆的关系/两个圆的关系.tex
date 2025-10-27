@@ -1,0 +1,1784 @@
+\documentclass[serif]{beamer}
+\usepackage[UTF8]{ctexcap}
+\usepackage{amsmath,mathtools,hyperref,caption,wrapfig,enumitem}
+\usetheme{Antibes}
+\usecolortheme{beaver}
+
+\newtheorem{thm}{定理}
+\renewcommand\proofname{\heiti 证明}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+
+
+\title{\textbf{\heiti 两个圆的关系}}
+\author{\kaishu 程昊一}
+
+\begin{document}
+	
+\begin{frame}
+	\maketitle
+\end{frame}
+
+\part{\heiti\hspace*{\fill}\hspace*{3cm}知\hspace{\fill}识\hspace{\fill}讲\hspace{\fill}解\hspace{\fill}\hspace{3cm}}
+
+\begin{frame}
+	\partpage
+\end{frame}
+
+\begin{frame}{\heiti 目录}
+	\tableofcontents
+\end{frame}
+
+\section{\heiti 两圆的位置关系}
+
+\begin{frame}{\heiti 两圆的位置关系}
+	观看动态演示:\\
+	\vspace{6cm}
+\end{frame}
+
+\subsection{\kaishu 一般结论}
+
+\begin{frame}{\kaishu 一般结论}
+	由此我们得到:
+	\begin{block}{{\heiti 定义}: {\fangsong 两个圆的位置关系}}
+		\kaishu
+		两个圆的位置关系有以下五种(除去两圆重合的情况):
+		\[\left\{\begin{matrix}
+			d>R+r & \Rightarrow & \text{两圆外离;}\\
+			d=R+r & \Rightarrow & \text{两圆外切;}\\
+			R-r<d<R+r & \Rightarrow & \text{两圆相交;}\\
+			d=R-r & \Rightarrow & \text{两圆内切;}\\
+			d<R-r & \Rightarrow & \text{两圆内离.}
+		\end{matrix}\right.\]
+		式中, $R$为大圆半径, $r$为小圆半径, $d$为两圆圆心的距离.
+	\end{block}
+\end{frame}
+
+\subsection{\kaishu 若干命题}
+
+\begin{frame}{\kaishu 若干命题}
+	我们有必要了解一些显然的命题并严谨地证明:
+	\begin{block}{\textbf{命题1、2}}
+		\kaishu
+		\textbf{1.} 相交两圆的连心线垂直平分其公共弦.\\
+		\textbf{2.} 相切两圆的连心线通过其切点.
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\begin{proof}
+		\begin{figure}[htbp]
+			\flushright
+			\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.6cm,y=0.6cm]
+				\clip(-2,-2) rectangle (3.5,2);
+				\draw [line width=1.2pt] (0.,0.) circle (1.7320508075688772);
+				\draw [line width=1.2pt] (2.,0.) circle (1.224744871391589);
+				\draw [line width=0.4pt] (0.,0.)-- (2.,0.);
+				\draw [line width=0.4pt] (2.,0.)-- (1.375,1.0532687216470449);
+				\draw [line width=0.4pt] (1.375,1.0532687216470449)-- (0.,0.);
+				\draw [line width=0.4pt] (0.,0.)-- (1.375,-1.0532687216470449);
+				\draw [line width=0.4pt] (1.375,-1.0532687216470449)-- (2.,0.);
+				\draw [line width=0.4pt] (1.375,1.0532687216470449)-- (1.375,-1.0532687216470449);
+				\begin{scriptsize}
+					\draw [fill=black] (0.,0.) circle (0.5pt);
+					\draw[color=black] (-0.35355525347719167,0.04358560223523171) node {$O_1$};
+					\draw [fill=black] (2.,0.) circle (0.5pt);
+					\draw[color=black] (2.3766558377624565,0.06222955334154745) node {$O_2$};
+					\draw [fill=black] (1.375,1.0532687216470449) circle (0.5pt);
+					\draw[color=black] (1.4029318668503512,1.4212618471175092) node {$A$};
+					\draw [fill=black] (1.375,-1.0532687216470449) circle (0.5pt);
+					\draw[color=black] (1.3842879157440358,-1.4397396989161684) node {$B$};
+					\draw [fill=black] (1.375,0.) circle (0.5pt);
+					\draw[color=black] (1.5712930209068427,0.15855663405751208) node {$C$};
+				\end{scriptsize}
+			\end{tikzpicture}
+		\end{figure}
+	
+		\begin{figure}[htbp]
+			\flushright
+			\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.6cm,y=0.6cm]
+				\clip(-2.5,-2.5) rectangle (2.5,2.5);
+				\draw [line width=1.2pt] (0.,0.) circle (2);
+				\draw [line width=1.2pt] (1.25,0.) circle (0.75);
+				\draw [line width=0.4pt,dash pattern=on 1pt off 1pt] (0.,0.)-- (2.,0.);
+				\begin{scriptsize}
+					\draw [fill=black] (0.,0.) circle (0.5pt);
+					\draw[color=black] (-0.31940261191756072,0.05104318267775812) node {$O_1$};
+					\draw [fill=black] (1.25,0.) circle (0.5pt);
+					\draw[color=black] (1.2298538540800525,0.28776549079074023) node {$O_2$};
+					\draw [fill=black] (2.,0.) circle (0.5pt);
+					\draw[color=black] (2.2629836069511574,0.027116778757986255) node {$A$};
+				\end{scriptsize}
+			\end{tikzpicture}
+		\end{figure}
+	
+	\end{proof}
+\end{frame}
+
+\section{\heiti 公切线}
+\subsection{\kaishu 基本概念}
+
+\begin{frame}{\heiti 公切线}{\kaishu 基本概念}
+	同时与两圆相切的直线被称为\textbf{公切线}. 公切线有两种: \textbf{外公切线}(所切两圆在公切线同侧)与\textbf{内公切线}(所切两圆在公切线异侧), 如下图所示. 同一条公切线上两切点的距离被称作\textbf{公切线的长}(即下图中线段$AB$的长度).
+	\begin{figure}[htbp]
+		\begin{minipage}{0.48\textwidth}
+			\centering
+			\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+			\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+				\clip(-1.2,-1.5) rectangle (3.2,1.5);
+				\draw [line width=1.2pt] (0.,0.) circle (1.);
+				\draw [line width=1.2pt] (2.5,0.) circle (0.5);
+				\draw [line width=1.2pt,domain=-1.2:3.2] plot(\x,{(--1.-0.2*\x)/-0.9797958971132726});
+				\draw [line width=1.2pt,domain=-1.2:3.2] plot(\x,{(--1.-0.2*\x)/0.9797958971132728});
+				\begin{scriptsize}
+					\draw [fill=black] (0.,0.) circle (0.5pt);
+					\draw[color=black] (-0.008250041614909352,0.25059584124037515) node {$O_1$};
+					\draw [fill=black] (2.5,0.) circle (0.5pt);
+					\draw[color=black] (2.4983707103978325,0.19230233537961366) node {$O_2$};
+					\draw [fill=black] (0.2,0.9797958971132728) circle (0.5pt);
+					\draw[color=black] (0.2735019033787709,1.225392800356442) node {$A$};
+					\draw [fill=black] (2.6,0.48989794855663366) circle (0.5pt);
+					\draw[color=black] (2.6311503626362334,0.6813200789893349) node {$B$};
+				\end{scriptsize}
+			\end{tikzpicture}
+			\caption*{\kaishu 外公切线}
+		\end{minipage}
+		\begin{minipage}{0.48\textwidth}
+			\centering
+			\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+			\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+				\clip(-1.2,-1.5) rectangle (3.2,1.5);
+				\draw [line width=1.2pt] (0.,0.) circle (1.cm);
+				\draw [line width=1.2pt] (2.5,0.) circle (0.5cm);
+				\draw [line width=1.2pt,domain=-1.2:3.2] plot(\x,{(--1.-0.6*\x)/-0.8});
+				\draw [line width=1.2pt,domain=-1.2:3.2] plot(\x,{(--1.-0.6*\x)/0.8});
+				\begin{scriptsize}
+					\draw [fill=black] (0.,0.) circle (0.5pt);
+					\draw[color=black] (-0.010919373869813079,0.2946286077645399) node {$O_1$};
+					\draw [fill=black] (2.5,0.) circle (0.5pt);
+					\draw[color=black] (2.4969967893842795,0.227452281963091) node {$O_2$};
+					
+					\draw [fill=uuuuuu] (0.6,0.8) circle (0.5pt);
+					\draw[color=uuuuuu] (0.7168241556458834,0.9850519562794319) node {$A$};
+					\draw [fill=uuuuuu] (2.2,-0.4) circle (0.5pt);
+					\draw[color=uuuuuu] (2.1051348888758272,-0.5450754647535718) node {$B$};
+				\end{scriptsize}
+			\end{tikzpicture}
+			\caption*{\kaishu 内公切线}
+		\end{minipage}
+	\end{figure}
+\end{frame}
+
+\subsection{\kaishu 公切线的性质}
+
+\begin{frame}{\kaishu 公切线的性质}
+	\textbf{1. 公切线的长度}\par
+	\begin{wrapfigure}[3]{r}{0.3\textwidth}
+		\begin{tikzpicture}[x=0.75cm,y=0.75cm]
+			\tikzstyle{every node}=[scale=0.75]
+			\clip(-1.7,-1.7) rectangle (3.7,1.7);
+			\draw [line width=1.2pt] (0.,0.) circle (1.5);
+			\draw [line width=1.2pt] (3.,-1.) circle (0.5);
+			\draw [line width=1.2pt] (0.,-1.5)-- (3.,-1.5);
+			\draw [line width=1.2pt] (0.,0.)-- (3.,-1.);
+			\draw [line width=1.2pt] (0.,0.)-- (0.,-1.5);
+			\draw [line width=1.2pt] (3.,-1.)-- (3.,-1.5);
+			\draw [line width=0.4pt,dash pattern=on 1pt off 1pt] (0.,-1.)-- (3.,-1.);
+			\draw [line width=0.4pt,|<->|] (-0.1,0.)-- (-0.1,-1.5);
+			\draw [line width=0.4pt,|<->|] (0.03162277660168379,0.09486832980505137)-- (3.031622776601684,-0.9051316701949487);
+			\draw [line width=0.4pt,|<->|] (3.1,-1.)-- (3.1,-1.5);
+			\begin{scriptsize}
+				\draw [fill=black] (0.,-1.5) circle (0.5pt);
+				\draw[color=black] (0.13010075988592698,-1.3084577093394554) node {$A$};
+				\draw [fill=black] (3.,-1.5) circle (0.5pt);
+				\draw[color=black] (2.8320392986192955,-1.2588504949466322) node {$B$};
+				\draw [fill=black] (0.,0.) circle (0.5pt);
+				\draw[color=black] (-0.14231072936965789,0.1907086204971672) node {$O_{1}$};
+				\draw [fill=black] (3.,-1.) circle (0.5pt);
+				\draw[color=black] (3.25,-0.83) node {$O_2$};
+				\draw [fill=black] (0.,-1.) circle (0.5pt);
+				\draw[color=black] (0.16277945054063237,-0.8190629207332286) node {$C$};
+				\draw[color=black] (-0.26590057544677315,-0.75) node {$R$};
+				\draw[color=black] (1.6490706969189612,-0.2831323939960606) node {$d$};
+				\draw[color=black] (3.230719324606701,-1.2046714704587518) node {$r$};
+			\end{scriptsize}
+		\end{tikzpicture}
+	\end{wrapfigure}
+	如图, 在$\mathrm{Rt}\triangle O_1O_2C$中运用勾股定理, 容易得到外公切线的长度
+	\[AB=\sqrt{d^2-(R-r)^2}.\]\\
+	同理可得(留作习题)内公切线的长度为
+	\[\sqrt{d^2-(R+r)^2}.\]
+	由此可得: 
+	\begin{quote}
+		两圆的两条外公切线与两条内公切线分别相等.
+	\end{quote}
+\end{frame}
+
+\begin{frame}
+	\textbf{2. 两圆位置关系与公切线的关系}\par
+	我们根据之前给出的公式能得到如下一系列命题:
+	\begin{itemize}
+		\item[(1)] 两圆相交(即$d<R+r$)时不存在内公切线;
+		\item[(2)] 两圆内离(即$d<R-r$)时不存在公切线;
+		\item[(3)] 两圆外切(即$d=R+r$)时两内公切线重合;
+		\item[(4)] 两圆内切(即$d=R-r$)时两外公切线重合.
+	\end{itemize}
+\end{frame}
+
+\subsection{\kaishu 公切线的尺规作图}
+
+\begin{frame}{\kaishu 公切线的尺规作图}
+	\textbf{1. 外公切线}\par
+	如图, 这相当于把两圆的外公切线平移为一点到一圆的切线.
+	\begin{figure}[htbp]
+		\centering
+		\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+			\clip(-2.5,-2.5) rectangle (5.,2.5);
+			\draw [line width=1.2pt] (0.,0.) circle (2.cm);
+			\draw [line width=1.2pt] (4.,0.) circle (0.6666666666666669cm);
+			\draw [line width=1.2pt] (0.6666666666666657,1.8856180831641205)-- (4.222222222222221,0.6285393610547054);
+			\draw [line width=0.4pt,dash pattern=on 1pt off 1pt] (0.,0.) circle (1.3333333333333333cm);
+			\draw [line width=0.4pt,dash pattern=on 1pt off 1pt] (0.4444444444444444,1.2570787221094177)-- (4.,0.);
+			\draw [line width=0.4pt,dash pattern=on 1pt off 1pt] (2.,0.) circle (2.cm);
+			\draw [line width=1.2pt] (0.,0.)-- (0.6666666666666657,1.8856180831641205);
+			\draw [line width=1.2pt] (4.,0.)-- (4.222222222222221,0.6285393610547054);
+			\draw [line width=1.2pt] (0.,0.)-- (4.,0.);
+			\begin{scriptsize}
+				\draw [fill=black] (0.,0.) circle (0.5pt);
+				\draw[color=black] (-0.18178574200946274,-0.03702944760087623) node {$O_1$};
+				\draw [fill=black] (4.,0.) circle (0.5pt);
+				\draw[color=black] (4.1447951851120735,-0.049408792170608784) node {$O_2$};
+				\draw [fill=black] (0.6666666666666657,1.8856180831641205) circle (0.5pt);
+				\draw[color=black] (0.7064322308688499,2.076743637680958) node {$S$};
+				\draw [fill=black] (4.222222222222221,0.6285393610547054) circle (0.5pt);
+				\draw[color=black] (4.271683466951833,0.8511885252774348) node {$T$};
+				\draw [fill=black] (0.4444444444444444,1.2570787221094177) circle (0.5pt);
+				\draw[color=black] (0.33505189377687244,1.451586736909464) node {$P$};
+			\end{scriptsize}
+		\end{tikzpicture}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\textbf{2. 内公切线}\par
+	如图, 同上.
+	\begin{figure}[htbp]
+		\centering
+		\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+			\clip(-3.,-3.) rectangle (5.,3.);
+			\draw [line width=1.2pt] (0.,0.) circle (2.cm);
+			\draw [line width=1.2pt] (4.,0.) circle (0.6666666666666669cm);
+			\draw [line width=0.4pt,dash pattern=on 2pt off 2pt] (2.,0.) circle (2.cm);
+			\draw [line width=1.2pt] (0.,0.)-- (4.,0.);
+			\draw [line width=1.2pt] (1.3333333333333341,1.4907119849998463)-- (3.5555555555555562,-0.49690399499994764);
+			\draw [line width=0.4pt,dash pattern=on 2pt off 2pt] (0.,0.) circle (2.6666666666666665cm);
+			\draw [line width=0.4pt,dash pattern=on 2pt off 2pt] (1.7777777777777777,1.987615979999813)-- (4.,0.);
+			\draw [line width=1.2pt] (1.7777777777777777,1.987615979999813)-- (0.,0.);
+			\draw [line width=1.2pt] (3.5555555555555562,-0.49690399499994764)-- (4.,0.);
+			\begin{scriptsize}
+				\draw [fill=black] (0.,0.) circle (0.5pt);
+				\draw[color=black] (-0.2192023109714792,-0.04191928870592024) node {$O_!$};
+				\draw [fill=black] (4.,0.) circle (0.5pt);
+				\draw[color=black] (4.1771362228005025,-0.05689829563529665) node {$O_2$};
+				\draw [fill=black] (1.3333333333333341,1.4907119849998463) circle (0.5pt);
+				\draw[color=black] (1.5745337688213479,1.512152680216881) node {$S$};
+				\draw [fill=black] (3.5555555555555562,-0.49690399499994764) circle (0.5pt);
+				\draw[color=black] (3.446909634993401,-0.6223558072192557) node {$T$};
+				\draw [fill=black] (1.7777777777777777,1.987615979999813) circle (0.5pt);
+				\draw[color=black] (1.8141978796913707,2.2685925301503893) node {$P$};
+			\end{scriptsize}
+		\end{tikzpicture}
+	\end{figure}
+\end{frame}
+
+\section{\heiti *拓展: 三圆相切与四圆相切}
+
+\begin{frame}{\heiti *拓展: 三圆相切与四圆相切}
+	我们知道, 三圆相切并不特殊:
+	\begin{figure}[htbp]
+		\centering
+		\begin{minipage}{0.48\textwidth}
+			\centering
+			\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.75cm,y=0.75cm]
+				\clip(-3.5,-3.5) rectangle (3.5,3.5);
+				\draw [line width=1.2pt] (0.,0.) circle (3.);
+				\draw [line width=1.2pt] (-1.5,1.5) circle (0.8786796564403578);
+				\draw [line width=1.2pt] (0.987076530407758,0.02558421149435941) circle (2.0125919644039727);
+				\begin{scriptsize}
+					\draw [fill=black] (0.,0.) circle (0.5pt);
+					\draw [fill=black] (-1.5,1.5) circle (0.5pt);
+					\draw [fill=black] (0.987076530407758,0.02558421149435941) circle (0.5pt);
+				\end{scriptsize}
+			\end{tikzpicture}
+		\end{minipage}
+		\begin{minipage}{0.48\textwidth}
+			\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.75cm,y=0.75cm]
+				\clip(4.5,-3.5) rectangle (11.5,3.5);
+				\draw [line width=1.2pt] (0.,0.) circle (3);
+				\draw [line width=1.2pt] (-1.5,1.5) circle (0.8786796564403578);
+				\draw [line width=1.2pt] (0.987076530407758,0.02558421149435941) circle (2.0125919644039727);
+				\draw [line width=1.2pt] (6.,0.) circle (1.);
+				\draw [line width=1.2pt] (9.,0.) circle (2.);
+				\draw [line width=1.2pt] (6.642731167288937,1.969588488060973) circle (1.0718064981331894);
+				\begin{scriptsize}
+					\draw [fill=black] (0.,0.) circle (0.5pt);
+					\draw [fill=black] (-1.5,1.5) circle (0.5pt);
+					\draw [fill=black] (0.987076530407758,0.02558421149435941) circle (0.5pt);
+					\draw [fill=black] (6.,0.) circle (0.5pt);
+					\draw [fill=black] (9.,0.) circle (0.5pt);
+					\draw [fill=black] (6.642731167288937,1.969588488060973) circle (0.5pt);
+				\end{scriptsize}
+			\end{tikzpicture}
+		\end{minipage}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	根据椭圆或双曲线的定义, 如果给定外切或内切的两圆, 第三个与两圆均相切的圆的轨迹为椭圆或双曲线.
+	\begin{figure}[htbp]
+		\centering
+		\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.75cm,y=0.75cm]
+			\clip(-3.5,-3.5) rectangle (11.5,3.5);
+			\draw [line width=1.2pt] (0.,0.) circle (2.25cm);
+			\draw [line width=1.2pt] (-1.5,1.5) circle (0.6590097423302683cm);
+			\draw [rotate around={-45.:(-0.75,0.75)},line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.75,0.75) ellipse (1.4545048711651343cm and 1.2176912253289436cm);
+			\draw [line width=1.2pt] (0.987076530407758,0.02558421149435941) circle (1.5094439733029796cm);
+			\draw [line width=1.2pt] (6.,0.) circle (0.75cm);
+			\draw [line width=1.2pt] (9.,0.) circle (1.5cm);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.5,31.080540535840107) -- (-3.5,31.080540535840107);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.5,31.080540535840107) -- (-3.47375,31.00621732007953);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.47375,31.00621732007953) -- (-3.4475,30.931893734461198);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.4475,30.931893734461198) -- (-3.4212499999999997,30.857569776312587);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.4212499999999997,30.857569776312587) -- (-3.3949999999999996,30.78324544293535);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.3949999999999996,30.78324544293535) -- (-3.3687499999999995,30.708920731605005);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.3687499999999995,30.708920731605005) -- (-3.3424999999999994,30.63459563957063);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.3424999999999994,30.63459563957063) -- (-3.3162499999999993,30.560270164054508);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.3162499999999993,30.560270164054508) -- (-3.289999999999999,30.485944302251813);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.289999999999999,30.485944302251813) -- (-3.263749999999999,30.41161805133031);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.263749999999999,30.41161805133031) -- (-3.237499999999999,30.337291408429987);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.237499999999999,30.337291408429987) -- (-3.211249999999999,30.2629643706627);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.211249999999999,30.2629643706627) -- (-3.1849999999999987,30.188636935111855);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.1849999999999987,30.188636935111855) -- (-3.1587499999999986,30.114309098832063);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.1587499999999986,30.114309098832063) -- (-3.1324999999999985,30.039980858848757);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.1324999999999985,30.039980858848757) -- (-3.1062499999999984,29.96565221215784);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.1062499999999984,29.96565221215784) -- (-3.0799999999999983,29.891323155725303);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.0799999999999983,29.891323155725303) -- (-3.053749999999998,29.8169936864869);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.053749999999998,29.8169936864869) -- (-3.027499999999998,29.742663801347714);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.027499999999998,29.742663801347714) -- (-3.001249999999998,29.668333497181802);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.001249999999998,29.668333497181802) -- (-2.974999999999998,29.59400277083179);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.974999999999998,29.59400277083179) -- (-2.9487499999999978,29.519671619108493);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.9487499999999978,29.519671619108493) -- (-2.9224999999999977,29.445340038790512);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.9224999999999977,29.445340038790512) -- (-2.8962499999999975,29.3710080266238);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.8962499999999975,29.3710080266238) -- (-2.8699999999999974,29.296675579321274);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.8699999999999974,29.296675579321274) -- (-2.8437499999999973,29.222342693562393);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.8437499999999973,29.222342693562393) -- (-2.8174999999999972,29.148009365992724);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.8174999999999972,29.148009365992724) -- (-2.791249999999997,29.0736755932235);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.791249999999997,29.0736755932235) -- (-2.764999999999997,28.99934137183118);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.764999999999997,28.99934137183118) -- (-2.738749999999997,28.925006698357034);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.738749999999997,28.925006698357034) -- (-2.712499999999997,28.85067156930666);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.712499999999997,28.85067156930666) -- (-2.6862499999999967,28.776335981149504);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.6862499999999967,28.776335981149504) -- (-2.6599999999999966,28.701999930318436);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.6599999999999966,28.701999930318436) -- (-2.6337499999999965,28.62766341320925);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.6337499999999965,28.62766341320925) -- (-2.6074999999999964,28.55332642618018);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.6074999999999964,28.55332642618018) -- (-2.5812499999999963,28.47898896555142);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.5812499999999963,28.47898896555142) -- (-2.554999999999996,28.404651027604604);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.554999999999996,28.404651027604604) -- (-2.528749999999996,28.330312608582336);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.528749999999996,28.330312608582336) -- (-2.502499999999996,28.25597370468764);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.502499999999996,28.25597370468764) -- (-2.476249999999996,28.181634312083457);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.476249999999996,28.181634312083457) -- (-2.4499999999999957,28.107294426892093);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.4499999999999957,28.107294426892093) -- (-2.4237499999999956,28.032954045194725);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.4237499999999956,28.032954045194725) -- (-2.3974999999999955,27.958613163030805);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.3974999999999955,27.958613163030805) -- (-2.3712499999999954,27.884271776397522);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.3712499999999954,27.884271776397522) -- (-2.3449999999999953,27.809929881249236);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.3449999999999953,27.809929881249236) -- (-2.318749999999995,27.735587473496917);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.318749999999995,27.735587473496917) -- (-2.292499999999995,27.661244549007538);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.292499999999995,27.661244549007538) -- (-2.266249999999995,27.586901103603488);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.266249999999995,27.586901103603488) -- (-2.239999999999995,27.51255713306197);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.239999999999995,27.51255713306197) -- (-2.2137499999999948,27.438212633114407);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.2137499999999948,27.438212633114407) -- (-2.1874999999999947,27.363867599445793);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.1874999999999947,27.363867599445793) -- (-2.1612499999999946,27.28952202769406);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.1612499999999946,27.28952202769406) -- (-2.1349999999999945,27.215175913449453);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.1349999999999945,27.215175913449453) -- (-2.1087499999999944,27.140829252253862);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.1087499999999944,27.140829252253862) -- (-2.0824999999999942,27.06648203960018);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.0824999999999942,27.06648203960018) -- (-2.056249999999994,26.992134270931583);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.056249999999994,26.992134270931583) -- (-2.029999999999994,26.917785941640872);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.029999999999994,26.917785941640872) -- (-2.003749999999994,26.84343704706979);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.003749999999994,26.84343704706979) -- (-1.9774999999999938,26.76908758250828);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.9774999999999938,26.76908758250828) -- (-1.9512499999999937,26.694737543193774);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.9512499999999937,26.694737543193774) -- (-1.9249999999999936,26.620386924310456);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.9249999999999936,26.620386924310456) -- (-1.8987499999999935,26.546035720988527);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.8987499999999935,26.546035720988527) -- (-1.8724999999999934,26.471683928303445);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.8724999999999934,26.471683928303445) -- (-1.8462499999999933,26.397331541275136);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.8462499999999933,26.397331541275136) -- (-1.8199999999999932,26.32297855486721);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.8199999999999932,26.32297855486721) -- (-1.793749999999993,26.248624963986185);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.793749999999993,26.248624963986185) -- (-1.767499999999993,26.17427076348067);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.767499999999993,26.17427076348067) -- (-1.7412499999999929,26.099915948140506);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.7412499999999929,26.099915948140506) -- (-1.7149999999999928,26.025560512695954);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.7149999999999928,26.025560512695954) -- (-1.6887499999999926,25.951204451816853);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.6887499999999926,25.951204451816853) -- (-1.6624999999999925,25.87684776011172);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.6624999999999925,25.87684776011172) -- (-1.6362499999999924,25.802490432126877);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.6362499999999924,25.802490432126877) -- (-1.6099999999999923,25.72813246234555);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.6099999999999923,25.72813246234555) -- (-1.5837499999999922,25.653773845186965);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.5837499999999922,25.653773845186965) -- (-1.5574999999999921,25.579414575005405);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.5574999999999921,25.579414575005405) -- (-1.531249999999992,25.505054646089253);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.531249999999992,25.505054646089253) -- (-1.504999999999992,25.43069405266004);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.504999999999992,25.43069405266004) -- (-1.4787499999999918,25.356332788871477);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.4787499999999918,25.356332788871477) -- (-1.4524999999999917,25.281970848808424);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.4524999999999917,25.281970848808424) -- (-1.4262499999999916,25.207608226485885);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.4262499999999916,25.207608226485885) -- (-1.3999999999999915,25.13324491584799);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.3999999999999915,25.13324491584799) -- (-1.3737499999999914,25.05888091076692);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.3737499999999914,25.05888091076692) -- (-1.3474999999999913,24.98451620504185);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.3474999999999913,24.98451620504185) -- (-1.3212499999999912,24.910150792397843);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.3212499999999912,24.910150792397843) -- (-1.294999999999991,24.835784666484745);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.294999999999991,24.835784666484745) -- (-1.268749999999991,24.761417820876062);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.268749999999991,24.761417820876062) -- (-1.2424999999999908,24.687050249067802);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.2424999999999908,24.687050249067802) -- (-1.2162499999999907,24.6126819444773);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.2162499999999907,24.6126819444773) -- (-1.1899999999999906,24.53831290044201);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.1899999999999906,24.53831290044201) -- (-1.1637499999999905,24.463943110218324);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.1637499999999905,24.463943110218324) -- (-1.1374999999999904,24.389572566980313);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.1374999999999904,24.389572566980313) -- (-1.1112499999999903,24.31520126381846);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.1112499999999903,24.31520126381846) -- (-1.0849999999999902,24.240829193738374);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.0849999999999902,24.240829193738374) -- (-1.05874999999999,24.166456349659512);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.05874999999999,24.166456349659512) -- (-1.03249999999999,24.092082724413817);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.03249999999999,24.092082724413817) -- (-1.0062499999999899,24.01770831074436);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.0062499999999899,24.01770831074436) -- (-0.9799999999999899,23.943333101303974);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.9799999999999899,23.943333101303974) -- (-0.9537499999999899,23.868957088653847);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.9537499999999899,23.868957088653847) -- (-0.9274999999999899,23.79458026526206);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.9274999999999899,23.79458026526206) -- (-0.9012499999999899,23.720202623502157);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.9012499999999899,23.720202623502157) -- (-0.8749999999999899,23.64582415565164);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.8749999999999899,23.64582415565164) -- (-0.8487499999999899,23.57144485389045);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.8487499999999899,23.57144485389045) -- (-0.8224999999999899,23.497064710299426);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.8224999999999899,23.497064710299426) -- (-0.7962499999999899,23.42268371685872);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.7962499999999899,23.42268371685872) -- (-0.7699999999999899,23.348301865446206);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.7699999999999899,23.348301865446206) -- (-0.7437499999999899,23.273919147835816);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.7437499999999899,23.273919147835816) -- (-0.7174999999999899,23.19953555569591);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.7174999999999899,23.19953555569591) -- (-0.6912499999999899,23.125151080587532);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.6912499999999899,23.125151080587532) -- (-0.6649999999999899,23.050765713962708);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.6649999999999899,23.050765713962708) -- (-0.6387499999999899,22.97637944716266);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.6387499999999899,22.97637944716266) -- (-0.6124999999999899,22.90199227141601);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.6124999999999899,22.90199227141601) -- (-0.58624999999999,22.827604177836943);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.58624999999999,22.827604177836943) -- (-0.55999999999999,22.75321515742333);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.55999999999999,22.75321515742333) -- (-0.53374999999999,22.67882520105481);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.53374999999999,22.67882520105481) -- (-0.50749999999999,22.604434299490855);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.50749999999999,22.604434299490855) -- (-0.48124999999998996,22.53004244336878);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.48124999999998996,22.53004244336878) -- (-0.45499999999998997,22.455649623201705);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.45499999999998997,22.455649623201705) -- (-0.42874999999999,22.38125582937648);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.42874999999999,22.38125582937648) -- (-0.40249999999999,22.306861052151618);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.40249999999999,22.306861052151618) -- (-0.37624999999999,22.232465281655085);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.37624999999999,22.232465281655085) -- (-0.34999999999999,22.15806850788215);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.34999999999999,22.15806850788215) -- (-0.32374999999999,22.08367072069312);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.32374999999999,22.08367072069312) -- (-0.29749999999999,22.009271909811073);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.29749999999999,22.009271909811073) -- (-0.27124999999999,21.934872064819498);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.27124999999999,21.934872064819498) -- (-0.24499999999999,21.860471175159944);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.24499999999999,21.860471175159944) -- (-0.21874999999999,21.786069230129577);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.21874999999999,21.786069230129577) -- (-0.19249999999999,21.711666218878705);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.19249999999999,21.711666218878705) -- (-0.16624999999999002,21.637262130408246);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.16624999999999002,21.637262130408246) -- (-0.13999999999999002,21.56285695356714);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.13999999999999002,21.56285695356714) -- (-0.11374999999999001,21.488450677049723);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.11374999999999001,21.488450677049723) -- (-0.08749999999999,21.41404328939303);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.08749999999999,21.41404328939303) -- (-0.06124999999998999,21.339634778974048);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.06124999999998999,21.339634778974048) -- (-0.034999999999989984,21.2652251340069);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.034999999999989984,21.2652251340069) -- (-0.008749999999989974,21.190814342539998);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.008749999999989974,21.190814342539998) -- (0.017500000000010035,21.116402392453097);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.017500000000010035,21.116402392453097) -- (0.043750000000010045,21.041989271454323);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.043750000000010045,21.041989271454323) -- (0.07000000000001005,20.967574967077113);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.07000000000001005,20.967574967077113) -- (0.09625000000001006,20.893159466677098);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.09625000000001006,20.893159466677098) -- (0.12250000000001007,20.81874275742891);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.12250000000001007,20.81874275742891) -- (0.1487500000000101,20.744324826322952);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.1487500000000101,20.744324826322952) -- (0.1750000000000101,20.66990566016204);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.1750000000000101,20.66990566016204) -- (0.2012500000000101,20.595485245558038);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.2012500000000101,20.595485245558038) -- (0.22750000000001008,20.521063568928362);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.22750000000001008,20.521063568928362) -- (0.2537500000000101,20.446640616492452);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.2537500000000101,20.446640616492452) -- (0.2800000000000101,20.372216374268138);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.2800000000000101,20.372216374268138) -- (0.30625000000001007,20.297790828067935);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.30625000000001007,20.297790828067935) -- (0.33250000000001007,20.223363963495263);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.33250000000001007,20.223363963495263) -- (0.35875000000001006,20.148935765940564);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.35875000000001006,20.148935765940564) -- (0.38500000000001006,20.07450622057735);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.38500000000001006,20.07450622057735) -- (0.41125000000001005,20.000075312358174);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.41125000000001005,20.000075312358174) -- (0.43750000000001005,19.92564302601045);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.43750000000001005,19.92564302601045) -- (0.46375000000001004,19.851209346032267);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.46375000000001004,19.851209346032267) -- (0.49000000000001004,19.776774256688043);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.49000000000001004,19.776774256688043) -- (0.5162500000000101,19.70233774200409);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.5162500000000101,19.70233774200409) -- (0.5425000000000101,19.62789978576411);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.5425000000000101,19.62789978576411) -- (0.5687500000000101,19.55346037150455);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.5687500000000101,19.55346037150455) -- (0.5950000000000101,19.479019482509862);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.5950000000000101,19.479019482509862) -- (0.6212500000000101,19.40457710180768);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.6212500000000101,19.40457710180768) -- (0.6475000000000101,19.330133212163826);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.6475000000000101,19.330133212163826) -- (0.6737500000000101,19.255687796077265);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.6737500000000101,19.255687796077265) -- (0.7000000000000101,19.181240835774908);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.7000000000000101,19.181240835774908) -- (0.72625000000001,19.106792313206288);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.72625000000001,19.106792313206288) -- (0.75250000000001,19.032342210038127);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.75250000000001,19.032342210038127) -- (0.77875000000001,18.95789050764876);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.77875000000001,18.95789050764876) -- (0.80500000000001,18.883437187122446);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.80500000000001,18.883437187122446) -- (0.83125000000001,18.808982229243533);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.83125000000001,18.808982229243533) -- (0.85750000000001,18.734525614490455);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.85750000000001,18.734525614490455) -- (0.88375000000001,18.66006732302965);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.88375000000001,18.66006732302965) -- (0.91000000000001,18.58560733470927);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.91000000000001,18.58560733470927) -- (0.93625000000001,18.511145629052756);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.93625000000001,18.511145629052756) -- (0.96250000000001,18.436682185252284);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.96250000000001,18.436682185252284) -- (0.98875000000001,18.36221698216201);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.98875000000001,18.36221698216201) -- (1.0150000000000101,18.287749998291176);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.0150000000000101,18.287749998291176) -- (1.0412500000000102,18.213281211797035);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.0412500000000102,18.213281211797035) -- (1.0675000000000103,18.138810600477612);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.0675000000000103,18.138810600477612) -- (1.0937500000000104,18.064338141764257);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.0937500000000104,18.064338141764257) -- (1.1200000000000105,17.989863812714063);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.1200000000000105,17.989863812714063) -- (1.1462500000000106,17.915387590002034);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.1462500000000106,17.915387590002034) -- (1.1725000000000108,17.84090944991311);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.1725000000000108,17.84090944991311) -- (1.1987500000000109,17.766429368333945);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.1987500000000109,17.766429368333945) -- (1.225000000000011,17.69194732074451);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.225000000000011,17.69194732074451) -- (1.251250000000011,17.61746328220947);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.251250000000011,17.61746328220947) -- (1.2775000000000112,17.54297722736933);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.2775000000000112,17.54297722736933) -- (1.3037500000000113,17.46848913043137);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.3037500000000113,17.46848913043137) -- (1.3300000000000114,17.393998965160336);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.3300000000000114,17.393998965160336) -- (1.3562500000000115,17.319506704868903);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.3562500000000115,17.319506704868903) -- (1.3825000000000116,17.245012322407856);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.3825000000000116,17.245012322407856) -- (1.4087500000000117,17.170515790156067);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.4087500000000117,17.170515790156067) -- (1.4350000000000118,17.096017080010153);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.4350000000000118,17.096017080010153) -- (1.461250000000012,17.021516163373896);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.461250000000012,17.021516163373896) -- (1.487500000000012,16.947013011147387);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.487500000000012,16.947013011147387) -- (1.5137500000000121,16.872507593715845);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.5137500000000121,16.872507593715845) -- (1.5400000000000122,16.79799988093817);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.5400000000000122,16.79799988093817) -- (1.5662500000000124,16.723489842135187);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.5662500000000124,16.723489842135187) -- (1.5925000000000125,16.648977446077545);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.5925000000000125,16.648977446077545) -- (1.6187500000000126,16.57446266097332);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.6187500000000126,16.57446266097332) -- (1.6450000000000127,16.49994545445526);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.6450000000000127,16.49994545445526) -- (1.6712500000000128,16.42542579356769);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.6712500000000128,16.42542579356769) -- (1.6975000000000129,16.350903644753057);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.6975000000000129,16.350903644753057) -- (1.723750000000013,16.276378973838092);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.723750000000013,16.276378973838092) -- (1.750000000000013,16.201851746019614);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.750000000000013,16.201851746019614) -- (1.7762500000000132,16.127321925849895);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.7762500000000132,16.127321925849895) -- (1.8025000000000133,16.05278947722167);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.8025000000000133,16.05278947722167) -- (1.8287500000000134,15.978254363352674);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.8287500000000134,15.978254363352674) -- (1.8550000000000135,15.903716546769775);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.8550000000000135,15.903716546769775) -- (1.8812500000000136,15.829175989292644);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.8812500000000136,15.829175989292644) -- (1.9075000000000137,15.754632652016953);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.9075000000000137,15.754632652016953) -- (1.9337500000000138,15.68008649529711);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.9337500000000138,15.68008649529711) -- (1.960000000000014,15.605537478728463);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.960000000000014,15.605537478728463) -- (1.986250000000014,15.530985561129041);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.986250000000014,15.530985561129041) -- (2.012500000000014,15.4564307005207);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.012500000000014,15.4564307005207) -- (2.038750000000014,15.38187285410976);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.038750000000014,15.38187285410976) -- (2.065000000000014,15.30731197826708);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.065000000000014,15.30731197826708) -- (2.0912500000000143,15.232748028507487);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.0912500000000143,15.232748028507487) -- (2.1175000000000144,15.158180959468678);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.1175000000000144,15.158180959468678) -- (2.1437500000000145,15.083610724889406);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.1437500000000145,15.083610724889406) -- (2.1700000000000146,15.009037277587087);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.1700000000000146,15.009037277587087) -- (2.1962500000000147,14.934460569434663);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.1962500000000147,14.934460569434663) -- (2.222500000000015,14.859880551336838);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.222500000000015,14.859880551336838) -- (2.248750000000015,14.785297173205505);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.248750000000015,14.785297173205505) -- (2.275000000000015,14.710710383934515);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.275000000000015,14.710710383934515) -- (2.301250000000015,14.63612013137357);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.301250000000015,14.63612013137357) -- (2.3275000000000152,14.561526362301404);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.3275000000000152,14.561526362301404) -- (2.3537500000000153,14.486929022398042);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.3537500000000153,14.486929022398042) -- (2.3800000000000154,14.412328056216273);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.3800000000000154,14.412328056216273) -- (2.4062500000000155,14.33772340715215);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.4062500000000155,14.33772340715215) -- (2.4325000000000156,14.26311501741463);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.4325000000000156,14.26311501741463) -- (2.4587500000000158,14.188502827994174);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.4587500000000158,14.188502827994174) -- (2.485000000000016,14.113886778630427);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.485000000000016,14.113886778630427) -- (2.511250000000016,14.03926680777877);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.511250000000016,14.03926680777877) -- (2.537500000000016,13.964642852575885);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.537500000000016,13.964642852575885) -- (2.563750000000016,13.89001484880411);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.563750000000016,13.89001484880411) -- (2.5900000000000163,13.815382730854717);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.5900000000000163,13.815382730854717) -- (2.6162500000000164,13.7407464316899);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.6162500000000164,13.7407464316899) -- (2.6425000000000165,13.666105882803585);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.6425000000000165,13.666105882803585) -- (2.6687500000000166,13.591461014180878);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.6687500000000166,13.591461014180878) -- (2.6950000000000167,13.516811754256207);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.6950000000000167,13.516811754256207) -- (2.721250000000017,13.442158029870006);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.721250000000017,13.442158029870006) -- (2.747500000000017,13.367499766224002);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.747500000000017,13.367499766224002) -- (2.773750000000017,13.292836886834905);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.773750000000017,13.292836886834905) -- (2.800000000000017,13.218169313486598);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.800000000000017,13.218169313486598) -- (2.8262500000000172,13.143496966180601);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.8262500000000172,13.143496966180601) -- (2.8525000000000174,13.06881976308491);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.8525000000000174,13.06881976308491) -- (2.8787500000000175,12.994137620480965);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.8787500000000175,12.994137620480965) -- (2.9050000000000176,12.919450452708844);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.9050000000000176,12.919450452708844) -- (2.9312500000000177,12.844758172110469);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.9312500000000177,12.844758172110469) -- (2.957500000000018,12.770060688970853);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.957500000000018,12.770060688970853) -- (2.983750000000018,12.69535791145719);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.983750000000018,12.69535791145719) -- (3.010000000000018,12.620649745555843);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.010000000000018,12.620649745555843) -- (3.036250000000018,12.545936095006967);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.036250000000018,12.545936095006967) -- (3.062500000000018,12.471216861236867);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.062500000000018,12.471216861236867) -- (3.0887500000000183,12.396491943287772);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.0887500000000183,12.396491943287772) -- (3.1150000000000184,12.321761237745143);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.1150000000000184,12.321761237745143) -- (3.1412500000000185,12.247024638662188);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.1412500000000185,12.247024638662188) -- (3.1675000000000186,12.172282037481663);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.1675000000000186,12.172282037481663) -- (3.1937500000000187,12.09753332295467);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.1937500000000187,12.09753332295467) -- (3.220000000000019,12.022778381056467);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.220000000000019,12.022778381056467) -- (3.246250000000019,11.948017094898997);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.246250000000019,11.948017094898997) -- (3.272500000000019,11.873249344640191);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.272500000000019,11.873249344640191) -- (3.298750000000019,11.79847500738967);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.298750000000019,11.79847500738967) -- (3.3250000000000193,11.723693957110905);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.3250000000000193,11.723693957110905) -- (3.3512500000000194,11.648906064519478);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.3512500000000194,11.648906064519478) -- (3.3775000000000195,11.574111196977448);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.3775000000000195,11.574111196977448) -- (3.4037500000000196,11.499309218383454);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.4037500000000196,11.499309218383454) -- (3.4300000000000197,11.424499989058546);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.4300000000000197,11.424499989058546) -- (3.45625000000002,11.349683365627373);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.45625000000002,11.349683365627373) -- (3.48250000000002,11.27485920089465);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.48250000000002,11.27485920089465) -- (3.50875000000002,11.200027343716565);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.50875000000002,11.200027343716565) -- (3.53500000000002,11.125187638866983);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.53500000000002,11.125187638866983) -- (3.5612500000000202,11.050339926898118);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.5612500000000202,11.050339926898118) -- (3.5875000000000203,10.97548404399545);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.5875000000000203,10.97548404399545) -- (3.6137500000000204,10.900619821826588);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.6137500000000204,10.900619821826588) -- (3.6400000000000206,10.825747087383796);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.6400000000000206,10.825747087383796) -- (3.6662500000000207,10.750865662819843);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.6662500000000207,10.750865662819843) -- (3.6925000000000208,10.675975365276877);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.6925000000000208,10.675975365276877) -- (3.718750000000021,10.601076006707938);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.718750000000021,10.601076006707938) -- (3.745000000000021,10.52616739369077);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.745000000000021,10.52616739369077) -- (3.771250000000021,10.451249327233503);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.771250000000021,10.451249327233503) -- (3.797500000000021,10.376321602571826);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.797500000000021,10.376321602571826) -- (3.8237500000000213,10.301384008957182);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.8237500000000213,10.301384008957182) -- (3.8500000000000214,10.226436329435526);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.8500000000000214,10.226436329435526) -- (3.8762500000000215,10.151478340616146);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.8762500000000215,10.151478340616146) -- (3.9025000000000216,10.076509812430034);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.9025000000000216,10.076509812430034) -- (3.9287500000000217,10.00153050787722);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.9287500000000217,10.00153050787722) -- (3.955000000000022,9.92654018276251);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.955000000000022,9.92654018276251) -- (3.981250000000022,9.851538585418968);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.981250000000022,9.851538585418968) -- (4.007500000000022,9.776525456418492);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.007500000000022,9.776525456418492) -- (4.033750000000022,9.701500528268747);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.033750000000022,9.701500528268747) -- (4.060000000000022,9.626463525095746);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.060000000000022,9.626463525095746) -- (4.086250000000022,9.551414162311191);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.086250000000022,9.551414162311191) -- (4.112500000000022,9.476352146263814);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.112500000000022,9.476352146263814) -- (4.138750000000022,9.401277173873707);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.138750000000022,9.401277173873707) -- (4.165000000000022,9.326188932248735);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.165000000000022,9.326188932248735) -- (4.191250000000022,9.251087098281953);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.191250000000022,9.251087098281953) -- (4.2175000000000225,9.17597133822893);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.2175000000000225,9.17597133822893) -- (4.243750000000023,9.100841307263787);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.243750000000023,9.100841307263787) -- (4.270000000000023,9.025696649012687);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.270000000000023,9.025696649012687) -- (4.296250000000023,8.950536995063414);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.296250000000023,8.950536995063414) -- (4.322500000000023,8.87536196444961);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.322500000000023,8.87536196444961) -- (4.348750000000023,8.80017116310807);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.348750000000023,8.80017116310807) -- (4.375000000000023,8.724964183307508);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.375000000000023,8.724964183307508) -- (4.401250000000023,8.64974060304694);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.401250000000023,8.64974060304694) -- (4.427500000000023,8.574499985421824);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.427500000000023,8.574499985421824) -- (4.453750000000023,8.499241877955871);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.453750000000023,8.499241877955871) -- (4.4800000000000235,8.42396581189637);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.4800000000000235,8.42396581189637) -- (4.506250000000024,8.348671301470604);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.506250000000024,8.348671301470604) -- (4.532500000000024,8.273357843100882);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.532500000000024,8.273357843100882) -- (4.558750000000024,8.198024914575393);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.558750000000024,8.198024914575393) -- (4.585000000000024,8.122671974171977);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.585000000000024,8.122671974171977) -- (4.611250000000024,8.04729845973162);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.611250000000024,8.04729845973162) -- (4.637500000000024,7.9719037876782535);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.637500000000024,7.9719037876782535) -- (4.663750000000024,7.89648735198119);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.663750000000024,7.89648735198119) -- (4.690000000000024,7.821048523056158);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.690000000000024,7.821048523056158) -- (4.7162500000000245,7.74558664660069);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.7162500000000245,7.74558664660069) -- (4.742500000000025,7.67010104235915);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.742500000000025,7.67010104235915) -- (4.768750000000025,7.5945910028123915);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.768750000000025,7.5945910028123915) -- (4.795000000000025,7.519055791786554);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.795000000000025,7.519055791786554) -- (4.821250000000025,7.443494642975095);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.821250000000025,7.443494642975095) -- (4.847500000000025,7.367906758367599);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.847500000000025,7.367906758367599) -- (4.873750000000025,7.292291306578402);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.873750000000025,7.292291306578402) -- (4.900000000000025,7.216647421067414);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.900000000000025,7.216647421067414) -- (4.926250000000025,7.140974198244869);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.926250000000025,7.140974198244869) -- (4.952500000000025,7.065270695451022);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.952500000000025,7.065270695451022) -- (4.9787500000000255,6.989535928800922);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.9787500000000255,6.989535928800922) -- (5.005000000000026,6.913768870883592);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.005000000000026,6.913768870883592) -- (5.031250000000026,6.837968448303852);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.031250000000026,6.837968448303852) -- (5.057500000000026,6.762133539054001);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.057500000000026,6.762133539054001) -- (5.083750000000026,6.686262969701311);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.083750000000026,6.686262969701311) -- (5.110000000000026,6.610355512375942);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.110000000000026,6.610355512375942) -- (5.136250000000026,6.534409881542404);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.136250000000026,6.534409881542404) -- (5.162500000000026,6.458424730536001);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.162500000000026,6.458424730536001) -- (5.188750000000026,6.382398647843852);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.188750000000026,6.382398647843852) -- (5.2150000000000265,6.3063301531079885);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.2150000000000265,6.3063301531079885) -- (5.241250000000027,6.230217692825752);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.241250000000027,6.230217692825752) -- (5.267500000000027,6.1540596357200705);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.267500000000027,6.1540596357200705) -- (5.293750000000027,6.077854267749355);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.293750000000027,6.077854267749355) -- (5.320000000000027,6.0015997867234585);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.320000000000027,6.0015997867234585) -- (5.346250000000027,5.925294296488493);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.346250000000027,5.925294296488493) -- (5.372500000000027,5.848935800639214);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.372500000000027,5.848935800639214) -- (5.398750000000027,5.772522195712987);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.398750000000027,5.772522195712987) -- (5.425000000000027,5.696051263814177);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.425000000000027,5.696051263814177) -- (5.4512500000000275,5.619520664611805);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.4512500000000275,5.619520664611805) -- (5.477500000000028,5.54292792664663);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.477500000000028,5.54292792664663) -- (5.503750000000028,5.466270437876187);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.503750000000028,5.466270437876187) -- (5.530000000000028,5.3895454353775625);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.530000000000028,5.3895454353775625) -- (5.556250000000028,5.312749994117842);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.556250000000028,5.312749994117842) -- (5.582500000000028,5.23588101469076);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.582500000000028,5.23588101469076) -- (5.608750000000028,5.158935209905155);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.608750000000028,5.158935209905155) -- (5.635000000000028,5.081909090095882);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.635000000000028,5.081909090095882) -- (5.661250000000028,5.004798947010675);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.661250000000028,5.004798947010675) -- (5.687500000000028,4.927600836106672);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.687500000000028,4.927600836106672) -- (5.7137500000000285,4.85031055706737);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.7137500000000285,4.85031055706737) -- (5.740000000000029,4.772923632324238);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.740000000000029,4.772923632324238) -- (5.766250000000029,4.695435283336274);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.766250000000029,4.695435283336274) -- (5.792500000000029,4.617840404344785);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.792500000000029,4.617840404344785) -- (5.818750000000029,4.540133533278423);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.818750000000029,4.540133533278423) -- (5.845000000000029,4.462308819434087);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.845000000000029,4.462308819434087) -- (5.871250000000029,4.38435998750094);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.871250000000029,4.38435998750094) -- (5.897500000000029,4.306280297425987);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.897500000000029,4.306280297425987) -- (5.923750000000029,4.228062499537969);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.923750000000029,4.228062499537969) -- (5.9500000000000295,4.149698784249197);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.9500000000000295,4.149698784249197) -- (5.97625000000003,4.07118072553888);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.97625000000003,4.07118072553888) -- (6.00250000000003,3.992499217282239);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.00250000000003,3.992499217282239) -- (6.02875000000003,3.9136444013220335);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.02875000000003,3.9136444013220335) -- (6.05500000000003,3.8346055859761257);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.05500000000003,3.8346055859761257) -- (6.08125000000003,3.755371153428023);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.08125000000003,3.755371153428023) -- (6.10750000000003,3.675928454145881);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.10750000000003,3.675928454145881) -- (6.13375000000003,3.5962636861052526);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.13375000000003,3.5962636861052526) -- (6.16000000000003,3.516361756133653);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.16000000000003,3.516361756133653) -- (6.1862500000000304,3.4362061201271614);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.1862500000000304,3.4362061201271614) -- (6.2125000000000306,3.3557785981794703);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.2125000000000306,3.3557785981794703) -- (6.238750000000031,3.2750591597709167);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.238750000000031,3.2750591597709167) -- (6.265000000000031,3.1940256730338583);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.265000000000031,3.1940256730338583) -- (6.291250000000031,3.1126536106671754);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.291250000000031,3.1126536106671754) -- (6.317500000000031,3.0309157032156824);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.317500000000031,3.0309157032156824) -- (6.343750000000031,2.948781528021265);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.343750000000031,2.948781528021265) -- (6.370000000000031,2.8662170189989866);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.370000000000031,2.8662170189989866) -- (6.396250000000031,2.7831838782228253);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.396250000000031,2.7831838782228253) -- (6.422500000000031,2.6996388647371816);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.422500000000031,2.6996388647371816) -- (6.4487500000000315,2.61553292848694);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.4487500000000315,2.61553292848694) -- (6.475000000000032,2.5308101469686504);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.475000000000032,2.5308101469686504) -- (6.501250000000032,2.44540640794112);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.501250000000032,2.44540640794112) -- (6.527500000000032,2.3592477614696397);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.527500000000032,2.3592477614696397) -- (6.553750000000032,2.2722483358998233);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.553750000000032,2.2722483358998233) -- (6.580000000000032,2.1843076706360596);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.580000000000032,2.1843076706360596) -- (6.606250000000032,2.0953072567047393);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.606250000000032,2.0953072567047393) -- (6.632500000000032,2.005105982236239);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.632500000000032,2.005105982236239) -- (6.658750000000032,1.913534034188983);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.658750000000032,1.913534034188983) -- (6.6850000000000325,1.8203845747532517);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.6850000000000325,1.8203845747532517) -- (6.711250000000033,1.7254021270415743);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.711250000000033,1.7254021270415743) -- (6.737500000000033,1.6282659487932558);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.737500000000033,1.6282659487932558) -- (6.763750000000033,1.5285655039937327);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.763750000000033,1.5285655039937327) -- (6.790000000000033,1.4257629536495982);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.790000000000033,1.4257629536495982) -- (6.816250000000033,1.3191332381528558);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.816250000000033,1.3191332381528558) -- (6.842500000000033,1.2076630324720765);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.842500000000033,1.2076630324720765) -- (6.868750000000033,1.089868111286712);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.868750000000033,1.089868111286712) -- (6.895000000000033,0.9634313675605946);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.895000000000033,0.9634313675605946) -- (6.921250000000033,0.8243861352544029);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.921250000000033,0.8243861352544029) -- (6.9475000000000335,0.6648684080325244);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.9475000000000335,0.6648684080325244) -- (6.973750000000034,0.4642332387924379);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.5,-31.080540535840107) -- (-3.5,-31.080540535840107);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.5,-31.080540535840107) -- (-3.47375,-31.00621732007953);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.47375,-31.00621732007953) -- (-3.4475,-30.931893734461198);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.4475,-30.931893734461198) -- (-3.4212499999999997,-30.857569776312587);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.4212499999999997,-30.857569776312587) -- (-3.3949999999999996,-30.78324544293535);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.3949999999999996,-30.78324544293535) -- (-3.3687499999999995,-30.708920731605005);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.3687499999999995,-30.708920731605005) -- (-3.3424999999999994,-30.63459563957063);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.3424999999999994,-30.63459563957063) -- (-3.3162499999999993,-30.560270164054508);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.3162499999999993,-30.560270164054508) -- (-3.289999999999999,-30.485944302251813);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.289999999999999,-30.485944302251813) -- (-3.263749999999999,-30.41161805133031);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.263749999999999,-30.41161805133031) -- (-3.237499999999999,-30.337291408429987);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.237499999999999,-30.337291408429987) -- (-3.211249999999999,-30.2629643706627);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.211249999999999,-30.2629643706627) -- (-3.1849999999999987,-30.188636935111855);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.1849999999999987,-30.188636935111855) -- (-3.1587499999999986,-30.114309098832063);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.1587499999999986,-30.114309098832063) -- (-3.1324999999999985,-30.039980858848757);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.1324999999999985,-30.039980858848757) -- (-3.1062499999999984,-29.96565221215784);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.1062499999999984,-29.96565221215784) -- (-3.0799999999999983,-29.891323155725303);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.0799999999999983,-29.891323155725303) -- (-3.053749999999998,-29.8169936864869);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.053749999999998,-29.8169936864869) -- (-3.027499999999998,-29.742663801347714);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.027499999999998,-29.742663801347714) -- (-3.001249999999998,-29.668333497181802);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-3.001249999999998,-29.668333497181802) -- (-2.974999999999998,-29.59400277083179);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.974999999999998,-29.59400277083179) -- (-2.9487499999999978,-29.519671619108493);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.9487499999999978,-29.519671619108493) -- (-2.9224999999999977,-29.445340038790512);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.9224999999999977,-29.445340038790512) -- (-2.8962499999999975,-29.3710080266238);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.8962499999999975,-29.3710080266238) -- (-2.8699999999999974,-29.296675579321274);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.8699999999999974,-29.296675579321274) -- (-2.8437499999999973,-29.222342693562393);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.8437499999999973,-29.222342693562393) -- (-2.8174999999999972,-29.148009365992724);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.8174999999999972,-29.148009365992724) -- (-2.791249999999997,-29.0736755932235);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.791249999999997,-29.0736755932235) -- (-2.764999999999997,-28.99934137183118);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.764999999999997,-28.99934137183118) -- (-2.738749999999997,-28.925006698357034);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.738749999999997,-28.925006698357034) -- (-2.712499999999997,-28.85067156930666);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.712499999999997,-28.85067156930666) -- (-2.6862499999999967,-28.776335981149504);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.6862499999999967,-28.776335981149504) -- (-2.6599999999999966,-28.701999930318436);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.6599999999999966,-28.701999930318436) -- (-2.6337499999999965,-28.62766341320925);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.6337499999999965,-28.62766341320925) -- (-2.6074999999999964,-28.55332642618018);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.6074999999999964,-28.55332642618018) -- (-2.5812499999999963,-28.47898896555142);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.5812499999999963,-28.47898896555142) -- (-2.554999999999996,-28.404651027604604);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.554999999999996,-28.404651027604604) -- (-2.528749999999996,-28.330312608582336);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.528749999999996,-28.330312608582336) -- (-2.502499999999996,-28.25597370468764);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.502499999999996,-28.25597370468764) -- (-2.476249999999996,-28.181634312083457);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.476249999999996,-28.181634312083457) -- (-2.4499999999999957,-28.107294426892093);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.4499999999999957,-28.107294426892093) -- (-2.4237499999999956,-28.032954045194725);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.4237499999999956,-28.032954045194725) -- (-2.3974999999999955,-27.958613163030805);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.3974999999999955,-27.958613163030805) -- (-2.3712499999999954,-27.884271776397522);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.3712499999999954,-27.884271776397522) -- (-2.3449999999999953,-27.809929881249236);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.3449999999999953,-27.809929881249236) -- (-2.318749999999995,-27.735587473496917);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.318749999999995,-27.735587473496917) -- (-2.292499999999995,-27.661244549007538);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.292499999999995,-27.661244549007538) -- (-2.266249999999995,-27.586901103603488);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.266249999999995,-27.586901103603488) -- (-2.239999999999995,-27.51255713306197);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.239999999999995,-27.51255713306197) -- (-2.2137499999999948,-27.438212633114407);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.2137499999999948,-27.438212633114407) -- (-2.1874999999999947,-27.363867599445793);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.1874999999999947,-27.363867599445793) -- (-2.1612499999999946,-27.28952202769406);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.1612499999999946,-27.28952202769406) -- (-2.1349999999999945,-27.215175913449453);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.1349999999999945,-27.215175913449453) -- (-2.1087499999999944,-27.140829252253862);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.1087499999999944,-27.140829252253862) -- (-2.0824999999999942,-27.06648203960018);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.0824999999999942,-27.06648203960018) -- (-2.056249999999994,-26.992134270931583);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.056249999999994,-26.992134270931583) -- (-2.029999999999994,-26.917785941640872);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.029999999999994,-26.917785941640872) -- (-2.003749999999994,-26.84343704706979);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-2.003749999999994,-26.84343704706979) -- (-1.9774999999999938,-26.76908758250828);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.9774999999999938,-26.76908758250828) -- (-1.9512499999999937,-26.694737543193774);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.9512499999999937,-26.694737543193774) -- (-1.9249999999999936,-26.620386924310456);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.9249999999999936,-26.620386924310456) -- (-1.8987499999999935,-26.546035720988527);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.8987499999999935,-26.546035720988527) -- (-1.8724999999999934,-26.471683928303445);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.8724999999999934,-26.471683928303445) -- (-1.8462499999999933,-26.397331541275136);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.8462499999999933,-26.397331541275136) -- (-1.8199999999999932,-26.32297855486721);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.8199999999999932,-26.32297855486721) -- (-1.793749999999993,-26.248624963986185);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.793749999999993,-26.248624963986185) -- (-1.767499999999993,-26.17427076348067);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.767499999999993,-26.17427076348067) -- (-1.7412499999999929,-26.099915948140506);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.7412499999999929,-26.099915948140506) -- (-1.7149999999999928,-26.025560512695954);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.7149999999999928,-26.025560512695954) -- (-1.6887499999999926,-25.951204451816853);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.6887499999999926,-25.951204451816853) -- (-1.6624999999999925,-25.87684776011172);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.6624999999999925,-25.87684776011172) -- (-1.6362499999999924,-25.802490432126877);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.6362499999999924,-25.802490432126877) -- (-1.6099999999999923,-25.72813246234555);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.6099999999999923,-25.72813246234555) -- (-1.5837499999999922,-25.653773845186965);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.5837499999999922,-25.653773845186965) -- (-1.5574999999999921,-25.579414575005405);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.5574999999999921,-25.579414575005405) -- (-1.531249999999992,-25.505054646089253);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.531249999999992,-25.505054646089253) -- (-1.504999999999992,-25.43069405266004);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.504999999999992,-25.43069405266004) -- (-1.4787499999999918,-25.356332788871477);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.4787499999999918,-25.356332788871477) -- (-1.4524999999999917,-25.281970848808424);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.4524999999999917,-25.281970848808424) -- (-1.4262499999999916,-25.207608226485885);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.4262499999999916,-25.207608226485885) -- (-1.3999999999999915,-25.13324491584799);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.3999999999999915,-25.13324491584799) -- (-1.3737499999999914,-25.05888091076692);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.3737499999999914,-25.05888091076692) -- (-1.3474999999999913,-24.98451620504185);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.3474999999999913,-24.98451620504185) -- (-1.3212499999999912,-24.910150792397843);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.3212499999999912,-24.910150792397843) -- (-1.294999999999991,-24.835784666484745);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.294999999999991,-24.835784666484745) -- (-1.268749999999991,-24.761417820876062);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.268749999999991,-24.761417820876062) -- (-1.2424999999999908,-24.687050249067802);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.2424999999999908,-24.687050249067802) -- (-1.2162499999999907,-24.6126819444773);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.2162499999999907,-24.6126819444773) -- (-1.1899999999999906,-24.53831290044201);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.1899999999999906,-24.53831290044201) -- (-1.1637499999999905,-24.463943110218324);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.1637499999999905,-24.463943110218324) -- (-1.1374999999999904,-24.389572566980313);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.1374999999999904,-24.389572566980313) -- (-1.1112499999999903,-24.31520126381846);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.1112499999999903,-24.31520126381846) -- (-1.0849999999999902,-24.240829193738374);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.0849999999999902,-24.240829193738374) -- (-1.05874999999999,-24.166456349659512);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.05874999999999,-24.166456349659512) -- (-1.03249999999999,-24.092082724413817);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.03249999999999,-24.092082724413817) -- (-1.0062499999999899,-24.01770831074436);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.0062499999999899,-24.01770831074436) -- (-0.9799999999999899,-23.943333101303974);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.9799999999999899,-23.943333101303974) -- (-0.9537499999999899,-23.868957088653847);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.9537499999999899,-23.868957088653847) -- (-0.9274999999999899,-23.79458026526206);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.9274999999999899,-23.79458026526206) -- (-0.9012499999999899,-23.720202623502157);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.9012499999999899,-23.720202623502157) -- (-0.8749999999999899,-23.64582415565164);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.8749999999999899,-23.64582415565164) -- (-0.8487499999999899,-23.57144485389045);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.8487499999999899,-23.57144485389045) -- (-0.8224999999999899,-23.497064710299426);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.8224999999999899,-23.497064710299426) -- (-0.7962499999999899,-23.42268371685872);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.7962499999999899,-23.42268371685872) -- (-0.7699999999999899,-23.348301865446206);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.7699999999999899,-23.348301865446206) -- (-0.7437499999999899,-23.273919147835816);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.7437499999999899,-23.273919147835816) -- (-0.7174999999999899,-23.19953555569591);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.7174999999999899,-23.19953555569591) -- (-0.6912499999999899,-23.125151080587532);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.6912499999999899,-23.125151080587532) -- (-0.6649999999999899,-23.050765713962708);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.6649999999999899,-23.050765713962708) -- (-0.6387499999999899,-22.97637944716266);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.6387499999999899,-22.97637944716266) -- (-0.6124999999999899,-22.90199227141601);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.6124999999999899,-22.90199227141601) -- (-0.58624999999999,-22.827604177836943);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.58624999999999,-22.827604177836943) -- (-0.55999999999999,-22.75321515742333);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.55999999999999,-22.75321515742333) -- (-0.53374999999999,-22.67882520105481);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.53374999999999,-22.67882520105481) -- (-0.50749999999999,-22.604434299490855);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.50749999999999,-22.604434299490855) -- (-0.48124999999998996,-22.53004244336878);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.48124999999998996,-22.53004244336878) -- (-0.45499999999998997,-22.455649623201705);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.45499999999998997,-22.455649623201705) -- (-0.42874999999999,-22.38125582937648);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.42874999999999,-22.38125582937648) -- (-0.40249999999999,-22.306861052151618);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.40249999999999,-22.306861052151618) -- (-0.37624999999999,-22.232465281655085);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.37624999999999,-22.232465281655085) -- (-0.34999999999999,-22.15806850788215);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.34999999999999,-22.15806850788215) -- (-0.32374999999999,-22.08367072069312);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.32374999999999,-22.08367072069312) -- (-0.29749999999999,-22.009271909811073);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.29749999999999,-22.009271909811073) -- (-0.27124999999999,-21.934872064819498);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.27124999999999,-21.934872064819498) -- (-0.24499999999999,-21.860471175159944);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.24499999999999,-21.860471175159944) -- (-0.21874999999999,-21.786069230129577);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.21874999999999,-21.786069230129577) -- (-0.19249999999999,-21.711666218878705);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.19249999999999,-21.711666218878705) -- (-0.16624999999999002,-21.637262130408246);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.16624999999999002,-21.637262130408246) -- (-0.13999999999999002,-21.56285695356714);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.13999999999999002,-21.56285695356714) -- (-0.11374999999999001,-21.488450677049723);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.11374999999999001,-21.488450677049723) -- (-0.08749999999999,-21.41404328939303);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.08749999999999,-21.41404328939303) -- (-0.06124999999998999,-21.339634778974048);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.06124999999998999,-21.339634778974048) -- (-0.034999999999989984,-21.2652251340069);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.034999999999989984,-21.2652251340069) -- (-0.008749999999989974,-21.190814342539998);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.008749999999989974,-21.190814342539998) -- (0.017500000000010035,-21.116402392453097);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.017500000000010035,-21.116402392453097) -- (0.043750000000010045,-21.041989271454323);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.043750000000010045,-21.041989271454323) -- (0.07000000000001005,-20.967574967077113);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.07000000000001005,-20.967574967077113) -- (0.09625000000001006,-20.893159466677098);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.09625000000001006,-20.893159466677098) -- (0.12250000000001007,-20.81874275742891);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.12250000000001007,-20.81874275742891) -- (0.1487500000000101,-20.744324826322952);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.1487500000000101,-20.744324826322952) -- (0.1750000000000101,-20.66990566016204);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.1750000000000101,-20.66990566016204) -- (0.2012500000000101,-20.595485245558038);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.2012500000000101,-20.595485245558038) -- (0.22750000000001008,-20.521063568928362);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.22750000000001008,-20.521063568928362) -- (0.2537500000000101,-20.446640616492452);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.2537500000000101,-20.446640616492452) -- (0.2800000000000101,-20.372216374268138);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.2800000000000101,-20.372216374268138) -- (0.30625000000001007,-20.297790828067935);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.30625000000001007,-20.297790828067935) -- (0.33250000000001007,-20.223363963495263);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.33250000000001007,-20.223363963495263) -- (0.35875000000001006,-20.148935765940564);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.35875000000001006,-20.148935765940564) -- (0.38500000000001006,-20.07450622057735);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.38500000000001006,-20.07450622057735) -- (0.41125000000001005,-20.000075312358174);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.41125000000001005,-20.000075312358174) -- (0.43750000000001005,-19.92564302601045);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.43750000000001005,-19.92564302601045) -- (0.46375000000001004,-19.851209346032267);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.46375000000001004,-19.851209346032267) -- (0.49000000000001004,-19.776774256688043);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.49000000000001004,-19.776774256688043) -- (0.5162500000000101,-19.70233774200409);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.5162500000000101,-19.70233774200409) -- (0.5425000000000101,-19.62789978576411);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.5425000000000101,-19.62789978576411) -- (0.5687500000000101,-19.55346037150455);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.5687500000000101,-19.55346037150455) -- (0.5950000000000101,-19.479019482509862);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.5950000000000101,-19.479019482509862) -- (0.6212500000000101,-19.40457710180768);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.6212500000000101,-19.40457710180768) -- (0.6475000000000101,-19.330133212163826);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.6475000000000101,-19.330133212163826) -- (0.6737500000000101,-19.255687796077265);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.6737500000000101,-19.255687796077265) -- (0.7000000000000101,-19.181240835774908);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.7000000000000101,-19.181240835774908) -- (0.72625000000001,-19.106792313206288);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.72625000000001,-19.106792313206288) -- (0.75250000000001,-19.032342210038127);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.75250000000001,-19.032342210038127) -- (0.77875000000001,-18.95789050764876);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.77875000000001,-18.95789050764876) -- (0.80500000000001,-18.883437187122446);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.80500000000001,-18.883437187122446) -- (0.83125000000001,-18.808982229243533);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.83125000000001,-18.808982229243533) -- (0.85750000000001,-18.734525614490455);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.85750000000001,-18.734525614490455) -- (0.88375000000001,-18.66006732302965);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.88375000000001,-18.66006732302965) -- (0.91000000000001,-18.58560733470927);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.91000000000001,-18.58560733470927) -- (0.93625000000001,-18.511145629052756);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.93625000000001,-18.511145629052756) -- (0.96250000000001,-18.436682185252284);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.96250000000001,-18.436682185252284) -- (0.98875000000001,-18.36221698216201);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (0.98875000000001,-18.36221698216201) -- (1.0150000000000101,-18.287749998291176);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.0150000000000101,-18.287749998291176) -- (1.0412500000000102,-18.213281211797035);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.0412500000000102,-18.213281211797035) -- (1.0675000000000103,-18.138810600477612);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.0675000000000103,-18.138810600477612) -- (1.0937500000000104,-18.064338141764257);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.0937500000000104,-18.064338141764257) -- (1.1200000000000105,-17.989863812714063);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.1200000000000105,-17.989863812714063) -- (1.1462500000000106,-17.915387590002034);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.1462500000000106,-17.915387590002034) -- (1.1725000000000108,-17.84090944991311);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.1725000000000108,-17.84090944991311) -- (1.1987500000000109,-17.766429368333945);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.1987500000000109,-17.766429368333945) -- (1.225000000000011,-17.69194732074451);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.225000000000011,-17.69194732074451) -- (1.251250000000011,-17.61746328220947);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.251250000000011,-17.61746328220947) -- (1.2775000000000112,-17.54297722736933);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.2775000000000112,-17.54297722736933) -- (1.3037500000000113,-17.46848913043137);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.3037500000000113,-17.46848913043137) -- (1.3300000000000114,-17.393998965160336);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.3300000000000114,-17.393998965160336) -- (1.3562500000000115,-17.319506704868903);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.3562500000000115,-17.319506704868903) -- (1.3825000000000116,-17.245012322407856);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.3825000000000116,-17.245012322407856) -- (1.4087500000000117,-17.170515790156067);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.4087500000000117,-17.170515790156067) -- (1.4350000000000118,-17.096017080010153);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.4350000000000118,-17.096017080010153) -- (1.461250000000012,-17.021516163373896);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.461250000000012,-17.021516163373896) -- (1.487500000000012,-16.947013011147387);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.487500000000012,-16.947013011147387) -- (1.5137500000000121,-16.872507593715845);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.5137500000000121,-16.872507593715845) -- (1.5400000000000122,-16.79799988093817);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.5400000000000122,-16.79799988093817) -- (1.5662500000000124,-16.723489842135187);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.5662500000000124,-16.723489842135187) -- (1.5925000000000125,-16.648977446077545);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.5925000000000125,-16.648977446077545) -- (1.6187500000000126,-16.57446266097332);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.6187500000000126,-16.57446266097332) -- (1.6450000000000127,-16.49994545445526);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.6450000000000127,-16.49994545445526) -- (1.6712500000000128,-16.42542579356769);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.6712500000000128,-16.42542579356769) -- (1.6975000000000129,-16.350903644753057);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.6975000000000129,-16.350903644753057) -- (1.723750000000013,-16.276378973838092);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.723750000000013,-16.276378973838092) -- (1.750000000000013,-16.201851746019614);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.750000000000013,-16.201851746019614) -- (1.7762500000000132,-16.127321925849895);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.7762500000000132,-16.127321925849895) -- (1.8025000000000133,-16.05278947722167);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.8025000000000133,-16.05278947722167) -- (1.8287500000000134,-15.978254363352674);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.8287500000000134,-15.978254363352674) -- (1.8550000000000135,-15.903716546769775);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.8550000000000135,-15.903716546769775) -- (1.8812500000000136,-15.829175989292644);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.8812500000000136,-15.829175989292644) -- (1.9075000000000137,-15.754632652016953);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.9075000000000137,-15.754632652016953) -- (1.9337500000000138,-15.68008649529711);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.9337500000000138,-15.68008649529711) -- (1.960000000000014,-15.605537478728463);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.960000000000014,-15.605537478728463) -- (1.986250000000014,-15.530985561129041);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (1.986250000000014,-15.530985561129041) -- (2.012500000000014,-15.4564307005207);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.012500000000014,-15.4564307005207) -- (2.038750000000014,-15.38187285410976);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.038750000000014,-15.38187285410976) -- (2.065000000000014,-15.30731197826708);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.065000000000014,-15.30731197826708) -- (2.0912500000000143,-15.232748028507487);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.0912500000000143,-15.232748028507487) -- (2.1175000000000144,-15.158180959468678);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.1175000000000144,-15.158180959468678) -- (2.1437500000000145,-15.083610724889406);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.1437500000000145,-15.083610724889406) -- (2.1700000000000146,-15.009037277587087);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.1700000000000146,-15.009037277587087) -- (2.1962500000000147,-14.934460569434663);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.1962500000000147,-14.934460569434663) -- (2.222500000000015,-14.859880551336838);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.222500000000015,-14.859880551336838) -- (2.248750000000015,-14.785297173205505);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.248750000000015,-14.785297173205505) -- (2.275000000000015,-14.710710383934515);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.275000000000015,-14.710710383934515) -- (2.301250000000015,-14.63612013137357);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.301250000000015,-14.63612013137357) -- (2.3275000000000152,-14.561526362301404);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.3275000000000152,-14.561526362301404) -- (2.3537500000000153,-14.486929022398042);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.3537500000000153,-14.486929022398042) -- (2.3800000000000154,-14.412328056216273);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.3800000000000154,-14.412328056216273) -- (2.4062500000000155,-14.33772340715215);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.4062500000000155,-14.33772340715215) -- (2.4325000000000156,-14.26311501741463);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.4325000000000156,-14.26311501741463) -- (2.4587500000000158,-14.188502827994174);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.4587500000000158,-14.188502827994174) -- (2.485000000000016,-14.113886778630427);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.485000000000016,-14.113886778630427) -- (2.511250000000016,-14.03926680777877);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.511250000000016,-14.03926680777877) -- (2.537500000000016,-13.964642852575885);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.537500000000016,-13.964642852575885) -- (2.563750000000016,-13.89001484880411);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.563750000000016,-13.89001484880411) -- (2.5900000000000163,-13.815382730854717);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.5900000000000163,-13.815382730854717) -- (2.6162500000000164,-13.7407464316899);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.6162500000000164,-13.7407464316899) -- (2.6425000000000165,-13.666105882803585);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.6425000000000165,-13.666105882803585) -- (2.6687500000000166,-13.591461014180878);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.6687500000000166,-13.591461014180878) -- (2.6950000000000167,-13.516811754256207);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.6950000000000167,-13.516811754256207) -- (2.721250000000017,-13.442158029870006);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.721250000000017,-13.442158029870006) -- (2.747500000000017,-13.367499766224002);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.747500000000017,-13.367499766224002) -- (2.773750000000017,-13.292836886834905);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.773750000000017,-13.292836886834905) -- (2.800000000000017,-13.218169313486598);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.800000000000017,-13.218169313486598) -- (2.8262500000000172,-13.143496966180601);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.8262500000000172,-13.143496966180601) -- (2.8525000000000174,-13.06881976308491);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.8525000000000174,-13.06881976308491) -- (2.8787500000000175,-12.994137620480965);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.8787500000000175,-12.994137620480965) -- (2.9050000000000176,-12.919450452708844);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.9050000000000176,-12.919450452708844) -- (2.9312500000000177,-12.844758172110469);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.9312500000000177,-12.844758172110469) -- (2.957500000000018,-12.770060688970853);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.957500000000018,-12.770060688970853) -- (2.983750000000018,-12.69535791145719);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (2.983750000000018,-12.69535791145719) -- (3.010000000000018,-12.620649745555843);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.010000000000018,-12.620649745555843) -- (3.036250000000018,-12.545936095006967);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.036250000000018,-12.545936095006967) -- (3.062500000000018,-12.471216861236867);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.062500000000018,-12.471216861236867) -- (3.0887500000000183,-12.396491943287772);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.0887500000000183,-12.396491943287772) -- (3.1150000000000184,-12.321761237745143);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.1150000000000184,-12.321761237745143) -- (3.1412500000000185,-12.247024638662188);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.1412500000000185,-12.247024638662188) -- (3.1675000000000186,-12.172282037481663);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.1675000000000186,-12.172282037481663) -- (3.1937500000000187,-12.09753332295467);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.1937500000000187,-12.09753332295467) -- (3.220000000000019,-12.022778381056467);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.220000000000019,-12.022778381056467) -- (3.246250000000019,-11.948017094898997);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.246250000000019,-11.948017094898997) -- (3.272500000000019,-11.873249344640191);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.272500000000019,-11.873249344640191) -- (3.298750000000019,-11.79847500738967);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.298750000000019,-11.79847500738967) -- (3.3250000000000193,-11.723693957110905);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.3250000000000193,-11.723693957110905) -- (3.3512500000000194,-11.648906064519478);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.3512500000000194,-11.648906064519478) -- (3.3775000000000195,-11.574111196977448);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.3775000000000195,-11.574111196977448) -- (3.4037500000000196,-11.499309218383454);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.4037500000000196,-11.499309218383454) -- (3.4300000000000197,-11.424499989058546);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.4300000000000197,-11.424499989058546) -- (3.45625000000002,-11.349683365627373);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.45625000000002,-11.349683365627373) -- (3.48250000000002,-11.27485920089465);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.48250000000002,-11.27485920089465) -- (3.50875000000002,-11.200027343716565);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.50875000000002,-11.200027343716565) -- (3.53500000000002,-11.125187638866983);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.53500000000002,-11.125187638866983) -- (3.5612500000000202,-11.050339926898118);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.5612500000000202,-11.050339926898118) -- (3.5875000000000203,-10.97548404399545);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.5875000000000203,-10.97548404399545) -- (3.6137500000000204,-10.900619821826588);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.6137500000000204,-10.900619821826588) -- (3.6400000000000206,-10.825747087383796);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.6400000000000206,-10.825747087383796) -- (3.6662500000000207,-10.750865662819843);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.6662500000000207,-10.750865662819843) -- (3.6925000000000208,-10.675975365276877);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.6925000000000208,-10.675975365276877) -- (3.718750000000021,-10.601076006707938);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.718750000000021,-10.601076006707938) -- (3.745000000000021,-10.52616739369077);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.745000000000021,-10.52616739369077) -- (3.771250000000021,-10.451249327233503);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.771250000000021,-10.451249327233503) -- (3.797500000000021,-10.376321602571826);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.797500000000021,-10.376321602571826) -- (3.8237500000000213,-10.301384008957182);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.8237500000000213,-10.301384008957182) -- (3.8500000000000214,-10.226436329435526);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.8500000000000214,-10.226436329435526) -- (3.8762500000000215,-10.151478340616146);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.8762500000000215,-10.151478340616146) -- (3.9025000000000216,-10.076509812430034);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.9025000000000216,-10.076509812430034) -- (3.9287500000000217,-10.00153050787722);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.9287500000000217,-10.00153050787722) -- (3.955000000000022,-9.92654018276251);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.955000000000022,-9.92654018276251) -- (3.981250000000022,-9.851538585418968);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (3.981250000000022,-9.851538585418968) -- (4.007500000000022,-9.776525456418492);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.007500000000022,-9.776525456418492) -- (4.033750000000022,-9.701500528268747);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.033750000000022,-9.701500528268747) -- (4.060000000000022,-9.626463525095746);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.060000000000022,-9.626463525095746) -- (4.086250000000022,-9.551414162311191);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.086250000000022,-9.551414162311191) -- (4.112500000000022,-9.476352146263814);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.112500000000022,-9.476352146263814) -- (4.138750000000022,-9.401277173873707);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.138750000000022,-9.401277173873707) -- (4.165000000000022,-9.326188932248735);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.165000000000022,-9.326188932248735) -- (4.191250000000022,-9.251087098281953);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.191250000000022,-9.251087098281953) -- (4.2175000000000225,-9.17597133822893);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.2175000000000225,-9.17597133822893) -- (4.243750000000023,-9.100841307263787);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.243750000000023,-9.100841307263787) -- (4.270000000000023,-9.025696649012687);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.270000000000023,-9.025696649012687) -- (4.296250000000023,-8.950536995063414);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.296250000000023,-8.950536995063414) -- (4.322500000000023,-8.87536196444961);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.322500000000023,-8.87536196444961) -- (4.348750000000023,-8.80017116310807);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.348750000000023,-8.80017116310807) -- (4.375000000000023,-8.724964183307508);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.375000000000023,-8.724964183307508) -- (4.401250000000023,-8.64974060304694);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.401250000000023,-8.64974060304694) -- (4.427500000000023,-8.574499985421824);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.427500000000023,-8.574499985421824) -- (4.453750000000023,-8.499241877955871);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.453750000000023,-8.499241877955871) -- (4.4800000000000235,-8.42396581189637);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.4800000000000235,-8.42396581189637) -- (4.506250000000024,-8.348671301470604);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.506250000000024,-8.348671301470604) -- (4.532500000000024,-8.273357843100882);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.532500000000024,-8.273357843100882) -- (4.558750000000024,-8.198024914575393);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.558750000000024,-8.198024914575393) -- (4.585000000000024,-8.122671974171977);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.585000000000024,-8.122671974171977) -- (4.611250000000024,-8.04729845973162);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.611250000000024,-8.04729845973162) -- (4.637500000000024,-7.9719037876782535);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.637500000000024,-7.9719037876782535) -- (4.663750000000024,-7.89648735198119);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.663750000000024,-7.89648735198119) -- (4.690000000000024,-7.821048523056158);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.690000000000024,-7.821048523056158) -- (4.7162500000000245,-7.74558664660069);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.7162500000000245,-7.74558664660069) -- (4.742500000000025,-7.67010104235915);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.742500000000025,-7.67010104235915) -- (4.768750000000025,-7.5945910028123915);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.768750000000025,-7.5945910028123915) -- (4.795000000000025,-7.519055791786554);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.795000000000025,-7.519055791786554) -- (4.821250000000025,-7.443494642975095);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.821250000000025,-7.443494642975095) -- (4.847500000000025,-7.367906758367599);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.847500000000025,-7.367906758367599) -- (4.873750000000025,-7.292291306578402);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.873750000000025,-7.292291306578402) -- (4.900000000000025,-7.216647421067414);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.900000000000025,-7.216647421067414) -- (4.926250000000025,-7.140974198244869);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.926250000000025,-7.140974198244869) -- (4.952500000000025,-7.065270695451022);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.952500000000025,-7.065270695451022) -- (4.9787500000000255,-6.989535928800922);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (4.9787500000000255,-6.989535928800922) -- (5.005000000000026,-6.913768870883592);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.005000000000026,-6.913768870883592) -- (5.031250000000026,-6.837968448303852);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.031250000000026,-6.837968448303852) -- (5.057500000000026,-6.762133539054001);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.057500000000026,-6.762133539054001) -- (5.083750000000026,-6.686262969701311);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.083750000000026,-6.686262969701311) -- (5.110000000000026,-6.610355512375942);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.110000000000026,-6.610355512375942) -- (5.136250000000026,-6.534409881542404);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.136250000000026,-6.534409881542404) -- (5.162500000000026,-6.458424730536001);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.162500000000026,-6.458424730536001) -- (5.188750000000026,-6.382398647843852);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.188750000000026,-6.382398647843852) -- (5.2150000000000265,-6.3063301531079885);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.2150000000000265,-6.3063301531079885) -- (5.241250000000027,-6.230217692825752);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.241250000000027,-6.230217692825752) -- (5.267500000000027,-6.1540596357200705);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.267500000000027,-6.1540596357200705) -- (5.293750000000027,-6.077854267749355);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.293750000000027,-6.077854267749355) -- (5.320000000000027,-6.0015997867234585);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.320000000000027,-6.0015997867234585) -- (5.346250000000027,-5.925294296488493);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.346250000000027,-5.925294296488493) -- (5.372500000000027,-5.848935800639214);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.372500000000027,-5.848935800639214) -- (5.398750000000027,-5.772522195712987);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.398750000000027,-5.772522195712987) -- (5.425000000000027,-5.696051263814177);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.425000000000027,-5.696051263814177) -- (5.4512500000000275,-5.619520664611805);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.4512500000000275,-5.619520664611805) -- (5.477500000000028,-5.54292792664663);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.477500000000028,-5.54292792664663) -- (5.503750000000028,-5.466270437876187);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.503750000000028,-5.466270437876187) -- (5.530000000000028,-5.3895454353775625);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.530000000000028,-5.3895454353775625) -- (5.556250000000028,-5.312749994117842);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.556250000000028,-5.312749994117842) -- (5.582500000000028,-5.23588101469076);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.582500000000028,-5.23588101469076) -- (5.608750000000028,-5.158935209905155);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.608750000000028,-5.158935209905155) -- (5.635000000000028,-5.081909090095882);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.635000000000028,-5.081909090095882) -- (5.661250000000028,-5.004798947010675);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.661250000000028,-5.004798947010675) -- (5.687500000000028,-4.927600836106672);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.687500000000028,-4.927600836106672) -- (5.7137500000000285,-4.85031055706737);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.7137500000000285,-4.85031055706737) -- (5.740000000000029,-4.772923632324238);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.740000000000029,-4.772923632324238) -- (5.766250000000029,-4.695435283336274);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.766250000000029,-4.695435283336274) -- (5.792500000000029,-4.617840404344785);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.792500000000029,-4.617840404344785) -- (5.818750000000029,-4.540133533278423);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.818750000000029,-4.540133533278423) -- (5.845000000000029,-4.462308819434087);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.845000000000029,-4.462308819434087) -- (5.871250000000029,-4.38435998750094);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.871250000000029,-4.38435998750094) -- (5.897500000000029,-4.306280297425987);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.897500000000029,-4.306280297425987) -- (5.923750000000029,-4.228062499537969);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.923750000000029,-4.228062499537969) -- (5.9500000000000295,-4.149698784249197);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.9500000000000295,-4.149698784249197) -- (5.97625000000003,-4.07118072553888);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (5.97625000000003,-4.07118072553888) -- (6.00250000000003,-3.992499217282239);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.00250000000003,-3.992499217282239) -- (6.02875000000003,-3.9136444013220335);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.02875000000003,-3.9136444013220335) -- (6.05500000000003,-3.8346055859761257);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.05500000000003,-3.8346055859761257) -- (6.08125000000003,-3.755371153428023);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.08125000000003,-3.755371153428023) -- (6.10750000000003,-3.675928454145881);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.10750000000003,-3.675928454145881) -- (6.13375000000003,-3.5962636861052526);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.13375000000003,-3.5962636861052526) -- (6.16000000000003,-3.516361756133653);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.16000000000003,-3.516361756133653) -- (6.1862500000000304,-3.4362061201271614);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.1862500000000304,-3.4362061201271614) -- (6.2125000000000306,-3.3557785981794703);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.2125000000000306,-3.3557785981794703) -- (6.238750000000031,-3.2750591597709167);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.238750000000031,-3.2750591597709167) -- (6.265000000000031,-3.1940256730338583);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.265000000000031,-3.1940256730338583) -- (6.291250000000031,-3.1126536106671754);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.291250000000031,-3.1126536106671754) -- (6.317500000000031,-3.0309157032156824);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.317500000000031,-3.0309157032156824) -- (6.343750000000031,-2.948781528021265);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.343750000000031,-2.948781528021265) -- (6.370000000000031,-2.8662170189989866);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.370000000000031,-2.8662170189989866) -- (6.396250000000031,-2.7831838782228253);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.396250000000031,-2.7831838782228253) -- (6.422500000000031,-2.6996388647371816);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.422500000000031,-2.6996388647371816) -- (6.4487500000000315,-2.61553292848694);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.4487500000000315,-2.61553292848694) -- (6.475000000000032,-2.5308101469686504);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.475000000000032,-2.5308101469686504) -- (6.501250000000032,-2.44540640794112);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.501250000000032,-2.44540640794112) -- (6.527500000000032,-2.3592477614696397);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.527500000000032,-2.3592477614696397) -- (6.553750000000032,-2.2722483358998233);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.553750000000032,-2.2722483358998233) -- (6.580000000000032,-2.1843076706360596);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.580000000000032,-2.1843076706360596) -- (6.606250000000032,-2.0953072567047393);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.606250000000032,-2.0953072567047393) -- (6.632500000000032,-2.005105982236239);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.632500000000032,-2.005105982236239) -- (6.658750000000032,-1.913534034188983);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.658750000000032,-1.913534034188983) -- (6.6850000000000325,-1.8203845747532517);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.6850000000000325,-1.8203845747532517) -- (6.711250000000033,-1.7254021270415743);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.711250000000033,-1.7254021270415743) -- (6.737500000000033,-1.6282659487932558);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.737500000000033,-1.6282659487932558) -- (6.763750000000033,-1.5285655039937327);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.763750000000033,-1.5285655039937327) -- (6.790000000000033,-1.4257629536495982);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.790000000000033,-1.4257629536495982) -- (6.816250000000033,-1.3191332381528558);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.816250000000033,-1.3191332381528558) -- (6.842500000000033,-1.2076630324720765);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.842500000000033,-1.2076630324720765) -- (6.868750000000033,-1.089868111286712);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.868750000000033,-1.089868111286712) -- (6.895000000000033,-0.9634313675605946);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.895000000000033,-0.9634313675605946) -- (6.921250000000033,-0.8243861352544029);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.921250000000033,-0.8243861352544029) -- (6.9475000000000335,-0.6648684080325244);
+			\draw[line width=0.4pt,dash pattern=on 1pt off 1pt] (6.9475000000000335,-0.6648684080325244) -- (6.973750000000034,-0.4642332387924379);
+			\draw [line width=1.2pt] (6.642731167288937,1.969588488060973) circle (0.803854873599892cm);
+			\begin{scriptsize}
+				\draw [fill=black] (0.,0.) circle (0.5pt);
+				\draw [fill=black] (-1.5,1.5) circle (0.5pt);
+				\draw [fill=black] (0.987076530407758,0.02558421149435941) circle (0.5pt);
+				\draw [fill=black] (6.,0.) circle (0.5pt);
+				\draw [fill=black] (9.,0.) circle (0.5pt);
+				\draw [fill=black] (6.642731167288937,1.969588488060973) circle (0.5pt);
+			\end{scriptsize}
+		\end{tikzpicture}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	那么, 给定三个两两相切的圆后, 能添加第四个与之均相切的圆吗?\par
+	事实上, 有且仅有两个圆满足要求. 这就是\textbf{阿波罗尼奥斯定理(Apollonius' Theorem)}
+	\begin{figure}[htbp]
+		\centering
+		\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.75cm,y=0.75cm]
+			\clip(-3.5,-3.5) rectangle (11.5,3.7);
+			\draw [line width=1.2pt] (0.,0.) circle (2.25cm);
+			\draw [line width=1.2pt] (-1.5,1.5) circle (0.6590097423302683cm);
+			\draw [line width=1.2pt] (0.987076530407758,0.02558421149435941) circle (1.5094439733029796cm);
+			\draw [line width=1.2pt] (6.,0.) circle (0.75cm);
+			\draw [line width=1.2pt] (9.,0.) circle (1.5cm);
+			\draw [line width=1.2pt] (6.642731167288937,1.969588488060973) circle (0.803854873599892cm);
+			\draw [line width=0.4pt,dash pattern=on 1pt off 1pt] (-0.2580809265221695,2.356155823080864) circle (0.4723139294744084cm);
+			\draw [line width=0.4pt,dash pattern=on 1pt off 1pt] (-1.9930214258949928,-0.2972203839109061) circle (0.7387035936364565cm);
+			\draw [line width=0.4pt,dash pattern=on 1pt off 1pt] (6.935767193486697,0.7395061051587242) circle (0.14452381465492994cm);
+			\draw [line width=0.4pt,dash pattern=on 1pt off 1pt] (8.030564388577076,0.5019846246738799) circle (2.3187698742983134cm);
+			\begin{scriptsize}
+				\draw [fill=black] (0.,0.) circle (0.5pt);
+				\draw [fill=black] (-1.5,1.5) circle (0.5pt);
+				\draw [fill=black] (0.987076530407758,0.02558421149435941) circle (0.5pt);
+				\draw [fill=black] (6.,0.) circle (0.5pt);
+				\draw [fill=black] (9.,0.) circle (0.5pt);
+				\draw [fill=black] (6.642731167288937,1.969588488060973) circle (0.5pt);
+				\draw [fill=black] (-0.2580809265221695,2.356155823080864) circle (0.5pt);
+				\draw [fill=black] (-1.9930214258949928,-0.2972203839109061) circle (0.5pt);
+			\end{scriptsize}
+		\end{tikzpicture}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	并且, 设两两相切的四圆的有向曲率为$k_1$, $k_2$, $k_3$, $k_4$, 那么
+	\[{(k_1 + k_2 + k_3 + k_4)^2 = 2(k_1^2 + k_2^2 + k_3^2 + k_4^2)}\]
+	其中:
+	\begin{itemize}
+		\item[(1)]有向曲率的大小为$|k_i|=1/r_i$, 其中$r_i$为每个圆的半径, $i=1,2,3,4$;
+		\item[(2)]有向曲率带有符号(正或负), 如果两圆外切, 二者的曲率符号相同, 如果两圆内切, 二者的曲率符号相异;
+		\item[(3)]对于任一四圆相切图案来说, 只要指定某个圆的曲率符号, 剩余圆的曲率符号就能完全确定. 如果每个圆的曲率半径同时取相反数, 很显然这对整个结果没有任何影响.
+	\end{itemize}
+	这就是\textbf{笛卡尔定理(Descartes' Theorem)}.
+\end{frame}
+
+\begin{frame}
+	还有一个关于多圆相切的有趣的例子.
+	画一个数轴, 取出$0$与$1$中间那一段(包括端点), 找出所有的有理点$p/q$, 在数轴上方画一个半径为$1/(2q^2)$的圆, 使之与数轴相切于$p/q$所对应的点.\par
+	于是我们得到了如下精致的图形:
+\end{frame}
+
+\begin{frame}
+	\begin{figure}[htbp]
+		\centering
+		\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=4.0cm,y=4.0cm]
+			\clip(-0.6,-0.1) rectangle (1.6,1.1);
+			\draw [line width=0.4pt] (0.,0.5) circle (2.cm);
+			\draw [line width=0.4pt] (1.,0.5) circle (2.cm);
+			\draw [line width=0.4pt] (0.5,0.125) circle (0.5cm);
+			\draw [line width=0.4pt] (0.33333333333333354,0.055555555555555636) circle (0.22222222222222254cm);
+			\draw [line width=0.4pt] (0.6666666666666671,0.05555555555555536) circle (0.22222222222222263cm);
+			\draw [line width=0.4pt] (0.25,0.03125) circle (0.125cm);
+			\draw [line width=0.4pt] (0.4,0.02) circle (0.08cm);
+			\draw [line width=0.4pt] (0.6,0.02) circle (0.08cm);
+			\draw [line width=0.4pt] (0.75,0.03125) circle (0.125cm);
+			\draw [line width=0.4pt] (0.2,0.02) circle (0.08cm);
+			\draw [line width=0.4pt] (0.2857142857142672,0.010204081632667814) circle (0.040816326530617585cm);
+			\draw [line width=0.4pt] (0.37499999999731193,0.007812500003012313) circle (0.031250000004343914cm);
+			\draw [line width=0.4pt] (0.42857142857161906,0.010204081632529505) circle (0.04081632653068899cm);
+			\draw [line width=0.4pt] (0.5714285714285727,0.010204081632653739) circle (0.040816326530614955cm);
+			\draw [line width=0.4pt] (0.6250000000032812,0.007812499997312039) circle (0.031249999999684253cm);
+			\draw [line width=0.4pt] (0.7142857142586074,0.010204081661848823) circle (0.04081632656455527cm);
+			\draw [line width=0.4pt] (0.800000000001851,0.019999999998949247) circle (0.08000000000130228cm);
+			\draw [line width=0.4pt] (0.1666666666666668,0.013888888888889037) circle (0.05555555555555562cm);
+			\draw [line width=0.4pt] (0.14285714285714302,0.010204081632653147) circle (0.040816326530612006cm);
+			\draw [line width=0.4pt] (0.1538461538461902,0.002958579881623358) circle (0.01183431952660757cm);
+			\draw [line width=0.4pt] (0.1818181818181955,0.0041322314049462945) circle (0.0165289256198276cm);
+			\draw [line width=0.4pt] (0.17647058825851647,0.0017301037798156393) circle (0.0069204151835096945cm);
+			\draw [line width=0.4pt] (0.18750000000128547,0.001953124999055783) circle (0.007812500000248204cm);
+			\draw [line width=0.4pt] (0.2222222222220812,0.006172839506300354) circle (0.02469135802475548cm);
+			\draw [line width=0.4pt] (0.21428571416557196,0.0025510205444834178) circle (0.010204081843089612cm);
+			\draw [line width=0.4pt] (0.23076923076936828,0.0029585798815317255) circle (0.011834319526701404cm);
+			\draw [line width=0.4pt] (0.272727272719698,0.004132231413520204) circle (0.016528925632734823cm);
+			\draw [line width=0.4pt] (0.29999999999927307,0.005000000000525334) circle (0.019999999999830643cm);
+			\draw [line width=0.4pt] (0.3636363586277698,0.0041322372432385235) circle (0.016528937473408906cm);
+			\draw [line width=0.4pt] (0.35714285256655315,0.0025510206183708695) circle (0.010204073425243435cm);
+			\draw [line width=0.4pt] (0.36842104986824376,0.0013850435843506214) circle (0.005540168425179155cm);
+			\draw [line width=0.4pt] (0.384615384629243,0.002958579869665118) circle (0.01183431952513434cm);
+			\draw [line width=0.4pt] (0.3809523809581655,0.0011337868437293896) circle (0.004535147409361287cm);
+			\draw [line width=0.4pt] (0.38888888902842367,0.001543209780532323) circle (0.006172839547660571cm);
+			\draw [line width=0.4pt] (0.4166666668733954,0.0034722219971090834) circle (0.013888888612686983cm);
+			\draw [line width=0.4pt] (0.411764706008775,0.0017301037720710566) circle (0.006920415548109546cm);
+			\draw [line width=0.4pt] (0.42105263099646223,0.00138504205083112) circle (0.005540166193417635cm);
+			\draw [line width=0.4pt] (0.4444444444465827,0.006172839504852784) circle (0.024691358025763957cm);
+			\draw [line width=0.4pt] (0.4375000055287178,0.0019531190893469508) circle (0.007812493381868452cm);
+			\draw [line width=0.4pt] (0.43478261137986557,9.451792006806292E-4) circle (0.003780727933289983cm);
+			\draw [line width=0.4pt] (0.43999999913632115,8.000012103498988E-4) circle (0.003199998464724599cm);
+			\draw [line width=0.4pt] (0.45454545454183765,0.004132231407413131) circle (0.01652892561608156cm);
+			\draw [line width=0.4pt] (0.4499999999869399,0.001250000014303396) circle (0.005000000009317896cm);
+			\draw [line width=0.4pt] (0.46153846152976613,0.0029585798857438977) circle (0.011834319521328737cm);
+			\draw [line width=0.4pt] (0.125,0.007812500000000014) circle (0.03125cm);
+			\draw [line width=0.4pt] (0.1333333333340213,0.0022222222215679465) circle (0.008888888888479206cm);
+			\draw [line width=0.4pt] (0.11111111111111117,0.006172839506172846) circle (0.024691358024691384cm);
+			\draw [line width=0.4pt] (0.11764705882435969,0.0017301038054356934) circle (0.0069204152243997515cm);
+			\draw [line width=0.4pt] (0.1,0.005) circle (0.02cm);
+			\draw [line width=0.4pt] (0.0909090909090912,0.004132231404958746) circle (0.01652892561983453cm);
+			\draw [line width=0.4pt] (0.08333333333333354,0.0034722222222222385) circle (0.013888888888888954cm);
+			\draw [line width=0.4pt] (0.07692307692307718,0.0029585798816568246) circle (0.011834319526627298cm);
+			\draw [line width=0.4pt] (0.07142857142857145,0.002551020408163251) circle (0.010204081632653045cm);
+			\draw [line width=0.4pt] (0.06666666666666668,0.0022222222222222227) circle (0.00888888888888889cm);
+			\draw [line width=0.4pt] (0.0625,0.0019531249999999991) circle (0.0078124999999999965cm);
+			\draw [line width=0.4pt] (0.1052631578959102,0.00138504155011809) circle (0.0055401662042367465cm);
+			\draw [line width=0.4pt] (0.09523809523659577,0.001133786849523078) circle (0.004535147393272493cm);
+			\draw [line width=0.4pt] (0.08695652173723173,9.4517958596486E-4) circle (0.003780718337752325cm);
+			\draw [line width=0.4pt] (0.08000000000564977,7.999999945064368E-4) circle (0.003199999996170799cm);
+			\draw [line width=0.4pt] (0.05882352941176461,0.0017301038062283681) circle (0.0069204152249134725cm);
+			\draw [line width=0.4pt] (0.05555555555555548,0.0015432098765432059) circle (0.0061728395061728236cm);
+			\draw [line width=0.4pt] (0.05263157894736827,0.0013850415512464069) circle (0.005540166204985672cm);
+			\draw [line width=0.4pt] (0.05,0.00125) circle (0.005cm);
+			\draw [line width=0.4pt] (0.46666666658300243,0.0022222222626745725) circle (0.008888888820564175cm);
+			\draw [line width=0.4pt] (0.47058823431776897,0.0017301042616677392) circle (0.006920414359268455cm);
+			\draw [line width=0.4pt] (0.47368420860012794,0.0013850422667007686) circle (0.005540165017231729cm);
+			\draw [line width=0.4pt] (0.5555555555520164,0.006172839510286743) circle (0.024691358034353787cm);
+			\draw [line width=0.4pt] (0.545454545441662,0.004132231415434895) circle (0.016528925641772604cm);
+			\draw [line width=0.4pt] (0.5555555545928397,0.006172839581991704) circle (0.02469135611825503cm);
+			\draw [line width=0.4pt] (0.5384615384363148,0.0029585798961181686) circle (0.011834319550720939cm);
+			\draw [line width=0.4pt] (0.5333333332661642,0.002222222272790786) circle (0.008888889010310248cm);
+			\draw [line width=0.4pt] (0.5294117645910859,0.0017301038519748901) circle (0.00692041529485942cm);
+			\draw [line width=0.4pt] (0.5833333334046633,0.003472222158731556) circle (0.013888888865847287cm);
+			\draw [line width=0.4pt] (0.578947368373496,0.001385041621923766) circle (0.005540166426917198cm);
+			\draw [line width=0.4pt] (0.5882352935656874,0.0017301042126794952) circle (0.0069204150509193495cm);
+			\draw [line width=0.4pt] (0.5624999991242616,0.0019531255563346142) circle (0.007812501062662786cm);
+			\draw [line width=0.4pt] (0.5263157892905829,0.0013850416400596408) circle (0.005540166387315738cm);
+			\draw [line width=0.4pt] (0.6153846289694729,0.002958564721280245) circle (0.011834298352683277cm);
+			\draw [line width=0.4pt] (0.6111111198735325,0.0015432082796558166) circle (0.006172861934359558cm);
+			\draw [line width=0.4pt] (0.6190476319112435,0.0011337771943109587) circle (0.004535141987632673cm);
+			\draw [line width=0.4pt] (0.6363636363657685,0.004132231403920383) circle (0.016528925619231662cm);
+			\draw [line width=0.4pt] (0.6666662851255618,0.0555548393707391) circle (0.22221906034662248cm);
+			\draw [line width=0.4pt] (0.6428571280486319,0.002551021975075979) circle (0.01020402350795271cm);
+			\draw [line width=0.4pt] (0.6470587853439979,0.0017301167528924466) circle (0.006920366650157068cm);
+			\draw [line width=0.4pt] (0.6499999392030835,0.0012500231752840402) circle (0.0049999581797460484cm);
+			\draw [line width=0.4pt] (0.6999997850641728,0.0050001670397357145) circle (0.020000579024797085cm);
+			\draw [line width=0.4pt] (0.6923072897980241,0.0029586703452054164) circle (0.011834544263570921cm);
+			\draw [line width=0.4pt] (0.6874995196051221,0.001953191690722056) circle (0.007812599672262619cm);
+			\draw [line width=0.4pt] (0.6842100093414466,0.001385101054795862) circle (0.005540215608332471cm);
+			\draw [line width=0.4pt] (0.7272727270835004,0.00413223155738085) circle (0.016528925637578004cm);
+			\draw [line width=0.4pt] (0.7333333324548631,0.00222222279876777) circle (0.008888888633942126cm);
+			\draw [line width=0.4pt] (0.7368421060627185,0.0013850409307108735) circle (0.005540167172728545cm);
+			\draw [line width=0.4pt] (0.7058822684325995,0.001730146135807026) circle (0.006920532997128692cm);
+			\draw [line width=0.4pt] (0.7500000007562004,0.03125000122404175) circle (0.12500000508410444cm);
+			\draw [line width=0.4pt] (0.7222222222009615,0.001543209857171025) circle (0.006172839202448771cm);
+			\draw [line width=0.4pt] (0.7777777783821771,0.006172839157098872) circle (0.024691356712392688cm);
+			\draw [line width=0.4pt] (0.7692307575493831,0.0029585944008531095) circle (0.011834345901742363cm);
+			\draw [line width=0.4pt] (0.785714285440257,0.002551020740528931) circle (0.01020408129630886cm);
+			\draw [line width=0.4pt] (0.7647058729176609,0.0017301047373760592) circle (0.006920394420021489cm);
+			\draw [line width=0.4pt] (0.7619047601954841,0.001133789257998924) circle (0.004535136739762805cm);
+			\draw [line width=0.4pt] (0.7600000019605848,8.000034253598243E-4) circle (0.0031999954940700147cm);
+			\draw [line width=0.4pt] (0.7586206887210791,5.94539122425311E-4) circle (0.002378134075768111cm);
+			\draw [line width=0.4pt] (0.766666651348302,5.555644900278312E-4) circle (0.0022222216813408547cm);
+			\draw [line width=0.4pt] (0.7826086970001245,9.451783703918096E-4) circle (0.0037807157800274637cm);
+			\draw [line width=0.4pt] (0.7894736788856299,0.0013850451564418331) circle (0.005540164115854292cm);
+			\draw [line width=0.4pt] (0.7878787870957649,4.591370338311024E-4) circle (0.0018365404799391971cm);
+			\draw [line width=0.4pt] (0.7812500138534098,4.882664966925909E-4) circle (0.0019530973986144682cm);
+			\draw [line width=0.4pt] (0.047619047619047644,0.0011337868480726335) circle (0.004535147392290518cm);
+			\draw [line width=0.4pt] (0.045454545454545414,0.0010330578512396677) circle (0.004132231404958671cm);
+			\draw [line width=0.4pt] (0.043478260869564786,9.451795841209237E-4) circle (0.0037807183364842708cm);
+			\draw [line width=0.4pt] (0.04166666666666646,8.68055555555547E-4) circle (0.003472222222222188cm);
+			\draw [line width=0.4pt] (0.04,8.E-4) circle (0.0032cm);
+			\draw [line width=0.4pt] (0.03846153846153804,7.39644970414185E-4) circle (0.00295857988165674cm);
+			\draw [line width=0.4pt] (0.037037037037036556,6.858710562413962E-4) circle (0.0027434842249656065cm);
+			\draw [line width=0.4pt] (0.03571428571428522,6.377551020407987E-4) circle (0.002551020408163195cm);
+			\draw [line width=0.4pt] (0.09374999999310266,4.882812574185935E-4) circle (0.0019531250093798337cm);
+			\draw [line width=0.4pt] (0.09677419354829869,5.202913630756659E-4) circle (0.002081165453141315cm);
+			\draw [line width=0.4pt] (0.07407407407486387,6.858710554777897E-4) circle (0.002743484224428461cm);
+			\draw [line width=0.4pt] (0.06896551723784333,5.945303245089023E-4) circle (0.0023781212866496202cm);
+			\draw [line width=0.4pt] (0.06451612903266316,5.202913627664987E-4) circle (0.0020811654523688666cm);
+			\draw [line width=0.4pt] (0.060606060597525345,4.5913683113603046E-4) circle (0.0018365472971323348cm);
+			\draw [line width=0.4pt] (-4.630000667582568E-9,0.5000000544352741) circle (2.0000002184526cm);
+			\draw [line width=0.4pt] (0.05714285714642246,4.0816326180518166E-4) circle (0.0016326530586801957cm);
+			\draw [line width=0.4pt] (0.10344827586214393,5.945303213546888E-4) circle (0.002378121286714701cm);
+			\draw [line width=0.4pt] (0.10714285714244151,6.377551024786265E-4) circle (0.002551020407708727cm);
+			\draw [line width=0.4pt] (0.11538461813308143,7.396418333359966E-4) circle (0.00295857484524417cm);
+			\draw [line width=0.4pt] (0.11999999999766423,8.000000018529296E-4) circle (0.0031999999993585927cm);
+			\draw [line width=0.4pt] (0.12121212112335192,4.5913687990515456E-4) circle (0.0018365472488907587cm);
+			\draw [line width=0.4pt] (0.13043478435340397,9.451775943906948E-4) circle (0.003780715160776359cm);
+			\draw [line width=0.4pt] (0.12903225931530402,5.20291208933571E-4) circle (0.002081168390512335cm);
+			\draw [line width=0.4pt] (0.13636363636346205,0.001033057851451094) circle (0.004132231404701849cm);
+			\draw [line width=0.4pt] (0.13793103444982927,5.94530342331534E-4) circle (0.002378121268069404cm);
+			\draw [line width=0.4pt] (0.15000000008821635,0.0012499998995213618) circle (0.004999999840828914cm);
+			\draw [line width=0.4pt] (0.148148148202128,6.858710586198496E-4) circle (0.00274348439521606cm);
+			\draw [line width=0.4pt] (0.15789473683960611,0.0013850415531079102) circle (0.005540166204525602cm);
+			\draw [line width=0.4pt] (0.15624999997781142,4.882812741803153E-4) circle (0.0019531250273248143cm);
+			\draw [line width=0.4pt] (0.15999999998732625,8.000000077711331E-4) circle (0.0031999999948434514cm);
+			\draw [line width=0.4pt] (0.16129032251135142,5.202914016131446E-4) circle (0.0020811654134914614cm);
+			\draw [line width=0.4pt] (0.1739130434896978,9.45179587778594E-4) circle (0.0037807183877071483cm);
+			\draw [line width=0.4pt] (0.17241379309179003,5.945303269174057E-4) circle (0.0023781213208440154cm);
+			\draw [line width=0.4pt] (0.17857142862850403,6.377550549677143E-4) circle (0.002551020390714398cm);
+			\draw [line width=0.4pt] (0.18518519184221152,6.858637511079788E-4) circle (0.002743474901832927cm);
+			\draw [line width=0.4pt] (0.1904761904830963,0.001133786843787482) circle (0.0045351473951100885cm);
+			\draw [line width=0.4pt] (0.19230769226113428,7.396449985362721E-4) circle (0.002958579845982074cm);
+			\draw [line width=0.4pt] (0.21052631571064076,0.0013850415570269836) circle (0.0055401659914251136cm);
+			\draw [line width=0.4pt] (0.2083333333468508,8.680555585012378E-4) circle (0.003472222078777036cm);
+			\draw [line width=0.4pt] (0.2068965518337775,5.945302810770048E-4) circle (0.002378121082001765cm);
+			\draw [line width=0.4pt] (0.21739130432024728,9.451795972451781E-4) circle (0.00378071837276214cm);
+			\draw [line width=0.4pt] (0.2187500003204166,4.88281018983322E-4) circle (0.0019531251220025092cm);
+			\draw [line width=0.4pt] (0.22727272849982427,0.001033056506509664) circle (0.0041322297005221865cm);
+			\draw [line width=0.4pt] (0.22580645231388183,5.202912421873457E-4) circle (0.002081167528193969cm);
+			\draw [line width=0.4pt] (0.2352941176471013,0.001730103806126898) circle (0.006920415224790137cm);
+			\draw [line width=0.4pt] (0.23333332921048516,5.555599798855877E-4) circle (0.0022222272734514297cm);
+			\draw [line width=0.4pt] (0.2380952381204766,0.0011337868333742562) circle (0.004535147409549463cm);
+			\draw [line width=0.4pt] (0.24000000005819222,7.999999728083573E-4) circle (0.0032000000309030264cm);
+			\draw [line width=0.4pt] (0.24137931032075102,5.945303442968786E-4) circle (0.0023781212201029367cm);
+			\draw [line width=0.4pt] (0.26666666666025746,0.0022222222244255574) circle (0.008888888879192473cm);
+			\draw [line width=0.4pt] (0.26315789474498313,0.0013850415414864148) circle (0.005540166169168718cm);
+			\draw [line width=0.4pt] (0.26086956519882215,9.451796215144623E-4) circle (0.0037807184415972203cm);
+			\draw [line width=0.4pt] (0.25925925932016525,6.858709538529878E-4) circle (0.0027434838949217445cm);
+			\draw [line width=0.4pt] (0.2692307690307325,7.396451482770067E-4) circle (0.002958579949841856cm);
+			\draw [line width=0.4pt] (0.2647058790552924,4.325290047075703E-4) circle (0.001730105310875667cm);
+			\draw [line width=0.4pt] (0.27777777780888074,0.001543209849378046) circle (0.006172839502581619cm);
+			\draw [line width=0.4pt] (0.2758620690234431,5.945302610945724E-4) circle (0.0023781212515717833cm);
+			\draw [line width=0.4pt] (0.27999999991165697,8.000000656585293E-4) circle (0.0031999999591722423cm);
+			\draw [line width=0.4pt] (0.2812499997586774,4.882813891937954E-4) circle (0.0019531249048141209cm);
+			\draw [line width=0.4pt] (0.29411764545596947,0.0017301055588289213) circle (0.006920417421144187cm);
+			\draw [line width=0.4pt] (0.29166666583084333,8.680556323737154E-4) circle (0.003472219355718864cm);
+			\draw [line width=0.4pt] (0.2903225810042184,5.202914205933856E-4) circle (0.0020811637111926348cm);
+			\draw [line width=0.4pt] (0.2962962969407844,6.85870378256459E-4) circle (0.002743484606563461cm);
+			\draw [line width=0.4pt] (0.30769230769156464,0.0029585798820925546) circle (0.011834319526671577cm);
+			\draw [line width=0.4pt] (0.3043478260961865,9.451795739480132E-4) circle (0.0037807183243952595cm);
+			\draw [line width=0.4pt] (0.30769230906395256,0.002958580481673606) circle (0.011834324203119365cm);
+			\draw [line width=0.4pt] (0.3030303032073397,4.591366222997384E-4) circle (0.0018365469374901585cm);
+			\draw [line width=0.4pt] (0.31250000210034423,0.0019531243774670443) circle (0.007812499277911162cm);
+			\draw [line width=0.4pt] (0.31578947541463087,0.001385041126133378) circle (0.005540165692068759cm);
+			\draw [line width=0.4pt] (0.3103448296723486,5.945299181157513E-4) circle (0.0023781215878380087cm);
+			\draw [line width=0.4pt] (0.31428571646570314,4.0816260390447813E-4) circle (0.001632652577879049cm);
+			\draw [line width=0.4pt] (0.318181819144171,0.0010330577993286627) circle (0.004132230572424143cm);
+			\draw [line width=0.4pt] (0.3200000003970725,8.00000102226972E-4) circle (0.003199999228124472cm);
+			\draw [line width=0.4pt] (0.3529411750636707,0.0017301045136478982) circle (0.006920410608629955cm);
+			\draw [line width=0.4pt] (0.3500000005318639,0.0012500007838090466) circle (0.0049999969132208145cm);
+			\draw [line width=0.4pt] (0.34782608852415836,9.451806861292544E-4) circle (0.003780717143675979cm);
+			\draw [line width=0.4pt] (0.3461538484890783,7.396457617254437E-4) circle (0.0029585781786094093cm);
+			\draw [line width=0.4pt] (0.3448275886415459,5.945317888583976E-4) circle (0.0023781222976041916cm);
+			\draw [line width=0.4pt] (0.3548387115536186,5.20288807198402E-4) circle (0.0020811616150514943cm);
+			\draw [line width=0.4pt] (0.3599999994867225,7.999975831464109E-4) circle (0.0031999972019430573cm);
+			\draw [line width=0.4pt] (0.36666666264599024,5.555580031098017E-4) circle (0.0022222238415523015cm);
+			\draw [line width=0.4pt] (0.37037036569320597,6.858740476811398E-4) circle (0.0027434843778523167cm);
+			\draw [line width=0.4pt] (0.37931034554777715,5.945294753125219E-4) circle (0.002378119601084428cm);
+			\draw [line width=0.4pt] (0.38235293780213336,4.325288062661792E-4) circle (0.0017301043110284cm);
+			\draw [line width=0.4pt] (0.3870967745135971,5.202910384171016E-4) circle (0.0020811652413558687cm);
+			\draw [line width=0.4pt] (0.391304348302167,9.451793118496338E-4) circle (0.0037807185416058866cm);
+			\draw [line width=0.4pt] (0.3928571461959369,6.377533013316034E-4) circle (0.0025510225458588542cm);
+			\draw [line width=0.4pt] (0.409090908664546,0.0010330583035449703) circle (0.004132232730234025cm);
+			\draw [line width=0.4pt] (0.4074074063965004,6.858715810801469E-4) circle (0.002743485131062167cm);
+			\draw [line width=0.4pt] (0.4137931022286636,5.945314476080942E-4) circle (0.0023781217643996937cm);
+			\draw [line width=0.4pt] (0.41935483791483164,5.202922027980622E-4) circle (0.002081165605037057cm);
+			\draw [line width=0.4pt] (0.4230769254512586,7.39643271971735E-4) circle (0.00295858099686732cm);
+			\draw [line width=0.4pt] (0.4246411449192469,-6.982420988677629E-4) circle (0.005540168956991374cm);
+			\draw [line width=0.4pt] (0.43333333369520305,5.555533179980587E-4) circle (0.0022222235230331846cm);
+			\draw [line width=0.4pt] (0.4642857145008496,6.377548684917125E-4) circle (0.002551020091235148cm);
+			\draw [line width=0.4pt] (0.5238095236808573,0.0011337867908413624) circle (0.004535147051550472cm);
+			\draw [line width=0.4pt] (0.5217391304473458,9.451795441326044E-4) circle (0.0037807181086090963cm);
+			\draw [line width=0.4pt] (0.5200000002042564,7.999998660797383E-4) circle (0.0031999994949218746cm);
+			\draw [line width=0.4pt] (0.518518518960962,6.85870915066708E-4) circle (0.0027434837822034384cm);
+			\draw [line width=0.4pt] (0.5172413790344064,5.945311620382948E-4) circle (0.0023781243126309976cm);
+			\draw [line width=0.4pt] (0.5416666630036998,8.680590167845033E-4) circle (0.0034722242483914883cm);
+			\draw [line width=0.4pt] (0.5499999998260348,0.0012500001315404559) circle (0.004999999397817161cm);
+			\draw [line width=0.4pt] (0.5483870972993741,5.202909568357006E-4) circle (0.002081164397303799cm);
+			\draw [line width=0.4pt] (0.5599999984469873,8.00000866028272E-4) circle (0.003200000877257385cm);
+			\draw [line width=0.4pt] (0.5652173909611252,9.451796907417043E-4) circle (0.003780718750426664cm);
+			\draw [line width=0.4pt] (0.5769230788142031,7.396426889255958E-4) circle (0.00295857513380758cm);
+			\draw [line width=0.4pt] (0.5862068969197325,5.945298702019241E-4) circle (0.0023781199086603724cm);
+			\draw [line width=0.4pt] (0.5909090924126112,0.001033056830390816) circle (0.004132232488527291cm);
+			\draw [line width=0.4pt] (0.6086956528847425,9.451764049429046E-4) circle (0.0037807286917061014cm);
+			\draw [line width=0.4pt] (0.6071428588706347,6.377458691750604E-4) circle (0.0025510107651942637cm);
+			\draw [line width=0.4pt] (0.6206896620246493,5.945273338358592E-4) circle (0.002378117484922704cm);
+			\draw [line width=0.4pt] (0.6400000024213852,8.000063099971322E-4) circle (0.003199989454185426cm);
+			\draw [line width=0.4pt] (0.6451612635497017,5.20312849778784E-4) circle (0.0020811572179175284cm);
+			\draw [line width=0.4pt] (0.6521738364167035,9.452086722959718E-4) circle (0.003780686029840007cm);
+			\draw [line width=0.4pt] (0.6538460644164069,7.396788829515111E-4) circle (0.0029585540901822666cm);
+			\draw [line width=0.4pt] (0.6818176471071671,0.0010331144240638829) circle (0.004132253899250811cm);
+			\draw [line width=0.4pt] (0.6799994575683278,8.000558563522053E-4) circle (0.0032000085021438624cm);
+			\draw [line width=0.4pt] (0.6785708844549765,6.37810385314852E-4) circle (0.002551018861614072cm);
+			\draw [line width=0.4pt] (0.6896547176268517,5.945805932130882E-4) circle (0.0023781596630560497cm);
+			\draw [line width=0.4pt] (0.7037035736880644,6.859042319884434E-4) circle (0.002743546408626067cm);
+			\draw [line width=0.4pt] (0.7199999999616984,8.00000131201517E-4) circle (0.003200000176333744cm);
+			\draw [line width=0.4pt] (0.7187499990901332,4.882823157882632E-4) circle (0.001953127308462882cm);
+			\draw [line width=0.4pt] (0.7307692325130819,7.396429111510589E-4) circle (0.002958576348943578cm);
+			\draw [line width=0.4pt] (0.7352941133798326,4.325301455645083E-4) circle (0.0017301100217927826cm);
+			\draw [line width=0.4pt] (0.8333333333377791,0.013888888886748274) circle (0.055555555557795566cm);
+			\draw [line width=0.4pt] (0.8571428571687677,0.010204081620256655) circle (0.040816326549867554cm);
+			\draw [line width=0.4pt] (0.8181818224467633,0.004132226921575286) circle (0.016528920994628025cm);
+			\draw [line width=0.4pt] (0.8125000015573463,0.0019531251355621726) circle (0.007812508121621388cm);
+			\draw [line width=0.4pt] (0.8095238092945373,0.001133785273732979) circle (0.004535147973115988cm);
+			\draw [line width=0.4pt] (0.8076922985510337,7.396534418764034E-4) circle (0.0029586056976905416cm);
+			\draw [line width=0.4pt] (0.8064515798047693,5.203151812895324E-4) circle (0.00208122331884121cm);
+			\draw [line width=0.4pt] (0.823529412513122,0.0017301036029874206) circle (0.006920413981970456cm);
+			\draw [line width=0.4pt] (0.821428571986033,6.377559361143613E-4) circle (0.0025510204268559627cm);
+			\draw [line width=0.4pt] (0.8260869594643058,9.451777764993841E-4) circle (0.003780718892593148cm);
+			\draw [line width=0.4pt] (0.8461538462011899,0.002958579835783446) circle (0.011834319507106006cm);
+			\draw [line width=0.4pt] (0.8421052634064512,0.0013850412780271326) circle (0.00554016580742937cm);
+			\draw [line width=0.4pt] (0.8399999991881684,8.000011236993232E-4) circle (0.003200002988664386cm);
+			\draw [line width=0.4pt] (0.838709659424648,5.203109654922655E-4) circle (0.0020812139764525973cm);
+			\draw [line width=0.4pt] (0.8750000000455105,0.007812499982199322) circle (0.031250000022851054cm);
+			\draw [line width=0.4pt] (0.8888888888109489,0.0061728395526262775) circle (0.024691357911616103cm);
+			\draw [line width=0.4pt] (0.8823529410715404,0.0017301039446545863) circle (0.006920415235419302cm);
+			\draw [line width=0.4pt] (0.8799999942865959,8.000066152518137E-4) circle (0.0032000113126853407cm);
+			\draw [line width=0.4pt] (0.8787878917661185,4.591169975195486E-4) circle (0.001836492617207066cm);
+			\draw [line width=0.4pt] (0.8846153898963485,7.396407763846646E-4) circle (0.0029585800182435917cm);
+			\draw [line width=0.4pt] (0.8999999999092794,0.0050000000306724) circle (0.019999999955409006cm);
+			\draw [line width=0.4pt] (0.8947368423919758,0.0013850412107774843) circle (0.0055401658409479975cm);
+			\draw [line width=0.4pt] (0.9090909092800875,0.004132231299715877) circle (0.016528925896293532cm);
+			\draw [line width=0.4pt] (0.9047619051169675,0.0011337864358624305) circle (0.004535147284646653cm);
+			\draw [line width=0.4pt] (0.9166666673666164,0.003472221949324658) circle (0.013888889521137784cm);
+			\draw [line width=0.4pt] (0.9230769252475061,0.0029585790920889227) circle (0.01183432130284635cm);
+			\draw [line width=0.4pt] (0.9285714313087156,0.0025510197132874723) circle (0.010204082788537882cm);
+			\draw [line width=0.4pt] (0.9333333420456126,0.0022222192825452486) circle (0.008888895956374336cm);
+			\draw [line width=0.4pt] (0.9130434785201729,9.451794618204855E-4) circle (0.003780718826960696cm);
+			\draw [line width=0.4pt] (0.9200000037921493,7.999966660048383E-4) circle (0.0031999987084987387cm);
+			\draw [line width=0.4pt] (0.9259259245781647,6.858740160551271E-4) circle (0.002743488003934899cm);
+			\draw [line width=0.4pt] (0.931034491129366,5.945242577585912E-4) circle (0.0023781225081749885cm);
+			\draw [line width=0.4pt] (0.9380139525536019,0.001286394604197133) circle (0.010204090263910488cm);
+			\draw [line width=0.4pt] (0.9351228695728021,4.697958923890311E-5) circle (0.0023781260018087527cm);
+			\draw [line width=0.4pt] (0.9427812473331875,0.001047919018546846) circle (0.00888890591818748cm);
+			\draw [line width=0.4pt] (0.9469522801655119,8.578515527260799E-4) circle (0.00781252080738926cm);
+			\draw [line width=0.4pt] (-0.5,0.)-- (1.5,0.);
+		\end{tikzpicture}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	注意: 每两个相切的圆之下都会有一个小圆, 所以这个图是无限的, 可以称作\textbf{分形}. 还有一个有趣的事实:
+	如果我们依次取三个圆$\odot O_1$, $\odot O_2$, $\odot O_3$, 使得$\odot O_1$与$\odot O_2$相切, $\odot O_2$与$\odot O_3$相切.设$\odot O_i$对应的分数为$p_i/q_i$, $i=1, 2, 3$, 则有如下等式:
+	\[\frac{p_2}{q_2}=\frac{p_1+p_3}{q_1+q_3}=\frac{p_1}{p_3}\oplus\frac{p_3}{q_3}.\]
+	其中“$\oplus$”被称为“法雷和(Farey Sum)”:
+	\[\frac{a}{b}\oplus\frac{c}{d}=\frac{a+c}{b+d}.\]
+\end{frame}
+
+\part{\heiti 例题与习题讲解}
+
+\begin{frame}
+	\partpage
+\end{frame}
+
+\begin{frame}{\heiti 目录}
+	\tableofcontents
+\end{frame}
+
+\section{\heiti 例题}
+\subsection{\kaishu 例27.1}
+
+\begin{frame}{\kaishu 例27.1}
+	如图, 已知$\odot P$与$\odot Q$交于两点$P$, $Q$, 两圆的半径分别为$R$与$r$, $PQ=d$. 求$AB$与$\cos{\angle PAQ}$.
+	\begin{figure}[htbp]
+		\flushright
+		\begin{tikzpicture}[line cap=round,line join=round,x=0.5cm,y=0.5cm]
+			\clip(-3.5,-3.5) rectangle (6.5,3.5);
+			\draw [line width=1.2pt] (0.,0.) circle (3);
+			\draw [line width=1.2pt] (4.,0.) circle (2);
+			\draw [line width=1.2pt] (0.,0.)-- (2.625,1.4523687548277813);
+			\draw [line width=1.2pt] (2.625,1.4523687548277813)-- (4.,0.);
+			\draw [line width=1.2pt] (4.,0.)-- (2.625,-1.4523687548277815);
+			\draw [line width=1.2pt] (2.625,-1.4523687548277815)-- (0.,0.);
+			\draw [line width=1.2pt] (0.,0.)-- (4.,0.);
+			\draw [line width=1.2pt] (2.625,1.4523687548277813)-- (2.625,-1.4523687548277815);
+			\draw [line width=0.4pt,|<->|] (-0.0484122918275927,0.0875)-- (2.5765877081724073,1.5398687548277814);
+			\draw [line width=0.4pt,|<->|] (2.697618437741389,1.5211187548277814)-- (4.072618437741389,0.06875);
+			\begin{scriptsize}
+				\draw [fill=black] (0.,0.) circle (0.5pt);
+				\draw[color=black] (-0.3767887291014338,0.016199246917238452) node {$P$};
+				\draw [fill=black] (4.,0.) circle (0.5pt);
+				\draw[color=black] (4.438329187395363,0.04237384353461113) node {$Q$};
+				\draw [fill=black] (2.625,1.4523687548277813) circle (0.5pt);
+				\draw[color=black] (2.6416787937356263,2.0001591152072661) node {$A$};
+				\draw [fill=black] (2.625,-1.523687548277815) circle (0.5pt);
+				\draw[color=black] (2.62859149542694,-1.9113241298293578) node {$B$};
+				\draw [fill=black] (2.625,0.) circle (0.5pt);
+				\draw[color=black] (2.27255177682249,0.2910325113996515) node {$C$};
+				\draw [fill=black] (-5.7865413170583935,4.459337022716249) circle (2.5pt);
+				\draw[color=black] (1.0020759797801255,1.0917069014642633) node {$R$};
+				\draw[color=black] (3.6094007635044765,0.8977466200687135) node {$r$};
+			\end{scriptsize}
+		\end{tikzpicture}
+	\end{figure}
+	\vspace{10cm}
+\end{frame}
+
+\subsection{\kaishu 例27.2}
+
+\begin{frame}{\kaishu 例27.2}
+	如图, $\odot A$, $\odot B$, $\odot C$两两外切, 并且均顺次与同一条直线相切, 切点分别为$D$, $E$, $F$. 设三圆的半径分别为$a$, $b$, $c$.求证:
+	\[\frac{1}{\sqrt{a}}+\frac{1}{\sqrt{c}}=\frac{1}{\sqrt{b}}.\]
+	\begin{figure}[htbp]
+		\flushright
+		\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.5cm,y=0.5cm]
+			\clip(-2.5,-1.) rectangle (4.5,4.5);
+			\draw [line width=1.2pt] (0.,2.) circle (2.);
+			\draw [line width=1.2pt] (2.9753339496171325,1.1065765139680357) circle (1.1065765139680357);
+			\draw [line width=1.2pt] (1.7062030125628294,0.36389109000980935) circle (0.36389109000980935);
+			\draw [line width=1.2pt,domain=-2.5:4.5] plot(\x,{(-0.-0.*\x)/1.});
+			\draw [line width=1.2pt] (0.,2.)-- (0.,0.);
+			\draw [line width=1.2pt] (2.9753339496171325,1.1065765139680357)-- (2.9753339496171325,0.);
+			\draw [line width=1.2pt] (1.7062030125628294,0.36389109000980935)-- (1.7062030125628294,0.);
+			\draw [line width=0.4pt] (1.4352219468300567,1.4890256477873955)-- (1.6805353212129266,0.4704653500159459);
+			\begin{scriptsize}
+				\draw [fill=black] (2.9753339496171325,1.1065765139680357) circle (0.5pt);
+				\draw[color=black] (2.9630645227241335,1.3573533885004538) node {$C$};
+				\draw [fill=black] (2.9753339496171325,0.) circle (0.5pt);
+				\draw[color=black] (2.9726699474650786,-0.30833084427358686) node {$F$};
+				\draw [fill=black] (1.7062030125628294,0.36389109000980935) circle (0.5pt);
+				\draw [fill=black] (1.7062030125628294,0.) circle (0.5pt);
+				\draw[color=black] (1.685543032178442,-0.2987254195326418) node {$E$};
+				\draw [fill=black] (0.,0.) circle (0.5pt);
+				\draw[color=black] (-0.014617146968831825,-0.30833084427358686) node {$D$};
+				\draw [fill=black] (0.,2.) circle (0.5pt);
+				\draw[color=black] (-0.024222571709776874,2.241052464667397) node {$A$};
+				\draw[color=black] (1.2725097683178048,1.8568354750295955) node {$B$};
+			\end{scriptsize}
+		\end{tikzpicture}
+	\end{figure}
+	\vspace{10cm}
+\end{frame}
+
+\subsection{\kaishu 例27.3}
+
+\begin{frame}{\kaishu 例27.3}
+	如图, 两圆相切于$A$, 并且分别与同一条外公切线切于$B$, $C$.已知$AB$与$AC$的长度, 求$BC$.
+	\begin{figure}[htbp]
+		\flushright
+		\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.5cm,y=0.5cm]
+			\clip(-2.5,-2.5) rectangle (4.5,3.5);
+			\draw [line width=1.2pt] (0.,0.) circle (1.cm);
+			\draw [line width=1.2pt] (3.,0.) circle (0.5cm);
+			\draw [line width=1.2pt] (0.6666666666666666,1.8856180831641267)-- (3.3333333333333335,0.9428090415820638);
+			\draw [line width=0.4pt,dash pattern=on 1pt off 1pt] (2.,0.)-- (2.,1.4142135623730954);
+			\draw [line width=1.2pt] (0.6666666666666666,1.8856180831641267)-- (2.,0.);
+			\draw [line width=1.2pt] (2.,0.)-- (3.3333333333333335,0.9428090415820638);
+			\draw [line width=0.4pt,dash pattern=on 1pt off 1pt] (2.,1.4142135623730954) circle (0.7071067811865476cm);
+			\begin{scriptsize}
+				\draw [fill=black] (2.,0.) circle (0.5pt);
+				\draw[color=black] (2.2614386779122273,-0.1455002722681247) node {$A$};
+				\draw [fill=black] (0.6666666666666666,1.8856180831641267) circle (0.5pt);
+				\draw[color=black] (0.4807286118042019,2.2957957861057703) node {$B$};
+				\draw [fill=black] (3.3333333333333335,0.9428090415820638) circle (0.5pt);
+				\draw[color=black] (3.678347762772377,1.1278031620994362) node {$C$};
+				\draw [fill=black] (2.,1.4142135623730954) circle (0.5pt);
+				\draw[color=black] (2.098685607353967,1.7500943142339584) node {$D$};
+			\end{scriptsize}
+		\end{tikzpicture}
+	\end{figure}
+	\vspace{10cm}
+\end{frame}
+
+\subsection{\kaishu 例27.4}
+
+\begin{frame}{\kaishu 例27.4}
+	如图, 两圆的两条外公切线切两圆于$A$, $B$, $C$, $D$, 一条内公切线切两圆与$E$, $F$, 交两条外公切线于$P$, $Q$. 已知$AB=10$, 求$PQ$.
+	\begin{figure}[htbp]
+		\flushright
+		\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.5cm,y=0.5cm]
+			\clip(-2.5,-2.5) rectangle (6.5,2.5);
+			\draw [line width=1.2pt] (0.,0.) circle (1.cm);
+			\draw [line width=1.2pt] (4.5,0.) circle (0.75cm);
+			\draw [line width=1.2pt,domain=-2.5:6.5] plot(\x,{(--4.-0.2222222222222222*\x)/-1.987615979999813});
+			\draw [line width=1.2pt,domain=-2.5:6.5] plot(\x,{(--4.-0.2222222222222222*\x)/1.987615979999813});
+			\draw [line width=1.2pt,domain=-2.5:6.5] plot(\x,{(--4.-1.5555555555555554*\x)/1.257078722109417});
+			\begin{scriptsize}
+				\draw [fill=black] (0.2222222222222222,1.987615979999813) circle (0.5pt);
+				\draw[color=black] (0.19638942382888755,2.2408339871445175) node {$A$};
+				\draw [fill=black] (4.666666666666667,1.4907119849998598) circle (0.5pt);
+				\draw[color=black] (4.68262994521717,1.830121826735733) node {$B$};
+				\draw [fill=black] (0.2222222222222222,-1.987615979999813) circle (0.5pt);
+				\draw[color=black] (0.28585834279276484,-2.271779506677218) node {$C$};
+				\draw [fill=black] (4.666666666666667,-1.4907119849998598) circle (0.5pt);
+				\draw[color=black] (4.693161026253293,-1.8978808600516972) node {$D$};
+				\draw [fill=black] (1.5555555555555554,1.257078722109417) circle (0.5pt);
+				\draw[color=black] (1.765520498211174,1.461533990471439) node {$E$};
+				\draw [fill=black] (3.333333333333333,-0.942809041582063) circle (0.5pt);
+				\draw[color=black] (3.0713745466903926,-1.2238916737398453) node {$F$};
+				\draw [fill=black] (1.0389877065918325,1.8962988227635134) circle (0.5pt);
+				\draw[color=black] (1.2284353653689148,2.177647500927782) node {$P$};
+				\draw [fill=black] (3.849901182297058,-1.5820291422361592) circle (0.5pt);
+				\draw[color=black] (3.7348326519661246,-2.0137227514490466) node {$Q$};
+			\end{scriptsize}
+		\end{tikzpicture}
+	\end{figure}
+	\vspace{10cm}
+\end{frame}
+
+\section{\heiti 习题}
+\subsection{\kaishu 习题27.1}
+
+\begin{frame}{\kaishu 习题27.1}
+	已知$\triangle ABC$的三边$AB=7$, $BC=9$, $CA=8$. 又$\odot A$, $\odot B$, $\odot C$两两外切, 求此三圆的半径.
+	\begin{figure}
+		\flushright
+		\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.25cm,y=0.25cm]
+			\clip(-3.5,-4.5) rectangle (11.5,13.);
+			\draw [line width=1.2pt] (0.,0.)-- (2.2857142857142856,7.666518779999279);
+			\draw [line width=1.2pt] (2.2857142857142856,7.666518779999279)-- (7.,0.);
+			\draw [line width=1.2pt] (7.,0.)-- (0.,0.);
+			\draw [line width=0.4pt] (2.2857142857142856,7.666518779999279) circle (1.25cm);
+			\draw [line width=0.4pt] (0.,0.) circle (0.75cm);
+			\draw [line width=0.4pt] (7.,0.) circle (1.cm);
+			\begin{scriptsize}
+				\draw [fill=black] (0.,0.) circle (0.5pt);
+				\draw[color=black] (-0.575570046557837,-0.4599160942502908) node {$A$};
+				\draw [fill=black] (7.,0.) circle (0.5pt);
+				\draw[color=black] (7.5430427298370795,-0.5535024086755926) node {$B$};
+				\draw [fill=black] (2.2857142857142856,7.666518779999279) circle (0.5pt);
+				\draw[color=black] (2.255415964807537,8.430783776153385) node {$C$};
+			\end{scriptsize}
+		\end{tikzpicture}
+	\end{figure}
+	\vspace{10cm}
+\end{frame}
+
+\subsection{\kaishu 习题27.2}
+
+\begin{frame}{\kaishu 习题27.2}
+	如图, $\odot L$内切$\odot O$于$C$, 且切$\odot L$的直径$AB$于$O$. $\odot M$内切于$\odot O$, 外切于$\odot L$, 且切$AB$于$D$. 已知$AB=16$, 求$\odot L$与$\odot M$的半径.
+	\begin{figure}[htbp]
+		\flushright
+		\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.75cm,y=0.75cm]
+			\clip(-2.5,-2.5) rectangle (2.5,2.5);
+			\draw [line width=1.2pt] (0.,0.) circle (1.5cm);
+			\draw [line width=1.2pt] (0.,1.) circle (0.75cm);
+			\draw [line width=1.2pt] (-2.,0.)-- (2.,0.);
+			\draw [line width=1.2pt] (1.414213562373095,0.5) circle (0.375cm);
+			\draw [line width=0.4pt,dash pattern=on 1pt off 1pt] (1.414213562373095,0.5)-- (1.414213562373095,0.);
+			\draw [line width=0.4pt,dash pattern=on 1pt off 1pt] (0.,0.)-- (1.885618083164127,0.6666666666666666);
+			\draw [line width=0.4pt,dash pattern=on 1pt off 1pt] (0.,2.)-- (0.,0.);
+			\begin{scriptsize}
+				\draw [fill=black] (-2.,0.) circle (0.5pt);
+				\draw[color=black] (-2.2689013279344663,0.026293413437656968) node {$A$};
+				\draw [fill=black] (2.,0.) circle (0.5pt);
+				\draw[color=black] (2.235824053599745,0.026293413437656968) node {$B$};
+				\draw [fill=black] (0.,2.) circle (0.5pt);
+				\draw[color=black] (-0.02767057797840034,2.2081538124015103) node {$C$};
+				\draw [fill=black] (0.,0.) circle (0.5pt);
+				\draw[color=black] (-0.020249284104373634,-0.18150281503509097) node {$O$};
+				\draw [fill=black] (0.,1.) circle (0.5pt);
+				\draw[color=black] (0.2023895321164276,1.028168086431263) node {$L$};
+				\draw [fill=black] (1.414213562373095,0.5) circle (0.5pt);
+				\draw[color=black] (1.360111376464594,0.6942098621000611) node {$M$};
+				\draw [fill=black] (1.414213562373095,0.) circle (0.5pt);
+				\draw[color=black] (1.414009490700968,-0.18824247055584395) node {$D$};
+				\draw [fill=black] (1.885618083164127,0.6666666666666666) circle (0.5pt);
+				\draw[color=black] (2.0799768822451843,0.7758440947143549) node {$T$};
+			\end{scriptsize}
+		\end{tikzpicture}
+	\end{figure}
+	\vspace{10cm}
+\end{frame}
+
+\subsection{\kaishu 习题27.3}
+
+\begin{frame}{\kaishu 习题27.3}
+	如图, $\odot O$的直径为20, 自$P$向$\odot O$作两条切线切$\odot O$于$A$, $B$, $\angle OPA=\angle OPB=\beta$. 较小的$\odot Q$与$PA$, $PB$均相切. 求$\odot Q$的半径.
+	\begin{figure}[htbp]
+		\flushright
+		\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+			\clip(-0.5,-0.5) rectangle (4.,3.);
+			\draw [shift={(0.,0.)},line width=0.4pt] (0,0) -- (0.:0.2552581491293456) arc (0.:27.4527915886758:0.2552581491293456) -- cycle;
+			\draw [shift={(0.,0.)},line width=0.4pt] (0,0) -- (27.4527915886758:0.2552581491293456) arc (27.4527915886758:54.905583177351595:0.2552581491293456) -- cycle;
+			\draw [line width=1.2pt] (2.5660412364770506,1.333110453806604) circle (1.333110453806604cm);
+			\draw [line width=0.4pt,dash pattern=on 1pt off 1pt] (2.5660412364770506,1.333110453806604)-- (2.5660412364770506,0.);
+			\draw [line width=0.4pt,dash pattern=on 1pt off 1pt] (2.5660412364770506,1.333110453806604)-- (1.4752826046820007,2.0995496811514993);
+			\draw [line width=1.2pt] (0.,0.)-- (2.5660412364770506,0.);
+			\draw [line width=1.2pt] (1.4752826046820007,2.0995496811514993)-- (0.,0.);
+			\draw [line width=1.2pt] (0.,0.)-- (2.5660412364770506,1.333110453806604);
+			\draw [line width=1.2pt] (0.9466354312227281,0.4917963013873132) circle (0.4917963013873125cm);
+			\draw [line width=0.4pt,dash pattern=on 1pt off 1pt] (0.9466354312227282,0.)-- (0.9466354312227281,0.4917963013873132);
+			\draw [line width=0.4pt,dash pattern=on 1pt off 1pt] (0.5442448721423832,0.7745425480843265)-- (0.9466354312227281,0.4917963013873132);
+			\begin{scriptsize}
+				\draw [fill=black] (2.5660412364770506,1.333110453806604) circle (0.5pt);
+				\draw[color=black] (2.761130409975504,1.4764429584154906) node {$O$};
+				\draw [fill=black] (2.5660412364770506,0.) circle (0.5pt);
+				\draw[color=black] (2.5715100706222755,-0.23743318573868416) node {$B$};
+				\draw [fill=black] (0.,0.) circle (0.5pt);
+				\draw[color=black] (-0.21445029987515382,-0.06969211631082878) node {$P$};
+				\draw [fill=black] (1.4752826046820007,2.0995496811514993) circle (0.5pt);
+				\draw[color=black] (1.3098055049257957,2.2422174058035265) node {$A$};
+				\draw [fill=black] (0.9466354312227281,0.4917963013873132) circle (0.5pt);
+				\draw[color=black] (0.9451510061695877,0.7033754210523309) node {$Q$};
+				\draw [fill=black] (1.3830510361310402,0.7185230573089563) circle (0.5pt);
+				\draw[color=black] (1.4337880345029064,0.9481855907289448) node {$E$};
+				\draw [fill=black] (0.9466354312227282,0.) circle (0.5pt);
+				\draw[color=black] (0.9232717362442152,-0.1936746458879393) node {$C$};
+				\draw [fill=black] (0.5442448721423832,0.7745425480843265) circle (0.5pt);
+				\draw[color=black] (0.368996898134779,0.9513404802065519) node {$D$};
+				\draw[color=black] (0.45839324776164116,0.102822304239907) node {$\beta$};
+				\draw[color=black] (0.3528674328487066,0.33153982718418216) node {$\beta_{ }$};
+			\end{scriptsize}
+		\end{tikzpicture}
+	\end{figure}
+	\vspace{10cm}
+\end{frame}
+
+\subsection{\kaishu 习题27.4}
+
+\begin{frame}{\kaishu 习题27.4}
+	半径为$1$的三个圆两两外切, $\odot O$与此三圆均相切, 求其半径.
+	\begin{figure}[htbp]
+		\flushright
+		\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.75cm,y=0.75cm]
+			\clip(-2.5,-2.5) rectangle (2.5,2.5);
+			\draw [line width=1.2pt] (1.1547005383792517,0.) circle (0.75cm);
+			\draw [line width=1.2pt] (-0.5773502691896258,1.) circle (0.75cm);
+			\draw [line width=1.2pt] (-0.5773502691896258,-1.) circle (0.75cm);
+			\draw [line width=0.4pt,dash pattern=on 1pt off 1pt] (0.,0.) circle (0.11602540378443876cm);
+			\draw [line width=0.4pt,dash pattern=on 1pt off 1pt] (0.,0.) circle (1.6160254037844386cm);
+			\begin{scriptsize}
+				\draw [fill=black] (1.1547005383792517,0.) circle (0.5pt);
+				\draw[color=black] (1.3982976707569628,0.031428764121258876) node {$A$};
+				\draw [fill=black] (-0.5773502691896258,1.) circle (0.5pt);
+				\draw[color=black] (-0.7990374078481949,1.266878205907291) node {$B$};
+				\draw [fill=black] (-0.5773502691896258,-1.) circle (0.5pt);
+				\draw[color=black] (-0.7902127689782947,-1.195196038794873) node {$C$};
+			\end{scriptsize}
+		\end{tikzpicture}
+	\end{figure}
+	\vspace{10cm}
+\end{frame}
+\end{document}

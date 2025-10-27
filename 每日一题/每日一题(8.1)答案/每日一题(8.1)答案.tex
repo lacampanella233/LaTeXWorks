@@ -1,0 +1,81 @@
+\documentclass{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath,mathtools,geometry,enumitem,fancyhdr,cases}
+\geometry{a4paper,scale=0.7}
+\pagenumbering{arabic}
+\pagestyle{fancy}
+\fancyhead[L]{励志AQ班}
+\fancyhead[R]{每日一题(8.1)答案}
+\fancyfoot[C]{\thepage}
+\title{每日一题(8.1)答案}
+\author{选题:门宇翎、李东宸\\答案制作:程昊一}
+
+\begin{document}
+\maketitle
+\textbf{1.}{\kaishu 阅读材料:
+{\fangsong
+	\par 对于形如$\sqrt{m\pm\sqrt{n}}$的复合二次根式, 我们可以采取以下的方式化简: \\
+	(1)\quad 找到合适的$a$和$b$, 使得$a+b=m$, $4ab=n$.\\
+	(2)\quad 将原式做变形:
+	\begin{align*}
+		\sqrt{m\pm\sqrt{n}}&=\sqrt{a+b\pm\sqrt{4ab}}\\
+		&=\sqrt{\left(\sqrt{a}\right)^2+\left(\sqrt{b}\right)^2\pm2\cdot\sqrt{a}\cdot\sqrt{b}}\\
+		&=\sqrt{\left(\sqrt{a}\pm\sqrt{b}\right)^2}\\
+		&=\left|\sqrt{a}\pm\sqrt{b}\right|.
+	\end{align*}
+	(3)\quad 即得答案:$\sqrt{m\pm\sqrt{n}}=\left|\sqrt{a}\pm\sqrt{b}\right|$.
+}
+\par 化简: 
+\begin{itemize}
+	\item[(1)]$\sqrt{5+2\sqrt{6}}$ ; 
+	\item[(2)]$\sqrt{7-2\sqrt{12}}$ . 
+\end{itemize}
+(李东宸供题)}
+\paragraph{分析}找到合适的$a$和$b$, 使得满足材料(见 “每日一题(8.1)”)中的形式.
+\paragraph{解}(1)
+\begin{align*}
+	\sqrt{5+2\sqrt{6}}&=\sqrt{2+3+2\sqrt{2}\cdot\sqrt{3}}\\
+	&=\left|\sqrt{2}+\sqrt{3}\right|\\
+	&=\sqrt{2}+\sqrt{3}; 
+\end{align*}
+\par(2)
+\begin{align*}
+	\sqrt{7-2\sqrt{12}}&=\sqrt{3+4-2\sqrt{3}\cdot\sqrt{4}}\\
+	&=\left|\sqrt{3}-\sqrt{4}\right|\\
+	&=2-\sqrt{3}.
+\end{align*}
+\paragraph{注}一般来说, 通过试算少量的整数$a$和$b$, 就能找到合适的数. 如果原题($\sqrt{m+\sqrt{n}}$)中的$m$ 和$n$过大, 可以采取以下的方式算出$a$和$b$:
+\par 我们要通过关于$a$和$b$的方程组
+\begin{numcases}
+	{}a+b=m\\ab=\frac{n}{4}
+\end{numcases}
+来计算$a$和$b$.
+\par 由韦达定理,易知$a$和$b$为下列一元二次方程的实根: 
+\[x^2-mx+\frac{n}{4}=0.\]
+这是因为原方程等价于
+\[x^2-(a+b)x+ab=0,\]
+即
+\[(x-a)(x-b)=0.\]
+$a$和$b$显然是它的两个实根.\\
+\par\textbf{2.}{\kaishu 
+证明: 若$a$, $b$是大于1的正整数, 则 $a^4+4b^4$是合数.\\
+(门宇翎供题)}
+\paragraph{分析}若想要证明一个代数式的值是合数, 可以尝试因式分解, 然后分别证明每一个部分都大于1.
+\paragraph{解}
+\begin{align*}
+	a^4+4b^4&=a^4+4a^2b^2+4b^4-4a^2b^2\\
+	&=(a^2+2b^2)^2-(2ab)^2\\
+	&=(a^2+2b^2-2ab)(a^2+2b^2+2ab).
+\end{align*}
+\par 其中$a^2+2b^2+2ab$显然大于1. 下面证明$a^2+2b^2-2ab$也大于1. 
+\par 因为
+\begin{align*}
+	&a^2+2b^2-2ab\\
+	=&a^2-2ab+b^2+b^2\\
+	=&(a-b)^2+b^2\\
+	\ge&0^2+2^2\\
+	=&4,
+\end{align*}
+所以$a^2+2b^2-2ab>1$.
+\par 所以原命题成立.
+\end{document}

@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage[UTF8]{ctex}
+\usepackage{geometry,amsmath,mathtools}
+\geometry{a4paper,scale=0.81}
+
+\newcommand{\sign}{\mathrm{sign}}
+
+\title{多选题答案}
+
+\begin{document}
+\textbf{铁一中月考2物理多选最后一题的精确解}. 设$v(t)$为速度与时间的依赖关系, 沿用题干中字母. 则答案有如下若干种情况:\par 
+对于实数$x$, 记
+\[\sign\ x=\begin{cases}
+    1,\quad x>0\\
+    0,\quad x=0\\
+    -1,\quad x<0.
+\end{cases}\]
+记$ \delta = \sign(mg-k v_0)$.\par
+\textbf{1}. 若$ F_0>\mu m g$.\par
+(1) $0<v_0<(\mu m g+F_0)/(\mu k)$. 则
+\[v(t)=\frac{mg}{k}+\sign\left(\delta\ln{\left(1-\frac{\mu|k v_0-mg|}{F_0}\right)}+\frac{\mu k}{m }t\right)\cdot \frac{F_0}{\mu k }\left(1-\exp\left(-\left|\delta\ln\left(1-\frac{\mu|k v_0-m g|}{F_0}\right)+\frac{\mu k}{m}t\right|\right)\right).\]\par 
+(2) $v_0=(\mu m g+F_0)/(\mu k)$. 则$v(t)=v_0$.\par
+(3) $v_0>(\mu m g+F_0)/(\mu k)$. 则
+\[v(t)=\frac{mg}{k}+\frac{F_0}{\mu k}\left(1+\left(\frac{\mu k v_0 -\mu mg}{F_0}-1\right)\exp{\left(-\frac{\mu k}{m}t\right)}\right).\]\par 
+\textbf{2}. 若$F_0\le \mu m g$.\par 
+(1) $v_0=(\mu m g \pm F_0)/(\mu k)$. 则$v=v_0$.\par
+(2) $0\le v_0<(\mu m g - F_0)/(\mu k)$. 则
+\[v(t)=\begin{cases}
+    \displaystyle\frac{mg}{\mu}-\frac{F_0}{\mu k}\left(1+\left(\frac{\mu (m g-k v_0)}{F_0}-1\right)\exp\left(\frac{\mu k}{m}t\right)\right),\quad t<t_0\\
+    0,\quad t\ge t_0.
+\end{cases}\]
+其中
+\[t_0=\frac{m}{\mu k}\ln\left(\frac{\mu m g-F_0}{\mu (mg -k v_0)-F_0}\right).\]\par 
+(3) $(\mu m g-F_0)/(\mu k)<v_0<(\mu m g+F_0)/(\mu k)$. 则
+\[v(t)=\frac{mg}{k}+\sign\left(\delta\ln{\left(1-\frac{\mu|k v_0-mg|}{F_0}\right)}+\frac{\mu k}{m }t\right)\cdot \frac{F_0}{\mu k }\left(1-\exp\left(-\left|\delta\ln\left(1-\frac{\mu|k v_0-m g|}{F_0}\right)+\frac{\mu k}{m}t\right|\right)\right).\]\par 
+(4) $v_0>(\mu m g+F_0)/(\mu k)$. 则
+\[v(t)=\frac{mg}{k}+\frac{F_0}{\mu k}\left(1+\left(\frac{\mu k v_0 -\mu mg}{F_0}-1\right)\exp{\left(-\frac{\mu k}{m}t\right)}\right).\]
+
+\end{document}

@@ -1,0 +1,197 @@
+\documentclass{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath,mathtools,geometry,pgfplots,mathrsfs,float,enumerate}
+
+\pgfplotsset{compat=1.15}
+\geometry{a4paper,scale=0.7}
+
+\newcommand\ve[1]{\overrightarrow{#1}}
+
+\title{向量}
+\author{ }
+\date{ }
+
+\begin{document}
+阅读材料, 回答问题.\par
+{\kaishu 向量指有大小和方向的量. 向量可以形象地用一个带箭头的线段表示. 如下图所示, 这是一个起点为$A$, 终点为$B$的向量, 写作$\ve{AB}$. 也可以用单个字母上加一个小箭头$\ve{a}$表示一个向量. 一般在向量两侧添上竖线(例如$\left|\ve{a}\right|$)来表示向量的大小, 即箭头的长度.
+\begin{figure}[H]
+	\centering
+	\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+	\definecolor{qqqqff}{rgb}{0.,0.,1.}
+	\begin{tikzpicture}[line cap=round,line join=round,x=1.0cm,y=1.0cm]
+		\clip(-0.5,-0.5) rectangle (2.5,0.5);
+		\draw [->,line width=2.pt,color=qqqqff] (0.,0.) -- (2.,0.);
+		\draw [fill=ffqqqq] (0.,0.) circle (2.0pt);
+		\draw[color=ffqqqq] (-0.09491368106742987,-0.25) node {$A$};
+		\draw [fill=ffqqqq] (2.,0.) circle (2.0pt);
+		\draw[color=ffqqqq] (1.9976626417929675,-0.25) node {$B$};
+	\end{tikzpicture}
+	\caption{向量可以用一个带箭头的线段形象地表示.}
+\end{figure}\par
+事实上, 向量的概念起源于物理. 物理中的很多量, 例如速度、力、电场强度等都是用向量(在物理中, 更多地称为“矢量”)描述的. 位移是其中的典型代表, 我们以此说明向量的基本概念.\par 
+例如, 一个人站在平面上的$A$点, 他从$A$点走到$B$点(我们并不关心他的路径, 只关心起点和终点), 那么我们可以说这个人的位移是$\ve{AB}$. 在某些时候, 像这样用位移等概念思考向量, 可以建立对向量这个概念的某些感性认知. 后面介绍更多概念时, 可以尝试通过这种方法去理解.\par
+有一种向量很特殊, 称为零向量, 记作$\ve{0}$. 顾名思义, 零向量的大小是$0$. 为了方便, 我们定义: $\ve{0}$的方向是任意的.\par
+称两个向量相等, 当且仅当这两个向量大小相等, 且方向相同. 例如, 对于平行四边形$ABCD$, 我们有$\ve{AB}=\ve{DC}$. 请试着自己画一个图, 体会向量相等的概念.\par
+向量可以做加法运算, 我们仍然用位移的概念解释: 设想一个人站在平面上的$A$点, 他走向了$B$点, 又走向了$C$点.
+\begin{figure}[H]
+	\centering
+	\definecolor{qqwwtt}{rgb}{0.,0.4,0.2}
+	\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+	\definecolor{qqqqff}{rgb}{0.,0.,1.}
+		\begin{tikzpicture}[line cap=round,line join=round,x=1.0cm,y=1.0cm]
+		\clip(-0.43064570649338374,-0.5444957808559767) rectangle (2.733513656425195,1.6331038209681348);
+		\draw [->,line width=2.pt,color=qqqqff] (0.,0.) -- (2.,0.);
+		\draw [->,line width=2.pt,color=qqqqff] (2.,0.) -- (2.383984424474887,1.0145885563960553);
+		\draw [->,line width=2.pt,color=qqwwtt] (0.,0.) -- (2.383984424474887,1.0145885563960553);
+		\draw [fill=ffqqqq] (0.,0.) circle (2.0pt);
+		\draw[color=ffqqqq] (-0.09491368106742987,-0.27427073911913726) node {$A$};
+		\draw [fill=ffqqqq] (2.,0.) circle (2.0pt);
+		\draw[color=ffqqqq] (1.9976626417929675,-0.2650726014362344) node {$B$};
+		\draw [fill=ffqqqq] (2.383984424474887,1.0145885563960553) circle (2.0pt);
+		\draw[color=ffqqqq] (2.416177906365047,1.3594592249017752) node {$C$};
+	\end{tikzpicture}
+	\caption{向量的加法}
+\end{figure}\par
+一方面, 作为一个完整的过程, 这个人的起点是$A$, 终点是$C$, 那么这个人的位移应该是$\ve{AC}$; 另一方面, 这个完整的过程可以分解为两个过程, 即这个人从$A$到$B$和从$B$到$C$, 两个过程的位移分别是$\ve{AB}$和$\ve{BC}$. 我们自然地认为, 总位移应该是两个位移之和, 即应有
+\[\ve{AC}=\ve{AB}+\ve{BC}.\]\par
+于是, 我们将向量的加法定义如下: 两个向量相加, 将两个向量首尾相接, 结果为从第一个向量的起点指向最后一个向量的终点的向量. 多个向量相加的定义可以由两个向量相加的定义导出. 这就是向量加法的基本概念. \par
+我们也可以把两个向量相减. 我们定义: $\ve{a}$减去$\ve{b}$, 其结果为$\ve{a}$加上$\ve{b}$的相反向量. 相反向量, 就是大小相同、方向相反的向量. 例如在平行四边形$ABCD$中, $\ve{AB}$是$\ve{CD}$的相反向量, 记为$-\ve{CD}$. 于是,
+\[\ve{a}-\ve{b}=\ve{a}+\left(-\ve{b}\right).\]\par
+我们还可以把向量和一个实数相乘, 称为向量的数乘. 比如, 对于正整数$n$和向量$\ve{a}$, 我们可以定义它们的乘积(写作$n\ve{a}$)为
+\[n\ve{a}=\underbrace{\ve{a}+\ve{a}+\cdots+\ve{a}}\limits_{n\text{个}}.\]
+对于正实数$x$与向量$\ve{a}$, 我们定义它们的乘积$x\ve{a}$是这样的一个向量, 它的大小是$x\cdot\left|\ve{a}\right|$, 方向与$\ve{a}$相同. 对于负实数$-x$, 定义$(-x)\ve{a}=-(x\ve{a})$. 图\ref{prod}给出了一些例子.
+\begin{figure}[H]
+	\centering
+	\definecolor{qqqqff}{rgb}{0.,0.,1.}
+	\begin{tikzpicture}[line cap=round,line join=round,x=2.0cm,y=2.0cm]
+		\clip(-1.6826370240159345,-0.2004731853586162) rectangle (2.649384999699359,1.4214378616552156);
+		\draw [->,line width=2.pt,color=qqqqff] (0.,0.) -- (2.,0.);
+		\draw [->,line width=2.pt,color=qqqqff] (0.,1.) -- (1.,1.);
+		\draw [->,line width=2.pt,color=qqqqff] (0.,0.5) -- (-0.66666666666,0.5);
+		\draw (2.073609920597959,0.23120192889896374) node[anchor=north west] {$\vec{a}$};
+		\draw (-1.3262048321912585,0.8252555819400923) node[anchor=north west] {$-\frac13\vec{a}$};
+		\draw (1.077427640882839,1.337055652252449) node[anchor=north west] {$\frac12\vec{a}$};
+		\draw [line width=0.4pt,|<->|] (0.,0.1)-- (2.,0.1);
+		\draw (0.9586169102746135,0.3779626770852787) node[anchor=north west] {$1$};
+		\draw [line width=0.4pt,|<->|] (0.,0.6)-- (-0.66666666666,0.6);
+		\draw [line width=0.4pt,|<->|] (0.,1.1)-- (1.,1.1);
+		\draw (-0.512808291873408,0.9171806083072261) node[anchor=north west] {$1/3$};
+		\draw (0.31886682238416936,1.374144956800402) node[anchor=north west] {$1/2$};
+	\end{tikzpicture}
+	\caption{向量的数乘}\label{prod}
+\end{figure}\par
+再来看一个例子: 如图, $\triangle ABC$中, $D,E$为边$AB, AC$的中点, 则有$\ve{BC}=2\ve{DE}.$(为什么?)
+\begin{figure}[H]
+	\centering
+	\definecolor{qqqqff}{rgb}{0.,0.,1.}
+	\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+	\begin{tikzpicture}[line cap=round,line join=round,x=1.0cm,y=1.0cm]
+		\clip(-2.3955014076652867,-1.1853875514298813) rectangle (2.1558635033267306,2.543441532274433);
+		\draw [line width=2.pt,color=qqqqff] (-0.6133404485419064,2.031641461962076)-- (-1.7374727458351156,-0.6461696202079338);
+		\draw [line width=2.pt,color=qqqqff] (1.680620580893829,-0.6644481941476608)-- (-0.6133404485419064,2.031641461962076);
+		\draw [->,line width=2.pt,color=qqqqff] (-1.175406597188511,0.6927359208770711) -- (0.5336400661759613,0.6835966339072077);
+		\draw [->,line width=2.pt,color=qqqqff] (-1.7374727458351156,-0.6461696202079338) -- (1.680620580893829,-0.6644481941476608);
+		\draw [fill=ffqqqq] (-0.6133404485419064,2.031641461962076) circle (2.0pt);
+		\draw[color=ffqqqq] (-0.7047333182405413,2.3012504275730503) node {$A$};
+		\draw [fill=ffqqqq] (-1.7374727458351156,-0.6461696202079338) circle (2.0pt);
+		\draw[color=ffqqqq] (-1.9568156331118391,-0.8243857161202723) node {$B$};
+		\draw [fill=ffqqqq] (1.680620580893829,-0.6644481941476608) circle (2.0pt);
+		\draw[color=ffqqqq] (1.9445955896828735,-0.8243857161202723) node {$C$};
+		\draw [fill=ffqqqq] (-1.175406597188511,0.6927359208770711) circle (2.0pt);
+		\draw[color=ffqqqq] (-1.4267369888597567,0.8024073645154335) node {$D$};
+		\draw [fill=ffqqqq] (0.5336400661759613,0.6835966339072077) circle (2.0pt);
+		\draw[color=ffqqqq] (0.6844383011787089,0.8206859384551605) node {$E$};
+	\end{tikzpicture}
+\end{figure}
+当然, 向量之间也可以做乘法, 但较为复杂, 在这里不做进一步讨论.}
+
+\newpage
+\begin{enumerate}
+\item 如图, 四边形$ABCD$的边$AB$, $CD$的中点为$E$, $F$. 求证:
+\[\ve{EF}=\frac12\left(\ve{AD}+\ve{BC}\right).\]
+{(\kaishu 提示: $\ve{EF}=\ve{EA}+\ve{AD}+\ve{DF}$.)}
+\begin{figure}[H]
+	\centering
+	\definecolor{qqqqff}{rgb}{0.,0.,1.}
+	\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+	\begin{tikzpicture}[line cap=round,line join=round,x=1.5cm,y=1.5cm]
+		\clip(-1.8380049025036138,-1.4412875865860597) rectangle (3.398806531228165,1.9311093052935777);
+		\draw [line width=1.2pt,color=qqqqff,->] (-1.280508397341941,-0.9112089423339758)-- (2.932702895765127,-0.9020696553641122);
+		\draw [line width=1.2pt,color=qqqqff,<-] (2.0827492075678227,1.5015628177099924)-- (-0.6955940312706779,0.944066312548318);
+		\draw [line width=1.2pt,color=qqqqff,->] (-0.9880512143063095,0.016428685107171104)-- (2.5077260516664746,0.2997465811729401);
+		\draw [line width=1.2pt,color=qqqqff] (-0.6955940312706779,0.944066312548318)-- (-0.9880512143063095,0.016428685107171104);
+		\draw [line width=1.2pt,color=qqqqff] (-0.7982408101712494,0.466507419973047) -- (-0.885404435405738,0.49398757768244206);
+		\draw [line width=1.2pt,color=qqqqff] (-0.9880512143063095,0.016428685107171104)-- (-1.280508397341941,-0.9112089423339758);
+		\draw [line width=1.2pt,color=qqqqff] (-1.090697993206881,-0.46113020746809985) -- (-1.1778616184413695,-0.4336500497587048);
+		\draw [line width=1.2pt,color=qqqqff] (2.0827492075678227,1.5015628177099924)-- (2.5077260516664746,0.2997465811729401);
+		\draw [line width=1.2pt,color=qqqqff] (2.3322260873786678,0.9331219816750053) -- (2.2460616552149877,0.9026531900733995);
+		\draw [line width=1.2pt,color=qqqqff] (2.3444136040193095,0.898656208809533) -- (2.2582491718556295,0.8681874172079274);
+		\draw [line width=1.2pt,color=qqqqff] (2.5077260516664746,0.2997465811729401)-- (2.932702895765127,-0.9020696553641122);
+		\draw [line width=1.2pt,color=qqqqff] (2.75720293147732,-0.2686942548620471) -- (2.67103849931364,-0.2991630464636528);
+		\draw [line width=1.2pt,color=qqqqff] (2.769390448117962,-0.30316002772751927) -- (2.683226015954282,-0.333628819329125);
+		\draw [fill=ffqqqq] (-0.6955940312706779,0.944066312548318) circle (2.0pt);
+		\draw[color=ffqqqq] (-0.9149369185474016,1.1131431214907932) node {$A$};
+		\draw [fill=ffqqqq] (-1.280508397341941,-0.9112089423339758) circle (2.0pt);
+		\draw[color=ffqqqq] (-1.5272691455282552,-1.0528678903668602) node {$B$};
+		\draw [fill=ffqqqq] (2.932702895765127,-0.9020696553641122) circle (2.0pt);
+		\draw[color=ffqqqq] (3.115488635162397,-1.0620071773367237) node {$C$};
+		\draw [fill=ffqqqq] (2.0827492075678227,1.5015628177099924) circle (2.0pt);
+		\draw[color=ffqqqq] (2.256395659995229,1.6528932093812393) node {$D$};
+		\draw [fill=ffqqqq] (-0.9880512143063095,0.016428685107171104) circle (2.0pt);
+		\draw[color=ffqqqq] (-1.2530905364323506,0.09868226783594276) node {$E$};
+		\draw [fill=ffqqqq] (2.5077260516664746,0.2997465811729401) circle (2.0pt);
+		\draw[color=ffqqqq] (2.713360008488403,0.42769659875102933) node {$F$};
+	\end{tikzpicture}
+\end{figure}
+\item 如图, 六边形$ABCDEF$各边中点为$L,M,N,P,Q,R$. 求证: $\ve{RN}=\ve{LP}+\ve{QM}$.\\
+{\kaishu (提示: 利用第1题的结果, 将$\ve{RN}$“拆开”.)}
+\begin{figure}[H]
+	\centering
+	\definecolor{qqwwtt}{rgb}{0.,0.4,0.2}
+	\definecolor{qqqqff}{rgb}{0.,0.,1.}
+	\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+	\begin{tikzpicture}[line cap=round,line join=round,x=1.5cm,y=1.5cm]
+		\clip(-2.468931901384928,-2.5134082833928364) rectangle (3.018454338717128,2.754482507105157);
+		\draw [line width=2.pt,color=qqqqff] (-0.3848582742953192,2.1778700534798925)-- (-1.8380049025036138,0.07583405041128397);
+		\draw [line width=2.pt,color=qqqqff] (-1.8380049025036138,0.07583405041128397)-- (-0.7504297530898587,-1.9165305090189624);
+		\draw [line width=2.pt,color=qqqqff] (-0.7504297530898587,-1.9165305090189624)-- (1.8725456072609623,-1.925669795988826);
+		\draw [line width=2.pt,color=qqqqff] (1.8725456072609623,-1.925669795988826)-- (2.52143498212127,0.5236591119345962);
+		\draw [line width=2.pt,color=qqqqff] (2.52143498212127,0.5236591119345962)-- (1.040870493003385,2.342377218937436);
+		\draw [line width=2.pt,color=qqqqff] (1.040870493003385,2.342377218937436)-- (-0.3848582742953192,2.1778700534798925);
+		\draw [->,line width=2.pt,color=qqwwtt] (0.32800610935403285,2.2601236362086645) -- (0.5610579270855518,-1.921100152503894);
+		\draw [->,line width=2.pt,color=qqwwtt] (-1.1114315883994665,1.1268520519455882) -- (2.196990294691116,-0.701005342027115);
+		\draw [->,line width=2.pt,color=qqwwtt] (1.7811527375623273,1.4330181654360161) -- (-1.2942173277967361,-0.9203482293038392);
+		
+		\draw [fill=ffqqqq] (-0.3848582742953192,2.1778700534798925) circle (2.0pt);
+		\draw[color=ffqqqq] (-0.5724912168056574,2.3988998787465428) node {$A$};
+		\draw [fill=ffqqqq] (-1.8380049025036138,0.07583405041128397) circle (2.0pt);
+		\draw[color=ffqqqq] (-2.144078635970886,0.08102793092742526) node {$B$};
+		\draw [fill=ffqqqq] (-0.7504297530898587,-1.9165305090189624) circle (2.0pt);
+		\draw[color=ffqqqq] (-0.9061243002038625,-2.1227063830975683) node {$C$};
+		\draw [fill=ffqqqq] (1.8725456072609623,-1.925669795988826) circle (2.0pt);
+		\draw[color=ffqqqq] (2.00877527053835,-2.113926565113405) node {$D$};
+		\draw [fill=ffqqqq] (2.52143498212127,0.5236591119345962) circle (2.0pt);
+		\draw[color=ffqqqq] (2.7375001632239027,0.5726977380405713) node {$E$};
+		\draw [fill=ffqqqq] (1.040870493003385,2.342377218937436) circle (2.0pt);
+		\draw[color=ffqqqq] (1.165912744058674,2.574496238429809) node {$F$};
+		\draw [fill=ffqqqq] (-1.1114315883994665,1.1268520519455882) circle (2.0pt);
+		\draw[color=ffqqqq] (-1.3363353814278636,1.3277620846786171) node {$L$};
+		\draw [fill=ffqqqq] (-1.2942173277967361,-0.9203482293038392) circle (2.0pt);
+		\draw[color=ffqqqq] (-1.5558308310319457,-1.0252291350771534) node {$M$};
+		\draw [fill=ffqqqq] (0.5610579270855518,-1.9211001525038942) circle (2.0pt);
+		\draw[color=ffqqqq] (0.533765849198917,-2.113926565113405) node {$N$};
+		\draw [fill=ffqqqq] (2.196990294691116,-0.701005342027115) circle (2.0pt);
+		\draw[color=ffqqqq] (2.4302065337781875,-0.7091556876472738) node {$P$};
+		\draw [fill=ffqqqq] (1.7811527375623273,1.4330181654360161) circle (2.0pt);
+		\draw[color=ffqqqq] (1.9297569086808801,1.6174960781560066) node {$Q$};
+		\draw [fill=ffqqqq] (0.32800610935403285,2.2601236362086645) circle (2.0pt);
+		\draw[color=ffqqqq] (0.2967107636265083,2.5042576945565025) node {$R$};
+	\end{tikzpicture}
+\end{figure}
+\item 平面内有一点$A$与线段$BC$, 线段$BC$上有一点$D$. 求证: 存在正实数$x,y$, 满足$x+y=1$, 且
+\[\ve{AD}=x\ve{AB}+y\ve{AC}.\]
+
+\end{enumerate}
+
+
+\end{document}

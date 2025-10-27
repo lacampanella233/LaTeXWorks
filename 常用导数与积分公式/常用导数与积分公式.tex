@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage[UTF8]{ctex}
+\usepackage{mathtools,amsmath,geometry,booktabs,longtable,enumerate}
+
+\geometry{scale=0.8}
+\renewcommand\arraystretch{2}
+
+\title{\vspace*{-2cm}\textbf{\heiti 常用导数与积分公式}}
+\author{}
+\date{\vspace*{-2cm}}
+
+\begin{document}
+\maketitle
+\section{常用导数与积分对照表}
+\begin{center}
+	\begin{longtable}{c|cc}
+		\toprule
+		\kaishu 序号 & \kaishu 导数 & \kaishu 积分\\
+		\midrule
+		\textbf{1} & $\displaystyle \left(c\right)'=0$ & $\displaystyle \int 0\mathrm{d}x=C$\\
+		\textbf{2} & $\displaystyle \left(x^\alpha\right)'=\alpha x^{\alpha-1}(\alpha\neq0)$ & $\displaystyle \int x^\alpha\mathrm{d}x=\frac{x^{\alpha+1}}{\alpha+1}+C$\\
+		\textbf{3} & $\displaystyle \left(a^x\right)'=\ln a\cdot a^x$ & $\displaystyle \int a^x\mathrm{d}x=\frac{a^x}{\ln a}+C$\\
+		\textbf{4} & $\displaystyle \left(\sin x\right)'=\cos x$ & $\displaystyle \int\cos x\mathrm{d}x=\sin x+C$\\
+		\textbf{5} & $\displaystyle \left(\cos x\right)'=-\sin x$ & $\displaystyle \int\sin x\mathrm{d}x=-\cos x+C$\\
+		\textbf{6} & $\displaystyle \left(\tan x\right)'=\frac{1}{\cos^2x}=\sec^2x$ & $\displaystyle \int\frac{1}{\cos^2x}\mathrm{d}x=\tan x+C$\\
+		\textbf{7} & $\displaystyle \left(\cot x\right)'=\frac{1}{\sin^2x}$ & $\displaystyle \int \frac{1}{\sin^2x}\mathrm{d}x=\cot x+C$\\
+		\textbf{8} & $\displaystyle \left(\ln |x|\right)'=\frac{1}{x}$ & $\displaystyle \int\frac{1}{x}\mathrm{d}x=\ln|x|+C$\\
+		\textbf{9} & $\displaystyle \left(\arcsin x\right)'=\frac{1}{\sqrt{1-x^2}}$ & $\displaystyle \int\frac{1}{\sqrt{1-x^2}}\mathrm{d}x=\arcsin x+C$\\
+		\textbf{10} & $\displaystyle \left(\arccos x\right)'=-\frac{1}{\sqrt{1-x^2}}$ & $\displaystyle \int\frac{1}{\sqrt{1-x^2}}\mathrm{d}x=-\arccos x+C$\\
+		\textbf{11} & $\displaystyle \left(\arctan x\right)'=\frac{1}{1+x^2}$ & $\displaystyle \int\frac{1}{1+x^2}\mathrm{d}x=\arctan x+C$\\
+		\textbf{12} & $\displaystyle \left(\mathrm{arccot} x\right)'=-\frac{1}{1+x^2}$ & $\displaystyle \int\frac{1}{1+x^2}\mathrm{d}x=-\mathrm{arccoy} x+C$\\
+		\textbf{13} & - & $\displaystyle \int \tan x\mathrm{d}x=-\ln|\cos x|+C$\\
+		\textbf{14} & - & $\displaystyle \int \cot x\mathrm{d}x=\ln\sin x+C$\\
+		\textbf{15} & - & $\displaystyle \int \frac{\mathrm{d}x}{x^2+a^2}=\frac{1}{a}\arctan\frac{x}{a}+C(a>0)$\\
+		\textbf{16} & - & $\displaystyle \int \frac{\mathrm{d}x}{x^2-a^2}=\frac{1}{2a}\ln\left|\frac{x-a}{x+a}\right|+C(a>0)$\\
+		\textbf{17} & - & $\displaystyle \int\frac{\mathrm{d}x}{\sqrt{a^2-x^2}}=\arcsin\frac{x}{a}+C$\\
+		\textbf{18} & - & $\displaystyle \int\frac{\mathrm{d}x}{\sqrt{x^2\pm a^2}}=\ln\left|x+\sqrt{x^2\pm a^2}\right|+C$\\
+		
+		\bottomrule
+	\end{longtable}
+\end{center}
+	
+\section{常用积分技巧}
+\subsection{换元法}
+\begin{enumerate}
+	\renewcommand{\labelenumi}{\textbf{\theenumi. }}
+	\item 第一换元法:
+		\[\int f(\varphi(x))\varphi'(x)\mathrm{d}x=\int f(\varphi(x))\mathrm{d}\varphi(x)=F(x)+C.\]
+	\item 第二换元法:
+		\[\int f(x)\mathrm{d}x=\int f(\varphi(t))\mathrm{d}\varphi(t)=F(\varphi^{-1}(x))+C.\]
+	\item 分部积分法:
+		\[\int u(x)v'(x)\mathrm{d}x=u(x)v(x)-\int u'(x)v(x)\mathrm{d}x.\]
+\end{enumerate}
+
+
+\end{document}
