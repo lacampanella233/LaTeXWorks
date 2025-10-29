@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber 组合风格代数讲义"] 0 "组合风格代数讲义.bcf" "组合风格代数讲义.bbl" "组合风格代数讲义" 1761486527.75928 0
+["biber 组合风格代数讲义"] 0 "组合风格代数讲义.bcf" "组合风格代数讲义.bbl" "组合风格代数讲义" 1761579686.64963 0
   "reference.bib" 0 -1 0 ""
   "组合风格代数讲义.bcf" 0 -1 0 "pdflatex"
   (generated)
   "组合风格代数讲义.bbl"
   "组合风格代数讲义.blg"
   (rewritten before read)
-["pdflatex"] 1761486520.81877 "d:/程昊一/LaTeXWorks/组合风格代数讲义/组合风格代数讲义.tex" "组合风格代数讲义.pdf" "组合风格代数讲义" 1761486527.75993 0
+["pdflatex"] 1761579669.45293 "d:/程昊一/LaTeXWorks/组合风格代数讲义/组合风格代数讲义.tex" "组合风格代数讲义.pdf" "组合风格代数讲义" 1761579686.65025 0
   "c:/Windows/Fonts/msyh.ttc" 1756564701 19704352 1e10e74402e59d54499af795caf0b135 ""
   "c:/Windows/Fonts/simfang.ttf" 1711630440 10580176 8d3ab7d902eb7dfed8404e2e6cd8d1fb ""
   "c:/Windows/Fonts/simhei.ttf" 1711630440 9755440 983b60188a8e5a7c29c06c674f428b3d ""
@@ -660,15 +660,15 @@
   "c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1751710906 5512713 d5293fe2524c042fff1d1aaaba621917 ""
   "c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1751711061 3346133 a455951bd44c3d6cc0fcd01d149be5bf ""
   "c:/texlive/2025/texmf.cnf" 1751710880 713 e69b156964470283e0530f5060668171 ""
-  "d:/程昊一/LaTeXWorks/组合风格代数讲义/组合风格代数讲义.tex" 1761486520 200093 bc146001b15b02d4a0803d09da2310dc ""
+  "d:/程昊一/LaTeXWorks/组合风格代数讲义/组合风格代数讲义.tex" 1761579666 200127 d155c62f8bd0f8126213b76b23d147f3 ""
   "elegantbook.cls" 1756647319 46743 bc6957377a43384af72797f14cd5d7ed ""
   "figure/cover.jpg" 1716443532 426434 430bf60f65350d914a9d0df352351854 ""
-  "组合风格代数讲义.aux" 1761486525 7065 4a15708e2d272ef3b3b1b893386145ba "pdflatex"
+  "组合风格代数讲义.aux" 1761579684 7065 4a15708e2d272ef3b3b1b893386145ba "pdflatex"
   "组合风格代数讲义.bbl" 0 -1 0 "biber 组合风格代数讲义"
-  "组合风格代数讲义.out" 1761486525 1263 27ea40fa8b7eb015224be006cfc7534b "pdflatex"
-  "组合风格代数讲义.run.xml" 1761486525 2449 f4238557818dd917224a5fffe2a39311 "pdflatex"
-  "组合风格代数讲义.tex" 1761486520 200093 bc146001b15b02d4a0803d09da2310dc ""
-  "组合风格代数讲义.toc" 1761486525 802 4c7dfb29a49a6298a4d3c17ff0398d2a "pdflatex"
+  "组合风格代数讲义.out" 1761579684 1263 27ea40fa8b7eb015224be006cfc7534b "pdflatex"
+  "组合风格代数讲义.run.xml" 1761579684 2449 f4238557818dd917224a5fffe2a39311 "pdflatex"
+  "组合风格代数讲义.tex" 1761579666 200127 d155c62f8bd0f8126213b76b23d147f3 ""
+  "组合风格代数讲义.toc" 1761579684 802 4c7dfb29a49a6298a4d3c17ff0398d2a "pdflatex"
   (generated)
   "组合风格代数讲义.aux"
   "组合风格代数讲义.bcf"

@@ -2423,7 +2423,7 @@ n\min_{1\le i\le n}\left(\left\{\sum_{j=i}^{i+k-1}x_j\right\}\right)\le \sum_{i=
 
 和上面相同的想法, 看看如果$||x||\le \frac{1}{p+q}$, 那么是否有$||\frac{p}{q}x||\ge \frac{1}{p+q}$, 我们将$x$拆开, 就有: 
 \[
-||\frac{p}{q}x||= ||\frac{p}{q}[x]+\frac{p}{q}\{x\}||\ge ||\frac{p}{q}[x]||-||\frac{p}{q}\{x\}||\ge \frac{1}{q}-\frac{p}{q}\{x\}\ge \frac{1}{q}-\frac{p}{q(p+q)}=\frac{1}{p+q}.
+||\frac{p}{q}x||= ||\frac{p}{q}\fl{x}+\frac{p}{q}\{x\}||\ge ||\frac{p}{q}\fl{x}||-||\frac{p}{q}\{x\}||\ge \frac{1}{q}-\frac{p}{q}\{x\}\ge \frac{1}{q}-\frac{p}{q(p+q)}=\frac{1}{p+q}.
 \]
 
 最后, 我们只需不取等即可, 事实上, 利用$(q^n,p+q)=1$即可.
@@ -2432,7 +2432,7 @@ n\min_{1\le i\le n}\left(\left\{\sum_{j=i}^{i+k-1}x_j\right\}\right)\le \sum_{i=
 \begin{solution}
 不妨设$(p,q)=1$, 若整数$n$使得$||\left(\frac{p}{q}\right)^n||\le \frac{1}{p+q}$, 记$x=\left(\frac{p}{q}\right)^n$, 那么: 
 \[
-||\frac{p}{q}x||= ||\frac{p}{q}[x]+\frac{p}{q}\{x\}||\ge ||\frac{p}{q}[x]||-||\frac{p}{q}\{x\}||\ge \frac{1}{q}-\frac{p}{q}\{x\}\ge \frac{1}{q}-\frac{p}{q(p+q)}=\frac{1}{p+q},
+||\frac{p}{q}x||= ||\frac{p}{q}\fl{x}+\frac{p}{q}\{x\}||\ge ||\frac{p}{q}\fl{x}||-||\frac{p}{q}\{x\}||\ge \frac{1}{q}-\frac{p}{q}\{x\}\ge \frac{1}{q}-\frac{p}{q(p+q)}=\frac{1}{p+q},
 \]
 
 因此我们有$||\left(\frac{p}{q}\right)^{n+1}||\ge \frac{1}{p+q}$, 由$(q^n,p+q)=1$知$||\left(\frac{p}{q}\right)^{n+1}||> \frac{1}{p+q}$\note{因为最简分母一定不同}.
@@ -2444,7 +2444,7 @@ n\min_{1\le i\le n}\left(\left\{\sum_{j=i}^{i+k-1}x_j\right\}\right)\le \sum_{i=
 \begin{example}
 对正整数$n>2$与正实数$x$, 证明: 
 \[
-\sum_{k=1}^n \left(x\left[\frac{k}{x}\right]-(x+1)\left[\frac{k}{x+1}\right]\right)\le n.
+\sum_{k=1}^n \left(x\fl{\frac{k}{x}}-(x+1)\fl{\frac{k}{x+1}}\right)\le n.
 \]
 \end{example}
 
@@ -2453,7 +2453,7 @@ n\min_{1\le i\le n}\left(\left\{\sum_{j=i}^{i+k-1}x_j\right\}\right)\le \sum_{i=
 
 设$k=xq_k+r_k,k=(x+1)Q_k+R_k(1\le k\le n,0\le r_k<x,0\le R_k<x+1)$, 那么就有
 \[
-\sum_{k=1}^n \left(x\left[\frac{k}{x}\right]-(x+1)\left[\frac{k}{x+1}\right]\right)=\sum_{k=1}^n (xq_k-(x+1)Q_k)=\sum_{k=1}^n (R_k-r_k),
+\sum_{k=1}^n \left(x\fl{\frac{k}{x}}-(x+1)\fl{\frac{k}{x+1}}\right)=\sum_{k=1}^n (xq_k-(x+1)Q_k)=\sum_{k=1}^n (R_k-r_k),
 \]
 
 所以我们会尝试找一找$R_k,r_k$之间可能的关系和放缩. 回到它们产生的地方, 考察$k=xq_k+r_k,k=(x+1)Q_k+R_k$, 我们可以发现, 这两个式子从形式上只是多了或少了一个$Q_k$, 可能的话, 如果我们将这个$Q_k$放到一个合理的位置, 那么就可能可以将$R_k$与某个$r_j$建立联系. \par
@@ -2475,7 +2475,7 @@ n\min_{1\le i\le n}\left(\left\{\sum_{j=i}^{i+k-1}x_j\right\}\right)\le \sum_{i=
 
 由于\note{按照分析中的想法变形到想要的形式}
 \[
-\sum_{k=1}^n \left(x\left[\frac{k}{x}\right]-(x+1)\left[\frac{k}{x+1}\right]\right)=\sum_{k=1}^n (xq_k-(x+1)Q_k)=\sum_{k=1}^n (R_k-r_k),
+\sum_{k=1}^n \left(x\fl{\frac{k}{x}}-(x+1)\fl{\frac{k}{x+1}}\right)=\sum_{k=1}^n (xq_k-(x+1)Q_k)=\sum_{k=1}^n (R_k-r_k),
 \]
 
 因此: 
@@ -2628,19 +2628,19 @@ r(|C|^2-|\hat{C}|^2+|B|^2- |\hat{B}|^2)\le 0.06,
 
 接下来, 我们来看看如何证明. 在这个问题中, 我们发现取余内的形式较为一般, 并没有特别利于取余求和计算的结构. 因此最好我们可以将其转化为取整结构, 也就是: 
 \[
-\sum_{1\le i<j\le n}\{a_ia_j\}\le \mathrm{C}_{n}^2 -\sum_{1\le i<j \le n}[a_ia_j],
+\sum_{1\le i<j\le n}\{a_ia_j\}\le \mathrm{C}_{n}^2 -\sum_{1\le i<j \le n}\fl{a_ia_j},
 \]
 
 因此只需证: 
 \[
-\sum_{1\le i<j \le n}[a_ia_j]\ge n-2.
+\sum_{1\le i<j \le n}\fl{a_ia_j}\ge n-2.
 \]
 
 直接去刻画取证的求和并不容易, 除非可以直接将一些取整合并来放缩. 我们希望做一些化简, 比如可以观察到当$a_ia_j<2$时, 这些求和可以理解为$a_ia_j$中不小于$1$的数的个数, 这样就比较清晰了; 同时, 这驱使我们将$a_i$较大的情况先解决掉. 
 
 我们大概想想要按照什么来分界, 利用$a_ia_j<2$, 以及取等时所有数都很接近$1$, 那么$2$附近应该是一个比较好的界. 同时, 从放缩也可以发现, 在最大数比较大时, 我们可以忽略剩下的数, 比如设$a_1$最大, 那就只保留含$a_1$的项, 那么: 
 \[
-\sum_{1\le i<j \le n}[a_ia_j]\ge \sum_{k=2}^n [a_1a_k]\ge [a_1(n-a_1)]-n+2,
+\sum_{1\le i<j \le n}\fl{a_ia_j}\ge \sum_{k=2}^n \fl{a_1a_k}\ge \fl{a_1(n-a_1)}-n+2,
 \]
 
 要让这个$\ge n-2$, 那么最好的界就是$2$. 因为在$2\le a_1\le n-2$时上式右端显然不小于$n$. 这就印证了的确需要依据$2$来分界; 同时, 对于$a_1>n-2$, 会发现剩下的数都很小, 回到取余式中随便放缩即可. 
@@ -2661,7 +2661,7 @@ a_1a_i\ge a_1\frac{\sum_{k=i}^n a_i}{n-i+1}\ge a_1\frac{n-ta_1-(i-t-1)}{n-i+1}\g
 
 其实可以发现, 这已经是一个很大的量了. 同时, 由于我们至少有$(i,j)(1\le i<j\le t)$这些组, 于是可以发现使得$a_ia_j\ge 1$的组数不小于
 \[
-[n-ta_1]+\frac{t(t-1)}{2}-(t-1)\ge n-2t+\frac{t^2-3t+2}{2}=n+1+\frac{t^2-7t}{2}\ge n+1-6=n-5,
+\fl{n-ta_1}+\frac{t(t-1)}{2}-(t-1)\ge n-2t+\frac{t^2-3t+2}{2}=n+1+\frac{t^2-7t}{2}\ge n+1-6=n-5,
 \]
 
 这正好只差$3$！于是我们只需要再借用$a_2$搞一些组就可以了. 我们使用类似上面的方法做$a_2$, 会发现会受到$a_1$的干扰. 那么我们反过来, 如果我们已经知道了哪些$a_i>\frac{1}{a_2}$, 这可以帮助我们放缩$a_1a_i$, 具体的, 如果设$k$最大使得$a_2a_k\ge 1$, 那么$(i>k)$: 
@@ -2689,17 +2689,17 @@ a_1a_i\ge a_1\frac{n-a_1-(t-1)a_2-(k-t)-\frac{i-k-1}{a_2}}{n-i+1},
 
 若$a_1\in [2,n-2]$, 由于: 
 \[
-\sum_{1\le i<j\le n}\{a_ia_j\}\le \mathrm{C}_{n}^2 -\sum_{1\le i<j \le n}[a_ia_j],
+\sum_{1\le i<j\le n}\{a_ia_j\}\le \mathrm{C}_{n}^2 -\sum_{1\le i<j \le n}\fl{a_ia_j},
 \]
 
 所以只需证: 
 \[
-\sum_{1\le i<j \le n}[a_ia_j]\ge n-2.
+\sum_{1\le i<j \le n}\fl{a_ia_j}\ge n-2.
 \]
 
 这由
 \[
-\sum_{1\le i<j \le n}[a_ia_j]\ge \sum_{k=2}^n [a_1a_k]\ge [a_1(n-a_1)]-n+2\ge 2(n-2)-n+2=n-2
+\sum_{1\le i<j \le n}\fl{a_ia_j}\ge \sum_{k=2}^n \fl{a_1a_k}\ge \fl{a_1(n-a_1)}-n+2\ge 2(n-2)-n+2=n-2
 \]
 
 知成立; 对于$a_1\le 2$, 我们设$2\ge a_1 \ge a_2\ge\dots{}\ge a_t>1\ge a_{t+1}\ge  \dots{}\ge a_n$, 记$A=\{(i,j):1\le i<j\le n,a_ia_j\ge 1\}$, 不妨设$t< n$\note{否则$a_i$均为$1$, 命题显然}, 接下来有两个断言: 
@@ -2736,7 +2736,7 @@ a_1a_i\ge a_1\frac{\sum_{k=i}^n a_i}{n-i+1}\ge a_1\frac{n-ta_1-(i-t-1)}{n-i+1}=1
 
 那么
 \[
-\sum_{1\le i<j\le n}[a_ia_j]\ge |A|\ge n-2.
+\sum_{1\le i<j\le n}\fl{a_ia_j}\ge |A|\ge n-2.
 \]
 
 命题得证.
@@ -2761,7 +2761,7 @@ a_1a_i\ge a_1\frac{\sum_{k=i}^n a_i}{n-i+1}\ge a_1\frac{n-ta_1-(i-t-1)}{n-i+1}=1
 
 因此, 结合上面的两个想法, 我们可以找一些性质较好的多项式, 让多项式逼近$||x||$或者$||x||^2$\\之类的, 再考虑对多项式取余进行求和放缩. 总结一下大概的想法核心就是“{\heiti 用多项式代替}$||\cdot||$以达到估计效果”我们具体地看看其中的一些细节:  
 
-首先, 我们要解决的是最初的想法中, $y_i$到$0,1$的误差与$||y_i||$的整体性质到底有什么关系. 我们设$y_i\in [-\delta,1+\delta](1\le i\le n)$, 不妨$\delta<\frac{1}{2}$, 此时, 从简单的角度考虑, $\sum_{k=1}^n ||y_k||$与$\delta$有无较好的关系. 借鉴上面的一些想法, 我们依然可以想想怎么用多项式逼近$||x||$, 然后从多项式的求和联系条件式直接给出一个较好的估计. 自然地, 我们可以先考虑让一个抛物线去逼近$||x||$, 注意$||x||$在$[0,1]$的图像是一个倒三角, 我们让抛物线过$(0,0),(1,0),(\frac{1}{2},\frac{1}{2})$, 解得$y=2x(1-x)$, 因此我们可以用$y=2x(1-x)$去拟合$||x||$; 同时, 我们的$y_i$界限比$[0,1]$稍微超出了一点, 因此我们可以把$y=2x(1-x)$往上平移一点, 使得两个曲线在最边上的点$(-\delta,\delta),(1+\delta,\delta)$正好重合, 设向上平移$h$, 即为$-2\delta(\delta+1)+h=\delta$, 解得$h=3\delta+2\delta^2\le 4\delta$, 因此我们可以构建局部不等式: 
+首先, 我们要解决的是最初的想法中, $y_i$到$0,1$的误差与$||y_i||$的整体性质到底有什么关系. 我们设$y_i\in [-\delta,1+\delta]\ (1\le i\le n)$, 不妨$\delta<\frac{1}{2}$, 此时, 从简单的角度考虑, $\sum_{k=1}^n ||y_k||$与$\delta$有无较好的关系. 借鉴上面的一些想法, 我们依然可以想想怎么用多项式逼近$||x||$, 然后从多项式的求和联系条件式直接给出一个较好的估计. 自然地, 我们可以先考虑让一个抛物线去逼近$||x||$, 注意$||x||$在$[0,1]$的图像是一个倒三角, 我们让抛物线过$(0,0),(1,0),(\frac{1}{2},\frac{1}{2})$, 解得$y=2x(1-x)$, 因此我们可以用$y=2x(1-x)$去拟合$||x||$; 同时, 我们的$y_i$界限比$[0,1]$稍微超出了一点, 因此我们可以把$y=2x(1-x)$往上平移一点, 使得两个曲线在最边上的点$(-\delta,\delta),(1+\delta,\delta)$正好重合, 设向上平移$h$, 即为$-2\delta(\delta+1)+h=\delta$, 解得$h=3\delta+2\delta^2\le 4\delta$, 因此我们可以构建局部不等式: 
 \[
 ||x||\le 2x(1-x)+4\delta,
 \]
@@ -2794,7 +2794,7 @@ a_1a_i\ge a_1\frac{\sum_{k=i}^n a_i}{n-i+1}\ge a_1\frac{n-ta_1-(i-t-1)}{n-i+1}=1
 \begin{solution}
 设$y_i =\frac{x_i-(1-\sqrt{5})/2}{\sqrt{5}}(1\le i\le n)$, 带回得到$\sum_{k=1}^n y_k^r= \frac{1+\sqrt{5}}{2\sqrt{5}}n(r=1,2,3)$
 
-设$y_i\in [-\delta,1+\delta](1\le i\le n)$, 不妨$\delta<\frac{1}{2}$, 有以下两个断言: 
+设$y_i\in [-\delta,1+\delta]\ (1\le i\le n)$, 不妨$\delta<\frac{1}{2}$, 有以下两个断言: 
 
 \underline{\textbf{Claim 1}}.\ 对$x\in [-\delta,1+\delta]$, 有$||x||\le 2x(1-x)+4\delta$.
 
@@ -2839,21 +2839,21 @@ a_1a_i\ge a_1\frac{\sum_{k=i}^n a_i}{n-i+1}\ge a_1\frac{n-ta_1-(i-t-1)}{n-i+1}=1
 \end{example}
 
 \begin{analysis}
-和例题2.3.5类似地分析, 我们发现取余内部的结构并不是很直接, 故想到将$\{\cdot{}\}$转化为$[\cdot{}]$, 正好
+和例题2.3.5类似地分析, 我们发现取余内部的结构并不是很直接, 故想到将$\{\cdot{}\}$转化为$\fl{\cdot{}}$, 正好
 \[
-\sum_{1\le i,j\le n}\{a_ib_j\}=n^2-\sum_{1\le i,j\le n}[a_ib_j],
+\sum_{1\le i,j\le n}\{a_ib_j\}=n^2-\sum_{1\le i,j\le n}\fl{a_ib_j},
 \]
 
 于是问题完全转化为求
 \[
-\sum_{1\le i,j\le n}[a_ib_j]
+\sum_{1\le i,j\le n}\fl{a_ib_j}
 \]
 
 的最小可能值. 这个时候, 我们再看看, 最优的, 我们希望尽可能多的$a_ib_j$刚好小于$1$, 我们可以取$a_1=\dots{}=a_{n-1}=1-r$, 注意$\frac{1}{1-r}$趋近于$1+r(r\to 0)$, 因此取$b_1=\dots{}=b_{n-1}=1+r$, 这样, 已经有了$(n-1)^2$个$0$, 此时, $a_n=1+(n-1)r,b_n=1-(n-1)r$, 这样, 只有$(1+(n-1)r)(1-r),\ge 1$, 于是此时恰好$n-1$个数大于$1$, 因此我们得到原题的答案$n^2-n+1$. 
 
 我们接下来想想如何证明, 自然地, 我们证明取整的和不小于$n-1$, 我们不难发现, 在$a_i,b_i$中有比较大的数时, 这个式子可以直接放缩, 由于: 
 \[
-\sum_{1\le i,j\le n}[a_ib_j]\ge \sum_{k=1}^n [a_1b_k]\ge [na_1]-n+1,
+\sum_{1\le i,j\le n}\fl{a_ib_j}\ge \sum_{k=1}^n \fl{a_1b_k}\ge \fl{na_1}-n+1,
 \]
 
 那么当$a_1\ge 2$时, 待证式自然成立, 因此, 只需考虑$2\ge a_i,b_j$的情况. 我们发现, $a_i,b_j$都比较接近$1$时, 这个式子可以近似理解为使得$a_ib_j\ge 1$的$(i,j)$个数, 因此, 我们设$A=\{(i,j)|1\le i,j\le n,a_ib_j\ge 1\}$, 去证$|A|\ge n-1$. 自然地, 我们可以设一个序, 设$2\ge a_1\ge a_2\ge \dots{}\ge a_n$, 同时, 我们发现临界点$1$比较重要, 因此可以设$2\ge a_1\ge \dots{}\ge a_t\ge 1>a_{t+1}\ge \dots{}\ge a_n,2\ge b_1\ge \dots{}\ge b_s\ge 1>b_{s+1}\ge \dots{}\ge b_n$, 因此, 我们在这两个序列中考察$a_ib_j\ge 1$的情况.
@@ -2947,12 +2947,12 @@ b_k\ge \frac{1}{n-k+1}\sum_{j=k}^n b_j\ge \frac{n-b_1-(k-2)}{n-k+1},
 
 另一方面, 下证原式不超过$n^2-n+1$, 只需证\note{利用取整的和与取余的和和为$n^2$}: 
 \[
-\sum_{1\le i,j\le n}[a_ib_j]\ge n-1.
+\sum_{1\le i,j\le n}\fl{a_ib_j}\ge n-1.
 \]
 
 若存在$a_i\ge 2$或$b_i\ge 2$, 不妨设$a_1\ge 2$, 则有: 
 \[
-\sum_{1\le i,j\le n}[a_ib_j]\ge \sum_{k=1}^n [a_1b_k]\ge [na_1]-n+1>n-1,
+\sum_{1\le i,j\le n}\fl{a_ib_j}\ge \sum_{k=1}^n \fl{a_1b_k}\ge \fl{na_1}-n+1>n-1,
 \]
 
 此时成立; 下设$2\ge a_1\ge \dots{}\ge a_t\ge 1>a_{t+1}\ge \dots{}\ge a_n, 2\ge b_1\ge \dots{}\ge b_s\ge 1>b_{s+1}\ge \dots{}\ge b_n$, 不妨$a_1,b_1>1$, 否则命题显然成立. $A=\{(i,j)|1\le i,j\le n,a_ib_j\ge 1\}$, 只需去证$|A|\ge n-1$. 
