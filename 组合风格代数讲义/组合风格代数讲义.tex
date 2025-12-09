@@ -3851,4 +3851,244 @@ t(x_2 - x_3)=(t - 1)(x_1 - x_4)
 
 
 
+
+\chapter{min,\ max与绝对值问题}
+
+这是组合风格不等式中较为有趣的一类问题. min,max刻画最小数, 最大数；绝对值刻画数之间的距离, 很多时候会涉及到一些组合性质. 我们从如下几方面介绍：
+
+\begin{introduction}
+\item 绝对值问题
+\item 整体性质
+\item 刻画极值
+\item 中位数
+\end{introduction}
+
+\section{绝对值问题}
+
+本节我们主要讲解绝对值问题, 涉及到的方法较多；不过主要停留在绝对值独有的属性, 一些与后面章节相关的会放在后面. 
+
+绝对值问题最经典的做法是使用绝对值不等式：
+\[
+|x|+|y|\ge |x+y|,\quad{} |x|+|y|\ge |x-y|.
+\]
+
+这个对复数模长也成立. 
+
+我们先看一些使用绝对值不等式配凑的题目. 前几个问题我们会将配凑的思维过程详细给出. 
+
+\begin{example}
+对正整数$n\ge 2$, 对$n$个实数(复数)$x_1,x_2,\dots{},x_n$, 证明：
+\[
+(n-1)\sum_{1\le i<j\le n}|x_i-x_j|^2\le \left(\sum_{1\le i<j\le n}|x_i-x_j|\right)^2.
+\]
+\end{example}
+
+\begin{analysis}
+我们最初在学习分组时如果没有太好的想法, 就先从小情况试试吧. 考虑三个变量$a,b,c$, 要证
+\[
+\sum |a-b|^2\le 2\sum|a-b||b-c|,
+\]
+
+换元$x=a-b,y=b-c,z=c-a$, 那么$x+y+z=0$, 命题变为证明
+\[
+\sum |x|^2\le 2\sum|xy|.
+\]
+
+现在, 左边是平方, 距离右边还比较远, 那么我们希望把平方换成交叉积的形式, 注意$|x^2|=|xy+xz|$, 这样, 就有：
+\[
+\sum |x|^2=\sum\left(|xy|+|xz|\right)=2\sum|xy|.
+\]
+
+这样, 我们完成了$3$的证明, 我们看看有没有$n$时证明可以借鉴的, 把元换回去, 可以看到这件事本质是在做：
+\[
+2\sum|a-b||b-c|=\sum|a-b|\left(|a-c|+|b-c|\right)\ge \sum |a-b|^2,
+\]
+
+是固定了一个$|a-b|$, 然后在右边找到$|a-b|$乘的项后作了一个绝对值不等式. 那么, 使用这个配凑的想法, 我们看看$n$元是否有类似的操作, 固定$|x_k-x_l|$, 我们希望
+\[
+\sum_{1\le i<j\le n}|x_i-x_j|\ge (n-1)|x_k-x_l|,
+\]
+
+使用配凑的想法, 我们至少要将左边包含$k,l$的项留下, 那么自然发现左边可以拿出这些项：
+\[
+|x_k-x_l|+\sum_{i\ne k,l}\left(|x_k-x_i|+|x_i-x_l|\right),
+\]
+
+使用绝对值不等式, 这自然大于右边, 这样就解决了这个题.
+
+\end{analysis}
+
+\begin{solution}
+对$1\le k<l\le n$, 有：
+\[
+\sum_{1\le i<j\le n}|x_i-x_j|\ge|x_k-x_l|+\sum_{i\ne k,l}\left(|x_k-x_i|+|x_i-x_l|\right)\ge(n-1)|x_k-x_l|,
+\]
+
+于是两边同乘$|x_k-x_l|$并对$1\le k<l\le n$求和得：
+\[
+\left(\sum_{1\le i<j\le n}|x_i-x_j|\right)^2=\sum_{1\le k<l\le n}|x_k-x_l|\sum_{1\le i<j\le n}|x_i-x_j|\ge (n-1)\sum_{1\le k<l\le n}|x_k-x_l|^2.
+\]
+
+命题得证. 
+\end{solution}
+
+从这个问题我们看出, 使用配凑法的这些问题对实数与复数都成立, 由于做法完全相同, 我们后面对这些问题统一看复数的情况. 
+
+\begin{example}
+给定正整数$n\ge 2$与复数$t$, 求最大的实数$c$, 对任意$n$个复数$z_1,z_2,\dots{},z_n$满足$\sum_{k=1}^n z_k=1$, 均有：
+\[
+\sum_{k=1}^n |z_k+t|\ge c\sum_{k=1}^n |z_k|.
+\]
+\end{example}
+
+\begin{analysis}
+首先, 我们从小情况看看取等. 比如$a+b=1$, 求最大的实数$c$, 使得$|(t+1)a+b|+|(t+1)b+a|\ge c(|a|+|b|)$. 设$t+1=\lambda$, 原问题变成$|\lambda a+b|+|\lambda b+a|\ge c(|a|+|b|)$. 我们来看看这个式子, 对这样的不等式, 我们通常采用模长不等式. 但是具体如何配凑, 我们直接对左边配凑并不容易看出来, 所以为了简化问题, 我们暂时先对左边换元. 设$x=\lambda a+b,y=\lambda b+a$, 解出之后带回得到$c(|\lambda x-y|+|\lambda y-x|)\le |\lambda^2-1|(|x|+|y|)$, 这样我们再看看, 右边到左边的配凑已经一目了然了, 只需$|x|+|\lambda||y|\ge |\lambda y-x|,|y|+|\lambda||x|\ge |\lambda x-y|$相加就可以得到. 
+
+我们对于配凑总会有这样的疑问, 这样放缩是否是可以取等的？我们看看, 在这里, 取等意味着$x,\lambda y$同向, 以及$y,\lambda x$同向, 如果极端一点, $\lambda$是一个很奇怪的复数, 那么一般这似乎难以做到, 但是不难想到如果让$y=0$, 那么同向这件事是自然成立的. 于是, 我们的担心便解决了, 当左边之多只有一个非零数时, 取等是自然的. 
+
+这意味着我们发现了使用配凑方法, 如何在$n$时取等. 具体的, 我们让左边有$n-1$个$0$, 也就是可以设$z_1=\dots{}=z_{n-1}=-t$, 那么解出$z_n=(n-1)t+1$, 这样, 得到
+\[c\le \frac{|nt+1|}{(n-1)|t|+|(n-1)t+1|}.\]
+
+至于证明, 我们要始终心怀取等, 左边有且仅有1个非零数, 那么只需找一个比较合理的配凑方式, 让左边正好放到右边, 就一定可以取等. 剩下我们只需要配一配就行了.
+
+我们希望凑出右边的形式$|z_k|$, 看看左边相关的项, 首先自然有$|z_k+t|$, 其次对其余$|z_j+t|(j\ne k)$, 我们为了保持对称性, 将这些剩余的全部加起来, 得到$\sum_{j\ne k}|z_j+t|\ge |\sum_{j\ne k}z_j+(n-1)t|=|(n-1)t+1-z_k|$, 这样, 就可以和$|z_k+t|$凑起来凑出$|z_k|$了. 我们消掉一次项, 得到：
+\[
+|t|\sum_{j\ne k}|z_j+t|+|1+(n-1)t||z_k+t|\ge |(n-1)t^2+t-tz_k|+|(n-1)t^2+t+(1+(n-1)t)z_k|\ge |1+nt||z_k|,
+\]
+
+这样, 对$1\le k\le n$求和即可得到：
+\[
+((n-1)|t|+|(n-1)t+1|)\sum_{k=1}^n|z_k+t|\ge |1+nt|\sum_{k=1}^n |z_k|,
+\]
+
+这样整理之和就正好可以得到命题. 
+\end{analysis}
+
+\begin{solution}
+一方面, 取$z_1=\dots{}=z_{n-1}=-t,z_n=(n-1)t+1$, 得到：
+\[c\le \frac{|nt+1|}{(n-1)|t|+|(n-1)t+1|}.\]
+
+另一方面, 下证
+\[
+((n-1)|t|+|(n-1)t+1|)\sum_{k=1}^n|z_k+t|\ge |1+nt|\sum_{k=1}^n |z_k|.
+\]
+
+对$1\le k\le n$, 由模长不等式有：
+\[
+|t|\sum_{j\ne k}|z_j+t|+|1+(n-1)t||z_k+t|\ge |(n-1)t^2+t-tz_k|+|(n-1)t^2+t+(1+(n-1)t)z_k|\ge |1+nt||z_k|,
+\]
+
+再对$1\le k\le n$求和即得.
+\end{solution}
+
+\begin{example}
+给定正整数$n$, 对复数$z_1,z_2,\dots{},z_n$满足$\sum_{k=1}^n z_k=0,\sum_{k=1}^n |z_k|=1$，求
+\[
+\sum_{k=1}^n \left|\sum_{j=k}^n \frac{z_j}{j}\right|
+\]
+
+的最大可能值. 
+\end{example}
+
+在我们不使用绝对值不等式的时候, 设序是一个良法.
+
+\begin{example}
+实数$ x_1,\ x_2,\ \cdots,\ x_n \in [0,1]$. 求证:
+\[ \sum_{1\le i<j\le n}\left|x_i-x_j\right|\le\fl{\frac{n^2}{4}}. \]  
+\end{example}
+
+\begin{solution}
+不妨设$ x_1\ge x_2\ge\cdots\ge x_n $. 则有
+\begin{align*}
+\sum_{1 \leq i < j \leq n} |x_i - x_j| = \sum_{1 \leq i < j \leq n} (x_i - x_j) = \sum_{i=1}^n (n + 1 - 2i) x_i\le \sum_{i=1}^{\left\lfloor\frac{n+1}{2}\right\rfloor} (n + 1 - 2i) = \left\lfloor\frac{n^2}{4}\right\rfloor.
+\end{align*}
+\end{solution}
+
+
+\begin{example}
+正实数$ a_1,a_2,\cdots,a_n,b_1,b_2,\cdots,b_n $ 满足$ \sum_{i=1}^n a_i=\sum_{i=1}^n b_i=1 $ . 求证:
+\[ \sum_{i=1}^n |a_i-b_i|\le 2-\min_{1\le i\le n}\left\{\frac{a_i }{b_i}\right\}-\min_{1\le i\le n}\left\{\frac{b_i }{a_i}\right\}. \]
+\end{example}
+
+\begin{analysis}
+我们可以考虑不等式右边被固定的时候, 左边的最大值. 当各个$ a_i/b_i $ 被固定的时候, $ |a_i-b_i $ 就与$ a_i $ (或者$ b_i $ )成正比, 那么左边就可以看为各个$ a_i $ (或$ b_i $ )的带系数的和, 可以直接放缩. 具体如下:
+\end{analysis}
+
+\begin{solution}
+不妨设
+\[ \frac{a_1}{b_1}\ge\frac{a_2}{b_2}\ge\cdots\ge\frac{a_t}{b_t}\ge 1>\frac{a_{t+1}}{b_{t+1}}\ge\cdots\ge\frac{a_n}{b_n}. \]
+
+则对于$ 1\le i\le t $, 有
+\[ |a_i-b_i|=a_i-b_i=\left(1-\frac{b_i}{a_i}\right)a_i\le \left(1-\min_{1\le i\le n}\left\{\frac{b_i }{a_i}\right\}\right)a_i. \] 
+对于$ t+1\le i\le n $, 有\[ |a_i-b_i|=b_i-a_i=\left(1-\frac{a_i}{b_i}\right)b_i\le \left(1-\min_{1\le i\le n}\left\{\frac{a_i }{b_i}\right\}\right)b_i. \]\par
+相加, 就会有
+\begin{align*}
+\sum_{i=1}^n |a_i-b_i| &\le \left(1-\min_{1\le i\le n}\left\{\frac{b_i }{a_i}\right\}\right)\sum_{i=1}^t a_i + \left(1-\min_{1\le i\le n}\left\{\frac{a_i }{b_i}\right\}\right)\sum_{i=t+1}^n b_i \\
+&\le 2-\min_{1\le i\le n}\left\{\frac{a_i }{b_i}\right\}-\min_{1\le i\le n}\left\{\frac{b_i }{a_i}\right\}.
+\end{align*}
+\end{solution}
+
+我们再给出一种证明方法.
+\begin{solution}
+由
+\[ \sum_{i=1}^{n} \left|a_i-b_i\right|=\sum_{i=1}^{n}a_i+\sum_{i=1}^{n}b_i-2\sum_{i=1}^{n}\min\left\{a_i,b_i\right\}\]
+知只需要证明
+\[ 2\sum_{i=1}^{n}\min\left\{a_i,b_i\right\}\ge\min_{1\le i\le n}\left\{\frac{a_i }{b_i}\right\}+\min_{1\le i\le n}\left\{\frac{b_i }{a_i}\right\}.\]  \par
+
+而
+\begin{align*}
+\sum_{i=1}^{n}\min\left\{a_i,b_i\right\}=\sum_{i=1}^{n}a_i\min\left\{1,\frac{b_i}{a_i}\right\}\ge \sum_{i=1}^{n}a_i\min_{1\le i\le n}\left\{\frac{b_i }{a_i}\right\}=\min_{1\le i\le n}\left\{\frac{b_i }{a_i}\right\}.
+\end{align*}
+同理有
+\[\sum_{i=1}^{n}\min\left\{a_i,b_i\right\}\ge \min_{1\le i\le n}\left\{\frac{a_i }{b_i}\right\}.\] \par
+综上所述, 命题得证.
+\end{solution}
+
+
+\begin{example}
+$ n^2 $ 个实数$ x_{ij}\in[0,1]\ (1\le i\le n,\ 1\le j\le n) $. 求以下表达式的最大值: 
+\[ \sum_{i=1}^n\left|\sum_{j=1}^n \left(x_{ij}-x_{ji}\right)\right|. \] 
+\end{example}
+
+\begin{analysis}
+为了直观, 将这$ n^2 $ 个实数填入一个$ n\times n $ 的方格表中, 其中$ x_{ij} $ 填入$ i $ 行$ j $ 列的格子中.\par
+如果记$ R_i,\ C_i $分别为行和与列和, 即
+\[ R_i=\sum_{j=1}^n x_{ij},\ C_j=\sum_{i=1}^n x_{ij}, \]
+则题目要求的表达式即为$ \sum_{i=1}^n |R_i-C_i| $. \par
+由算两次知$ \sum_{i=1}^n R_i=\sum_{j=1}^n C_j $. 并且我们可以任意交换某两行或某两列, 而不改变题目要求的表达式的值. 因此, 我们可以假设$ R_1\le R_2\le\cdots\le R_n $, 同时$ C_1\ge C_2\ge\cdots\ge C_n $(这是在仅改变各个$ R_i $与$ C_i $ 的情况下能取到的最大值). \par
+因此可以设$ t $是满足
+\[ C_1-R_1\ge C_2-R_2\ge\cdots\ge C_t-R_t\ge0>C_{t+1}-R_{t+1}\cdots\ge C_n-R_n \]
+的唯一整数. 那么原式就可以变形为(注意$ \sum_{i=1}^n R_i=\sum_{j=1}^n C_j $)
+\[  \sum_{i=1}^n |R_i-C_i| =\sum_{i=1}^t (C_i-R_i)+\sum_{i=t+1}^n (R_i-C_i)=2\sum_{i=1}^t\left(C_i-R_i\right). \]\par
+从直观来看, 我们为了让$ \sum_{i=1}^t C_i $取到最大值, 那么应该让每行的数都尽可能“集中”在前面(在这里“前”指的是下标小的那一端). 对于每一行, 只有前$ t $个格子中的数对于$ \sum_{i=1}^t C_i $ 有贡献, 因此, 对于$ R_i \le t $, 这一行最多贡献$ R_i $; 而对于$ R_i >t $, 这一行最多贡献$ t $. 因此我们从直观上获得了一个估计: 
+\[ \sum_{i=1}^t C_i\le\sum_{i=1}^n\min\left\{R_i,t\right\}. \] \par
+剩下的的事情就是代数放缩, 并不困难.  
+\end{analysis}
+
+\begin{solution}
+设$ R_i,\ C_i,\ t $如上. 我们先证明:
+\[ \sum_{i=1}^t C_i\le\sum_{i=1}^n\min\left\{R_i,t\right\}. \] \par
+这是因为, 对于$ 1\le i\le n $, $ 1\le j\le t $, 由于$ x_{ij}\in[0,1] $, 所以以下两式显然成立:
+\[ \sum_{j=1}^t x_{ij}\le\sum_{j=1}^n x_{ij}=R_i, \quad \sum_{j=1}^t x_{ij}\le\sum_{j=1}^t 1=t. \]
+因此, 有
+\begin{align*}
+\sum_{i=1}^t C_i=\sum_{i=1}^t \sum_{j=1}^n x_{ij}=\sum_{i=1}^n \sum_{j=1}^t x_{ij}\le\sum_{i=1}^n\min\left\{R_i,t\right\}.
+\end{align*}\par 
+接下来, 由$ \sum_{i=1}^n R_i=\sum_{j=1}^n C_j $知道
+\begin{align*}
+\sum_{i=1}^n |R_i-C_i| &=\sum_{i=1}^t (C_i-R_i)+\sum_{i=t+1}^n (R_i-C_i)=2\sum_{i=1}^t\left(C_i-R_i\right) \\
+&=2\sum_{i=1}^t C_i-2\sum_{i=1}^t R_i\le 2\sum_{i=1}^n\min\left\{R_i,t\right\}-2\sum_{i=1}^t R_i \\
+&\le 2\sum_{i=1}^{t}R_i+2\sum_{i=t+1}^n\min\left\{R_i,t\right\}-2\sum_{i=1}^t R_i \\
+&=2\sum_{i=t+1}^n\min\left\{R_i,t\right\}\le 2(n-t)t\le 2\fl{\frac{n^2}{4}}.
+\end{align*}\par 
+根据放缩, 不难得出一个取等条件为
+\[ x_{ij}=\begin{cases}1,&t+1\le i\le n,1\le j\le t;\\0,&\text{其余情况}.\end{cases} \]
+\end{solution}
+
+\textbf{注}\ \ 还有一个与这道题类似的题目, 但是更困难:\par
+{\kaishu 给定正整数$ n $与$ m\in[n,n^2] $. 对实数$ x_{ij}\in[0,1]\ (1\le i,j\le n) $ 满足 $ \sum_{i=1}^n\sum_{j=1}^n x_{ij}=m $ , 求
+\[ \sum_{i=1}^{n}\min\left\{\sum_{j=1}^{n}x_{ij},\ \sum_{j=1}^{n}x_{ji}\right\} \]
+的取值范围.}\par 
+下面这个题目是原问题的背景:
+{\kaishu 在一个$ n\times n $的方格表中, 每个格子被染为黑色或白色. 记第$ i $行有$ a_i $个黑格, 第$ j $列有$ b_j $个黑格. 求$ \sum_{i=1}^{n}\left|a_i-b_i\right| $的最大值, 并求取等条件的个数.}
 \end{document}

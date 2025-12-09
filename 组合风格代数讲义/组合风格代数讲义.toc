@@ -8,3 +8,5 @@
 \contentsline {section}{\numberline {2.2}分组与配凑}{53}{section.2.2}%
 \contentsline {section}{\numberline {2.3}大小分析与组合性质}{63}{section.2.3}%
 \contentsline {section}{\numberline {2.4}高等观点与技巧}{84}{section.2.4}%
+\contentsline {chapter}{\numberline {3}min,\ max与绝对值问题}{98}{chapter.3}%
+\contentsline {section}{\numberline {3.1}绝对值问题}{98}{section.3.1}%

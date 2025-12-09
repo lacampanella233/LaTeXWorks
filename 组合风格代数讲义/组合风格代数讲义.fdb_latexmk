@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber 组合风格代数讲义"] 0 "组合风格代数讲义.bcf" "组合风格代数讲义.bbl" "组合风格代数讲义" 1761579686.64963 0
+["biber 组合风格代数讲义"] 0 "组合风格代数讲义.bcf" "组合风格代数讲义.bbl" "组合风格代数讲义" 1765294907.17839 0
   "reference.bib" 0 -1 0 ""
   "组合风格代数讲义.bcf" 0 -1 0 "pdflatex"
   (generated)
   "组合风格代数讲义.bbl"
   "组合风格代数讲义.blg"
   (rewritten before read)
-["pdflatex"] 1761579669.45293 "d:/程昊一/LaTeXWorks/组合风格代数讲义/组合风格代数讲义.tex" "组合风格代数讲义.pdf" "组合风格代数讲义" 1761579686.65025 0
+["pdflatex"] 1765294900.22397 "d:/程昊一/LaTeXWorks/组合风格代数讲义/组合风格代数讲义.tex" "组合风格代数讲义.pdf" "组合风格代数讲义" 1765294907.17899 0
   "c:/Windows/Fonts/msyh.ttc" 1756564701 19704352 1e10e74402e59d54499af795caf0b135 ""
   "c:/Windows/Fonts/simfang.ttf" 1711630440 10580176 8d3ab7d902eb7dfed8404e2e6cd8d1fb ""
   "c:/Windows/Fonts/simhei.ttf" 1711630440 9755440 983b60188a8e5a7c29c06c674f428b3d ""
@@ -80,6 +80,7 @@
   "c:/texlive/2025/texmf-dist/fonts/tfm/zhmetrics/unifs/unifs67.tfm" 1751710858 1172 2ac51daa11cb49d568b65a81bc53ad8e ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/zhmetrics/unifs/unifs68.tfm" 1751710858 1172 d65c77991ff2cfaa3610581b5164f186 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/zhmetrics/unifs/unifs69.tfm" 1751710858 1172 c7dc2875c81469911b8109d62a32079d ""
+  "c:/texlive/2025/texmf-dist/fonts/tfm/zhmetrics/unifs/unifs6a.tfm" 1751710858 1172 7b5d7948b077678b884e457fcca2054c ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/zhmetrics/unifs/unifs6b.tfm" 1751710858 1172 51c9397f6ec1971497d3d5e6d0fac7e7 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/zhmetrics/unifs/unifs6c.tfm" 1751710858 1172 8341a565c911679161e36ccf197e0b05 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/zhmetrics/unifs/unifs6d.tfm" 1751710858 1172 33cf1d4910a286a256a95ca5f51c30d2 ""
@@ -660,15 +661,15 @@
   "c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1751710906 5512713 d5293fe2524c042fff1d1aaaba621917 ""
   "c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1751711061 3346133 a455951bd44c3d6cc0fcd01d149be5bf ""
   "c:/texlive/2025/texmf.cnf" 1751710880 713 e69b156964470283e0530f5060668171 ""
-  "d:/程昊一/LaTeXWorks/组合风格代数讲义/组合风格代数讲义.tex" 1761579666 200127 d155c62f8bd0f8126213b76b23d147f3 ""
+  "d:/程昊一/LaTeXWorks/组合风格代数讲义/组合风格代数讲义.tex" 1765294899 212350 94e84690101267850d7020e8d73652d1 ""
   "elegantbook.cls" 1756647319 46743 bc6957377a43384af72797f14cd5d7ed ""
   "figure/cover.jpg" 1716443532 426434 430bf60f65350d914a9d0df352351854 ""
-  "组合风格代数讲义.aux" 1761579684 7065 4a15708e2d272ef3b3b1b893386145ba "pdflatex"
+  "组合风格代数讲义.aux" 1765294905 7867 29774ac22446319ff5fd046549d6281a "pdflatex"
   "组合风格代数讲义.bbl" 0 -1 0 "biber 组合风格代数讲义"
-  "组合风格代数讲义.out" 1761579684 1263 27ea40fa8b7eb015224be006cfc7534b "pdflatex"
-  "组合风格代数讲义.run.xml" 1761579684 2449 f4238557818dd917224a5fffe2a39311 "pdflatex"
-  "组合风格代数讲义.tex" 1761579666 200127 d155c62f8bd0f8126213b76b23d147f3 ""
-  "组合风格代数讲义.toc" 1761579684 802 4c7dfb29a49a6298a4d3c17ff0398d2a "pdflatex"
+  "组合风格代数讲义.out" 1765294905 1527 2d51311878ddbca8e6dcbbb2177d6770 "pdflatex"
+  "组合风格代数讲义.run.xml" 1765294905 2449 f4238557818dd917224a5fffe2a39311 "pdflatex"
+  "组合风格代数讲义.tex" 1765294899 212350 94e84690101267850d7020e8d73652d1 ""
+  "组合风格代数讲义.toc" 1765294905 962 7c3c3682386e438a3417bc50a4acfd89 "pdflatex"
   (generated)
   "组合风格代数讲义.aux"
   "组合风格代数讲义.bcf"
