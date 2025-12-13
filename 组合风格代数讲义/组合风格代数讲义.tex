@@ -4102,7 +4102,26 @@ $ n^2 $ 个实数$ x_{ij}\in[0,1]\ (1\le i\le n,\ 1\le j\le n) $. 求以下表�
 先来看一下取等. 直观上, 我们希望$ \{a_i\} $和$ \{b_i\} $一个较为分散, 而另一个较为紧密. 可以取
 \[ a_1=1, a_2=2, \cdots, a_{15}=15, a_{16}=2000, a_{17}=2001,\cdots,a_{31}=2015, \]
 而$ \{b_i\} $取为等差数列. 此时不难计算出原式不大于$ 30720 $.\par
-为了证明此为最大值, 可以考虑“分离正负”, 即分别考虑$ a_i\ge b_i $与$ a_i<b_i $的情况.
+首先, 来观察一下$ \sum_{i=1}^{31}\left|a_i-b_i\right| $的形式. 绝对值并不利于直接放缩, 并且难以利用条件 $ \sum_{i=1}^{n}a_i=\sum_{i=1}^{n}b_i $. 因此考虑去掉绝对值. 记$ A= \{1\le i\le 31:\ a_i\ge b_i\}$, $ B=\{1\le i\le 31:\ a_i<b_i\} $. 那么原式可以写为
+\[ S:=\sum_{i=1}^{31}\left|a_i-b_i\right|=\sum_{i\in A} (a_i-b_i)+\sum_{i\in B} (b_i-a_i). \]\par
+由$ \sum_{i=1}^{n}a_i=\sum_{i=1}^{n}b_i $知
+\[ S=2\sum_{i\in A} (a_i-b_i)=2\sum_{i\in B}(b_i-a_i). \]
+继续考虑上面的式子的形式. 条件$ 1\le a_1<a_2<\cdots<a_{31}\le 2015 $与$ 1\le b_1<b_2<\cdots<b_{31}\le 2015 $实际上是比较宽松的条件. 根据取等, 对$ i\in A, j\in B $, $ a_i-b_i $的均值与$ b_j-a_j $的均值比较接近且两者之和大约为$ 2015 $, $ |A| $与$ |B| $比较接近, $ a_i-b_i\ (i\in A) $均相等. 这些都意味着我们只需要使用如下平凡的放缩: 将$ \sum_{i\in A}(a_i-b_i) $与$ \sum_{i\in B}(b_i-a_i) $通过某种方式加起来就可以达到效果.\par 
+因此, 我们找$ \lambda,\mu $, 最小化
+\[ \lambda\sum_{i\in A}(a_i-b_i)+\mu\sum_{i\in B}(b_i-a_i)=(\lambda+\mu)\cdot 2S \] 
+即可. $ \sum_{i\in A}(a_i-b_i) $与$ \sum_{i\in B}(b_i-a_i) $的地位基本相同, 而由取等可以看出来$ a_i-b_i\ (i\in A) $与$ b_i-a_i\ (i\in B) $各自的均值较为重要, 因此可以通过取$ \lambda=1/|A|,\mu=1/|B| $来表示这两个均值:
+\[ \frac{1}{|A|}\sum_{i\in A}(a_i-b_i)+\frac{1}{|B|}\sum_{i\in B}(b_i-a_i)=(\frac{1}{|A|}+\frac{1}{|B|})\cdot S. \]\par
+两边同时乘上$ |A|\cdot |B| $, 得到
+\begin{align*}
+2\cdot 31S&=|B|\sum_{i\in A}(a_i-b_i)+|A|\sum_{i\in B}(b_i-a_i)\\
+&=\sum_{i\in A,j\in B}(a_i-b_i)+\sum_{i\in A,j\in B}(b_j-a_j)=\sum_{i\in A,j\in B}(a_i-b_i+b_j-a_j).
+\end{align*}\par
+因此只需要观察$ a_i-b_i+b_j-a_j $有没有较好的放缩. \par
+以$ i<j $为例. $ a_i-a_j\le i-j $, 而$ b_j\le 1984+j $, $ b_i\ge i $, 因此
+\[ a_i-b_i+b_j-a_j\le (i-j)+(1984+j)-i=1984. \]
+这样, 正好符合取等中$ a_i-b_i\ (i\in A) $全相等, 且$ b_i-a_i\ (i\in B) $全相等. 由此可以计算出$ S\le 30720. $\par
+
+
 \end{analysis}
 
 \begin{solution}
